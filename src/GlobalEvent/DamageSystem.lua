@@ -26,116 +26,44 @@ function InitDamage()
 		local casterOwner     = GetOwningPlayer(caster)
 
 		if isEventDamaged then
-
-			if IsUnitType(target,UNIT_TYPE_HERO) then --Prometheus
+			if IsUnitType(target,UNIT_TYPE_HERO) then --Событие Любой герой получил урон
 				--print("Герой получил урон")
-				local data=HERO[GetPlayerId(GetOwningPlayer(target))]
-				if data.ReleaseLMB and data.Perk14 then  -- Зажата левая кнопка мыши и есть щит
-					local AngleUnitRad = math.rad(GetUnitFacing(target))  -- data.LastTurn
-					local AngleSource = math.deg(AngleBetweenXY(GetUnitX(caster), GetUnitY(caster), GetUnitX(target), GetUnitY(target)))
-					local Vector3 = wGeometry.Vector3
-					local UnitFacingVector = Vector3:new(math.cos(AngleUnitRad), math.sin(AngleUnitRad), 0)  -- вектор поворота юнита
-					local AngleSourceVector = Vector3:new(GetUnitX(caster) - GetUnitX(target), GetUnitY(caster) - GetUnitY(target), 0)  -- вектор получения от урона (by Doc)
-					AngleSourceVector = AngleSourceVector:normalize()
-					local dot = UnitFacingVector:dotProduct(AngleSourceVector)
-					local dist=damage
-					if dist >=25 then dist=25 end
-					if 0 < dot then
-						local eff=AddSpecialEffect("Abilities\\Spells\\Human\\Defend\\DefendCaster",GetUnitXY(target))
-						BlzSetSpecialEffectYaw(eff,math.rad(AngleSource-180))
-						DestroyEffect(eff)
-						UnitAddVectorForce(target, AngleSource, dist / 3, dist, false)  -- отталкивание
-						if data.Perk14A then
-							FlyTextTagShieldXY(GetUnitX(target),GetUnitY(target),R2I(damage),GetOwningPlayer(target))
-							BlzSetEventDamage(0)
-						else
-							FlyTextTagShieldXY(GetUnitX(target),GetUnitY(target),R2I(damage/2),GetOwningPlayer(target))
-							BlzSetEventDamage(damage/2)
-							--print("факт поглощения урона ™")
-						end
-					end
-					if data.Perk12 and dot>0 then--
-						if DistanceBetweenXY(GetUnitX(target),GetUnitY(target),GetUnitXY(caster))<=200 then
-							local x,y=GetUnitXY(caster)
-							--print("замораживаем "..GetUnitName(caster))
-							local dummy=CreateUnit(GetOwningPlayer(target), DummyID, x, y, 0)--
-							UnitAddAbility(dummy,FourCC('A00H'))
-							UnitApplyTimedLife(dummy,FourCC('BTLF'),0.1)
-							if Cast(dummy,0,0,caster) then
-							--	print("успех")
-							else
-							--	print("провел")
-							end
-							SetUnitTimeScale(caster,0)
-							SetUnitVertexColor(caster,60,200,255,240)
-							BlzPauseUnitEx(caster, true)
-							TimerStart(CreateTimer(), 3, false, function()
-								SetUnitTimeScale(caster,1)
-								SetUnitVertexColor(caster,255,255,255,255)
-								BlzPauseUnitEx(caster, false)
-							end)
-						end
-					end
+				--local data=HERO[GetPlayerId(GetOwningPlayer(target))]
+				if GetUnitAbilityLevel(target,FourCC('A000'))>0 and GetUnitLifePercent(target)<=20 then  -- есть ярость пассивка
+					if BlzGetUnitAbilityCooldownRemaining(target,FourCC('A000'))<=1 then -- способность не на КД
+						--print("запуск кд способности")
+						local lvl=GetUnitAbilityLevel(target,FourCC('A000'))
+						local amount=0
+						BlzStartUnitAbilityCooldown(target,FourCC('A000'),16)-- старт КД
+						UnitAddAbility(target,FourCC('A001'))--скорость передвижения
+						SetUnitAbilityLevel(target,FourCC('A001'),lvl)
+						BlzUnitHideAbility(target,FourCC('A001'),true)
 
+						if lvl==1 then	amount=15
+						elseif lvl==2 then amount=22
+						elseif lvl==3 then amount=36
+						elseif lvl==4 then amount=50
+						end
+						--print("set bonus")
+						UnitAddBonus(target,4,amount)
+						TimerStart(CreateTimer(), 8, false, function() -- удаляем бонусы через 8 секунд
+							UnitAddBonus(target,4,-amount)-- урона
+							UnitRemoveAbility(target,FourCC('A001'))-- способность скорости движения
+							UnitRemoveAbility(target,FourCC('B000'))-- и сам бафф, чтобы он не висел ещё секунду
+						end)
+					end
 				end
-			end
-
-			if GetUnitTypeId(target)==FourCC('o002')  and GetOwningPlayer(target)==Player(10) then --урон по кодою
-				--print("урон по кодою")
-				local x,y=GetUnitXY()
-				BlzSetEventDamage(0)
-				local endX,endY=GetRectCenterX(gg_rct_KodoZone),GetRectCenterY(gg_rct_KodoZone)
-				IssuePointOrder(target,"move",endX,endY)
-				if IsUnitInRangeXY(target,endX,endY,120) then
-					SetUnitOwner(target,casterOwner,true)
-					--print("Ачивка кодоя")
-					local data=HERO[GetPlayerId(casterOwner)]
-					data.KodoCount=data.KodoCount+1-- считаем бездействие
-					if not data.Perk8 then
-						if data.KodoCount>=1 then
-							data.Perk8=true
-							BlzSetUnitArmor(caster,BlzGetUnitArmor(caster)+10)
-							if GetLocalPlayer()==casterOwner then
-								BlzFrameSetVisible(PerkIsLock[8],false)
-								BlzFrameSetVisible(FrameSelecter[8],true)
-							end
-							--print("Рабочий поднял бунт")
-							--Allian
-						end
+				if GetUnitAbilityLevel(caster,FourCC('B000'))>0 then--вампирский удар, ещё нужны доп условия для проверки ближнего боя, иначер работает от любого типа урона
+					local effModel="Abilities\\Spells\\Human\\Heal\\HealTarget" --эффект лечения
+					local amount=0
+					local lvl=GetUnitAbilityLevel(caster,FourCC('A000'))-- у баффа нельзя просчитать вампирку
+					if lvl==1 then	amount=damage*0.07
+					elseif lvl==2 then amount=damage*0.11
+					elseif lvl==3 then amount=damage*0.14
+					elseif lvl==4 then amount=damage*0.17
 					end
-					--Старт ИИ кодоя
-					TimerStart(CreateTimer(), 10, true, function()
-						if not UnitAlive(target) then DestroyTimer(GetExpiredTimer()) end
-						if GetUnitCurrentOrder(target)~=String2OrderIdBJ("move") then
-							local rx,ry=GetRandomInt(-500,500),GetRandomInt(-500,500)
-							IssuePointOrder(target,"move", rx,ry)
-						end
-					end)
-					TimerStart(CreateTimer(), 1, true, function()
-						if not UnitAlive(target) then DestroyTimer(GetExpiredTimer()) end
-						local e=nil
-						GroupEnumUnitsInRange(perebor,GetUnitX(target),GetUnitY(target),600,nil)
-						while true do
-							e = FirstOfGroup(perebor)
-
-							if e == nil then break end
-							if UnitAlive(e) and IsUnitEnemy(e,GetOwningPlayer(target)) then
-								--print("пытаемся скушать врага")
-								--if Cast(target,0,0,e) then
-								if IssueTargetOrder(target,"devour",e) then
-									--print("успешно")
-								else
-
-								end
-							end
-							GroupRemoveUnit(perebor,e)
-						end
-					end)
+					HealUnit(caster,amount,1,effModel)--сам вампиризм, хотя это моя универсальная функция лечения
 				end
-				TimerStart(CreateTimer(), 2, false, function()
-					IssueImmediateOrder(target,"stop")
-				end)
-
 			end
 		end
 	end)

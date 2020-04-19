@@ -3167,3 +3167,21 @@ STRING 492
 уровень 4 – доп. урон - 50 ск. пер. - 18% вампиризм - 17%
 }
 
+STRING 493
+// Abilities: A001 (Скорость перемещения от ярости), Name (Name)
+{
+Скорость перемещения от ярости
+}
+
+STRING 494
+// Buffs/Effects: B000 (), Bufftip (Tooltip)
+{
+Ярость
+}
+
+STRING 495
+// Buffs/Effects: B000 (), Buffubertip (Tooltip - Extended)
+{
+Скорость передвижения увеличена
+}
+
