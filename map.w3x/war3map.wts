@@ -1,0 +1,3169 @@
+﻿STRING 3
+{
+Kodum Resistance
+}
+
+STRING 4
+{
+6 - 10
+}
+
+STRING 6
+{
+Snorthcall2t
+}
+
+STRING 7
+// Units: h000 (Магическая башня), Name (Name)
+{
+Магическая башня
+}
+
+STRING 8
+// Units: h000 (Магическая башня), Tip (Tooltip - Basic)
+{
+Магическая башня
+}
+
+STRING 9
+// Units: h001 (Башня), Name (Name)
+{
+Башня
+}
+
+STRING 10
+// Units: h001 (Башня), Tip (Tooltip - Basic)
+{
+Башня
+}
+
+STRING 11
+// Units: h001 (Башня), EditorSuffix (Name - Editor Suffix)
+{
+4
+}
+
+STRING 12
+// Units: h002 (Башня), Name (Name)
+{
+Башня
+}
+
+STRING 13
+// Units: h002 (Башня), Tip (Tooltip - Basic)
+{
+Башня
+}
+
+STRING 14
+// Units: h002 (Башня), EditorSuffix (Name - Editor Suffix)
+{
+3
+}
+
+STRING 15
+// Units: h003 (Башня), Name (Name)
+{
+Башня
+}
+
+STRING 16
+// Units: h003 (Башня), Tip (Tooltip - Basic)
+{
+Башня
+}
+
+STRING 17
+// Units: h003 (Башня), EditorSuffix (Name - Editor Suffix)
+{
+2
+}
+
+STRING 18
+// Units: h004 (Сторожевая башня), Tip (Tooltip - Basic)
+{
+Сторожевая башня
+}
+
+STRING 19
+// Units: h005 (Аванпост), Name (Name)
+{
+Аванпост
+}
+
+STRING 20
+// Units: h005 (Аванпост), Tip (Tooltip - Basic)
+{
+Аванпост
+}
+
+STRING 21
+// Units: n000 (Порчень), Name (Name)
+{
+Порчень
+}
+
+STRING 22
+// Units: n000 (Порчень), Tip (Tooltip - Basic)
+{
+Порчень
+}
+
+STRING 23
+// Units: n000 (Порчень), EditorSuffix (Name - Editor Suffix)
+{
+Easy
+}
+
+STRING 24
+// Units: n001 (Скелет), Name (Name)
+{
+Скелет
+}
+
+STRING 25
+// Units: n001 (Скелет), Tip (Tooltip - Basic)
+{
+Скелет
+}
+
+STRING 26
+// Units: n001 (Скелет), EditorSuffix (Name - Editor Suffix)
+{
+Easy
+}
+
+STRING 27
+// Units: n002 (Волк), Name (Name)
+{
+Волк
+}
+
+STRING 28
+// Units: n002 (Волк), EditorSuffix (Name - Editor Suffix)
+{
+Easy
+}
+
+STRING 29
+// Units: n003 (Кентавр), Name (Name)
+{
+Кентавр
+}
+
+STRING 30
+// Units: n003 (Кентавр), EditorSuffix (Name - Editor Suffix)
+{
+Easy
+}
+
+STRING 31
+// Units: n004 (Командир скелетов), Name (Name)
+{
+Командир скелетов
+}
+
+STRING 32
+// Units: n004 (Командир скелетов), Tip (Tooltip - Basic)
+{
+Командир скелетов
+}
+
+STRING 33
+// Units: n004 (Командир скелетов), EditorSuffix (Name - Editor Suffix)
+{
+Easy
+}
+
+STRING 34
+// Units: n005 (Старый порчень), Name (Name)
+{
+Старый порчень
+}
+
+STRING 35
+// Units: n005 (Старый порчень), Tip (Tooltip - Basic)
+{
+Старый порчень
+}
+
+STRING 36
+// Units: n005 (Старый порчень), EditorSuffix (Name - Editor Suffix)
+{
+Easy
+}
+
+STRING 37
+// Units: n006 (Вожак волков), Name (Name)
+{
+Вожак волков
+}
+
+STRING 38
+// Units: n006 (Вожак волков), EditorSuffix (Name - Editor Suffix)
+{
+Easy
+}
+
+STRING 39
+// Units: n007 (Кентавр-берсерк), Name (Name)
+{
+Кентавр-берсерк
+}
+
+STRING 40
+// Units: n007 (Кентавр-берсерк), EditorSuffix (Name - Editor Suffix)
+{
+Easy
+}
+
+STRING 41
+// Units: n008 (Отшельник), Name (Name)
+{
+Отшельник
+}
+
+STRING 42
+// Units: n008 (Отшельник), EditorSuffix (Name - Editor Suffix)
+{
+Medium
+}
+
+STRING 43
+// Units: n009 (Сатир), Name (Name)
+{
+Сатир
+}
+
+STRING 44
+// Units: n009 (Сатир), EditorSuffix (Name - Editor Suffix)
+{
+Medium
+}
+
+STRING 45
+// Units: n00A (Иглогрив), Name (Name)
+{
+Иглогрив
+}
+
+STRING 46
+// Units: n00A (Иглогрив), Tip (Tooltip - Basic)
+{
+Иглогрив
+}
+
+STRING 47
+// Units: n00A (Иглогрив), EditorSuffix (Name - Editor Suffix)
+{
+Medium
+}
+
+STRING 48
+// Units: n00B (Медведь), Name (Name)
+{
+Медведь
+}
+
+STRING 49
+// Units: n00B (Медведь), EditorSuffix (Name - Editor Suffix)
+{
+Medium
+}
+
+STRING 50
+// Units: n00C (Огр-маг), Name (Name)
+{
+Огр-маг
+}
+
+STRING 51
+// Units: n00C (Огр-маг), EditorSuffix (Name - Editor Suffix)
+{
+Medium
+}
+
+STRING 52
+// Units: n00D (Сатир-провидец), Name (Name)
+{
+Сатир-провидец
+}
+
+STRING 53
+// Units: n00D (Сатир-провидец), EditorSuffix (Name - Editor Suffix)
+{
+Medium
+}
+
+STRING 54
+// Units: n00E (Совиный медведь), Name (Name)
+{
+Совиный медведь
+}
+
+STRING 55
+// Units: n00E (Совиный медведь), Tip (Tooltip - Basic)
+{
+Совиный медведь
+}
+
+STRING 56
+// Units: n00E (Совиный медведь), EditorSuffix (Name - Editor Suffix)
+{
+Medium
+}
+
+STRING 57
+// Units: n00F (Вождь иглогривов), Name (Name)
+{
+Вождь иглогривов
+}
+
+STRING 58
+// Units: n00F (Вождь иглогривов), Tip (Tooltip - Basic)
+{
+Вождь иглогривов
+}
+
+STRING 59
+// Units: n00F (Вождь иглогривов), EditorSuffix (Name - Editor Suffix)
+{
+Medium
+}
+
+STRING 60
+// Units: n00G (Крупный совиный медведь), Name (Name)
+{
+Крупный совиный медведь
+}
+
+STRING 61
+// Units: n00G (Крупный совиный медведь), Tip (Tooltip - Basic)
+{
+Крупный совиный медведь
+}
+
+STRING 62
+// Units: n00G (Крупный совиный медведь), EditorSuffix (Name - Editor Suffix)
+{
+Medium
+}
+
+STRING 63
+// Units: n00H (Маленький каменный голем), Name (Name)
+{
+Маленький каменный голем
+}
+
+STRING 64
+// Units: n00H (Маленький каменный голем), EditorSuffix (Name - Editor Suffix)
+{
+Hard
+}
+
+STRING 65
+// Units: n00I (Маленький осадный голем), Name (Name)
+{
+Маленький осадный голем
+}
+
+STRING 66
+// Units: n00I (Маленький осадный голем), EditorSuffix (Name - Editor Suffix)
+{
+Hard
+}
+
+STRING 67
+// Units: n00J (Лесной огр), Name (Name)
+{
+Лесной огр
+}
+
+STRING 68
+// Units: n00J (Лесной огр), EditorSuffix (Name - Editor Suffix)
+{
+Hard
+}
+
+STRING 69
+// Units: n00K (Боевой голем), Name (Name)
+{
+Боевой голем
+}
+
+STRING 70
+// Units: n00K (Боевой голем), EditorSuffix (Name - Editor Suffix)
+{
+Hard
+}
+
+STRING 71
+// Units: n00L (Каменный голем), Name (Name)
+{
+Каменный голем
+}
+
+STRING 72
+// Units: n00L (Каменный голем), EditorSuffix (Name - Editor Suffix)
+{
+Hard
+}
+
+STRING 73
+// Units: n00M (Осквернитель), Name (Name)
+{
+Осквернитель
+}
+
+STRING 74
+// Units: n00M (Осквернитель), EditorSuffix (Name - Editor Suffix)
+{
+Over hard
+}
+
+STRING 75
+// Units: n00N (Костяной рубака), Name (Name)
+{
+Костяной рубака
+}
+
+STRING 76
+// Units: n00N (Костяной рубака), EditorSuffix (Name - Editor Suffix)
+{
+Over easy
+}
+
+STRING 77
+// Units: n00O (Чемпион Бездны), Name (Name)
+{
+Чемпион Бездны
+}
+
+STRING 78
+// Units: n00O (Чемпион Бездны), EditorSuffix (Name - Editor Suffix)
+{
+Over hard
+}
+
+STRING 79
+// Units: n00P (Костяной громила), Name (Name)
+{
+Костяной громила
+}
+
+STRING 80
+// Units: n00P (Костяной громила), EditorSuffix (Name - Editor Suffix)
+{
+Over easy
+}
+
+STRING 81
+// Units: n00Q (|cff00ff00Лагерь скелетов|r), Tip (Tooltip - Basic)
+{
+|cff00ff00Лагерь скелетов|r
+}
+
+STRING 82
+// Units: n00Q (|cff00ff00Лагерь скелетов|r), Name (Name)
+{
+|cff00ff00Лагерь скелетов|r
+}
+
+STRING 83
+// Units: H006 (|c00F0F000Анти-маг), EditorSuffix (Name - Editor Suffix)
+{
+(Раса высших людей)
+}
+
+STRING 84
+// Units: H006 (|c00F0F000Анти-маг), Name (Name)
+{
+|c00F0F000Анти-маг
+}
+
+STRING 85
+// Units: H006 (|c00F0F000Анти-маг), Tip (Tooltip - Basic)
+{
+|c00F0F000Анти-маг
+}
+
+STRING 86
+// Units: H006 (|c00F0F000Анти-маг), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Анти-маг
+}
+
+STRING 87
+// Units: H006 (|c00F0F000Анти-маг), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Анти-маг
+}
+
+STRING 88
+// Units: H006 (|c00F0F000Анти-маг), Ubertip (Tooltip - Extended)
+{
+Раса высших людей
+Характеристики:
+Сила: 40 (+1.5)
+Ловкость: 0 (+0.0)
+Разум: 10 (+1.0)
+
+Один из энтов бежащих с леса Дремучих скал, где были сожжены его собратья.
+}
+
+STRING 89
+// Units: H006 (|c00F0F000Анти-маг), Propernames (Proper Names)
+{
+|c00F0F000Калканир
+}
+
+STRING 90
+// Units: H006 (|c00F0F000Анти-маг), Description (Description)
+{
+ 
+}
+
+STRING 91
+// Units: H007 (|c00F0F000Архикрыса), EditorSuffix (Name - Editor Suffix)
+{
+(Раса крыс)
+}
+
+STRING 92
+// Units: H007 (|c00F0F000Архикрыса), Name (Name)
+{
+|c00F0F000Архикрыса
+}
+
+STRING 93
+// Units: H007 (|c00F0F000Архикрыса), Tip (Tooltip - Basic)
+{
+|c00F0F000Архикрыса
+}
+
+STRING 94
+// Units: H007 (|c00F0F000Архикрыса), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Архикрыса
+}
+
+STRING 95
+// Units: H007 (|c00F0F000Архикрыса), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Архикрыса
+}
+
+STRING 96
+// Units: H007 (|c00F0F000Архикрыса), Ubertip (Tooltip - Extended)
+{
+Раса крыс
+Характеристики:
+Сила: 10 (+2.1)
+Ловкость: 6 (+2.4)
+Разум: 24 (+1.7)
+
+Напившись в бою крови нефермора, старый крыс по-имени Турк превратился в более разумный вид, который мог управлять своей силой разума.
+}
+
+STRING 97
+// Units: H007 (|c00F0F000Архикрыса), Propernames (Proper Names)
+{
+|c00F0F000Турк
+}
+
+STRING 98
+// Units: H007 (|c00F0F000Архикрыса), Description (Description)
+{
+ 
+}
+
+STRING 99
+// Units: H008 (|c00F0F000Вампир), EditorSuffix (Name - Editor Suffix)
+{
+(Раса вампиров)
+}
+
+STRING 100
+// Units: H008 (|c00F0F000Вампир), Name (Name)
+{
+|c00F0F000Вампир
+}
+
+STRING 101
+// Units: H008 (|c00F0F000Вампир), Tip (Tooltip - Basic)
+{
+|c00F0F000Вампир
+}
+
+STRING 102
+// Units: H008 (|c00F0F000Вампир), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Вампир
+}
+
+STRING 103
+// Units: H008 (|c00F0F000Вампир), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Вампир
+}
+
+STRING 104
+// Units: H008 (|c00F0F000Вампир), Ubertip (Tooltip - Extended)
+{
+Раса вампиров
+Характеристики:
+Сила: 18 (+1.8)
+Ловкость: 15 (+3.2)
+Разум: 12 (+1.0)
+
+Далмор - сын злобной матери Ивриды, похититель чужих душ. С раннего детства, Далмор был простым юношей расы людей, но во времена строгой Теракостры, был похищен и стал абузой пыток. спустя 12 недель мучений его приняли в посвещение.
+}
+
+STRING 105
+// Units: H008 (|c00F0F000Вампир), Propernames (Proper Names)
+{
+|c00F0F000Далмор
+}
+
+STRING 106
+// Units: H008 (|c00F0F000Вампир), Description (Description)
+{
+ 
+}
+
+STRING 107
+// Units: H009 (|c00F0F000Вождь троллей|r), EditorSuffix (Name - Editor Suffix)
+{
+(Раса Троллей)
+}
+
+STRING 108
+// Units: H009 (|c00F0F000Вождь троллей|r), Name (Name)
+{
+|c00F0F000Вождь троллей|r
+}
+
+STRING 109
+// Units: H009 (|c00F0F000Вождь троллей|r), Tip (Tooltip - Basic)
+{
+|c00F0F000Вождь троллей|r
+}
+
+STRING 110
+// Units: H009 (|c00F0F000Вождь троллей|r), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Вождь троллей|r
+}
+
+STRING 111
+// Units: H009 (|c00F0F000Вождь троллей|r), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Вождь троллей|r
+}
+
+STRING 112
+// Units: H009 (|c00F0F000Вождь троллей|r), Ubertip (Tooltip - Extended)
+{
+(Герой недоработан)
+Раса троллей
+Характеристики:
+Сила: 15 (+1.2)
+Ловкость: 22 (+1.8)
+Разум: 17 (+1.2)
+
+Оракул - третий правитель Кархангских троллей. Был верховным шаманом, так как духи выбрали именно его. После открытие варпа, народ Кархангских троллей практически истреблен.
+}
+
+STRING 113
+// Units: H009 (|c00F0F000Вождь троллей|r), Propernames (Proper Names)
+{
+|c00F0F000Оракул|r
+}
+
+STRING 114
+// Units: H00A (|c00F0F000Волшебница|r), EditorSuffix (Name - Editor Suffix)
+{
+(Раса Людей)
+}
+
+STRING 115
+// Units: H00A (|c00F0F000Волшебница|r), Name (Name)
+{
+|c00F0F000Волшебница|r
+}
+
+STRING 116
+// Units: H00A (|c00F0F000Волшебница|r), Tip (Tooltip - Basic)
+{
+|c00F0F000Волшебница|r
+}
+
+STRING 117
+// Units: H00A (|c00F0F000Волшебница|r), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Волшебница|r
+}
+
+STRING 118
+// Units: H00A (|c00F0F000Волшебница|r), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Волшебница|r
+}
+
+STRING 119
+// Units: H00A (|c00F0F000Волшебница|r), Ubertip (Tooltip - Extended)
+{
+Раса людей
+Характеристики:
+Сила: 16 (+1.2)
+Ловкость: 12 (+0.3)
+Разум: 22 (+2.4)
+
+Кирена - кровная дочь существа Пустоты Микриды и человека Корана. Штучно выращена в недрах Кабалита, древнего кристалла Бездны.
+}
+
+STRING 120
+// Units: H00A (|c00F0F000Волшебница|r), Propernames (Proper Names)
+{
+|c00F0F000Кирена|r
+}
+
+STRING 121
+// Units: H00B (|c00F0F000Вурдалак), EditorSuffix (Name - Editor Suffix)
+{
+(Раса мёртвых)
+}
+
+STRING 122
+// Units: H00B (|c00F0F000Вурдалак), Name (Name)
+{
+|c00F0F000Вурдалак
+}
+
+STRING 123
+// Units: H00B (|c00F0F000Вурдалак), Tip (Tooltip - Basic)
+{
+|c00F0F000Вурдалак
+}
+
+STRING 124
+// Units: H00B (|c00F0F000Вурдалак), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Вурдалак
+}
+
+STRING 125
+// Units: H00B (|c00F0F000Вурдалак), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Вурдалак
+}
+
+STRING 126
+// Units: H00B (|c00F0F000Вурдалак), Ubertip (Tooltip - Extended)
+{
+Раса мёртвых
+Характеристики:
+Сила: 15 (+2.5)
+Ловкость: 22 (+1.6)
+Разум: 15 (+1.8)
+
+Павшиий в бою за защиту замка Бернемона, древние силы похитили труп его и воскресили, превратив воина в дряхлое тело. Дабы вижить, Фаргос питаеться жизненной силой своих врагов.
+}
+
+STRING 127
+// Units: H00B (|c00F0F000Вурдалак), Propernames (Proper Names)
+{
+|c00F0F000Фаргос
+}
+
+STRING 128
+// Units: H00B (|c00F0F000Вурдалак), Description (Description)
+{
+ 
+}
+
+STRING 129
+// Units: H00C (|c00F0F000Высший колдун), EditorSuffix (Name - Editor Suffix)
+{
+(Раса гномов)
+}
+
+STRING 130
+// Units: H00C (|c00F0F000Высший колдун), Name (Name)
+{
+|c00F0F000Высший колдун
+}
+
+STRING 131
+// Units: H00C (|c00F0F000Высший колдун), Tip (Tooltip - Basic)
+{
+|c00F0F000Высший колдун
+}
+
+STRING 132
+// Units: H00C (|c00F0F000Высший колдун), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Высший колдун
+}
+
+STRING 133
+// Units: H00C (|c00F0F000Высший колдун), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Высший колдун
+}
+
+STRING 134
+// Units: H00C (|c00F0F000Высший колдун), Ubertip (Tooltip - Extended)
+{
+Раса гномов
+Характеристики:
+Сила: 10 (+1.2)
+Ловкость: 10 (+0.8)
+Разум: 30 (+1.2)
+
+Правнук Андуина Чёрнобородого, Корнаш изучал трактаты и руны древней Апокрефали, с помощью чего и смог добиться великих магических составляющих.
+}
+
+STRING 135
+// Units: H00C (|c00F0F000Высший колдун), Propernames (Proper Names)
+{
+|c00F0F000Корнаш
+}
+
+STRING 136
+// Units: H00C (|c00F0F000Высший колдун), Description (Description)
+{
+ 
+}
+
+STRING 137
+// Units: H00D (|c00F0F000Госпожа Средних миров), EditorSuffix (Name - Editor Suffix)
+{
+(Раса Древних)
+}
+
+STRING 138
+// Units: H00D (|c00F0F000Госпожа Средних миров), Name (Name)
+{
+|c00F0F000Госпожа Средних миров
+}
+
+STRING 139
+// Units: H00D (|c00F0F000Госпожа Средних миров), Tip (Tooltip - Basic)
+{
+|c00F0F000Госпожа Средних миров
+}
+
+STRING 140
+// Units: H00D (|c00F0F000Госпожа Средних миров), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Госпожа Средних миров
+}
+
+STRING 141
+// Units: H00D (|c00F0F000Госпожа Средних миров), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Госпожа Средних миров
+}
+
+STRING 142
+// Units: H00D (|c00F0F000Госпожа Средних миров), Ubertip (Tooltip - Extended)
+{
+Раса древних
+Характеристики:
+Сила: 15 (+4.0)
+Ловкость: 18 (+0.6)
+Разум: 12 (+0.2)
+
+Боги воссоздали древнюю обитель падших рас, а в пользу своих рабов использовали людей и их ресурсы. Именно Госпожа Средних миров выполняла эту работу и явилась его сущность вновь. 
+}
+
+STRING 143
+// Units: H00D (|c00F0F000Госпожа Средних миров), Propernames (Proper Names)
+{
+|c00F0F000Эннис
+}
+
+STRING 144
+// Units: H00E (|c00F0F000Древо Жизни), EditorSuffix (Name - Editor Suffix)
+{
+(Раса высших людей)
+}
+
+STRING 145
+// Units: H00E (|c00F0F000Древо Жизни), Name (Name)
+{
+|c00F0F000Древо Жизни
+}
+
+STRING 146
+// Units: H00E (|c00F0F000Древо Жизни), Tip (Tooltip - Basic)
+{
+|c00F0F000Древо Жизни
+}
+
+STRING 147
+// Units: H00E (|c00F0F000Древо Жизни), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Древо Жизни
+}
+
+STRING 148
+// Units: H00E (|c00F0F000Древо Жизни), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Древо Жизни
+}
+
+STRING 149
+// Units: H00E (|c00F0F000Древо Жизни), Ubertip (Tooltip - Extended)
+{
+Раса высших людей
+Характеристики:
+Сила: 40 (+1.5)
+Ловкость: 0 (+0.0)
+Разум: 10 (+1.0)
+
+Один из энтов бежащих с леса Дремучих скал, где были сожжены его собратья.
+}
+
+STRING 150
+// Units: H00E (|c00F0F000Древо Жизни), Propernames (Proper Names)
+{
+|c00F0F000Древо Жизни
+}
+
+STRING 151
+// Units: H00E (|c00F0F000Древо Жизни), Description (Description)
+{
+ 
+}
+
+STRING 152
+// Units: H00F (|c00F0F000Дух Пространства ), EditorSuffix (Name - Editor Suffix)
+{
+(Раса Древних)
+}
+
+STRING 153
+// Units: H00F (|c00F0F000Дух Пространства ), Name (Name)
+{
+|c00F0F000Дух Пространства 
+}
+
+STRING 154
+// Units: H00F (|c00F0F000Дух Пространства ), Tip (Tooltip - Basic)
+{
+|c00F0F000Дух Пространства 
+}
+
+STRING 155
+// Units: H00F (|c00F0F000Дух Пространства ), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Дух Пространства 
+}
+
+STRING 156
+// Units: H00F (|c00F0F000Дух Пространства ), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Дух Пространства 
+}
+
+STRING 157
+// Units: H00F (|c00F0F000Дух Пространства ), Ubertip (Tooltip - Extended)
+{
+Раса древних
+Характеристики:
+Сила: 12 (+2.0)
+Ловкость: 7 (+2.0)
+Разум: 21 (+2.0)
+
+Велентор - долина черепах и планета семи морей рыцарей Тереноса. После сильного землетрясения, планета начала раскалывать себя на части и освободила жизненную энергию Неоклону.
+}
+
+STRING 158
+// Units: H00F (|c00F0F000Дух Пространства ), Propernames (Proper Names)
+{
+|c00F0F000Неоклона
+}
+
+STRING 159
+// Units: H00G (|c00F0F000Копатель), EditorSuffix (Name - Editor Suffix)
+{
+(Раса крыс)
+}
+
+STRING 160
+// Units: H00G (|c00F0F000Копатель), Name (Name)
+{
+|c00F0F000Копатель
+}
+
+STRING 161
+// Units: H00G (|c00F0F000Копатель), Tip (Tooltip - Basic)
+{
+|c00F0F000Копатель
+}
+
+STRING 162
+// Units: H00G (|c00F0F000Копатель), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Копатель
+}
+
+STRING 163
+// Units: H00G (|c00F0F000Копатель), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Копатель
+}
+
+STRING 164
+// Units: H00G (|c00F0F000Копатель), Ubertip (Tooltip - Extended)
+{
+Раса крыс
+Характеристики:
+Сила: 17 (+2.0)
+Ловкость: 15 (+1.2)
+Разум: 10 (+1.4)
+
+В поисках драгоценных камней, Дрок потерял контроль над разумом и сбежал с родных земель.
+}
+
+STRING 165
+// Units: H00G (|c00F0F000Копатель), Propernames (Proper Names)
+{
+|c00F0F000Дрок
+}
+
+STRING 166
+// Units: H00G (|c00F0F000Копатель), Description (Description)
+{
+ 
+}
+
+STRING 167
+// Units: H00H (|c00F0F000Королева Бездны|r), EditorSuffix (Name - Editor Suffix)
+{
+(Раса Деногридов)
+}
+
+STRING 168
+// Units: H00H (|c00F0F000Королева Бездны|r), Name (Name)
+{
+|c00F0F000Королева Бездны|r
+}
+
+STRING 169
+// Units: H00H (|c00F0F000Королева Бездны|r), Tip (Tooltip - Basic)
+{
+|c00F0F000Королева Бездны|r
+}
+
+STRING 170
+// Units: H00H (|c00F0F000Королева Бездны|r), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Королева Бездны|r
+}
+
+STRING 171
+// Units: H00H (|c00F0F000Королева Бездны|r), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Королева Бездны|r
+}
+
+STRING 172
+// Units: H00H (|c00F0F000Королева Бездны|r), Ubertip (Tooltip - Extended)
+{
+Раса деногридов
+Характеристики:
+Сила: 16 (+1.0)
+Ловкость: 23 (+2.1)
+Разум: 12 (+1.3)
+
+Бема Правиклия - архонт Бездны Правиклия. Она убила свою мать и начала править частью одной из Бездн.
+}
+
+STRING 173
+// Units: H00H (|c00F0F000Королева Бездны|r), Propernames (Proper Names)
+{
+|c00F0F000Бема Правиклия|r
+}
+
+STRING 174
+// Units: H00I (|c00F0F000Крыса), EditorSuffix (Name - Editor Suffix)
+{
+(Раса крыс)
+}
+
+STRING 175
+// Units: H00I (|c00F0F000Крыса), Name (Name)
+{
+|c00F0F000Крыса
+}
+
+STRING 176
+// Units: H00I (|c00F0F000Крыса), Tip (Tooltip - Basic)
+{
+|c00F0F000Крыса
+}
+
+STRING 177
+// Units: H00I (|c00F0F000Крыса), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Крыса
+}
+
+STRING 178
+// Units: H00I (|c00F0F000Крыса), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Крыса
+}
+
+STRING 179
+// Units: H00I (|c00F0F000Крыса), Ubertip (Tooltip - Extended)
+{
+Раса крыс
+Характеристики:
+Сила: 12 (+1.5)
+Ловкость: 24 (+2.1)
+Разум: 12 (+2.4)
+
+Один из немногих крыс который прокопал путь на поверхность, но чтобы выживать, ему нужно быть хитрым и практичным. С тех пор Крыс обитает на поверхности и постоянно ищет пищу для своих маленьких крыс.
+}
+
+STRING 180
+// Units: H00I (|c00F0F000Крыса), Propernames (Proper Names)
+{
+|c00F0F000Крыс
+}
+
+STRING 181
+// Units: H00I (|c00F0F000Крыса), Description (Description)
+{
+ 
+}
+
+STRING 182
+// Units: H00J (|c00F0F000Ледяная виверна), EditorSuffix (Name - Editor Suffix)
+{
+(Раса гномов)
+}
+
+STRING 183
+// Units: H00J (|c00F0F000Ледяная виверна), Name (Name)
+{
+|c00F0F000Ледяная виверна
+}
+
+STRING 184
+// Units: H00J (|c00F0F000Ледяная виверна), Tip (Tooltip - Basic)
+{
+|c00F0F000Ледяная виверна
+}
+
+STRING 185
+// Units: H00J (|c00F0F000Ледяная виверна), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Ледяная виверна
+}
+
+STRING 186
+// Units: H00J (|c00F0F000Ледяная виверна), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Ледяная виверна
+}
+
+STRING 187
+// Units: H00J (|c00F0F000Ледяная виверна), Ubertip (Tooltip - Extended)
+{
+Раса гномов
+Характеристики:
+Сила: 20 (+2.0)
+Ловкость: 22 (+2.1)
+Разум: 14 (+2.4)
+
+Один среди ветеранов Чёрного камня, Вартрук был призван на службу.
+}
+
+STRING 188
+// Units: H00J (|c00F0F000Ледяная виверна), Propernames (Proper Names)
+{
+|c00F0F000Сафирпсис
+}
+
+STRING 189
+// Units: H00J (|c00F0F000Ледяная виверна), Description (Description)
+{
+ 
+}
+
+STRING 190
+// Units: H00K (|c00F0F000Ловец духов|r), EditorSuffix (Name - Editor Suffix)
+{
+(Раса Троллей)
+}
+
+STRING 191
+// Units: H00K (|c00F0F000Ловец духов|r), Name (Name)
+{
+|c00F0F000Ловец духов|r
+}
+
+STRING 192
+// Units: H00K (|c00F0F000Ловец духов|r), Tip (Tooltip - Basic)
+{
+|c00F0F000Ловец духов|r
+}
+
+STRING 193
+// Units: H00K (|c00F0F000Ловец духов|r), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Ловец духов|r
+}
+
+STRING 194
+// Units: H00K (|c00F0F000Ловец духов|r), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Ловец духов|r
+}
+
+STRING 195
+// Units: H00K (|c00F0F000Ловец духов|r), Ubertip (Tooltip - Extended)
+{
+Раса троллей
+Характеристики:
+Сила: 18 (+1.2)
+Ловкость: 15 (+1.4)
+Разум: 22 (+2.1)
+
+Волджин - говорящий с духами. Был призван на службу по просьбе Оракула.
+}
+
+STRING 196
+// Units: H00K (|c00F0F000Ловец духов|r), Propernames (Proper Names)
+{
+|c00F0F000Волджин|r
+}
+
+STRING 197
+// Units: H00K (|c00F0F000Ловец духов|r), Description (Description)
+{
+Волджин - говорящий с духами. Был призван на службу по просьбе духов.
+}
+
+STRING 198
+// Units: H00L (|c00F0F000Мастер Клинка), EditorSuffix (Name - Editor Suffix)
+{
+(Раса гномов)
+}
+
+STRING 199
+// Units: H00L (|c00F0F000Мастер Клинка), Name (Name)
+{
+|c00F0F000Мастер Клинка
+}
+
+STRING 200
+// Units: H00L (|c00F0F000Мастер Клинка), Tip (Tooltip - Basic)
+{
+|c00F0F000Мастер Клинка
+}
+
+STRING 201
+// Units: H00L (|c00F0F000Мастер Клинка), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Мастер Клинка
+}
+
+STRING 202
+// Units: H00L (|c00F0F000Мастер Клинка), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Мастер Клинка
+}
+
+STRING 203
+// Units: H00L (|c00F0F000Мастер Клинка), Ubertip (Tooltip - Extended)
+{
+Раса гномов
+Характеристики:
+Сила: 20 (+2.0)
+Ловкость: 22 (+2.1)
+Разум: 14 (+2.4)
+
+Один среди ветеранов Чёрного камня, Вартрук был призван на службу.
+}
+
+STRING 204
+// Units: H00L (|c00F0F000Мастер Клинка), Propernames (Proper Names)
+{
+|c00F0F000Дораш
+}
+
+STRING 205
+// Units: H00L (|c00F0F000Мастер Клинка), Description (Description)
+{
+ 
+}
+
+STRING 206
+// Units: H00M (|c00F0F000Мать пауков), EditorSuffix (Name - Editor Suffix)
+{
+(Раса гномов)
+}
+
+STRING 207
+// Units: H00M (|c00F0F000Мать пауков), Name (Name)
+{
+|c00F0F000Мать пауков
+}
+
+STRING 208
+// Units: H00M (|c00F0F000Мать пауков), Tip (Tooltip - Basic)
+{
+|c00F0F000Мать пауков
+}
+
+STRING 209
+// Units: H00M (|c00F0F000Мать пауков), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Мать пауков
+}
+
+STRING 210
+// Units: H00M (|c00F0F000Мать пауков), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Мать пауков
+}
+
+STRING 211
+// Units: H00M (|c00F0F000Мать пауков), Ubertip (Tooltip - Extended)
+{
+Раса гномов
+Характеристики:
+Сила: 20 (+2.0)
+Ловкость: 22 (+2.1)
+Разум: 14 (+2.4)
+
+Один среди ветеранов Чёрного камня, Вартрук был призван на службу.
+}
+
+STRING 212
+// Units: H00M (|c00F0F000Мать пауков), Propernames (Proper Names)
+{
+|c00F0F000Морея
+}
+
+STRING 213
+// Units: H00M (|c00F0F000Мать пауков), Description (Description)
+{
+ 
+}
+
+STRING 214
+// Units: H00N (|c00F0F000Молотобоец), EditorSuffix (Name - Editor Suffix)
+{
+(Раса гномов)
+}
+
+STRING 215
+// Units: H00N (|c00F0F000Молотобоец), Name (Name)
+{
+|c00F0F000Молотобоец
+}
+
+STRING 216
+// Units: H00N (|c00F0F000Молотобоец), Tip (Tooltip - Basic)
+{
+|c00F0F000Молотобоец
+}
+
+STRING 217
+// Units: H00N (|c00F0F000Молотобоец), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Молотобоец
+}
+
+STRING 218
+// Units: H00N (|c00F0F000Молотобоец), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Молотобоец
+}
+
+STRING 219
+// Units: H00N (|c00F0F000Молотобоец), Ubertip (Tooltip - Extended)
+{
+Раса гномов
+Характеристики:
+Сила: 20 (+2.0)
+Ловкость: 22 (+2.1)
+Разум: 14 (+2.4)
+
+Один среди ветеранов Чёрного камня, Вартрук был призван на службу.
+}
+
+STRING 220
+// Units: H00N (|c00F0F000Молотобоец), Propernames (Proper Names)
+{
+|c00F0F000Вартрук
+}
+
+STRING 221
+// Units: H00N (|c00F0F000Молотобоец), Description (Description)
+{
+ 
+}
+
+STRING 222
+// Units: H00O (|c00F0F000Некромант), EditorSuffix (Name - Editor Suffix)
+{
+(Раса мёртвых)
+}
+
+STRING 223
+// Units: H00O (|c00F0F000Некромант), Name (Name)
+{
+|c00F0F000Некромант
+}
+
+STRING 224
+// Units: H00O (|c00F0F000Некромант), Tip (Tooltip - Basic)
+{
+|c00F0F000Некромант
+}
+
+STRING 225
+// Units: H00O (|c00F0F000Некромант), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Вурдалк
+}
+
+STRING 226
+// Units: H00O (|c00F0F000Некромант), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Некромант
+}
+
+STRING 227
+// Units: H00O (|c00F0F000Некромант), Ubertip (Tooltip - Extended)
+{
+Раса мёртвых
+Характеристики:
+Сила: 11 (+1.4)
+Ловкость: 19 (+2.0)
+Разум: 25 (+3.1)
+
+Сул-Маракай - один из немногих, кто смог изучить некромантию будучи прислугой культа Пражего Горианства. Он предал своих людей и поднял армию мёртвых. С тех пор, его никто не смог видеть прежним.
+}
+
+STRING 228
+// Units: H00O (|c00F0F000Некромант), Propernames (Proper Names)
+{
+|c00F0F000Сул-Маракай
+}
+
+STRING 229
+// Units: H00O (|c00F0F000Некромант), Description (Description)
+{
+ 
+}
+
+STRING 230
+// Units: H00P (|c00F0F000Некрофил), EditorSuffix (Name - Editor Suffix)
+{
+(Раса вампиров)
+}
+
+STRING 231
+// Units: H00P (|c00F0F000Некрофил), Name (Name)
+{
+|c00F0F000Некрофил
+}
+
+STRING 232
+// Units: H00P (|c00F0F000Некрофил), Tip (Tooltip - Basic)
+{
+|c00F0F000Некрофил
+}
+
+STRING 233
+// Units: H00P (|c00F0F000Некрофил), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Некрофил
+}
+
+STRING 234
+// Units: H00P (|c00F0F000Некрофил), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Некрофил
+}
+
+STRING 235
+// Units: H00P (|c00F0F000Некрофил), Ubertip (Tooltip - Extended)
+{
+Раса вампиров
+Характеристики:
+Сила: 14 (+1.5)
+Ловкость: 22 (+1.2)
+Разум: 27 (+1.7)
+
+Будучи живым, Марлакаян обучался в гильдии убийств, но он был любопытен в другой сфере. Марлакаян наблюдал как существа поддаються порчи и был заинтересован в этом, но вскорем времени сам был повержен, но только укусом вампира. Уже на службе у вампиров, Марлакаян обучался алхимии, смешивая магию с гибкостью.
+}
+
+STRING 236
+// Units: H00P (|c00F0F000Некрофил), Propernames (Proper Names)
+{
+|c00F0F000Марлакаян
+}
+
+STRING 237
+// Units: H00P (|c00F0F000Некрофил), Description (Description)
+{
+ 
+}
+
+STRING 238
+// Units: H00Q (|c00F0F000Несущий огонь), EditorSuffix (Name - Editor Suffix)
+{
+(Раса гномов)
+}
+
+STRING 239
+// Units: H00Q (|c00F0F000Несущий огонь), Name (Name)
+{
+|c00F0F000Несущий огонь
+}
+
+STRING 240
+// Units: H00Q (|c00F0F000Несущий огонь), Tip (Tooltip - Basic)
+{
+|c00F0F000Несущий огонь
+}
+
+STRING 241
+// Units: H00Q (|c00F0F000Несущий огонь), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Несущий огонь
+}
+
+STRING 242
+// Units: H00Q (|c00F0F000Несущий огонь), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Несущий огонь
+}
+
+STRING 243
+// Units: H00Q (|c00F0F000Несущий огонь), Ubertip (Tooltip - Extended)
+{
+Раса гномов
+Характеристики:
+Сила: 20 (+2.0)
+Ловкость: 22 (+2.1)
+Разум: 14 (+2.4)
+
+Один среди ветеранов Чёрного камня, Вартрук был призван на службу.
+}
+
+STRING 244
+// Units: H00Q (|c00F0F000Несущий огонь), Propernames (Proper Names)
+{
+|c00F0F000Балтикор
+}
+
+STRING 245
+// Units: H00Q (|c00F0F000Несущий огонь), Description (Description)
+{
+ 
+}
+
+STRING 246
+// Units: H00R (|c00F0F000Орк-чемпион), EditorSuffix (Name - Editor Suffix)
+{
+(Раса гномов)
+}
+
+STRING 247
+// Units: H00R (|c00F0F000Орк-чемпион), Name (Name)
+{
+|c00F0F000Орк-чемпион
+}
+
+STRING 248
+// Units: H00R (|c00F0F000Орк-чемпион), Tip (Tooltip - Basic)
+{
+|c00F0F000Орк-чемпион
+}
+
+STRING 249
+// Units: H00R (|c00F0F000Орк-чемпион), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Орк-чемпион
+}
+
+STRING 250
+// Units: H00R (|c00F0F000Орк-чемпион), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Орк-чемпион
+}
+
+STRING 251
+// Units: H00R (|c00F0F000Орк-чемпион), Ubertip (Tooltip - Extended)
+{
+Раса гномов
+Характеристики:
+Сила: 20 (+2.0)
+Ловкость: 22 (+2.1)
+Разум: 14 (+2.4)
+
+Один среди ветеранов Чёрного камня, Вартрук был призван на службу.
+}
+
+STRING 252
+// Units: H00R (|c00F0F000Орк-чемпион), Propernames (Proper Names)
+{
+|c00F0F000Топор
+}
+
+STRING 253
+// Units: H00R (|c00F0F000Орк-чемпион), Description (Description)
+{
+ 
+}
+
+STRING 254
+// Units: H00S (|c00F0F000Падший король), EditorSuffix (Name - Editor Suffix)
+{
+(Раса гномов)
+}
+
+STRING 255
+// Units: H00S (|c00F0F000Падший король), Name (Name)
+{
+|c00F0F000Падший король
+}
+
+STRING 256
+// Units: H00S (|c00F0F000Падший король), Tip (Tooltip - Basic)
+{
+|c00F0F000Падший король
+}
+
+STRING 257
+// Units: H00S (|c00F0F000Падший король), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Падший король
+}
+
+STRING 258
+// Units: H00S (|c00F0F000Падший король), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Падший король
+}
+
+STRING 259
+// Units: H00S (|c00F0F000Падший король), Ubertip (Tooltip - Extended)
+{
+(Герой недоработан)
+Раса гномов
+Характеристики:
+Сила: 24 (+2.1)
+Ловкость: 12 (+1.8)
+Разум: 15 (+1.4)
+
+Андуин Чернобородый погибший во времена великой битвы был воскрешен из-за треска между мирами людей и бездны.
+}
+
+STRING 260
+// Units: H00S (|c00F0F000Падший король), Propernames (Proper Names)
+{
+|c00F0F000Андуин Чернобородый
+}
+
+STRING 261
+// Units: H00S (|c00F0F000Падший король), Description (Description)
+{
+ 
+}
+
+STRING 262
+// Units: H00T (|c00F0F000Паладин), EditorSuffix (Name - Editor Suffix)
+{
+(Раса Людей)
+}
+
+STRING 263
+// Units: H00T (|c00F0F000Паладин), Name (Name)
+{
+|c00F0F000Паладин
+}
+
+STRING 264
+// Units: H00T (|c00F0F000Паладин), Tip (Tooltip - Basic)
+{
+|c00F0F000Паладин
+}
+
+STRING 265
+// Units: H00T (|c00F0F000Паладин), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Паладин
+}
+
+STRING 266
+// Units: H00T (|c00F0F000Паладин), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Паладин
+}
+
+STRING 267
+// Units: H00T (|c00F0F000Паладин), Ubertip (Tooltip - Extended)
+{
+Раса людей
+Характеристики:
+Сила: 21 (+3.4)
+Ловкость: 15 (+0.2)
+Разум: 12 (+0.7)
+
+Один - король всех людей и высший паладин ордена Света. После открытие варп-порталов, в мирах Кодума люди разбились на 2 стороны. Нынче Один является паладином Света.
+}
+
+STRING 268
+// Units: H00T (|c00F0F000Паладин), Propernames (Proper Names)
+{
+|c00F0F000Один
+}
+
+STRING 269
+// Units: H00T (|c00F0F000Паладин), Description (Description)
+{
+Один - король всех людейи управляет орденом Света. После открытие варп-порталов, в мирах Кодума люди разбились на 2 стороны. Нынче Один является паладином Света.
+}
+
+STRING 270
+// Units: H00U (|c00F0F000Питомец вождя|r), EditorSuffix (Name - Editor Suffix)
+{
+(Раса Троллей)
+}
+
+STRING 271
+// Units: H00U (|c00F0F000Питомец вождя|r), Name (Name)
+{
+|c00F0F000Питомец вождя|r
+}
+
+STRING 272
+// Units: H00U (|c00F0F000Питомец вождя|r), Tip (Tooltip - Basic)
+{
+|c00F0F000Питомец вождя|r
+}
+
+STRING 273
+// Units: H00U (|c00F0F000Питомец вождя|r), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Питомец вождя|r
+}
+
+STRING 274
+// Units: H00U (|c00F0F000Питомец вождя|r), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Питомец вождя|r
+}
+
+STRING 275
+// Units: H00U (|c00F0F000Питомец вождя|r), Ubertip (Tooltip - Extended)
+{
+Раса троллей
+Характеристики:
+Сила: 35 (+5.0)
+Ловкость: 5 (+0.0)
+Разум: 5 (+1.5)
+
+Кабан любит очень много поесть.
+}
+
+STRING 276
+// Units: H00U (|c00F0F000Питомец вождя|r), Propernames (Proper Names)
+{
+|c00F0F000Кабан|r
+}
+
+STRING 277
+// Units: H00U (|c00F0F000Питомец вождя|r), Description (Description)
+{
+Сбежавший питомец вождя.
+}
+
+STRING 278
+// Units: H00V (|c00F0F000Повелитель Могил), EditorSuffix (Name - Editor Suffix)
+{
+(Раса гномов)
+}
+
+STRING 279
+// Units: H00V (|c00F0F000Повелитель Могил), Name (Name)
+{
+|c00F0F000Повелитель Могил
+}
+
+STRING 280
+// Units: H00V (|c00F0F000Повелитель Могил), Tip (Tooltip - Basic)
+{
+|c00F0F000Повелитель Могил
+}
+
+STRING 281
+// Units: H00V (|c00F0F000Повелитель Могил), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Повелитель Могил
+}
+
+STRING 282
+// Units: H00V (|c00F0F000Повелитель Могил), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Повелитель Могил
+}
+
+STRING 283
+// Units: H00V (|c00F0F000Повелитель Могил), Ubertip (Tooltip - Extended)
+{
+Раса гномов
+Характеристики:
+Сила: 20 (+2.0)
+Ловкость: 22 (+2.1)
+Разум: 14 (+2.4)
+
+Один среди ветеранов Чёрного камня, Вартрук был призван на службу.
+}
+
+STRING 284
+// Units: H00V (|c00F0F000Повелитель Могил), Propernames (Proper Names)
+{
+|c00F0F000Ра
+}
+
+STRING 285
+// Units: H00V (|c00F0F000Повелитель Могил), Description (Description)
+{
+ 
+}
+
+STRING 286
+// Units: H00W (|c00F0F000Повелительница Змей), EditorSuffix (Name - Editor Suffix)
+{
+(Раса Людей)
+}
+
+STRING 287
+// Units: H00W (|c00F0F000Повелительница Змей), Name (Name)
+{
+|c00F0F000Повелительница Змей
+}
+
+STRING 288
+// Units: H00W (|c00F0F000Повелительница Змей), Tip (Tooltip - Basic)
+{
+|c00F0F000Повелительница Змей
+}
+
+STRING 289
+// Units: H00W (|c00F0F000Повелительница Змей), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Повелитель Змей
+}
+
+STRING 290
+// Units: H00W (|c00F0F000Повелительница Змей), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Повелитель Змей
+}
+
+STRING 291
+// Units: H00W (|c00F0F000Повелительница Змей), Ubertip (Tooltip - Extended)
+{
+Раса людей
+Характеристики:
+Сила: 9 (+0.5)
+Ловкость: 27 (+3.7)
+Разум: 21 (+1.0)
+
+Молд'Ин Ор - повелитель Змей. Орден, который одолел великого Мал'Каниса, бога Варпа Пустот.
+}
+
+STRING 292
+// Units: H00W (|c00F0F000Повелительница Змей), Propernames (Proper Names)
+{
+|c00F0F000Молд'Инна
+}
+
+STRING 293
+// Units: H00W (|c00F0F000Повелительница Змей), Description (Description)
+{
+Молд'Инан Ор - повелительница Змей. Орден, который одолел великого Мал'Каниса, бога Варпа Пустот. 
+}
+
+STRING 294
+// Units: H00X (|c00F0F000Провидец Пустоты), EditorSuffix (Name - Editor Suffix)
+{
+(Раса Древних)
+}
+
+STRING 295
+// Units: H00X (|c00F0F000Провидец Пустоты), Name (Name)
+{
+|c00F0F000Провидец Пустоты
+}
+
+STRING 296
+// Units: H00X (|c00F0F000Провидец Пустоты), Tip (Tooltip - Basic)
+{
+|c00F0F000Провидец Пустоты
+}
+
+STRING 297
+// Units: H00X (|c00F0F000Провидец Пустоты), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Провидец Пустоты
+}
+
+STRING 298
+// Units: H00X (|c00F0F000Провидец Пустоты), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Провидец Пустоты
+}
+
+STRING 299
+// Units: H00X (|c00F0F000Провидец Пустоты), Ubertip (Tooltip - Extended)
+{
+Раса древних
+Характеристики:
+Сила: 15 (+2.0)
+Ловкость: 23 (+3.0)
+Разум: 12 (+1.2)
+
+Парий - великий провидец будущего и прошлого. Его тело гнило в Пустоте на протяжении тысячи лет, пока Архонт Терра не поглотил его сущность.
+}
+
+STRING 300
+// Units: H00X (|c00F0F000Провидец Пустоты), Propernames (Proper Names)
+{
+|c00F0F000Парий
+}
+
+STRING 301
+// Units: H00X (|c00F0F000Провидец Пустоты), Description (Description)
+{
+Парий - великий провидец будущего и прошлого. Его тело гнило в Пустоте на протяжении тысячи лет, пока Архонт Терра не поглотил его сущность.
+}
+
+STRING 302
+// Units: H00Y (|c00F0F000Рыцарь Смерти), EditorSuffix (Name - Editor Suffix)
+{
+(Раса мёртвых)
+}
+
+STRING 303
+// Units: H00Y (|c00F0F000Рыцарь Смерти), Name (Name)
+{
+|c00F0F000Рыцарь Смерти
+}
+
+STRING 304
+// Units: H00Y (|c00F0F000Рыцарь Смерти), Tip (Tooltip - Basic)
+{
+|c00F0F000Рыцарь Смерти
+}
+
+STRING 305
+// Units: H00Y (|c00F0F000Рыцарь Смерти), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Рыцарь Смерти
+}
+
+STRING 306
+// Units: H00Y (|c00F0F000Рыцарь Смерти), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Рыцарь Смерти
+}
+
+STRING 307
+// Units: H00Y (|c00F0F000Рыцарь Смерти), Ubertip (Tooltip - Extended)
+{
+Раса мёртвых
+Характеристики:
+Сила: 23 (+3.2)
+Ловкость: 12 (+0.6)
+Разум: 17 (+1.2)
+
+Падший в бою рыцарь был воскрешён одним из некромантов Сул-Маракая. Имя Рыцаря звучало как Корнит Смерти. В прошлом защищал замок Бернемона, но пал в бою... 
+}
+
+STRING 308
+// Units: H00Y (|c00F0F000Рыцарь Смерти), Propernames (Proper Names)
+{
+|c00F0F000Корнит Смерти
+}
+
+STRING 309
+// Units: H00Y (|c00F0F000Рыцарь Смерти), Description (Description)
+{
+ 
+}
+
+STRING 310
+// Units: H00Z (|c00F0F000Рыцарь смерти), EditorSuffix (Name - Editor Suffix)
+{
+(Раса вампиров)
+}
+
+STRING 311
+// Units: H00Z (|c00F0F000Рыцарь смерти), Name (Name)
+{
+|c00F0F000Рыцарь смерти
+}
+
+STRING 312
+// Units: H00Z (|c00F0F000Рыцарь смерти), Tip (Tooltip - Basic)
+{
+|c00F0F000Рыцарь смерти
+}
+
+STRING 313
+// Units: H00Z (|c00F0F000Рыцарь смерти), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Вурдалак
+}
+
+STRING 314
+// Units: H00Z (|c00F0F000Рыцарь смерти), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Рыцарь смерти
+}
+
+STRING 315
+// Units: H00Z (|c00F0F000Рыцарь смерти), Ubertip (Tooltip - Extended)
+{
+Раса вампиров
+Характеристики:
+Сила: 27 (+2.1)
+Ловкость: 5 (+1.2)
+Разум: 20 (+1.5)
+
+Один из спящих, был пробуждён по зову великой матери. Рыцарь Смерти Форус вновь возобновил своё существование, но в новом лице...
+}
+
+STRING 316
+// Units: H00Z (|c00F0F000Рыцарь смерти), Propernames (Proper Names)
+{
+|c00F0F000Форус
+}
+
+STRING 317
+// Units: H00Z (|c00F0F000Рыцарь смерти), Description (Description)
+{
+ 
+}
+
+STRING 318
+// Units: H010 (|c00F0F000Скорпион), EditorSuffix (Name - Editor Suffix)
+{
+(Раса гномов)
+}
+
+STRING 319
+// Units: H010 (|c00F0F000Скорпион), Name (Name)
+{
+|c00F0F000Скорпион
+}
+
+STRING 320
+// Units: H010 (|c00F0F000Скорпион), Tip (Tooltip - Basic)
+{
+|c00F0F000Скорпион
+}
+
+STRING 321
+// Units: H010 (|c00F0F000Скорпион), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Скорпион
+}
+
+STRING 322
+// Units: H010 (|c00F0F000Скорпион), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Скорпион
+}
+
+STRING 323
+// Units: H010 (|c00F0F000Скорпион), Ubertip (Tooltip - Extended)
+{
+Раса гномов
+Характеристики:
+Сила: 20 (+2.0)
+Ловкость: 22 (+2.1)
+Разум: 14 (+2.4)
+
+Один среди ветеранов Чёрного камня, Вартрук был призван на службу.
+}
+
+STRING 324
+// Units: H010 (|c00F0F000Скорпион), Propernames (Proper Names)
+{
+|c00F0F000Спящий Арак
+}
+
+STRING 325
+// Units: H010 (|c00F0F000Скорпион), Description (Description)
+{
+ 
+}
+
+STRING 326
+// Units: H011 (|c00F0F000Страж Небытия|r), EditorSuffix (Name - Editor Suffix)
+{
+(Раса Деногридов)
+}
+
+STRING 327
+// Units: H011 (|c00F0F000Страж Небытия|r), Name (Name)
+{
+|c00F0F000Страж Небытия|r
+}
+
+STRING 328
+// Units: H011 (|c00F0F000Страж Небытия|r), Tip (Tooltip - Basic)
+{
+|c00F0F000Страж Небытия|r
+}
+
+STRING 329
+// Units: H011 (|c00F0F000Страж Небытия|r), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Страж Небытия|r
+}
+
+STRING 330
+// Units: H011 (|c00F0F000Страж Небытия|r), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Страж Небытия|r
+}
+
+STRING 331
+// Units: H011 (|c00F0F000Страж Небытия|r), Ubertip (Tooltip - Extended)
+{
+Раса деногридов
+Характеристики:
+Сила: 40 (+2.0)
+Ловкость: 8 (+0.0)
+Разум: 12 (+1.6)
+
+Талканир - Страж Бездны Небытия. Является одним из могучих стражей, но из-за прояклятия Кастера, он стал полусмертным и поселился в мирах Кодума.
+}
+
+STRING 332
+// Units: H011 (|c00F0F000Страж Небытия|r), Propernames (Proper Names)
+{
+|c00F0F000Талканир|r
+}
+
+STRING 333
+// Units: H011 (|c00F0F000Страж Небытия|r), Description (Description)
+{
+Талканир - Страж Бездны Небытия. Является одним из могучих стражей, но из-за прояклятия Кастера, он стал полусмертным и поселился в мирах Кодума.
+}
+
+STRING 334
+// Units: H012 (|c00F0F000Хранитель сада), EditorSuffix (Name - Editor Suffix)
+{
+(Раса гномов)
+}
+
+STRING 335
+// Units: H012 (|c00F0F000Хранитель сада), Name (Name)
+{
+|c00F0F000Хранитель сада
+}
+
+STRING 336
+// Units: H012 (|c00F0F000Хранитель сада), Tip (Tooltip - Basic)
+{
+|c00F0F000Хранитель сада
+}
+
+STRING 337
+// Units: H012 (|c00F0F000Хранитель сада), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Хранитель сада
+}
+
+STRING 338
+// Units: H012 (|c00F0F000Хранитель сада), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Хранитель сада
+}
+
+STRING 339
+// Units: H012 (|c00F0F000Хранитель сада), Ubertip (Tooltip - Extended)
+{
+Раса гномов
+Характеристики:
+Сила: 20 (+2.0)
+Ловкость: 22 (+2.1)
+Разум: 14 (+2.4)
+
+Один среди ветеранов Чёрного камня, Вартрук был призван на службу.
+}
+
+STRING 340
+// Units: H012 (|c00F0F000Хранитель сада), Propernames (Proper Names)
+{
+|c00F0F000Малганис
+}
+
+STRING 341
+// Units: H012 (|c00F0F000Хранитель сада), Description (Description)
+{
+ 
+}
+
+STRING 342
+// Units: H013 (|c00F0F000Чернокнижник|r), EditorSuffix (Name - Editor Suffix)
+{
+(Раса Деногридов)
+}
+
+STRING 343
+// Units: H013 (|c00F0F000Чернокнижник|r), Name (Name)
+{
+|c00F0F000Чернокнижник|r
+}
+
+STRING 344
+// Units: H013 (|c00F0F000Чернокнижник|r), Tip (Tooltip - Basic)
+{
+|c00F0F000Чернокнижник|r
+}
+
+STRING 345
+// Units: H013 (|c00F0F000Чернокнижник|r), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Чернокнижник|r
+}
+
+STRING 346
+// Units: H013 (|c00F0F000Чернокнижник|r), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Чернокнижник|r
+}
+
+STRING 347
+// Units: H013 (|c00F0F000Чернокнижник|r), Ubertip (Tooltip - Extended)
+{
+Раса деногридов
+Характеристики:
+Сила: 15 (+0.8)
+Ловкость: 8 (+1.2)
+Разум: 25 (+2.7)
+
+Кастер - один из сильных магов Бездны Теракостра. Являеться наивысшим магом ордена Тальканиса Исшкра. Нынче повелитель ордена Чёрного Камня.
+}
+
+STRING 348
+// Units: H013 (|c00F0F000Чернокнижник|r), Propernames (Proper Names)
+{
+|c00F0F000Кастер|r
+}
+
+STRING 349
+// Units: H013 (|c00F0F000Чернокнижник|r), Description (Description)
+{
+Кастер - один из сильных магов Бездны Теракостра. Являеться наивысшим магом ордена Тальканиса Исшкра. Нынче повелитель ордена Чёрного Камня.
+}
+
+STRING 350
+// Units: H014 (|c00F0F000Шаман), EditorSuffix (Name - Editor Suffix)
+{
+(Раса гномов)
+}
+
+STRING 351
+// Units: H014 (|c00F0F000Шаман), Name (Name)
+{
+|c00F0F000Шаман
+}
+
+STRING 352
+// Units: H014 (|c00F0F000Шаман), Tip (Tooltip - Basic)
+{
+|c00F0F000Шаман
+}
+
+STRING 353
+// Units: H014 (|c00F0F000Шаман), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Шаман
+}
+
+STRING 354
+// Units: H014 (|c00F0F000Шаман), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Шаман
+}
+
+STRING 355
+// Units: H014 (|c00F0F000Шаман), Ubertip (Tooltip - Extended)
+{
+Раса гномов
+Характеристики:
+Сила: 20 (+2.0)
+Ловкость: 22 (+2.1)
+Разум: 14 (+2.4)
+
+Один среди ветеранов Чёрного камня, Вартрук был призван на службу.
+}
+
+STRING 356
+// Units: H014 (|c00F0F000Шаман), Propernames (Proper Names)
+{
+|c00F0F000Олдарокай
+}
+
+STRING 357
+// Units: H014 (|c00F0F000Шаман), Description (Description)
+{
+ 
+}
+
+STRING 358
+// Units: H015 (|c00F0F000Энт), EditorSuffix (Name - Editor Suffix)
+{
+(Раса высших людей)
+}
+
+STRING 359
+// Units: H015 (|c00F0F000Энт), Name (Name)
+{
+|c00F0F000Энт
+}
+
+STRING 360
+// Units: H015 (|c00F0F000Энт), Tip (Tooltip - Basic)
+{
+|c00F0F000Энт
+}
+
+STRING 361
+// Units: H015 (|c00F0F000Энт), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Энт
+}
+
+STRING 362
+// Units: H015 (|c00F0F000Энт), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Энт
+}
+
+STRING 363
+// Units: H015 (|c00F0F000Энт), Ubertip (Tooltip - Extended)
+{
+Раса высших людей
+Характеристики:
+Сила: 40 (+1.5)
+Ловкость: 0 (+0.0)
+Разум: 10 (+1.0)
+
+Один из энтов бежащих с леса Дремучих скал, где были сожжены его собратья.
+}
+
+STRING 364
+// Units: H015 (|c00F0F000Энт), Propernames (Proper Names)
+{
+|c00F0F000Энт
+}
+
+STRING 365
+// Units: H015 (|c00F0F000Энт), Description (Description)
+{
+ 
+}
+
+STRING 366
+{
+KODUM Resistance
+}
+
+STRING 367
+{
+King
+}
+
+STRING 368
+{
+Carry
+}
+
+STRING 369
+{
+Tank
+}
+
+STRING 370
+{
+Support
+}
+
+STRING 371
+{
+Builder
+}
+
+STRING 372
+{
+Bot High Kingdom
+}
+
+STRING 373
+{
+Bot Dawn Kingdom
+}
+
+STRING 374
+{
+High Kingdom
+}
+
+STRING 375
+{
+Dawn Kingdom
+}
+
+STRING 376
+// Abilities: ZxA0 (BonusMod - Armor (+0001)), Name (Name)
+{
+BonusMod - Armor (+0001)
+}
+
+STRING 377
+// Abilities: ZxB0 (BonusMod - Damage (+0001)), Name (Name)
+{
+BonusMod - Damage (+0001)
+}
+
+STRING 378
+// Abilities: ZxC0 (BonusMod - Sight Range (+0001)), Name (Name)
+{
+BonusMod - Sight Range (+0001)
+}
+
+STRING 379
+// Abilities: ZxD0 (BonusMod - Mana Regen (+0001)), Name (Name)
+{
+BonusMod - Mana Regen (+0001)
+}
+
+STRING 380
+// Abilities: ZxE0 (BonusMod - Life Regen (+0001)), Name (Name)
+{
+BonusMod - Life Regen (+0001)
+}
+
+STRING 381
+// Abilities: ZxF0 (BonusMod - Hero STR (+0001)), Name (Name)
+{
+BonusMod - Hero STR (+0001)
+}
+
+STRING 382
+// Abilities: ZxG0 (BonusMod - Hero AGI (+0001)), Name (Name)
+{
+BonusMod - Hero AGI (+0001)
+}
+
+STRING 383
+// Abilities: ZxH0 (BonusMod - Hero INT (+0001)), Name (Name)
+{
+BonusMod - Hero INT (+0001)
+}
+
+STRING 384
+// Abilities: ZxA1 (BonusMod - Armor (+0002)), Name (Name)
+{
+BonusMod - Armor (+0002)
+}
+
+STRING 385
+// Abilities: ZxB1 (BonusMod - Damage (+0002)), Name (Name)
+{
+BonusMod - Damage (+0002)
+}
+
+STRING 386
+// Abilities: ZxC1 (BonusMod - Sight Range (+0002)), Name (Name)
+{
+BonusMod - Sight Range (+0002)
+}
+
+STRING 387
+// Abilities: ZxD1 (BonusMod - Mana Regen (+0002)), Name (Name)
+{
+BonusMod - Mana Regen (+0002)
+}
+
+STRING 388
+// Abilities: ZxE1 (BonusMod - Life Regen (+0002)), Name (Name)
+{
+BonusMod - Life Regen (+0002)
+}
+
+STRING 389
+// Abilities: ZxF1 (BonusMod - Hero STR (+0002)), Name (Name)
+{
+BonusMod - Hero STR (+0002)
+}
+
+STRING 390
+// Abilities: ZxG1 (BonusMod - Hero AGI (+0002)), Name (Name)
+{
+BonusMod - Hero AGI (+0002)
+}
+
+STRING 391
+// Abilities: ZxH1 (BonusMod - Hero INT (+0002)), Name (Name)
+{
+BonusMod - Hero INT (+0002)
+}
+
+STRING 392
+// Abilities: ZxA2 (BonusMod - Armor (+0004)), Name (Name)
+{
+BonusMod - Armor (+0004)
+}
+
+STRING 393
+// Abilities: ZxB2 (BonusMod - Damage (+0004)), Name (Name)
+{
+BonusMod - Damage (+0004)
+}
+
+STRING 394
+// Abilities: ZxC2 (BonusMod - Sight Range (+0004)), Name (Name)
+{
+BonusMod - Sight Range (+0004)
+}
+
+STRING 395
+// Abilities: ZxD2 (BonusMod - Mana Regen (+0004)), Name (Name)
+{
+BonusMod - Mana Regen (+0004)
+}
+
+STRING 396
+// Abilities: ZxE2 (BonusMod - Life Regen (+0004)), Name (Name)
+{
+BonusMod - Life Regen (+0004)
+}
+
+STRING 397
+// Abilities: ZxF2 (BonusMod - Hero STR (+0004)), Name (Name)
+{
+BonusMod - Hero STR (+0004)
+}
+
+STRING 398
+// Abilities: ZxG2 (BonusMod - Hero AGI (+0004)), Name (Name)
+{
+BonusMod - Hero AGI (+0004)
+}
+
+STRING 399
+// Abilities: ZxH2 (BonusMod - Hero INT (+0004)), Name (Name)
+{
+BonusMod - Hero INT (+0004)
+}
+
+STRING 400
+// Abilities: ZxA3 (BonusMod - Armor (+0008)), Name (Name)
+{
+BonusMod - Armor (+0008)
+}
+
+STRING 401
+// Abilities: ZxB3 (BonusMod - Damage (+0008)), Name (Name)
+{
+BonusMod - Damage (+0008)
+}
+
+STRING 402
+// Abilities: ZxC3 (BonusMod - Sight Range (+0008)), Name (Name)
+{
+BonusMod - Sight Range (+0008)
+}
+
+STRING 403
+// Abilities: ZxD3 (BonusMod - Mana Regen (+0008)), Name (Name)
+{
+BonusMod - Mana Regen (+0008)
+}
+
+STRING 404
+// Abilities: ZxE3 (BonusMod - Life Regen (+0008)), Name (Name)
+{
+BonusMod - Life Regen (+0008)
+}
+
+STRING 405
+// Abilities: ZxF3 (BonusMod - Hero STR (+0008)), Name (Name)
+{
+BonusMod - Hero STR (+0008)
+}
+
+STRING 406
+// Abilities: ZxG3 (BonusMod - Hero AGI (+0008)), Name (Name)
+{
+BonusMod - Hero AGI (+0008)
+}
+
+STRING 407
+// Abilities: ZxH3 (BonusMod - Hero INT (+0008)), Name (Name)
+{
+BonusMod - Hero INT (+0008)
+}
+
+STRING 408
+// Abilities: ZxA4 (BonusMod - Armor (+0016)), Name (Name)
+{
+BonusMod - Armor (+0016)
+}
+
+STRING 409
+// Abilities: ZxB4 (BonusMod - Damage (+0016)), Name (Name)
+{
+BonusMod - Damage (+0016)
+}
+
+STRING 410
+// Abilities: ZxC4 (BonusMod - Sight Range (+0016)), Name (Name)
+{
+BonusMod - Sight Range (+0016)
+}
+
+STRING 411
+// Abilities: ZxD4 (BonusMod - Mana Regen (+0016)), Name (Name)
+{
+BonusMod - Mana Regen (+0016)
+}
+
+STRING 412
+// Abilities: ZxE4 (BonusMod - Life Regen (+0016)), Name (Name)
+{
+BonusMod - Life Regen (+0016)
+}
+
+STRING 413
+// Abilities: ZxF4 (BonusMod - Hero STR (+0016)), Name (Name)
+{
+BonusMod - Hero STR (+0016)
+}
+
+STRING 414
+// Abilities: ZxG4 (BonusMod - Hero AGI (+0016)), Name (Name)
+{
+BonusMod - Hero AGI (+0016)
+}
+
+STRING 415
+// Abilities: ZxH4 (BonusMod - Hero INT (+0016)), Name (Name)
+{
+BonusMod - Hero INT (+0016)
+}
+
+STRING 416
+// Abilities: ZxA5 (BonusMod - Armor (+0032)), Name (Name)
+{
+BonusMod - Armor (+0032)
+}
+
+STRING 417
+// Abilities: ZxB5 (BonusMod - Damage (+0032)), Name (Name)
+{
+BonusMod - Damage (+0032)
+}
+
+STRING 418
+// Abilities: ZxC5 (BonusMod - Sight Range (+0032)), Name (Name)
+{
+BonusMod - Sight Range (+0032)
+}
+
+STRING 419
+// Abilities: ZxD5 (BonusMod - Mana Regen (+0032)), Name (Name)
+{
+BonusMod - Mana Regen (+0032)
+}
+
+STRING 420
+// Abilities: ZxE5 (BonusMod - Life Regen (+0032)), Name (Name)
+{
+BonusMod - Life Regen (+0032)
+}
+
+STRING 421
+// Abilities: ZxF5 (BonusMod - Hero STR (+0032)), Name (Name)
+{
+BonusMod - Hero STR (+0032)
+}
+
+STRING 422
+// Abilities: ZxG5 (BonusMod - Hero AGI (+0032)), Name (Name)
+{
+BonusMod - Hero AGI (+0032)
+}
+
+STRING 423
+// Abilities: ZxH5 (BonusMod - Hero INT (+0032)), Name (Name)
+{
+BonusMod - Hero INT (+0032)
+}
+
+STRING 424
+// Abilities: ZxA6 (BonusMod - Armor (+0064)), Name (Name)
+{
+BonusMod - Armor (+0064)
+}
+
+STRING 425
+// Abilities: ZxB6 (BonusMod - Damage (+0064)), Name (Name)
+{
+BonusMod - Damage (+0064)
+}
+
+STRING 426
+// Abilities: ZxC6 (BonusMod - Sight Range (+0064)), Name (Name)
+{
+BonusMod - Sight Range (+0064)
+}
+
+STRING 427
+// Abilities: ZxD6 (BonusMod - Mana Regen (+0064)), Name (Name)
+{
+BonusMod - Mana Regen (+0064)
+}
+
+STRING 428
+// Abilities: ZxE6 (BonusMod - Life Regen (+0064)), Name (Name)
+{
+BonusMod - Life Regen (+0064)
+}
+
+STRING 429
+// Abilities: ZxF6 (BonusMod - Hero STR (+0064)), Name (Name)
+{
+BonusMod - Hero STR (+0064)
+}
+
+STRING 430
+// Abilities: ZxG6 (BonusMod - Hero AGI (+0064)), Name (Name)
+{
+BonusMod - Hero AGI (+0064)
+}
+
+STRING 431
+// Abilities: ZxH6 (BonusMod - Hero INT (+0064)), Name (Name)
+{
+BonusMod - Hero INT (+0064)
+}
+
+STRING 432
+// Abilities: ZxA7 (BonusMod - Armor (+0128)), Name (Name)
+{
+BonusMod - Armor (+0128)
+}
+
+STRING 433
+// Abilities: ZxB7 (BonusMod - Damage (+0128)), Name (Name)
+{
+BonusMod - Damage (+0128)
+}
+
+STRING 434
+// Abilities: ZxC7 (BonusMod - Sight Range (+0128)), Name (Name)
+{
+BonusMod - Sight Range (+0128)
+}
+
+STRING 435
+// Abilities: ZxD7 (BonusMod - Mana Regen (+0128)), Name (Name)
+{
+BonusMod - Mana Regen (+0128)
+}
+
+STRING 436
+// Abilities: ZxE7 (BonusMod - Life Regen (+0128)), Name (Name)
+{
+BonusMod - Life Regen (+0128)
+}
+
+STRING 437
+// Abilities: ZxF7 (BonusMod - Hero STR (+0128)), Name (Name)
+{
+BonusMod - Hero STR (+0128)
+}
+
+STRING 438
+// Abilities: ZxG7 (BonusMod - Hero AGI (+0128)), Name (Name)
+{
+BonusMod - Hero AGI (+0128)
+}
+
+STRING 439
+// Abilities: ZxH7 (BonusMod - Hero INT (+0128)), Name (Name)
+{
+BonusMod - Hero INT (+0128)
+}
+
+STRING 440
+// Abilities: ZxA8 (BonusMod - Armor (+0256)), Name (Name)
+{
+BonusMod - Armor (+0256)
+}
+
+STRING 441
+// Abilities: ZxB8 (BonusMod - Damage (+0256)), Name (Name)
+{
+BonusMod - Damage (+0256)
+}
+
+STRING 442
+// Abilities: ZxC8 (BonusMod - Sight Range (+0256)), Name (Name)
+{
+BonusMod - Sight Range (+0256)
+}
+
+STRING 443
+// Abilities: ZxD8 (BonusMod - Mana Regen (+0256)), Name (Name)
+{
+BonusMod - Mana Regen (+0256)
+}
+
+STRING 444
+// Abilities: ZxE8 (BonusMod - Life Regen (+0256)), Name (Name)
+{
+BonusMod - Life Regen (+0256)
+}
+
+STRING 445
+// Abilities: ZxF8 (BonusMod - Hero STR (+0256)), Name (Name)
+{
+BonusMod - Hero STR (+0256)
+}
+
+STRING 446
+// Abilities: ZxG8 (BonusMod - Hero AGI (+0256)), Name (Name)
+{
+BonusMod - Hero AGI (+0256)
+}
+
+STRING 447
+// Abilities: ZxH8 (BonusMod - Hero INT (+0256)), Name (Name)
+{
+BonusMod - Hero INT (+0256)
+}
+
+STRING 448
+// Abilities: ZxA9 (BonusMod - Armor (+0512)), Name (Name)
+{
+BonusMod - Armor (+0512)
+}
+
+STRING 449
+// Abilities: ZxB9 (BonusMod - Damage (+0512)), Name (Name)
+{
+BonusMod - Damage (+0512)
+}
+
+STRING 450
+// Abilities: ZxC9 (BonusMod - Sight Range (+0512)), Name (Name)
+{
+BonusMod - Sight Range (+0512)
+}
+
+STRING 451
+// Abilities: ZxD9 (BonusMod - Mana Regen (+0512)), Name (Name)
+{
+BonusMod - Mana Regen (+0512)
+}
+
+STRING 452
+// Abilities: ZxE9 (BonusMod - Life Regen (+0512)), Name (Name)
+{
+BonusMod - Life Regen (+0512)
+}
+
+STRING 453
+// Abilities: ZxF9 (BonusMod - Hero STR (+0512)), Name (Name)
+{
+BonusMod - Hero STR (+0512)
+}
+
+STRING 454
+// Abilities: ZxG9 (BonusMod - Hero AGI (+0512)), Name (Name)
+{
+BonusMod - Hero AGI (+0512)
+}
+
+STRING 455
+// Abilities: ZxH9 (BonusMod - Hero INT (+0512)), Name (Name)
+{
+BonusMod - Hero INT (+0512)
+}
+
+STRING 456
+// Abilities: ZxAa (BonusMod - Armor (+1024)), Name (Name)
+{
+BonusMod - Armor (+1024)
+}
+
+STRING 457
+// Abilities: ZxBa (BonusMod - Damage (+1024)), Name (Name)
+{
+BonusMod - Damage (+1024)
+}
+
+STRING 458
+// Abilities: ZxCa (BonusMod - Sight Range (+1024)), Name (Name)
+{
+BonusMod - Sight Range (+1024)
+}
+
+STRING 459
+// Abilities: ZxDa (BonusMod - Mana Regen (+1024)), Name (Name)
+{
+BonusMod - Mana Regen (+1024)
+}
+
+STRING 460
+// Abilities: ZxEa (BonusMod - Life Regen (+1024)), Name (Name)
+{
+BonusMod - Life Regen (+1024)
+}
+
+STRING 461
+// Abilities: ZxFa (BonusMod - Hero STR (+1024)), Name (Name)
+{
+BonusMod - Hero STR (+1024)
+}
+
+STRING 462
+// Abilities: ZxGa (BonusMod - Hero AGI (+1024)), Name (Name)
+{
+BonusMod - Hero AGI (+1024)
+}
+
+STRING 463
+// Abilities: ZxHa (BonusMod - Hero INT (+1024)), Name (Name)
+{
+BonusMod - Hero INT (+1024)
+}
+
+STRING 464
+// Abilities: ZxAb (BonusMod - Armor (+2048)), Name (Name)
+{
+BonusMod - Armor (+2048)
+}
+
+STRING 465
+// Abilities: ZxBb (BonusMod - Damage (+2048)), Name (Name)
+{
+BonusMod - Damage (+2048)
+}
+
+STRING 466
+// Abilities: ZxCb (BonusMod - Sight Range (+2048)), Name (Name)
+{
+BonusMod - Sight Range (+2048)
+}
+
+STRING 467
+// Abilities: ZxDb (BonusMod - Mana Regen (+2048)), Name (Name)
+{
+BonusMod - Mana Regen (+2048)
+}
+
+STRING 468
+// Abilities: ZxEb (BonusMod - Life Regen (+2048)), Name (Name)
+{
+BonusMod - Life Regen (+2048)
+}
+
+STRING 469
+// Abilities: ZxFb (BonusMod - Hero STR (+2048)), Name (Name)
+{
+BonusMod - Hero STR (+2048)
+}
+
+STRING 470
+// Abilities: ZxGb (BonusMod - Hero AGI (+2048)), Name (Name)
+{
+BonusMod - Hero AGI (+2048)
+}
+
+STRING 471
+// Abilities: ZxHb (BonusMod - Hero INT (+2048)), Name (Name)
+{
+BonusMod - Hero INT (+2048)
+}
+
+STRING 472
+// Abilities: ZxAc (BonusMod - Armor (-4096)), Name (Name)
+{
+BonusMod - Armor (-4096)
+}
+
+STRING 473
+// Abilities: ZxBc (BonusMod - Damage (-4096)), Name (Name)
+{
+BonusMod - Damage (-4096)
+}
+
+STRING 474
+// Abilities: ZxCc (BonusMod - Sight Range (-4096)), Name (Name)
+{
+BonusMod - Sight Range (-4096)
+}
+
+STRING 475
+// Abilities: ZxDc (BonusMod - Mana Regen (-4096)), Name (Name)
+{
+BonusMod - Mana Regen (-4096)
+}
+
+STRING 476
+// Abilities: ZxEc (BonusMod - Life Regen (-4096)), Name (Name)
+{
+BonusMod - Life Regen (-4096)
+}
+
+STRING 477
+// Abilities: ZxFc (BonusMod - Hero STR (-4096)), Name (Name)
+{
+BonusMod - Hero STR (-4096)
+}
+
+STRING 478
+// Abilities: ZxGc (BonusMod - Hero AGI (-4096)), Name (Name)
+{
+BonusMod - Hero AGI (-4096)
+}
+
+STRING 479
+// Abilities: ZxHc (BonusMod - Hero INT (-4096)), Name (Name)
+{
+BonusMod - Hero INT (-4096)
+}
+
+STRING 480
+// Abilities: A000 (Ярость), Name (Name)
+{
+Ярость
+}
+
+STRING 481
+// Abilities: A000 (Ярость), Hotkey (Hotkey - Normal)
+{
+Q
+}
+
+STRING 482
+// Abilities: A000 (Ярость), Researchhotkey (Hotkey - Learn)
+{
+Q
+}
+
+STRING 483
+// Abilities: A000 (Ярость), Tip (Tooltip - Normal)
+{
+Ярость
+}
+
+STRING 484
+// Abilities: A000 (Ярость), Ubertip (Tooltip - Normal - Extended)
+{
+Если у Пария меньше 20% ХП то: получает доп. урон, скорость передвижения и вампиризм (вампиризм работает также на постройки).
+Длительность заклинания: 8 секунд
+Перезарядка: 16 секунд
+уровень 1 – доп. урон - 15 ск. пер. - 10% вампиризм - 7%
+уровень 2 – доп. урон - 22 ск. пер. - 12% вампиризм - 11%
+уровень 3 – доп. урон - 36 ск. пер. - 14% вампиризм - 14%
+уровень 4 – доп. урон - 50 ск. пер. - 18% вампиризм - 17%
+}
+
+STRING 485
+// Abilities: A000 (Ярость), Ubertip (Tooltip - Normal - Extended)
+{
+Если у Пария меньше 20% ХП то: получает доп. урон, скорость передвижения и вампиризм (вампиризм работает также на постройки).
+Длительность заклинания: 8 секунд
+Перезарядка: 16 секунд
+уровень 1 – доп. урон - 15 ск. пер. - 10% вампиризм - 7%
+уровень 2 – доп. урон - 22 ск. пер. - 12% вампиризм - 11%
+уровень 3 – доп. урон - 36 ск. пер. - 14% вампиризм - 14%
+уровень 4 – доп. урон - 50 ск. пер. - 18% вампиризм - 17%
+}
+
+STRING 486
+// Abilities: A000 (Ярость), Ubertip (Tooltip - Normal - Extended)
+{
+Если у Пария меньше 20% ХП то: получает доп. урон, скорость передвижения и вампиризм (вампиризм работает также на постройки).
+Длительность заклинания: 8 секунд
+Перезарядка: 16 секунд
+уровень 1 – доп. урон - 15 ск. пер. - 10% вампиризм - 7%
+уровень 2 – доп. урон - 22 ск. пер. - 12% вампиризм - 11%
+уровень 3 – доп. урон - 36 ск. пер. - 14% вампиризм - 14%
+уровень 4 – доп. урон - 50 ск. пер. - 18% вампиризм - 17%
+}
+
+STRING 487
+// Abilities: A000 (Ярость), Ubertip (Tooltip - Normal - Extended)
+{
+Если у Пария меньше 20% ХП то: получает доп. урон, скорость передвижения и вампиризм (вампиризм работает также на постройки).
+Длительность заклинания: 8 секунд
+Перезарядка: 16 секунд
+уровень 1 – доп. урон - 15 ск. пер. - 10% вампиризм - 7%
+уровень 2 – доп. урон - 22 ск. пер. - 12% вампиризм - 11%
+уровень 3 – доп. урон - 36 ск. пер. - 14% вампиризм - 14%
+уровень 4 – доп. урон - 50 ск. пер. - 18% вампиризм - 17%
+}
+
+STRING 488
+// Abilities: A000 (Ярость), Tip (Tooltip - Normal)
+{
+Ярость
+}
+
+STRING 489
+// Abilities: A000 (Ярость), Tip (Tooltip - Normal)
+{
+Ярость
+}
+
+STRING 490
+// Abilities: A000 (Ярость), Tip (Tooltip - Normal)
+{
+Ярость
+}
+
+STRING 491
+// Abilities: A000 (Ярость), Researchtip (Tooltip - Learn)
+{
+Ярость
+}
+
+STRING 492
+// Abilities: A000 (Ярость), Researchubertip (Tooltip - Learn - Extended)
+{
+Если у Пария меньше 20% ХП то: получает доп. урон, скорость передвижения и вампиризм (вампиризм работает также на постройки).
+Длительность заклинания: 8 секунд
+Перезарядка: 16 секунд
+уровень 1 – доп. урон - 15 ск. пер. - 10% вампиризм - 7%
+уровень 2 – доп. урон - 22 ск. пер. - 12% вампиризм - 11%
+уровень 3 – доп. урон - 36 ск. пер. - 14% вампиризм - 14%
+уровень 4 – доп. урон - 50 ск. пер. - 18% вампиризм - 17%
+}
+
