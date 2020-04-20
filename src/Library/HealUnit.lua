@@ -5,6 +5,7 @@
 function HealUnit(hero,amount,flag,eff)
 	--1 или nil Сколько вылчено
 	--2 Сверхлечение
+	if not eff then eff="Abilities\\Spells\\Human\\Heal\\HealTarget" end
 	local p=GetOwningPlayer(hero)
 	local MaxHP=BlzGetUnitMaxHP(hero)
 	local CurrentHP=GetUnitState(hero,UNIT_STATE_LIFE)

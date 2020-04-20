@@ -13,9 +13,11 @@ do
 		--InitGameCore()
 		--InitMouseMoveTrigger()
 		InitDamage()
+		InitSpellTrigger()
 		InitUnitDeath()
 		--InitAllZones()
 		LeavePlayer()
+		LearnEvent()
 		--BadChat() -- Функция для починки чата
 	end
 

@@ -14,6 +14,7 @@ function InitDamage()
 	TriggerAddAction(DamageTrigger, function()
 		local damage     = GetEventDamage() -- число урона
 		local damageType = BlzGetEventDamageType()
+		local AttackType=BlzGetEventAttackType()
 		if damage < 1 then return end
 
 		local eventId         = GetHandleId(GetTriggerEventId())
@@ -28,7 +29,26 @@ function InitDamage()
 		if isEventDamaged then
 			if IsUnitType(target,UNIT_TYPE_HERO) then --Событие Любой герой получил урон
 				--print("Герой получил урон")
-				--local data=HERO[GetPlayerId(GetOwningPlayer(target))]
+				if GetUnitAbilityLevel(target,FourCC('A007'))>0  then--буйство
+					--print("урон под буйство")
+					local rf=0
+					local lvl=GetUnitAbilityLevel(target,FourCC('A007'))
+					local x,y=GetUnitXY(target)
+					if lvl==1 then	rf=GetRandomInt(1,33)
+					elseif lvl==2 then rf=GetRandomInt(1,20)
+					elseif lvl==3 then rf=GetRandomInt(1,14)
+					elseif lvl==4 then rf=GetRandomInt(1,10)
+					end
+					if rf==1 then
+						--print("рык прок")
+						CastArea(target,FourCC('A008'),x,y,lvl)
+
+						--print("после попытки каста")
+					end
+				end
+
+
+
 				if GetUnitAbilityLevel(target,FourCC('A000'))>0 and GetUnitLifePercent(target)<=20 then  -- есть ярость пассивка
 					if BlzGetUnitAbilityCooldownRemaining(target,FourCC('A000'))<=1 then -- способность не на КД
 						--print("запуск кд способности")
@@ -53,17 +73,64 @@ function InitDamage()
 						end)
 					end
 				end
-				if GetUnitAbilityLevel(caster,FourCC('B000'))>0 then--вампирский удар, ещё нужны доп условия для проверки ближнего боя, иначер работает от любого типа урона
-					local effModel="Abilities\\Spells\\Human\\Heal\\HealTarget" --эффект лечения
-					local amount=0
-					local lvl=GetUnitAbilityLevel(caster,FourCC('A000'))-- у баффа нельзя просчитать вампирку
-					if lvl==1 then	amount=damage*0.07
-					elseif lvl==2 then amount=damage*0.11
-					elseif lvl==3 then amount=damage*0.14
-					elseif lvl==4 then amount=damage*0.17
+				if GetUnitAbilityLevel(caster,FourCC('A003'))>0 and AttackType==ATTACK_TYPE_HERO then -- Герой под нирваной получил урон
+					local rf=0
+					local lvl=GetUnitAbilityLevel(caster,FourCC('A003')) -- Критический урон
+					local duration=30
+					local durationSleep=1+(lvl*.25)
+					if lvl==1 then	rf=GetRandomInt(1,20)--5 %%
+					elseif lvl==2 then rf=GetRandomInt(1,12)--8 %%
+					elseif lvl==3 then rf=GetRandomInt(1,8)--12 %%
+					elseif lvl==4 then rf=GetRandomInt(1,7)--14 %%
 					end
-					HealUnit(caster,amount,1,effModel)--сам вампиризм, хотя это моя универсальная функция лечения
+					--rf=1 Делает прок шанс 100%%
+					if rf==1 then
+						--
+						BlzPauseUnitEx(target,true)
+						UnitAddAbility(target,FourCC('A004')) --антимагия
+						BlzUnitHideAbility(target,FourCC('A004'),true)
+						UnitAddBonus(caster,3,1)
+						local eff=AddSpecialEffectTarget("Abilities\\Spells\\Undead\\Sleep\\SleepTarget.mdl",target,"overhead")
+						DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\Sleep\\SleepSpecialArt.mdl",target,"overhead"))
+						TimerStart(CreateTimer(), durationSleep, false, function()
+							BlzPauseUnitEx(target,false)
+							DestroyEffect(eff)
+							UnitRemoveAbility(target,FourCC('A004')) --антимагия
+						end)
+						TimerStart(CreateTimer(), duration, false, function()--возврат атрибута
+							UnitAddBonus(caster,3,-1)
+						end)
+					end
 				end
+
+
+			end
+			--Получение урона любым существом
+			if GetUnitAbilityLevel(caster,FourCC('B001'))>0 and AttackType==ATTACK_TYPE_HERO then -- Критический удар под баффом
+				local rf=0
+				local lvl=GetUnitAbilityLevel(caster,FourCC('A002')) -- Критический урон
+				if lvl==1 then	rf=GetRandomInt(1,10)--10 %%
+				elseif lvl==2 then rf=GetRandomInt(1,7)--15 %%
+				elseif lvl==3 then rf=GetRandomInt(1,4)--24 %%
+				elseif lvl==4 then rf=GetRandomInt(1,3)--30 %%
+				end
+				if rf==1 then
+					damage=damage*3
+					BlzSetEventDamage(damage)
+					FlyTextTagCriticalStrike(caster,R2I(damage),GetOwningPlayer(caster))
+					UnitRemoveAbility(caster,FourCC('B001'))
+				end
+			end
+			if GetUnitAbilityLevel(caster,FourCC('B000'))>0 and AttackType==ATTACK_TYPE_HERO then--вампирский удар, ещё нужны доп условия для проверки ближнего боя, иначер работает от любого типа урона
+				local effModel="Abilities\\Spells\\Human\\Heal\\HealTarget" --эффект лечения
+				local amount=0
+				local lvl=GetUnitAbilityLevel(caster,FourCC('A000'))-- у баффа нельзя просчитать вампирку
+				if lvl==1 then	amount=damage*0.07
+				elseif lvl==2 then amount=damage*0.11
+				elseif lvl==3 then amount=damage*0.14
+				elseif lvl==4 then amount=damage*0.17
+				end
+				HealUnit(caster,amount,1,effModel)--сам вампиризм, хотя это моя универсальная функция лечения
 			end
 		end
 	end)
@@ -73,12 +140,12 @@ end
 
 
 perebor=CreateGroup()
-function UnitDamageArea(u,damage,x,y,range,ZDamageSource,EffectModel)
+function UnitDamageArea(u,damage,x,y,range,EffectModel)
 	local OnlyCHK=false
 	local isdamage=false
 	local e=nil
 	local hero=nil
-	if ZDamageSource==nil then ZDamageSource=GetUnitZ(u)+60 end
+	--if ZDamageSource==nil then ZDamageSource=GetUnitZ(u)+60 end
 	if GetOwningPlayer(u)==Player(0) then
 	--	print("Выызов функции урона")
 	end
@@ -87,97 +154,31 @@ function UnitDamageArea(u,damage,x,y,range,ZDamageSource,EffectModel)
 	while true do
 		e = FirstOfGroup(perebor)
 		if e == nil then break end
-		if UnitAlive(e) and IsUnitEnemy(e,GetOwningPlayer(u))  and IsUnitZCollision(e,ZDamageSource) then -- момент урона
+		if UnitAlive(e) and IsUnitEnemy(e,GetOwningPlayer(u)) then -- момент урона
 			if EffectModel~=nil then
 				--print("эффеет")
 				local DE=AddSpecialEffect(EffectModel,GetUnitX(e),GetUnitY(e))
-				BlzSetSpecialEffectZ(DE,ZDamageSource)
+				--BlzSetSpecialEffectZ(DE,ZDamageSource)
 				DestroyEffect(DE)
 			end
-			if IsUnitType(u,UNIT_TYPE_HERO) then
-				local data=HERO[GetPlayerId(GetOwningPlayer(u))]
-				if data.Perk6 then -- удар тора
-					data.Perk6=false
-					--print("удар тора")
-					CastArea(u,FourCC('A003'),x,y)
-					UnitDamageArea(u,90,x,y,150)
-					DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\Thunderclap\\ThunderClapCaster",x,y))
-					TimerStart(CreateTimer(), 2, false, function()
-						data.Perk6=true
-					end)
-					--print("ПОСТ удар тора")
-				end
-				if data.HaveAFire then
-					damage=damage*5
-					data.HaveAFire=false
-					if not data.Perk16 then
-						UnitRemoveAbility(u,FourCC('A006'))
-					end
-					FlyTextTagCriticalStrike(e,I2S(R2I(damage)),GetOwningPlayer(u))
-				end
 
-			end
 			UnitDamageTarget( u, e, damage, true, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_NORMAL, WEAPON_TYPE_WHOKNOWS )
 			isdamage=true
 			hero=e
 		end
 		--ремонт
-		if  UnitAlive(e) and IsUnitAlly(e,GetOwningPlayer(u)) and IsUnitZCollision(e,ZDamageSource) and e~=u then -- момент ремонта
+		if  UnitAlive(e) and IsUnitAlly(e,GetOwningPlayer(u)) and e~=u then -- момент ремонта
 			local data=HERO[GetPlayerId(GetOwningPlayer(u))]
 			if DistanceBetweenXY(GetUnitX(u),GetUnitY(u),GetUnitXY(e))<=200 and IsUnitType(e,UNIT_TYPE_STRUCTURE) then
-				if GetUnitTypeId(e)==FourCC('n003') then-- костер
-					data.FireCount=data.FireCount+1
-					if not data.Perk9 then
-						if data.FireCount>=5 then
-							data.Perk9=true
-							--print("разблокировка перка")
-							if GetLocalPlayer()==GetOwningPlayer(u) then
-								BlzFrameSetVisible(PerkIsLock[9],false)
-								BlzFrameSetVisible(FrameSelecter[9],true)
-							end
-						end
-					end
-					if data.Perk9 then
-						UnitAddAbility(u,FourCC('A006'))
-						data.HaveAFire=true
-					end
-				end
-				--print("лечим")
-				if not data.OnCharge then-- нельзя чинить при рывке щита
-					local heal=HealUnit(e,BlzGetUnitBaseDamage(u,0))
-					data.Repairs=data.Repairs+heal
-					data.RevoltSec=0
-					if not data.Perk6 then
-						if data.Repairs>=1000 then
-							data.Perk6=true
-							if GetLocalPlayer()==GetOwningPlayer(u) then
-								BlzFrameSetVisible(PerkIsLock[6],false)
-								BlzFrameSetVisible(FrameSelecter[6],true)
-							end
-						end
-					end
-				end
+
 			end
 			hero=e
 		end
 		GroupRemoveUnit(perebor,e)
 	end
-	if PointContentDestructable(x,y,range,true,1+damage/4,u) then	isdamage=true	end
+	--if PointContentDestructable(x,y,range,true,1+damage/4,u) then	isdamage=true	end
 	return isdamage, hero
 end
-
-function IsUnitZCollision(hero,ZDamageSource)
-	local zcollision=false
-	local z=GetUnitZ(hero)
-
-	if  ZDamageSource+60>=z and ZDamageSource-60<=z then
-		zcollision=true
-	else
-		--print("Высота снаряда="..ZDamageSource.."Высота юнита="..z)
-	end
-	return zcollision
-end
-
 
 
 GlobalRect=Rect(0,0,0,0)

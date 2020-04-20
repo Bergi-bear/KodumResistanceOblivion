@@ -25,7 +25,10 @@ function Cast(u,x,y,target)
 		if AllTarget(u,target) then
 			IsCast=true
 		end
-		AllImmediate(u)
+		if AllImmediate(u) then
+			IsCast=true
+		end
+
 	end
 	return IsCast
 end
@@ -38,10 +41,14 @@ function AllImmediate(u)
 end
 
 function AllPoint(u,x,y)
+	local IsCast=false
 	for i = 1,#PointOrders do
 	--	print(PointOrders[i].." is point")
-		IssuePointOrder(u,PointOrders[i],x,y)
+		if IssuePointOrder(u,PointOrders[i],x,y) then
+
+		end
 	end
+	return IsCast
 end
 
 function AllTarget(u,target)

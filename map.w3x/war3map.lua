@@ -1,4 +1,5 @@
 gg_trg_Untitled_Trigger_001 = nil
+gg_trg_LearnEventConvert = nil
 function InitGlobals()
 end
 
@@ -31,10 +32,21 @@ function CreateUnitsForPlayer0()
     local unitID
     local t
     local life
-    u = BlzCreateUnitWithSkin(p, FourCC("H00X"), 343.3, -13964.1, 241.180, FourCC("H00X"))
+    u = BlzCreateUnitWithSkin(p, FourCC("H00X"), 528.8, -13963.8, 241.180, FourCC("H00X"))
     SetHeroLevel(u, 10, false)
     life = GetUnitState(u, UNIT_STATE_LIFE)
     SetUnitState(u, UNIT_STATE_LIFE, 0.10 * life)
+    u = BlzCreateUnitWithSkin(p, FourCC("H00K"), 513.8, -14255.0, 294.060, FourCC("H00K"))
+    SetHeroLevel(u, 10, false)
+    life = GetUnitState(u, UNIT_STATE_LIFE)
+    SetUnitState(u, UNIT_STATE_LIFE, 0.05 * life)
+    u = BlzCreateUnitWithSkin(p, FourCC("H00R"), 520.2, -14470.1, 260.810, FourCC("H00R"))
+    SetHeroLevel(u, 10, false)
+    SelectHeroSkill(u, FourCC("A006"))
+    SelectHeroSkill(u, FourCC("A006"))
+    SelectHeroSkill(u, FourCC("A006"))
+    SelectHeroSkill(u, FourCC("A006"))
+    IssueImmediateOrder(u, "")
 end
 
 function CreateNeutralHostile()
@@ -71,10 +83,39 @@ function CreateNeutralHostile()
     u = BlzCreateUnitWithSkin(p, FourCC("n001"), -3172.8, -3763.0, 117.733, FourCC("n001"))
     u = BlzCreateUnitWithSkin(p, FourCC("n001"), -3151.4, -3513.0, 221.271, FourCC("n001"))
     u = BlzCreateUnitWithSkin(p, FourCC("H00V"), 22.9, -13678.8, 67.150, FourCC("H00V"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00V"), 23.4, -13178.4, 67.150, FourCC("H00V"))
+    SetUnitAcquireRange(u, 200.0)
+    u = BlzCreateUnitWithSkin(p, FourCC("H00V"), 1.0, -13011.3, 67.150, FourCC("H00V"))
     SetHeroLevel(u, 5, false)
-    u = BlzCreateUnitWithSkin(p, FourCC("H00V"), 17.3, -12598.0, 67.150, FourCC("H00V"))
+    SetUnitAcquireRange(u, 200.0)
+    u = BlzCreateUnitWithSkin(p, FourCC("H00V"), 14.4, -12411.2, 67.150, FourCC("H00V"))
     SetHeroLevel(u, 10, false)
+    SetUnitAcquireRange(u, 200.0)
+    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -520.9, -14800.6, 163.921, FourCC("hfoo"))
+    SetUnitAcquireRange(u, 200.0)
+    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -540.3, -14901.1, 200.045, FourCC("hfoo"))
+    SetUnitAcquireRange(u, 200.0)
+    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -532.2, -14964.1, 312.065, FourCC("hfoo"))
+    SetUnitAcquireRange(u, 200.0)
+    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -501.7, -15033.9, 243.475, FourCC("hfoo"))
+    SetUnitAcquireRange(u, 200.0)
+    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -449.0, -15089.4, 252.419, FourCC("hfoo"))
+    SetUnitAcquireRange(u, 200.0)
+    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -318.8, -15030.7, 27.994, FourCC("hfoo"))
+    SetUnitAcquireRange(u, 200.0)
+    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -281.7, -14969.2, 45.243, FourCC("hfoo"))
+    SetUnitAcquireRange(u, 200.0)
+    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -292.2, -14906.4, 102.330, FourCC("hfoo"))
+    SetUnitAcquireRange(u, 200.0)
+    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -374.8, -14831.2, 86.201, FourCC("hfoo"))
+    SetUnitAcquireRange(u, 200.0)
+    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -445.5, -14804.5, 156.615, FourCC("hfoo"))
+    SetUnitAcquireRange(u, 200.0)
+    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -451.8, -14965.8, 322.437, FourCC("hfoo"))
+    SetUnitAcquireRange(u, 200.0)
+    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -385.7, -15019.3, 280.204, FourCC("hfoo"))
+    SetUnitAcquireRange(u, 200.0)
+    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -388.6, -14922.4, 354.990, FourCC("hfoo"))
+    SetUnitAcquireRange(u, 200.0)
 end
 
 function CreateNeutralPassiveBuildings()
@@ -348,8 +389,11 @@ end
 --- DateTime: 08.02.2020 21:25
 ---
 DummyID=FourCC('e000')
-function CastArea(caster,id,x,y,range, xPoz,yPoz)
+function CastArea(caster,id,x,y,lvl,range, target, xPoz,yPoz)
 	local dx,dy=x,y
+	if not lvl then lvl=1 end
+	if not x then print("Error x-nil") end
+	if not y then print("Error y-nil") end
 	if xPoz~=nil then
 		print("позиция")
 		dx,dy=xPoz,yPoz
@@ -357,14 +401,22 @@ function CastArea(caster,id,x,y,range, xPoz,yPoz)
 	local dummy=CreateUnit(GetOwningPlayer(caster), DummyID, dx, dy, 0)--
 	UnitApplyTimedLife(dummy,FourCC('BTLF'),0.1)
 	if UnitAddAbility(dummy,id) then
+		--print("успешно добавлна")
+		SetUnitAbilityLevel(dummy,id,lvl)
+		--print("успешно повышена до "..lvl)
 	else
-		print("ошибка добавления способности")
+		--print("ошибка добавления способности")
 	end
 	---для одиночек
 
 	if range==0 or range==nil then
 		--IssuePointOrder(dummy,"blizzard",x,y)-- на точку
-		Cast(dummy,x,y)
+
+		if Cast(dummy,x,y) then
+			--print("успех")
+		else
+			--print("провал")
+		end
 		--IssuePointOrder(dummy,"acidbomb",x,y)-- на точку
 	end
 	--print("Каст был успешен 1")
@@ -870,6 +922,7 @@ function InitDamage()
 	TriggerAddAction(DamageTrigger, function()
 		local damage     = GetEventDamage() -- число урона
 		local damageType = BlzGetEventDamageType()
+		local AttackType=BlzGetEventAttackType()
 		if damage < 1 then return end
 
 		local eventId         = GetHandleId(GetTriggerEventId())
@@ -884,7 +937,26 @@ function InitDamage()
 		if isEventDamaged then
 			if IsUnitType(target,UNIT_TYPE_HERO) then --Событие Любой герой получил урон
 				--print("Герой получил урон")
-				--local data=HERO[GetPlayerId(GetOwningPlayer(target))]
+				if GetUnitAbilityLevel(target,FourCC('A007'))>0  then--буйство
+					--print("урон под буйство")
+					local rf=0
+					local lvl=GetUnitAbilityLevel(target,FourCC('A007'))
+					local x,y=GetUnitXY(target)
+					if lvl==1 then	rf=GetRandomInt(1,33)
+					elseif lvl==2 then rf=GetRandomInt(1,20)
+					elseif lvl==3 then rf=GetRandomInt(1,14)
+					elseif lvl==4 then rf=GetRandomInt(1,10)
+					end
+					if rf==1 then
+						--print("рык прок")
+						CastArea(target,FourCC('A008'),x,y,lvl)
+
+						--print("после попытки каста")
+					end
+				end
+
+
+
 				if GetUnitAbilityLevel(target,FourCC('A000'))>0 and GetUnitLifePercent(target)<=20 then  -- есть ярость пассивка
 					if BlzGetUnitAbilityCooldownRemaining(target,FourCC('A000'))<=1 then -- способность не на КД
 						--print("запуск кд способности")
@@ -900,7 +972,7 @@ function InitDamage()
 						elseif lvl==3 then amount=36
 						elseif lvl==4 then amount=50
 						end
-						print("set bonus")
+						--print("set bonus")
 						UnitAddBonus(target,4,amount)
 						TimerStart(CreateTimer(), 8, false, function() -- удаляем бонусы через 8 секунд
 							UnitAddBonus(target,4,-amount)-- урона
@@ -909,19 +981,64 @@ function InitDamage()
 						end)
 					end
 				end
-				if GetUnitAbilityLevel(caster,FourCC('B000'))>0 then--вампирский удар, ещё нужны доп условия для проверки ближнего боя, иначер работает от любого типа урона
-					--print("удар вампира start")
-					local effModel="Abilities\\Spells\\Human\\Heal\\HealTarget" --эффект лечения
-					local amount=0
-					local lvl=GetUnitAbilityLevel(caster,FourCC('A000'))-- у баффа нельзя просчитать вампирку
-					if lvl==1 then	amount=damage*0.07
-					elseif lvl==2 then amount=damage*0.11
-					elseif lvl==3 then amount=damage*0.14
-					elseif lvl==4 then amount=damage*0.17
+				if GetUnitAbilityLevel(caster,FourCC('A003'))>0 and AttackType==ATTACK_TYPE_HERO then -- Герой под нирваной получил урон
+					local rf=0
+					local lvl=GetUnitAbilityLevel(caster,FourCC('A003')) -- Критический урон
+					local duration=30
+					local durationSleep=1+(lvl*.25)
+					if lvl==1 then	rf=GetRandomInt(1,20)--5 %
+					elseif lvl==2 then rf=GetRandomInt(1,12)--8 %
+					elseif lvl==3 then rf=GetRandomInt(1,8)--12 %
+					elseif lvl==4 then rf=GetRandomInt(1,7)--14 %
 					end
-					--print("удар вампира"..amount)
-					HealUnit(caster,amount,1,effModel)--сам вампиризм
+					--rf=1 Делает прок шанс 100%
+					if rf==1 then
+						--
+						BlzPauseUnitEx(target,true)
+						UnitAddAbility(target,FourCC('A004')) --антимагия
+						BlzUnitHideAbility(target,FourCC('A004'),true)
+						UnitAddBonus(caster,3,1)
+						local eff=AddSpecialEffectTarget("Abilities\\Spells\\Undead\\Sleep\\SleepTarget.mdl",target,"overhead")
+						DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\Sleep\\SleepSpecialArt.mdl",target,"overhead"))
+						TimerStart(CreateTimer(), durationSleep, false, function()
+							BlzPauseUnitEx(target,false)
+							DestroyEffect(eff)
+							UnitRemoveAbility(target,FourCC('A004')) --антимагия
+						end)
+						TimerStart(CreateTimer(), duration, false, function()--возврат атрибута
+							UnitAddBonus(caster,3,-1)
+						end)
+					end
 				end
+
+
+			end
+			--Получение урона любым существом
+			if GetUnitAbilityLevel(caster,FourCC('B001'))>0 and AttackType==ATTACK_TYPE_HERO then -- Критический удар под баффом
+				local rf=0
+				local lvl=GetUnitAbilityLevel(caster,FourCC('A002')) -- Критический урон
+				if lvl==1 then	rf=GetRandomInt(1,10)--10 %
+				elseif lvl==2 then rf=GetRandomInt(1,7)--15 %
+				elseif lvl==3 then rf=GetRandomInt(1,4)--24 %
+				elseif lvl==4 then rf=GetRandomInt(1,3)--30 %
+				end
+				if rf==1 then
+					damage=damage*3
+					BlzSetEventDamage(damage)
+					FlyTextTagCriticalStrike(caster,R2I(damage),GetOwningPlayer(caster))
+					UnitRemoveAbility(caster,FourCC('B001'))
+				end
+			end
+			if GetUnitAbilityLevel(caster,FourCC('B000'))>0 and AttackType==ATTACK_TYPE_HERO then--вампирский удар, ещё нужны доп условия для проверки ближнего боя, иначер работает от любого типа урона
+				local effModel="Abilities\\Spells\\Human\\Heal\\HealTarget" --эффект лечения
+				local amount=0
+				local lvl=GetUnitAbilityLevel(caster,FourCC('A000'))-- у баффа нельзя просчитать вампирку
+				if lvl==1 then	amount=damage*0.07
+				elseif lvl==2 then amount=damage*0.11
+				elseif lvl==3 then amount=damage*0.14
+				elseif lvl==4 then amount=damage*0.17
+				end
+				HealUnit(caster,amount,1,effModel)--сам вампиризм, хотя это моя универсальная функция лечения
 			end
 		end
 	end)
@@ -931,12 +1048,12 @@ end
 
 
 perebor=CreateGroup()
-function UnitDamageArea(u,damage,x,y,range,ZDamageSource,EffectModel)
+function UnitDamageArea(u,damage,x,y,range,EffectModel)
 	local OnlyCHK=false
 	local isdamage=false
 	local e=nil
 	local hero=nil
-	if ZDamageSource==nil then ZDamageSource=GetUnitZ(u)+60 end
+	--if ZDamageSource==nil then ZDamageSource=GetUnitZ(u)+60 end
 	if GetOwningPlayer(u)==Player(0) then
 	--	print("Выызов функции урона")
 	end
@@ -945,97 +1062,31 @@ function UnitDamageArea(u,damage,x,y,range,ZDamageSource,EffectModel)
 	while true do
 		e = FirstOfGroup(perebor)
 		if e == nil then break end
-		if UnitAlive(e) and IsUnitEnemy(e,GetOwningPlayer(u))  and IsUnitZCollision(e,ZDamageSource) then -- момент урона
+		if UnitAlive(e) and IsUnitEnemy(e,GetOwningPlayer(u)) then -- момент урона
 			if EffectModel~=nil then
 				--print("эффеет")
 				local DE=AddSpecialEffect(EffectModel,GetUnitX(e),GetUnitY(e))
-				BlzSetSpecialEffectZ(DE,ZDamageSource)
+				--BlzSetSpecialEffectZ(DE,ZDamageSource)
 				DestroyEffect(DE)
 			end
-			if IsUnitType(u,UNIT_TYPE_HERO) then
-				local data=HERO[GetPlayerId(GetOwningPlayer(u))]
-				if data.Perk6 then -- удар тора
-					data.Perk6=false
-					--print("удар тора")
-					CastArea(u,FourCC('A003'),x,y)
-					UnitDamageArea(u,90,x,y,150)
-					DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\Thunderclap\\ThunderClapCaster",x,y))
-					TimerStart(CreateTimer(), 2, false, function()
-						data.Perk6=true
-					end)
-					--print("ПОСТ удар тора")
-				end
-				if data.HaveAFire then
-					damage=damage*5
-					data.HaveAFire=false
-					if not data.Perk16 then
-						UnitRemoveAbility(u,FourCC('A006'))
-					end
-					FlyTextTagCriticalStrike(e,I2S(R2I(damage)),GetOwningPlayer(u))
-				end
 
-			end
 			UnitDamageTarget( u, e, damage, true, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_NORMAL, WEAPON_TYPE_WHOKNOWS )
 			isdamage=true
 			hero=e
 		end
 		--ремонт
-		if  UnitAlive(e) and IsUnitAlly(e,GetOwningPlayer(u)) and IsUnitZCollision(e,ZDamageSource) and e~=u then -- момент ремонта
+		if  UnitAlive(e) and IsUnitAlly(e,GetOwningPlayer(u)) and e~=u then -- момент ремонта
 			local data=HERO[GetPlayerId(GetOwningPlayer(u))]
 			if DistanceBetweenXY(GetUnitX(u),GetUnitY(u),GetUnitXY(e))<=200 and IsUnitType(e,UNIT_TYPE_STRUCTURE) then
-				if GetUnitTypeId(e)==FourCC('n003') then-- костер
-					data.FireCount=data.FireCount+1
-					if not data.Perk9 then
-						if data.FireCount>=5 then
-							data.Perk9=true
-							--print("разблокировка перка")
-							if GetLocalPlayer()==GetOwningPlayer(u) then
-								BlzFrameSetVisible(PerkIsLock[9],false)
-								BlzFrameSetVisible(FrameSelecter[9],true)
-							end
-						end
-					end
-					if data.Perk9 then
-						UnitAddAbility(u,FourCC('A006'))
-						data.HaveAFire=true
-					end
-				end
-				--print("лечим")
-				if not data.OnCharge then-- нельзя чинить при рывке щита
-					local heal=HealUnit(e,BlzGetUnitBaseDamage(u,0))
-					data.Repairs=data.Repairs+heal
-					data.RevoltSec=0
-					if not data.Perk6 then
-						if data.Repairs>=1000 then
-							data.Perk6=true
-							if GetLocalPlayer()==GetOwningPlayer(u) then
-								BlzFrameSetVisible(PerkIsLock[6],false)
-								BlzFrameSetVisible(FrameSelecter[6],true)
-							end
-						end
-					end
-				end
+
 			end
 			hero=e
 		end
 		GroupRemoveUnit(perebor,e)
 	end
-	if PointContentDestructable(x,y,range,true,1+damage/4,u) then	isdamage=true	end
+	--if PointContentDestructable(x,y,range,true,1+damage/4,u) then	isdamage=true	end
 	return isdamage, hero
 end
-
-function IsUnitZCollision(hero,ZDamageSource)
-	local zcollision=false
-	local z=GetUnitZ(hero)
-
-	if  ZDamageSource+60>=z and ZDamageSource-60<=z then
-		zcollision=true
-	else
-		--print("Высота снаряда="..ZDamageSource.."Высота юнита="..z)
-	end
-	return zcollision
-end
-
 
 
 GlobalRect=Rect(0,0,0,0)
@@ -1151,9 +1202,11 @@ do
 		--InitGameCore()
 		--InitMouseMoveTrigger()
 		InitDamage()
+		InitSpellTrigger()
 		InitUnitDeath()
 		--InitAllZones()
 		LeavePlayer()
+		LearnEvent()
 		--BadChat() -- Функция для починки чата
 	end
 
@@ -1252,6 +1305,54 @@ end
 ---
 --- Generated by EmmyLua(https://github.com/EmmyLua)
 --- Created by Bergi.
+--- DateTime: 20.04.2020 19:19
+---
+function LearnEvent()
+	local this = CreateTrigger()
+	TriggerRegisterAnyUnitEventBJ(this, EVENT_PLAYER_HERO_SKILL)
+	TriggerAddAction(this, function()
+		local hero=GetTriggerUnit()
+		if GetLearnedSkill()==FourCC('A00B') and GetLearnedSkillLevel()==1 then -- чемпион
+			--print("0 зарядов")
+			UnitAddAbility(hero, FourCC('Asud'))
+			AddUnitToStock(hero, FourCC('n00R'), 0, 0)
+			local IsLimit=true
+			TimerStart(CreateTimer(), 0.1, true, function()-- обновление зарядов
+				local ch=GetUnitUserData(hero)
+				local CurrentCharges=0
+				local lvl=GetUnitAbilityLevel(hero,FourCC('A00B'))
+				local maxCH=4+(2*lvl)
+
+				if ch>=maxCH then
+					CurrentCharges=maxCH
+					RemoveUnitFromStock(hero,FourCC('n00R'))
+					AddUnitToStock(hero, FourCC('n00S'), CurrentCharges, CurrentCharges)
+					if IsLimit then
+						IsLimit=false
+						TimerStart(CreateTimer(), 10, false, function()
+							SetUnitUserData(hero,0)
+							--print("обнуления зарядов")
+						end)
+					end
+				else
+					CurrentCharges=ch
+					RemoveUnitFromStock(hero,FourCC('n00S'))
+					AddUnitToStock(hero, FourCC('n00R'), CurrentCharges, CurrentCharges)
+				end
+
+				UnitSetBonus(hero,6,CurrentCharges)
+				UnitSetBonus(hero,5,CurrentCharges*lvl)
+				if ch>0 then
+
+				end
+
+			end)
+		end
+	end)
+end
+---
+--- Generated by EmmyLua(https://github.com/EmmyLua)
+--- Created by Bergi.
 --- DateTime: 19.04.2020 17:39
 function LeavePlayer()
 	local this = CreateTrigger()
@@ -1264,6 +1365,68 @@ function LeavePlayer()
 		local p=GetTriggerPlayer()
 		local data=HERO[GetPlayerId(p)]
 		StartPeonAI(data.UnitHero)
+	end)
+end
+
+----------------------------------
+----------------------------------
+----------------------------------
+function InitSpellTrigger()
+	local SpellTrigger = CreateTrigger()
+	for i = 0, bj_MAX_PLAYER_SLOTS - 1 do
+		local player = Player(i)
+		TriggerRegisterPlayerUnitEvent(SpellTrigger, player, EVENT_PLAYER_UNIT_SPELL_CAST)
+	end
+	TriggerAddAction(SpellTrigger, function()
+
+		local caster           = GetTriggerUnit()
+		local target=GetSpellTargetUnit()
+		local casterX, casterY = GetUnitX(caster), GetUnitY(caster)
+		local x,y=GetSpellTargetX(),GetSpellTargetY()
+		local spellId          = GetSpellAbilityId()
+		local ownplayer=GetOwningPlayer(caster)
+		local id=GetPlayerId(ownplayer)
+
+
+		if spellId == FourCC('A006') then -- Прорыв
+
+			local z=GetTerrainZ(x,y)
+
+			if z>=40 then
+				local distance=DistanceBetweenXY(x,y,casterX,casterY)
+				local angle=AngleBetweenXY(x,y,GetUnitXY(caster))/bj_DEGTORAD
+				BlzPauseUnitEx(caster,true)
+				SetUnitAnimationByIndex(caster,GetRandomInt(1,10))
+				UnitAddForce(caster,angle-180,distance/25,distance,600)
+
+			else
+				BlzEndUnitAbilityCooldown(caster,spellId)
+				print("cannot be used on water "..z)
+			end
+		end
+		if spellId == FourCC('A00C') then -- бойня
+			--print("бойня")
+			local lvl=GetUnitAbilityLevel(caster,spellId)
+			UnitAddAbility(caster,FourCC('A00D'))
+			SetUnitAbilityLevel(caster,FourCC('A00D'),lvl)
+			BlzUnitHideAbility(caster,FourCC('A00D'),true)
+			local sec=0
+			TimerStart(CreateTimer(), TIMER_PERIOD, true, function()
+				sec=sec+TIMER_PERIOD
+				if GetUnitAbilityLevel(target,FourCC('BPSE'))>0 then
+					if GetUnitCurrentOrder()~=String2OrderIdBJ("attack") then
+						IssueTargetOrder(caster,"attack",target)
+					end
+				else
+					if sec>=1 then
+						--print("break")
+						DestroyTimer(GetExpiredTimer())
+						UnitRemoveAbility(caster,FourCC('A00D'))
+						UnitRemoveAbility(caster,FourCC('B002'))
+					end
+				end
+			end)
+		end
 	end)
 end
 ---
@@ -1280,195 +1443,46 @@ function InitUnitDeath()
 
 		if IsUnitType(DeadUnit,UNIT_TYPE_HERO) then --герой умер
 			local x,y=GetUnitXY(DeadUnit)
-			local PD=GetOwningPlayer(DeadUnit)
-			local pid=GetPlayerId(PD)
-			local data=HERO[pid]
 
-			--data.CartUnit=nil
-			--SetUnitOwner(data.CartUnit,Player(PLAYER_NEUTRAL_PASSIVE),true)
-			--SetUnitAnimationByIndex(data.CartUnit,0)
-			if data.Perk15 then
-				SetUnitExploded(DeadUnit, true)
-				DestroyEffect(AddSpecialEffect("Abilities\\Weapons\\Mortar\\MortarMissile",x,y))
-				UnitDamageArea(DeadUnit,200,x,y,250)
-			end
-			data.Dies=data.Dies+1
-			if data.Dies==15 then
-				if not data.Perk3 then
-					BlzSetUnitMaxHP(DeadUnit,GetUnitState(DeadUnit,UNIT_STATE_MAX_LIFE)+100)
-				end
-				data.Perk3=true
-				if GetLocalPlayer()==PD then
-					BlzFrameSetVisible(PerkIsLock[3],false)
-					BlzFrameSetVisible(FrameSelecter[3],true)
-				end
-			end
-			if data.IsWood then
-				CreateUnit(Player(PLAYER_NEUTRAL_PASSIVE), FourCC('e002'), x,y, 0)--дровишко
-			end
-			TimerStart(CreateTimer(), 2.5, false, function()
+			if GetUnitAbilityLevel(DeadUnit,FourCC('A005'))>0 then
+				local spirit=CreateUnit(GetOwningPlayer(DeadUnit),FourCC('u000'),x,y,0)
+				local lvl=GetUnitAbilityLevel(DeadUnit,FourCC('A005'))
+				local ms=180+(30*lvl)
+				SetUnitMoveSpeed(spirit,ms)
+				--print("Смерть героя - лечение x"..x)
+				local e
 
-				--data.Alive=true
-				if data.Perk15 then
-					if data.ReviveOnBase then
-						ReviveHero(DeadUnit,GetPlayerStartLocationX(PD),GetPlayerStartLocationY(PD),true)
-						data.ReviveOnBase=false
-					else
-						ReviveHero(DeadUnit,x,y,true)
-						data.ReviveOnBase=true
+				local k=5*(lvl+1)
+				GroupEnumUnitsInRange(perebor,x,y,600,nil)
+				while true do
+					--print("группа")
+					e = FirstOfGroup(perebor)
+					--print(GetUnitName(e).." в FirstOFGroup")
+					if e == nil then break end
+					--print(GetUnitName(e).." в переборе")
+					if UnitAlive(e) and IsUnitAlly(e,GetOwningPlayer(DeadUnit)) and not IsUnitType(e,UNIT_TYPE_MECHANICAL) then
+						local amount=BlzGetUnitMaxHP(e)*k*0.01
+						--print("Лечим"..GetUnitName(e)..amount)
+						HealUnit(e,amount)
 					end
-
-				else
-					ReviveHero(DeadUnit,GetPlayerStartLocationX(PD),GetPlayerStartLocationY(PD),true)
+					GroupRemoveUnit(perebor,e)
 				end
-				SelectUnitForPlayerSingle(DeadUnit,PD)
-				data.IsWood=false
-				MakeUnitAllAlly(DeadUnit)
-				data.RevoltSec=0
-				data.Perk2=false
-			end)
+				TimerStart(CreateTimer(), 1, true, function() -- ждём возраждения героя чтобы убить духа3
+					if UnitAlive(DeadUnit) then
+						print("Дух умер, так как герой возродился")
+						DestroyTimer(GetExpiredTimer())
+						KillUnit(spirit)
+					end
+				end)
+			end
 		end
 
 		if IsUnitType(Killer,UNIT_TYPE_HERO) then --герои убил кого-то
-			--print("герой убил")
-			local PD=GetOwningPlayer(Killer)
-			local pid=GetPlayerId(PD)
-			local data=HERO[pid]
-
-			if data.Perk15 then
-				SetUnitExploded(DeadUnit, true)
-				local x,y=GetUnitXY(DeadUnit)
-				DestroyEffect(AddSpecialEffect("Abilities\\Weapons\\Mortar\\MortarMissile",x,y))
-				UnitDamageArea(Killer,200,x,y,250)
-			end
-
-
-			data.Kills=data.Kills+1
-			data.RevoltSec=0
-			if data.Kills==5 then
-				if not data.Perk5 then
-					BlzSetUnitBaseDamage(Killer,BlzGetUnitBaseDamage(Killer,0)*2,0)
-				end
-				data.Perk5=true
-				if GetLocalPlayer()==PD then
-					BlzFrameSetVisible(PerkIsLock[5],false)
-					BlzFrameSetVisible(FrameSelecter[5],true)
-				end
-			end
-			if GetUnitTypeId(DeadUnit)==FourCC('n002') then--голем
-				data.StoneCount=data.StoneCount+1
-
-				if data.StoneCount==1 then
-					--UnitAddAbility(Killer,FourCC('A007'))
-					data.Perk14A=true
-					if GetLocalPlayer()==PD then
-						BlzFrameSetVisible(PerkIsLock[14],false)
-						BlzFrameSetVisible(FrameSelecter[14],true)
-					end
-				end
-			end
-			if GetUnitTypeId(DeadUnit)==FourCC('n001') then--овцы
-				data.SheepCount=data.SheepCount+1
-				if data.SheepCount==20 then
-					data.Perk15=true
-					UnitAddAbility(Killer,FourCC('A00J'))
-					if GetLocalPlayer()==PD then
-						BlzFrameSetVisible(PerkIsLock[15],false)
-						BlzFrameSetVisible(FrameSelecter[15],true)
-					end
-				end
-			end
-			if GetUnitTypeId(DeadUnit)==FourCC('n000') then--волк
-				data.WolfCount=data.WolfCount+1
-
-				if data.WolfCount==5 then
-					--UnitAddAbility(Killer,FourCC('A007'))
-					AddSpecialEffectTarget("Wolf Cap by Sunchips",Killer,"head")
-					data.WolfHelper=CreateUnit(PD,FourCC('o006'),GetUnitX(Killer),GetUnitY(Killer),0)
-					UnitAddAbility(data.WolfHelper,FourCC('Aloc'))
-
-					if not data.Perk13 then
-						data.Perk13=true
-						if GetLocalPlayer()==PD then
-							BlzFrameSetVisible(PerkIsLock[13],false)
-							BlzFrameSetVisible(FrameSelecter[13],true)
-						end
-					end
-
-					TimerStart(CreateTimer(), 1, true, function()
-						local x,y=GetUnitXY(Killer)
-						local distance=DistanceBetweenXY(x,y,GetUnitX(data.WolfHelper),GetUnitY(data.WolfHelper))
-						if distance>600 then
-							local effmodel="Abilities\\Spells\\NightElf\\Blink\\BlinkCaster"
-							DestroyEffect(AddSpecialEffect(effmodel,GetUnitXY(data.WolfHelper)))
-							DestroyEffect(AddSpecialEffect(effmodel,x,y))
-							SetUnitPosition(data.WolfHelper,x,y)
-						else
-							if GetUnitCurrentOrder(data.WolfHelper)~=String2OrderIdBJ("Attack") then
-								local rx,ry=x+GetRandomInt(-500,500),y+GetRandomInt(-500,500)
-								IssuePointOrder(data.WolfHelper,"attack", rx,ry)
-							end
-						end
-					end)
-
-
-					if GetLocalPlayer()==PD then
-						BlzFrameSetVisible(PerkIsLock[13],false)
-					end
-				end
+			if GetUnitAbilityLevel(Killer,FourCC('A00B'))>0 then
+				SetUnitUserData(Killer,1+GetUnitUserData(Killer))
 			end
 		end
 
-		if GetUnitTypeId(DeadUnit)==FourCC('o001') then--лесопилка орков
-			print("О нет, лесопилка разрушена, теперь пеонам никогда не выбраться с острова")
-			TimerStart(CreateTimer(), 5, false, function()
-				CustomDefeatBJ(Player(0),"Вы проиграли")
-				CustomDefeatBJ(Player(1),"Вы проиграли")
-				CustomDefeatBJ(Player(2),"Вы проиграли")
-				CustomDefeatBJ(Player(3),"Вы проиграли")
-			end)
-		end
-		if GetUnitTypeId(DeadUnit)==FourCC('h001') then--лесопилка орков
-			local x,y=GetUnitX(DeadUnit)
-			ShowUnit(DeadUnit,false)
-			DestroyEffect(AddSpecialEffect("Abilities\\Weapons\\Mortar\\MortarMissile",x,y))
-		end
-
-		if GetUnitTypeId(DeadUnit)==FourCC('hlum') then -- лесопилка людей
-			for i=0,3 do
-				local data=HERO[i]
-				local hero=data.UnitHero
-				local distance=DistanceBetweenXY(GetUnitX(hero),GetUnitY(hero),GetUnitX(DeadUnit),GetUnitY(DeadUnit))
-				if distance<=500 then
-					if not data.Perk11 then
-						--Действие перка погрома
-						AddSpecialEffectTarget("GearAura",hero,"origin")
-						TimerStart(CreateTimer(), 1, true, function()
-							local e=nil
-							local x,y=GetUnitXY(hero)
-							GroupEnumUnitsInRange(perebor,x,y,400,nil)
-							while true do
-								e = FirstOfGroup(perebor)
-								if e == nil then break end
-
-								--ремонт
-								if true and UnitAlive(e) and IsUnitAlly(e,GetOwningPlayer(hero)) and (IsUnitType(e,UNIT_TYPE_STRUCTURE) or IsUnitType(e,UNIT_TYPE_MECHANICAL)) then
-									local amount=HealUnit(e,10)
-									data.Repairs=data.Repairs+amount
-								end
-								GroupRemoveUnit(perebor,e)
-							end
-						end)
-
-						data.Perk11=true
-						if GetLocalPlayer()==Player(i) then
-							BlzFrameSetVisible(PerkIsLock[11],false)
-							BlzFrameSetVisible(FrameSelecter[11],true)
-						end
-					end
-				end
-			end
-		end
 
 	end)
 end
@@ -1499,7 +1513,10 @@ function Cast(u,x,y,target)
 		if AllTarget(u,target) then
 			IsCast=true
 		end
-		AllImmediate(u)
+		if AllImmediate(u) then
+			IsCast=true
+		end
+
 	end
 	return IsCast
 end
@@ -1512,10 +1529,14 @@ function AllImmediate(u)
 end
 
 function AllPoint(u,x,y)
+	local IsCast=false
 	for i = 1,#PointOrders do
 	--	print(PointOrders[i].." is point")
-		IssuePointOrder(u,PointOrders[i],x,y)
+		if IssuePointOrder(u,PointOrders[i],x,y) then
+
+		end
 	end
+	return IsCast
 end
 
 function AllTarget(u,target)
@@ -1535,6 +1556,7 @@ end
 function HealUnit(hero,amount,flag,eff)
 	--1 или nil Сколько вылчено
 	--2 Сверхлечение
+	if not eff then eff="Abilities\\Spells\\Human\\Heal\\HealTarget" end
 	local p=GetOwningPlayer(hero)
 	local MaxHP=BlzGetUnitMaxHP(hero)
 	local CurrentHP=GetUnitState(hero,UNIT_STATE_LIFE)
@@ -1912,75 +1934,48 @@ function FindUnitOfType(id,flag,x,y)
 	end
 	return unit
 end
----------ВЕКТОРА
-function UnitAddVectorForce(hero,Angle,Speed,Distance,AfterMoving)
-	local data=nil
-	local k=0
-	local h=0
-	--print("ForceFor "..GetUnitName(hero))
-	if IsUnitType(hero,UNIT_TYPE_HERO) then
-		h=GetPlayerId(GetOwningPlayer(hero))
-
-	else
-		h=GetHandleId(hero)
-	--	print("НЕГЕРОЙ толкаемый "..GetUnitName(hero))
-	end
-	if not HERO[h] then
-		--print("первый толчек для "..GetUnitName(hero))
-		HERO[h]={
-			ForcesCount=0,
-			ForceRemain={},
-			ForceAngle={},
-			ForceSpeed={},
-			IsForce={}
-		}
-		--data=HERO[GetHandleId(hero)]
-		--MovingSystem(hero)
-	end
-	data=HERO[h]
-	data.ForcesCount=data.ForcesCount+1
-	k=data.ForcesCount
-	data.ForceRemain[k]=Distance
-	data.ForceSpeed[k]=Speed
-	data.ForceAngle[k]=Angle
-	data.IsForce[k]=true
-	data.AngleForce=Angle
-
-	if  AfterMoving==nil then
-		AfterMoving=true
-	end
-	if  data.AfterMoving==nil then
-		data.AfterMoving=AfterMoving
-	end
-	data.AfterMoving=AfterMoving
-	--print("параметры заданы"..GetUnitName(hero)..k)
-end
-
-function UnitAddForce(hero,angle,speed,distance)-- псевдо вектор использовать только для юнитов
+function UnitAddForce(hero,angle,speed,distance,MaxHeight)-- псевдо вектор использовать только для юнитов
 	local currentdistance=0
+	local i=0
+	local ZStart=GetUnitZ(hero)
+	if not MaxHeight then MaxHeight=0 end
 	TimerStart(CreateTimer(), TIMER_PERIOD, true, function()
 		currentdistance=currentdistance+speed
-		--print(currentdistance)
-		local x,y=GetUnitX(hero),GetUnitY(hero)
-		local newX,newY=MoveX(x,speed,angle),MoveY(y,speed,angle)
-		local dx=math.abs(x-newX)
-		if dx>=50 then
-			--print("телепорт баг в адд форсе")
-		else
-			--print(dx)
-			SetUnitPositionSmooth(hero,newX,newY)
-			--SetUnitX(hero,newX)
-			--SetUnitY(hero,newY)
-		end
 
-		if currentdistance>=distance   then --or (data.OnWater and data.OnTorrent==false)
-			--data.IsDisabled=false
-			--data.OnWater=false
+		local x,y=GetUnitXY(hero)
+		local f=ParabolaZ(MaxHeight/2, distance,i*speed)+ZStart
+		--print(f)
+
+		SetUnitZ(hero,f)
+		i=i+1
+		local newX,newY=MoveX(x,speed,angle),MoveY(y,speed,angle)
+
+		--SetUnitPositionSmooth(hero,newX,newY)
+		--if  not IsTerrainPathable(newX,newY,PATHING_TYPE_WALKABILITY)  then
+		--if GetTerrainZ(GetUnitXY(hero))>60 then
+			SetUnitX(hero,newX)
+			SetUnitY(hero,newY)
+		--end
+
+		if  i>3 and f<=GetTerrainZ(GetUnitXY(hero)) then --or (data.OnWater and data.OnTorrent==false)
 			DestroyTimer(GetExpiredTimer())
-			--print("stop cur="..currentdistance.." dist="..distance)
+			BlzPauseUnitEx(hero,false)
+			if GetUnitAbilityLevel(hero,FourCC('A006')) >0 then
+				local lvl=GetUnitAbilityLevel(hero,FourCC('A006'))
+				local damage= 75*lvl
+				SetUnitZ(hero,0)
+				--print("дамажим всех"..damage)
+				DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\Thunderclap\\ThunderClapCaster",newX,newY))
+				if GetUnitAbilityLevel(hero,FourCC('A00B')) >0 then
+					CastArea(hero,FourCC('A009'),newX,newY,lvl)
+				end
+				UnitDamageArea(hero,damage,newX,newY,(400+(50*lvl))/2)
+				ResetUnitAnimation(hero)
+			end
 		end
 	end)
 end
+
 ---
 --- Generated by EmmyLua(https://github.com/EmmyLua)
 --- Created by Bergi.
@@ -2926,8 +2921,19 @@ function InitTrig_Untitled_Trigger_001()
     TriggerAddAction(gg_trg_Untitled_Trigger_001, Trig_Untitled_Trigger_001_Actions)
 end
 
+function Trig_LearnEventConvert_Actions()
+    DoNothing()
+end
+
+function InitTrig_LearnEventConvert()
+    gg_trg_LearnEventConvert = CreateTrigger()
+    TriggerRegisterAnyUnitEventBJ(gg_trg_LearnEventConvert, EVENT_PLAYER_HERO_SKILL)
+    TriggerAddAction(gg_trg_LearnEventConvert, Trig_LearnEventConvert_Actions)
+end
+
 function InitCustomTriggers()
     InitTrig_Untitled_Trigger_001()
+    InitTrig_LearnEventConvert()
 end
 
 function RunInitializationTriggers()
