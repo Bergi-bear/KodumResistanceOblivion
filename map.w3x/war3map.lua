@@ -47,6 +47,14 @@ function CreateUnitsForPlayer0()
     SelectHeroSkill(u, FourCC("A006"))
     SelectHeroSkill(u, FourCC("A006"))
     IssueImmediateOrder(u, "")
+    u = BlzCreateUnitWithSkin(p, FourCC("H00T"), 516.2, -14665.1, 32.090, FourCC("H00T"))
+    SetHeroLevel(u, 30, false)
+    u = BlzCreateUnitWithSkin(p, FourCC("H00G"), 424.0, -14847.6, 164.850, FourCC("H00G"))
+    SetHeroLevel(u, 20, false)
+    SelectHeroSkill(u, FourCC("A00G"))
+    IssueImmediateOrder(u, "")
+    u = BlzCreateUnitWithSkin(p, FourCC("H013"), 664.3, -14762.9, 312.320, FourCC("H013"))
+    SetHeroLevel(u, 30, false)
 end
 
 function CreateNeutralHostile()
@@ -1014,6 +1022,23 @@ function InitDamage()
 
 			end
 			--Получение урона любым существом
+			if GetUnitAbilityLevel(caster,FourCC('B004'))>0 and GetUnitAbilityLevel(caster,FourCC('A00I'))>0 and AttackType==ATTACK_TYPE_HERO then -- Критический удар под баффом
+				local rf=0
+				local lvl=GetUnitAbilityLevel(caster,FourCC('A00I')) -- Критический урон
+				local bonus={200,100,50,25}
+				if lvl==1 then	rf=GetRandomInt(1,100)--
+				elseif lvl==2 then rf=GetRandomInt(1,50)--
+				elseif lvl==3 then rf=GetRandomInt(1,25)--
+				elseif lvl==4 then rf=GetRandomInt(1,14)--
+				end
+				--rf=1
+				if rf==1 then
+					DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Items\\ResourceItems\\ResourceEffectTarget",GetUnitXY(caster)))
+					AdjustPlayerStateBJ(bonus[lvl],GetOwningPlayer(caster), PLAYER_STATE_RESOURCE_GOLD )
+					FlyTextTagGoldBounty(caster,"+"..bonus[lvl],GetOwningPlayer(caster))
+				end
+			end
+
 			if GetUnitAbilityLevel(caster,FourCC('B001'))>0 and AttackType==ATTACK_TYPE_HERO then -- Критический удар под баффом
 				local rf=0
 				local lvl=GetUnitAbilityLevel(caster,FourCC('A002')) -- Критический урон
@@ -1029,6 +1054,7 @@ function InitDamage()
 					UnitRemoveAbility(caster,FourCC('B001'))
 				end
 			end
+
 			if GetUnitAbilityLevel(caster,FourCC('B000'))>0 and AttackType==ATTACK_TYPE_HERO then--вампирский удар, ещё нужны доп условия для проверки ближнего боя, иначер работает от любого типа урона
 				local effModel="Abilities\\Spells\\Human\\Heal\\HealTarget" --эффект лечения
 				local amount=0
@@ -1039,6 +1065,13 @@ function InitDamage()
 				elseif lvl==4 then amount=damage*0.17
 				end
 				HealUnit(caster,amount,1,effModel)--сам вампиризм, хотя это моя универсальная функция лечения
+			end
+
+			if GetUnitAbilityLevel(caster,FourCC('B003'))>0 and AttackType==ATTACK_TYPE_HERO then --Усиленный удар божественного щита
+				local lvl=GetUnitAbilityLevel(caster,FourCC('A00E') )
+				local dmgbonus=20+(30*lvl)
+				UnitDamageTarget( caster,target, dmgbonus, true, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_UNIVERSAL, WEAPON_TYPE_WHOKNOWS )
+				FlyTextTagCriticalStrike(caster,R2I(dmgbonus),casterOwner)
 			end
 		end
 	end)
@@ -1371,6 +1404,8 @@ end
 ----------------------------------
 ----------------------------------
 ----------------------------------
+---
+AnyData={}
 function InitSpellTrigger()
 	local SpellTrigger = CreateTrigger()
 	for i = 0, bj_MAX_PLAYER_SLOTS - 1 do
@@ -1388,6 +1423,107 @@ function InitSpellTrigger()
 		local id=GetPlayerId(ownplayer)
 
 
+
+		if spellId == FourCC('A00N') then -- Проклятье
+			--print("Проклятье")
+
+
+			if (AnyData[GetHandleId(target)]==nil) then
+				--print("first")
+				AnyData[GetHandleId(target)] = {
+					CurseCharge=0,
+				}
+			else
+				--print("second"..AnyData[GetHandleId(target)].CurseCharge)
+			end
+			local data=AnyData[GetHandleId(target)]
+			data.CurseCharge=data.CurseCharge+1
+			--print(data.CurseCharge)
+
+			local perioddmg={2,4,8,12}
+			local lvl=GetUnitAbilityLevel(caster,spellId)
+			local dummy=CreateUnit(GetOwningPlayer(caster), DummyID, GetUnitX(target), GetUnitY(target), 0)
+			local idc={FourCC('A00J'),FourCC('A00K'),FourCC('A00L'),FourCC('A00M')}
+
+			UnitApplyTimedLife(dummy,FourCC('BTLF'),1)
+
+			--if UnitAddAbility(dummy,FourCC('A00M')) then
+			if UnitAddAbility(dummy,idc[lvl]) then
+			--	print("добавлена")
+			end
+			SetUnitAbilityLevel(dummy,idc[lvl],data.CurseCharge)
+
+			--if Cast(dummy,0,0,target) then
+			if IssueTargetOrder(dummy,"cripple",target) then
+				--print("успех")
+			else
+				--print("провал")
+			end
+
+			TimerStart(CreateTimer(), 0.25, true, function()
+				UnitDamageTarget( caster,target, perioddmg[lvl], true, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC, WEAPON_TYPE_WHOKNOWS )
+				--print("наносим урон "..perioddmg[lvl])
+				if GetUnitAbilityLevel(target,FourCC('B005'))==0 then
+					DestroyTimer(GetExpiredTimer())
+					--print("Баф оконцен, нет урона")
+					data.CurseCharge=0
+				end
+			end)
+		end
+
+		if spellId == FourCC('A00G') then -- Копать
+			local z=GetTerrainZ(x,y)
+
+			if z>=40 then
+				local em="Objects\\Spawnmodels\\Undead\\ImpaleTargetDust\\ImpaleTargetDust.mdl"
+				local distance=DistanceBetweenXY(x,y,casterX,casterY)
+				local angle=AngleBetweenXY(x,y,GetUnitXY(caster))/bj_DEGTORAD
+				ShowUnit(caster,false)
+				UnitAddForce(caster,angle-180,distance/10,distance,0)
+			else
+				print("cannot be used on water "..z)
+			end
+		end
+
+		if spellId == FourCC('A00E') then -- божественный щит
+			local lvl=GetUnitAbilityLevel(caster,spellId)
+			--local dmgbonus=20+(30*lvl)
+			local regenbonus=lvl+2
+			UnitAddBonus(target,6,regenbonus)
+			--UnitAddBonus(target,4,dmgbonus)
+			TimerStart(CreateTimer(), 12, false, function()
+				UnitAddBonus(target,6,-regenbonus)
+			--	UnitAddBonus(target,4,-dmgbonus)
+			end)
+
+			TimerStart(CreateTimer(), 2, true, function()
+				if GetUnitAbilityLevel(caster,FourCC('B003'))>0 then
+					--print ("замедление области 600")
+					local e=nil
+					local dummy=CreateUnit(GetOwningPlayer(target), DummyID, GetUnitX(target), GetUnitY(target), 0)
+					UnitApplyTimedLife(dummy,FourCC('BTLF'),1)
+					UnitAddAbility(dummy,FourCC('A00F'))
+					SetUnitAbilityLevel(dummy,FourCC('A00F'),lvl)
+
+					GroupEnumUnitsInRange(perebor,GetUnitX(target),GetUnitY(target),600,nil)
+					while true do
+						e = FirstOfGroup(perebor)
+
+						if e == nil then break end
+						if UnitAlive(e) and IsUnitEnemy(e,ownplayer) then
+							--print("попытка замедлить"..GetUnitName(e))
+							if Cast(dummy,0,0,e) then
+							--if IssueTargetOrder(dummy,"slow",e) then
+							--	print("замедлен")
+							end
+						end
+						GroupRemoveUnit(perebor,e)
+					end
+				else
+					DestroyTimer(GetExpiredTimer())
+				end
+			end)
+		end
 		if spellId == FourCC('A006') then -- Прорыв
 
 			local z=GetTerrainZ(x,y)
@@ -1424,6 +1560,30 @@ function InitSpellTrigger()
 						UnitRemoveAbility(caster,FourCC('A00D'))
 						UnitRemoveAbility(caster,FourCC('B002'))
 					end
+				end
+			end)
+		end
+		if spellId == FourCC('A00I') then -- Золотая жила
+
+			local lvl=GetUnitAbilityLevel(caster,spellId)
+			--print("жила.."..lvl)
+			UnitAddAbility(caster,FourCC('A00H'))
+			SetUnitAbilityLevel(caster,FourCC('A00H'),lvl)
+			BlzUnitHideAbility(caster,FourCC('A00H'),true)
+			local sec=0
+			local dur={2.5,4,5,6}
+			TimerStart(CreateTimer(), TIMER_PERIOD, true, function()
+				sec=sec+TIMER_PERIOD
+				if UnitAlive(target) then
+					if GetUnitCurrentOrder()~=String2OrderIdBJ("attack") then
+						IssueTargetOrder(caster,"attack",target)
+					end
+				end
+				if sec>=dur[lvl] or not UnitAlive(target) then
+					--print("break")
+					DestroyTimer(GetExpiredTimer())
+					UnitRemoveAbility(caster,FourCC('A00H'))
+					UnitRemoveAbility(caster,FourCC('B004'))
 				end
 			end)
 		end
@@ -1955,23 +2115,50 @@ function UnitAddForce(hero,angle,speed,distance,MaxHeight)-- псевдо век
 		--if GetTerrainZ(GetUnitXY(hero))>60 then
 			SetUnitX(hero,newX)
 			SetUnitY(hero,newY)
-		--end
+		if GetUnitAbilityLevel(hero,FourCC('A00G'))>0 then
+			DestroyEffect(AddSpecialEffect("Objects\\Spawnmodels\\Undead\\ImpaleTargetDust\\ImpaleTargetDust.mdl",newX,newY))
+			SetFogStateRadius(GetOwningPlayer(hero),FOG_OF_WAR_VISIBLE,newX,newY,400,true)
+			if currentdistance>=distance then
+				ShowUnit(hero,true)
+				DestroyTimer(GetExpiredTimer())
+				SelectUnitForPlayerSingle(hero,GetOwningPlayer(hero))
+				SetUnitZ(hero,0)
+				local rf=0
+				local lvl=GetUnitAbilityLevel(hero,FourCC('A00G')) -- копать
+				if lvl==1 then	rf=GetRandomInt(1,10)
+				elseif lvl==2 then rf=GetRandomInt(1,7)
+				elseif lvl==3 then rf=GetRandomInt(1,3)
+				elseif lvl==4 then rf=GetRandomInt(1,2)
+				end
+				if rf==1 then
+					local rgold={
+						GetRandomInt(10,40),
+						GetRandomInt(25,60),
+						GetRandomInt(30,80),
+						GetRandomInt(100,120)
+					}
+					local bonus=rgold[lvl]
+					DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Items\\ResourceItems\\ResourceEffectTarget",newX,newY))
+					AdjustPlayerStateBJ(bonus,GetOwningPlayer(hero), PLAYER_STATE_RESOURCE_GOLD )
+					FlyTextTagGoldBounty(hero,"+"..bonus,GetOwningPlayer(hero))
 
-		if  i>3 and f<=GetTerrainZ(GetUnitXY(hero)) then --or (data.OnWater and data.OnTorrent==false)
+				end
+			end
+		end
+
+		if  i>3 and f<=GetTerrainZ(GetUnitXY(hero)) and  GetUnitAbilityLevel(hero,FourCC('A006'))>0  then-- прыжок орка
 			DestroyTimer(GetExpiredTimer())
 			BlzPauseUnitEx(hero,false)
-			if GetUnitAbilityLevel(hero,FourCC('A006')) >0 then
-				local lvl=GetUnitAbilityLevel(hero,FourCC('A006'))
-				local damage= 75*lvl
-				SetUnitZ(hero,0)
-				--print("дамажим всех"..damage)
-				DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\Thunderclap\\ThunderClapCaster",newX,newY))
-				if GetUnitAbilityLevel(hero,FourCC('A00B')) >0 then
-					CastArea(hero,FourCC('A009'),newX,newY,lvl)
-				end
-				UnitDamageArea(hero,damage,newX,newY,(400+(50*lvl))/2)
-				ResetUnitAnimation(hero)
+			local lvl=GetUnitAbilityLevel(hero,FourCC('A006'))
+			local damage= 75*lvl
+			SetUnitZ(hero,0)
+			--print("дамажим всех"..damage)
+			DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\Thunderclap\\ThunderClapCaster",newX,newY))
+			if GetUnitAbilityLevel(hero,FourCC('A00B')) >0 then
+				CastArea(hero,FourCC('A009'),newX,newY,lvl)
 			end
+			UnitDamageArea(hero,damage,newX,newY,(400+(50*lvl))/2)
+			ResetUnitAnimation(hero)
 		end
 	end)
 end

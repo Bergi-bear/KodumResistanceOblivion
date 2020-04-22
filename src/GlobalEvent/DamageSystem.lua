@@ -106,6 +106,23 @@ function InitDamage()
 
 			end
 			--Получение урона любым существом
+			if GetUnitAbilityLevel(caster,FourCC('B004'))>0 and GetUnitAbilityLevel(caster,FourCC('A00I'))>0 and AttackType==ATTACK_TYPE_HERO then -- Критический удар под баффом
+				local rf=0
+				local lvl=GetUnitAbilityLevel(caster,FourCC('A00I')) -- Критический урон
+				local bonus={200,100,50,25}
+				if lvl==1 then	rf=GetRandomInt(1,100)--
+				elseif lvl==2 then rf=GetRandomInt(1,50)--
+				elseif lvl==3 then rf=GetRandomInt(1,25)--
+				elseif lvl==4 then rf=GetRandomInt(1,14)--
+				end
+				--rf=1
+				if rf==1 then
+					DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Items\\ResourceItems\\ResourceEffectTarget",GetUnitXY(caster)))
+					AdjustPlayerStateBJ(bonus[lvl],GetOwningPlayer(caster), PLAYER_STATE_RESOURCE_GOLD )
+					FlyTextTagGoldBounty(caster,"+"..bonus[lvl],GetOwningPlayer(caster))
+				end
+			end
+
 			if GetUnitAbilityLevel(caster,FourCC('B001'))>0 and AttackType==ATTACK_TYPE_HERO then -- Критический удар под баффом
 				local rf=0
 				local lvl=GetUnitAbilityLevel(caster,FourCC('A002')) -- Критический урон
@@ -121,6 +138,7 @@ function InitDamage()
 					UnitRemoveAbility(caster,FourCC('B001'))
 				end
 			end
+
 			if GetUnitAbilityLevel(caster,FourCC('B000'))>0 and AttackType==ATTACK_TYPE_HERO then--вампирский удар, ещё нужны доп условия для проверки ближнего боя, иначер работает от любого типа урона
 				local effModel="Abilities\\Spells\\Human\\Heal\\HealTarget" --эффект лечения
 				local amount=0
@@ -131,6 +149,13 @@ function InitDamage()
 				elseif lvl==4 then amount=damage*0.17
 				end
 				HealUnit(caster,amount,1,effModel)--сам вампиризм, хотя это моя универсальная функция лечения
+			end
+
+			if GetUnitAbilityLevel(caster,FourCC('B003'))>0 and AttackType==ATTACK_TYPE_HERO then --Усиленный удар божественного щита
+				local lvl=GetUnitAbilityLevel(caster,FourCC('A00E') )
+				local dmgbonus=20+(30*lvl)
+				UnitDamageTarget( caster,target, dmgbonus, true, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_UNIVERSAL, WEAPON_TYPE_WHOKNOWS )
+				FlyTextTagCriticalStrike(caster,R2I(dmgbonus),casterOwner)
 			end
 		end
 	end)
