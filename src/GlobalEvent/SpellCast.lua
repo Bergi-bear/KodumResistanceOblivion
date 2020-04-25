@@ -42,20 +42,19 @@ function InitSpellTrigger()
 			local lvl=GetUnitAbilityLevel(caster,spellId)
 			local dummy=CreateUnit(GetOwningPlayer(caster), DummyID, GetUnitX(target), GetUnitY(target), 0)
 			local idc={FourCC('A00J'),FourCC('A00K'),FourCC('A00L'),FourCC('A00M')}
-
 			UnitApplyTimedLife(dummy,FourCC('BTLF'),1)
 
-			--if UnitAddAbility(dummy,FourCC('A00M')) then
+
 			if UnitAddAbility(dummy,idc[lvl]) then
-			--	print("добавлена")
+
 			end
 			SetUnitAbilityLevel(dummy,idc[lvl],data.CurseCharge)
 
-			--if Cast(dummy,0,0,target) then
+
 			if IssueTargetOrder(dummy,"cripple",target) then
-				--print("успех")
+
 			else
-				--print("провал")
+
 			end
 
 			TimerStart(CreateTimer(), 0.25, true, function()
@@ -183,6 +182,26 @@ function InitSpellTrigger()
 					UnitRemoveAbility(caster,FourCC('A00H'))
 					UnitRemoveAbility(caster,FourCC('B004'))
 				end
+			end)
+		end
+		if spellId == FourCC('A00Q') then -- Голем инферно
+			local damage={110,140,180,220}
+			local lvl=GetUnitAbilityLevel(caster,spellId)
+			local range={200,250,300,350}
+			TimerStart(CreateTimer(), 1, false, function()
+				UnitDamageArea(caster,damage[lvl],x,y,range[lvl])
+			end)
+		end
+		if spellId == FourCC('A00T') then -- Огненная буря
+			local damage={20,25,32,41}
+			local lvl=GetUnitAbilityLevel(caster,spellId)
+			local ch=GetUnitUserData(caster)
+			TimerStart(CreateTimer(), 0.25, false, function()
+				local totalDmg=ch*damage[lvl]
+				UnitDamageTarget( caster, target, totalDmg, true, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC, WEAPON_TYPE_WHOKNOWS )
+				SetUnitUserData(caster,0)
+				FlyTextTagCriticalStrike(caster,R2I(totalDmg),ownplayer)
+				CastArea(caster,FourCC('A00U'),GetUnitX(target),GetUnitY(target))
 			end)
 		end
 	end)

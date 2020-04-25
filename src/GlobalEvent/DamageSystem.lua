@@ -157,6 +157,28 @@ function InitDamage()
 				UnitDamageTarget( caster,target, dmgbonus, true, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_UNIVERSAL, WEAPON_TYPE_WHOKNOWS )
 				FlyTextTagCriticalStrike(caster,R2I(dmgbonus),casterOwner)
 			end
+			if GetUnitAbilityLevel(caster,FourCC('A00O'))>0 and AttackType==ATTACK_TYPE_HERO and  BlzGetUnitAbilityCooldownRemaining(caster,FourCC('A00O'))<=0.1  then --Цепь молний
+				--print("функция молнии")
+						--
+				local lvl=GetUnitAbilityLevel(caster,FourCC('A00O') )
+				local prok={
+					GetRandomInt(1,8),
+					GetRandomInt(1,7),
+					GetRandomInt(1,5),
+					GetRandomInt(1,4),
+				}
+				--print(BlzGetUnitAbilityCooldownRemaining(target,FourCC('A00O')))
+				--prok[lvl]=1
+				if prok[lvl]==1 then
+					BlzStartUnitAbilityCooldown(caster,FourCC('A00O'),4)
+
+					local dummy=CreateUnit(GetOwningPlayer(caster), DummyID, GetUnitX(caster), GetUnitY(caster), 0)
+					UnitApplyTimedLife(dummy,FourCC('BTLF'),1)
+					UnitAddAbility(dummy,FourCC('A00P'))
+					SetUnitAbilityLevel(dummy,FourCC('A00P'),lvl)
+					Cast(dummy,0,0,target)
+				end
+			end
 		end
 	end)
 end

@@ -50,7 +50,13 @@ function InitUnitDeath()
 			if GetUnitAbilityLevel(Killer,FourCC('A00B'))>0 then
 				SetUnitUserData(Killer,1+GetUnitUserData(Killer))
 			end
+
+			if GetUnitAbilityLevel(Killer,FourCC('A00S'))>0 then --Оживщий огонь
+				SetUnitUserData(Killer,1+GetUnitUserData(Killer))
+			end
 		end
+
+
 
 
 	end)

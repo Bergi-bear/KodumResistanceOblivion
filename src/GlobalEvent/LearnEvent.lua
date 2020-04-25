@@ -38,10 +38,30 @@ function LearnEvent()
 
 				UnitSetBonus(hero,6,CurrentCharges)
 				UnitSetBonus(hero,5,CurrentCharges*lvl)
-				if ch>0 then
 
+			end)
+		end
+		if GetLearnedSkill()==FourCC('A00S') and GetLearnedSkillLevel()==1 then -- Оживщий огонь
+			UnitAddAbility(hero, FourCC('Asud'))
+			AddUnitToStock(hero, FourCC('n00T'), 0, 0)
+			TimerStart(CreateTimer(), 0.1, true, function()-- обновление зарядов
+				local ch=GetUnitUserData(hero)
+				local CurrentCharges=0
+				local lvl=GetUnitAbilityLevel(hero,FourCC('A00S'))
+				local maxCH=3+(3*lvl)
+				if ch>=maxCH then
+					CurrentCharges=maxCH
+					SetUnitUserData(hero,maxCH)
+				else
+					CurrentCharges=ch
 				end
 
+				AddUnitToStock(hero, FourCC('n00T'), CurrentCharges, CurrentCharges)
+				UnitSetBonus(hero,4,CurrentCharges*lvl*2)
+
+				if not UnitAlive(hero) then
+					SetUnitUserData(hero,0)
+				end
 			end)
 		end
 	end)

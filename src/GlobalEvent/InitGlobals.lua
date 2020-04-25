@@ -18,6 +18,7 @@ do
 		--InitAllZones()
 		LeavePlayer()
 		LearnEvent()
+		InitTrig_Entire()
 		--BadChat() -- Функция для починки чата
 	end
 
