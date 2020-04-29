@@ -84,7 +84,7 @@ function InitSpellTrigger()
 
 		if spellId == FourCC('A00E') then -- божественный щит
 			local lvl=GetUnitAbilityLevel(caster,spellId)
-			--local dmgbonus=20+(30*lvl)
+			local dmgbonus=20+(30*lvl)
 			local regenbonus=lvl+2
 			UnitAddBonus(target,6,regenbonus)
 			--UnitAddBonus(target,4,dmgbonus)
@@ -109,10 +109,9 @@ function InitSpellTrigger()
 						if e == nil then break end
 						if UnitAlive(e) and IsUnitEnemy(e,ownplayer) then
 							--print("попытка замедлить"..GetUnitName(e))
-							if Cast(dummy,0,0,e) then
-							--if IssueTargetOrder(dummy,"slow",e) then
-							--	print("замедлен")
-							end
+							if Cast(dummy,0,0,e) then	end
+							UnitDamageTarget(caster,e, dmgbonus, true, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_UNIVERSAL, WEAPON_TYPE_WHOKNOWS )
+							--FlyTextTagCriticalStrike(e,R2I(dmgbonus),GetOwningPlayer(caster))
 						end
 						GroupRemoveUnit(perebor,e)
 					end
@@ -172,7 +171,7 @@ function InitSpellTrigger()
 			TimerStart(CreateTimer(), TIMER_PERIOD, true, function()
 				sec=sec+TIMER_PERIOD
 				if UnitAlive(target) then
-					if GetUnitCurrentOrder()~=String2OrderIdBJ("attack") then
+					if GetUnitCurrentOrder(caster)~=String2OrderIdBJ("attack") then
 						IssueTargetOrder(caster,"attack",target)
 					end
 				end
@@ -204,5 +203,59 @@ function InitSpellTrigger()
 				CastArea(caster,FourCC('A00U'),GetUnitX(target),GetUnitY(target))
 			end)
 		end
+		if spellId == FourCC('A00W') then -- удар по земле
+			local str=GetHeroStr(caster,true)
+			local lvl=GetUnitAbilityLevel(caster,spellId)
+			local damage={2,4,6,8}
+			local realdamage=str*damage[lvl]
+			local rx,ry=GetRandomInt(-100,100),GetRandomInt(-100,100)
+			TimerStart(CreateTimer(), 0.5, false, function()
+				UnitDamageArea(caster,realdamage,GetUnitX(caster),GetUnitY(caster),500)
+				IssuePointOrder(footman[1],"attack",GetUnitX(caster)+rx,GetUnitY(caster)+ry)
+				rx,ry=GetRandomInt(-100,100),GetRandomInt(-100,100)
+				IssuePointOrder(footman[2],"attack",GetUnitX(caster)+rx,GetUnitY(caster)+ry)
+			end)
+		end
+		if spellId == FourCC('A00V') then -- Лидер, приказ атаки
+			footman[3]=target
+			IssueTargetOrder(footman[1],"attack",target)
+			IssueTargetOrder(footman[2],"attack",target)
+			--print("Новая цель приказа"..GetUnitName(target))
+		end
+		if spellId == FourCC('A00R') then --  огненный шар
+			local lvl=GetUnitAbilityLevel(caster,spellId)
+			local damage={5,10,15,20}
+			local delay=0
+			TimerStart(CreateTimer(), 0.5, true, function()
+				delay=delay+1
+				UnitDamageTarget( caster, target, damage[lvl], true, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC, WEAPON_TYPE_WHOKNOWS )
+				if (GetUnitAbilityLevel(target,FourCC('B006'))==0 and delay>3) or delay>6 then
+					DestroyTimer(GetExpiredTimer())
+					--print("бафф огня закончился")
+				end
+			end)
+		end
+		if spellId == FourCC('A00Z') then --  сильный удар
+			local lvl=GetUnitAbilityLevel(caster,spellId)
+			UnitAddAbility(caster,FourCC('A00Y'))
+			BlzUnitHideAbility(caster,FourCC('A00Y'),true)
+			SetUnitAbilityLevel(caster,FourCC('A00Y'),lvl)
+		end
+		if spellId == FourCC('A010') then --  Страх
+			local lvl=GetUnitAbilityLevel(caster,spellId)
+			local StunTimed={0.5,1,1.5,2.5}
+			if GetUnitLifePercent(target)<=60 then
+				StunUnit(target,StunTimed[lvl])
+			else
+				FearUnit(target,AngleBetweenUnits(caster,target),2)
+			end
+		end
+		if spellId == FourCC('A011') then --Пробуждение
+
+			local angle=AngleBetweenUnits(caster,target)
+			TempUnit[GetHandleId(caster)]=target
+			UnitAddForce(caster,angle,50,DistanceBetweenXY(GetUnitX(caster),GetUnitY(caster),GetUnitXY(target)),0)
+		end
 	end)
 end
+TempUnit={}

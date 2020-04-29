@@ -151,12 +151,12 @@ function InitDamage()
 				HealUnit(caster,amount,1,effModel)--сам вампиризм, хотя это моя универсальная функция лечения
 			end
 
-			if GetUnitAbilityLevel(caster,FourCC('B003'))>0 and AttackType==ATTACK_TYPE_HERO then --Усиленный удар божественного щита
+			--[[if GetUnitAbilityLevel(caster,FourCC('B003'))>0 and AttackType==ATTACK_TYPE_HERO then --Усиленный удар божественного щита --ОШИБКА
 				local lvl=GetUnitAbilityLevel(caster,FourCC('A00E') )
 				local dmgbonus=20+(30*lvl)
 				UnitDamageTarget( caster,target, dmgbonus, true, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_UNIVERSAL, WEAPON_TYPE_WHOKNOWS )
 				FlyTextTagCriticalStrike(caster,R2I(dmgbonus),casterOwner)
-			end
+			end]]
 			if GetUnitAbilityLevel(caster,FourCC('A00O'))>0 and AttackType==ATTACK_TYPE_HERO and  BlzGetUnitAbilityCooldownRemaining(caster,FourCC('A00O'))<=0.1  then --Цепь молний
 				--print("функция молнии")
 						--
@@ -178,6 +178,11 @@ function InitDamage()
 					SetUnitAbilityLevel(dummy,FourCC('A00P'),lvl)
 					Cast(dummy,0,0,target)
 				end
+			end
+			if GetUnitAbilityLevel(caster,FourCC('B007'))>0 and AttackType==ATTACK_TYPE_HERO then --Есть бафф сильного удара
+				--print("удар под бафом удаляем способность")
+				UnitRemoveAbility(caster,FourCC('B007'))
+				UnitRemoveAbility(caster,FourCC('A00Y'))
 			end
 		end
 	end)
@@ -291,10 +296,4 @@ function PointContentDestructable (x,y,range,iskill,damage,hero)
 		end
 	end)
 	return content
-end
-
-function CreateFreeWood(x,y)
-	local  new=CreateUnit(Player(PLAYER_NEUTRAL_PASSIVE), FourCC('e002'),x,y , 0)
-	UnitAddAbility(new,FourCC('A000'))
-	IssueImmediateOrder(new,"WindWalk")
 end

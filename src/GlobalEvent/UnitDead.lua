@@ -54,10 +54,21 @@ function InitUnitDeath()
 			if GetUnitAbilityLevel(Killer,FourCC('A00S'))>0 then --Оживщий огонь
 				SetUnitUserData(Killer,1+GetUnitUserData(Killer))
 			end
+			if GetUnitAbilityLevel(Killer,FourCC('A00X'))>0 then --Исцеление
+				local lvl=GetUnitAbilityLevel(Killer,FourCC('A00X'))
+				local amountU={25,32,40,50}
+				local amountH={15,20,25,30}
+				local heal=0
+				if IsUnitType(DeadUnit,UNIT_TYPE_HERO) then
+					heal=BlzGetUnitMaxHP(Killer)*0.01*amountH[lvl]
+				else
+					heal=amountU[lvl]
+				end
+				HealUnit(Killer,heal)
+				DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt",Killer,"origin"))
+			end
 		end
-
-
-
+		-- просто кто-то умер
 
 	end)
 end

@@ -64,5 +64,65 @@ function LearnEvent()
 				end
 			end)
 		end
+		if GetLearnedSkill()==FourCC('A00V') and GetLearnedSkillLevel()==1 then --Лидерство
+			footman={
+				CreateUnit(GetOwningPlayer(hero),FourCC('h016'),GetUnitX(hero),GetUnitY(hero),0),
+				CreateUnit(GetOwningPlayer(hero),FourCC('h016'),GetUnitX(hero),GetUnitY(hero),0),
+			}
+			local RangeTeleport={500,1000,1500,2000}
+			local tptime={5,4,3,2}
+			local melledamage={20,40,60,100}
+			local IsTeleport=true
+
+			SetUnitVertexColor(footman[1],255,255,255,128)
+			SetUnitVertexColor(footman[2],255,255,255,128)
+			UnitAddAbility(footman[1],FourCC('Aloc'))
+			UnitAddAbility(footman[2],FourCC('Aloc'))
+
+			TimerStart(CreateTimer(), 1, true, function() -- обновление приказа пехотинцев
+				local lvl=GetUnitAbilityLevel(hero,FourCC('A00V'))
+				local rx,ry=GetRandomInt(-100,100),GetRandomInt(-100,100)
+				local target=footman[3]
+				BlzSetUnitBaseDamage(footman[1],melledamage[lvl],0)
+				BlzSetUnitBaseDamage(footman[2],melledamage[lvl],0)
+
+
+				if not UnitAlive(target) then target=nil	end
+				if GetUnitCurrentOrder(footman[1])~=String2OrderIdBJ("attack") and not target then
+					--print("нет цели для атаки")
+					IssuePointOrder(footman[1],"attack",GetUnitX(hero)+rx,GetUnitY(hero)+ry)
+					rx,ry=GetRandomInt(-100,100),GetRandomInt(-100,100)
+					IssuePointOrder(footman[2],"attack",GetUnitX(hero)+rx,GetUnitY(hero)+ry)
+				end
+
+				if (not IsUnitInRange(footman[1],hero,RangeTeleport[lvl]) or not IsUnitInRange(footman[2],hero,RangeTeleport[lvl]))  and IsTeleport then
+					IsTeleport=false
+					--print("Герой далеко, телепортируюсь")
+					TimerStart(CreateTimer(), tptime[lvl], false, function()
+						IsTeleport=true
+						footman[3]=nil
+						--print("тп к герою")
+						local effmodel="Abilities\\Spells\\NightElf\\Blink\\BlinkCaster"
+						DestroyEffect(AddSpecialEffect(effmodel,GetUnitXY(footman[1])))
+						DestroyEffect(AddSpecialEffect(effmodel,GetUnitXY(footman[2])))
+						SetUnitPosition(footman[1],GetUnitX(hero)+rx,GetUnitY(hero)+ry)
+						rx,ry=GetRandomInt(-100,100),GetRandomInt(-100,100)
+						SetUnitPosition(footman[2],GetUnitX(hero)+rx,GetUnitY(hero)+ry)
+						DestroyEffect(AddSpecialEffect(effmodel,GetUnitXY(footman[1])))
+						DestroyEffect(AddSpecialEffect(effmodel,GetUnitXY(footman[2])))
+					end)
+				end
+				--if GetUnitCurrentOrder()
+			end)
+		end
+		if GetLearnedSkill()==FourCC('A011') and GetLearnedSkillLevel()==1 then --Крепкая кожа
+			TimerStart(CreateTimer(),1 , true, function()
+				local lvl=GetUnitAbilityLevel(hero,FourCC('A011'))
+				local bhp={8,12,16,24}
+				if GetUnitLifePercent(hero)<=10 then
+					UnitSetBonus(hero,6,bhp[lvl])
+				end
+			end)
+		end
 	end)
 end

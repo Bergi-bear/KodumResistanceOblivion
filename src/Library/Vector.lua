@@ -10,15 +10,38 @@ function UnitAddForce(hero,angle,speed,distance,MaxHeight)-- псевдо век
 		local f=ParabolaZ(MaxHeight/2, distance,i*speed)+ZStart
 		--print(f)
 
+		--main
+		if GetUnitAbilityLevel(hero, FourCC('A011'))>0 then -- пробуждение
+			local lvl=GetUnitAbilityLevel(hero, FourCC('A011'))
+			local damage={80,160,240,320}
+			local target=TempUnit[GetHandleId(hero)]
+			angle=AngleBetweenUnits(hero,target)
+			if currentdistance>2000 then
+				DestroyTimer(GetExpiredTimer())
+			end
+			if IsUnitInRange(hero,target,100) then
+				--print("попал")
+				UnitDamageTarget( hero, target, damage[lvl], true, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_NORMAL, WEAPON_TYPE_WHOKNOWS )
+				DestroyTimer(GetExpiredTimer())
+				TimerStart(CreateTimer(), 1, false, function()
+					UnitDamageArea(hero,BlzGetUnitBaseDamage(hero,0),x,y,300)
+					SetUnitInvulnerable(hero,true)
+				end)
+				TimerStart(CreateTimer(), 3, false, function()
+					SetUnitInvulnerable(hero,false)
+				end)
+			end
+		end
+
 		SetUnitZ(hero,f)
 		i=i+1
 		local newX,newY=MoveX(x,speed,angle),MoveY(y,speed,angle)
+		SetUnitX(hero,newX)
+		SetUnitY(hero,newY)
+		--main
 
-		--SetUnitPositionSmooth(hero,newX,newY)
-		--if  not IsTerrainPathable(newX,newY,PATHING_TYPE_WALKABILITY)  then
-		--if GetTerrainZ(GetUnitXY(hero))>60 then
-			SetUnitX(hero,newX)
-			SetUnitY(hero,newY)
+
+
 		if GetUnitAbilityLevel(hero,FourCC('A00G'))>0 then
 			DestroyEffect(AddSpecialEffect("Objects\\Spawnmodels\\Undead\\ImpaleTargetDust\\ImpaleTargetDust.mdl",newX,newY))
 			SetFogStateRadius(GetOwningPlayer(hero),FOG_OF_WAR_VISIBLE,newX,newY,400,true)
