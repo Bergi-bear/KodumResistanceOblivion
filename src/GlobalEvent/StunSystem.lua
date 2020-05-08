@@ -9,40 +9,40 @@ function StunUnit(hero,dur)
 	--	print("оглушен первый раз")
 		StunSystem[GetHandleId(hero)]={
 			Time=0,
-			Eff=nil
+			Eff=nil,
+			Timer=nil
 		}
 	end
 	local data=StunSystem[GetHandleId(hero)]
-	--print(1)
-
-	if not data.eff then DestroyEffect(data.eff) end
-
-	--print(2)
-
-	data.Eff=AddSpecialEffectTarget(stuneff,hero,"overhead")
 
 	local curdur=0
-	if data.Time<dur and data.Time==0 then
-		--print("полное оглушение, обновляем")
-		data.Time=dur
-	else
-		print("Есть более долгое оглушение")
-		return
-		--dur=data.Time
+	if data.Time==0 then
+		data.Timer=CreateTimer()
+		--print("старт нового таймера")
+		data.Eff=AddSpecialEffectTarget(stuneff,hero,"overhead")
+		BlzPauseUnitEx(hero,true)
 	end
 
-	BlzPauseUnitEx(hero,true)
+	if data.Time<dur  then
+		--print("Более сильное оглушение, обновляем время")
+		data.Time=dur
+	else
+		--print("Есть более долгое оглушение")
+		return
+	end
 
-	TimerStart(CreateTimer(), 0.1, true, function()
+	TimerStart(data.Timer, 0.1, true, function()
 		curdur=curdur+0.1
-	--	print(data.Time)
 		data.Time=data.Time-0.1
-		if curdur>=dur then
+		--print(data.Time)
+		if curdur>=dur or not UnitAlive(hero) then
+			--print("Вышел из стана")
 			BlzPauseUnitEx(hero,false)
-		--	print("end")
+			--BlzPauseUnitEx(hero,false)
 			DestroyTimer(GetExpiredTimer())
 			data.Time=0
 			DestroyEffect(data.Eff)
+			data.Timer=nil
 		end
 	end)
 end

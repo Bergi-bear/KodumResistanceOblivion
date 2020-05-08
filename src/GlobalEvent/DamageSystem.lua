@@ -184,6 +184,26 @@ function InitDamage()
 				UnitRemoveAbility(caster,FourCC('B007'))
 				UnitRemoveAbility(caster,FourCC('A00Y'))
 			end
+			if GetUnitAbilityLevel(target,FourCC('BHca'))>0 and GetUnitAbilityLevel(caster,FourCC('A012'))>0 and AttackType==ATTACK_TYPE_HERO then --Есть бафф Оедяного дыхания
+				--print("атака под ледяным дыханием")
+				local lvl=GetUnitAbilityLevel(caster,FourCC('A012') )
+				local proc={
+					GetRandomInt(1,100),
+					GetRandomInt(1,50),
+					GetRandomInt(1,33),
+					GetRandomInt(1,25),
+				}
+				--proc[lvl]=1
+				--if true then
+				if proc[lvl]==1 then
+					local eff=AddSpecialEffectTarget("Abilities\\Spells\\Undead\\FreezingBreath\\FreezingBreathTargetArt",target,"origin")
+					StunUnit(target,2)
+					TimerStart(CreateTimer(), 2, false, function()
+						DestroyEffect(eff)
+					end)
+				end
+
+			end
 		end
 	end)
 end

@@ -33,7 +33,7 @@ function CreateUnitsForPlayer0()
     local unitID
     local t
     local life
-    u = BlzCreateUnitWithSkin(p, FourCC("H00S"), 447.8, -14266.8, 230.630, FourCC("H00S"))
+    u = BlzCreateUnitWithSkin(p, FourCC("H00J"), 462.3, -14410.7, 312.910, FourCC("H00J"))
     SetHeroLevel(u, 30, false)
 end
 
@@ -74,6 +74,8 @@ function CreateNeutralHostile()
     SetUnitAcquireRange(u, 200.0)
     u = BlzCreateUnitWithSkin(p, FourCC("H00V"), 1.0, -13011.3, 67.150, FourCC("H00V"))
     SetHeroLevel(u, 5, false)
+    SetUnitAcquireRange(u, 200.0)
+    u = BlzCreateUnitWithSkin(p, FourCC("H00V"), -440.6, -14870.0, 67.150, FourCC("H00V"))
     SetUnitAcquireRange(u, 200.0)
     u = BlzCreateUnitWithSkin(p, FourCC("H00V"), 14.4, -12411.2, 67.150, FourCC("H00V"))
     SetHeroLevel(u, 10, false)
@@ -1080,6 +1082,26 @@ function InitDamage()
 				UnitRemoveAbility(caster,FourCC('B007'))
 				UnitRemoveAbility(caster,FourCC('A00Y'))
 			end
+			if GetUnitAbilityLevel(target,FourCC('BHca'))>0 and GetUnitAbilityLevel(caster,FourCC('A012'))>0 and AttackType==ATTACK_TYPE_HERO then --Есть бафф Оедяного дыхания
+				--print("атака под ледяным дыханием")
+				local lvl=GetUnitAbilityLevel(caster,FourCC('A012') )
+				local proc={
+					GetRandomInt(1,100),
+					GetRandomInt(1,50),
+					GetRandomInt(1,33),
+					GetRandomInt(1,25),
+				}
+				--proc[lvl]=1
+				--if true then
+				if proc[lvl]==1 then
+					local eff=AddSpecialEffectTarget("Abilities\\Spells\\Undead\\FreezingBreath\\FreezingBreathTargetArt",target,"origin")
+					StunUnit(target,2)
+					TimerStart(CreateTimer(), 2, false, function()
+						DestroyEffect(eff)
+					end)
+				end
+
+			end
 		end
 	end)
 end
@@ -1496,6 +1518,15 @@ function LearnEvent()
 				--if GetUnitCurrentOrder()
 			end)
 		end
+		if GetLearnedSkill()==FourCC('A011') and GetLearnedSkillLevel()==1 then --Крепкая кожа
+			TimerStart(CreateTimer(),1 , true, function()
+				local lvl=GetUnitAbilityLevel(hero,FourCC('A011'))
+				local bhp={8,12,16,24}
+				if GetUnitLifePercent(hero)<=10 then
+					UnitSetBonus(hero,6,bhp[lvl])
+				end
+			end)
+		end
 	end)
 end
 ---
@@ -1773,9 +1804,97 @@ function InitSpellTrigger()
 			TempUnit[GetHandleId(caster)]=target
 			UnitAddForce(caster,angle,50,DistanceBetweenXY(GetUnitX(caster),GetUnitY(caster),GetUnitXY(target)),0)
 		end
+		if spellId == FourCC('A013') then --Холодное объятие
+			local lvl=GetUnitAbilityLevel(caster,spellId)
+			local heal={25,50,75,100}
+			local eff=AddSpecialEffectTarget("Abilities\\Spells\\Undead\\FreezingBreath\\FreezingBreathTargetArt",target,"origin")
+			StunUnit(target,4)
+			local sec=0
+			TimerStart(CreateTimer(), 1, true, function()
+				sec=sec+1
+				if sec==4 then
+					DestroyTimer(GetExpiredTimer())
+				end
+				HealUnit(target,heal[lvl])
+			end)
+			TimerStart(CreateTimer(), 4, false, function()
+				DestroyEffect(eff)
+			end)
+		end
+		if spellId == FourCC('A014') then --Глыба льда
+			CreateIceBlast(caster,spellId,x,y)
+		end
+		if spellId == FourCC('A015') then --Ледяная волна
+			local lvl=GetUnitAbilityLevel(caster,spellId)
+			local stun={3,3.5,4,5}
+			local mainDamage={25,35,45,65}
+			local sec=0
+			local model="Abilities\\Spells\\Human\\Blizzard\\BlizzardTarget"
+			local effMain=nil
+			IceBlast[1]=x
+			IceBlast[2]=y
+			IceBlast[3]=caster
+			TimerStart(CreateTimer(), 1, true, function()
+				local eff=AddSpecialEffect("frost warp",x,y)
+				BlzSetSpecialEffectScale(eff,5)
+				DestroyEffect(eff)
+
+				for i=1,7 do
+					local angle=60
+					if i==1 then
+						effMain=AddSpecialEffect("IceVortex",x,y)
+						BlzSetSpecialEffectScale(eff,3)
+					else
+						DestroyEffect(AddSpecialEffect(model,MoveXY(x,y,200,angle*i)))
+					end
+				end
+
+				sec=sec+1
+				if sec==5 then
+
+					DestroyTimer(GetExpiredTimer())
+					BlzSetSpecialEffectPosition(effMain,5000,5000,0)
+					DestroyEffect(effMain)
+					IceBlast[1]=0
+					IceBlast[2]=0
+					IceBlast[3]=nil
+
+				end
+				local e=nil
+				--local dummy=CreateUnit(GetOwningPlayer(target), DummyID, GetUnitX(target), GetUnitY(target), 0)
+				--UnitApplyTimedLife(dummy,FourCC('BTLF'),1)
+				--UnitAddAbility(dummy,FourCC('A00F'))
+				--SetUnitAbilityLevel(dummy,FourCC('A00F'),lvl)
+				GroupEnumUnitsInRange(perebor,x,y,325,nil)
+				while true do
+					e = FirstOfGroup(perebor)
+
+					if e == nil then break end
+					if UnitAlive(e) and IsUnitEnemy(e,ownplayer) then
+						--print("попытка замедлить"..GetUnitName(e))
+
+						local eff2=AddSpecialEffectTarget("Abilities\\Spells\\Undead\\FreezingBreath\\FreezingBreathTargetArt",e,"origin")
+						StunUnit(e,stun[lvl])
+						TimerStart(CreateTimer(), stun[lvl], false, function()
+							DestroyEffect(eff2)
+						end)
+
+						--if Cast(dummy,0,0,e) then	end
+						UnitDamageTarget(caster,e, mainDamage[lvl], true, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC, WEAPON_TYPE_WHOKNOWS )
+						--if not UnitAlive(e) and IsUnitType(e,UNIT_TYPE_HERO) then
+						--	print("убил способностью героя")
+
+						--end
+						--FlyTextTagCriticalStrike(e,R2I(dmgbonus),GetOwningPlayer(caster))
+					end
+					GroupRemoveUnit(perebor,e)
+				end
+			end)
+		end
 	end)
 end
 TempUnit={}
+IceBlast={}
 ---
 --- Generated by EmmyLua(https://github.com/EmmyLua)
 --- Created by Bergi.
@@ -1787,40 +1906,40 @@ function StunUnit(hero,dur)
 	--	print("оглушен первый раз")
 		StunSystem[GetHandleId(hero)]={
 			Time=0,
-			Eff=nil
+			Eff=nil,
+			Timer=nil
 		}
 	end
 	local data=StunSystem[GetHandleId(hero)]
-	--print(1)
-
-	if not data.eff then DestroyEffect(data.eff) end
-
-	--print(2)
-
-	data.Eff=AddSpecialEffectTarget(stuneff,hero,"overhead")
 
 	local curdur=0
-	if data.Time<dur and data.Time==0 then
-		--print("полное оглушение, обновляем")
-		data.Time=dur
-	else
-		print("Есть более долгое оглушение")
-		return
-		--dur=data.Time
+	if data.Time==0 then
+		data.Timer=CreateTimer()
+		--print("старт нового таймера")
+		data.Eff=AddSpecialEffectTarget(stuneff,hero,"overhead")
+		BlzPauseUnitEx(hero,true)
 	end
 
-	BlzPauseUnitEx(hero,true)
+	if data.Time<dur  then
+		--print("Более сильное оглушение, обновляем время")
+		data.Time=dur
+	else
+		--print("Есть более долгое оглушение")
+		return
+	end
 
-	TimerStart(CreateTimer(), 0.1, true, function()
+	TimerStart(data.Timer, 0.1, true, function()
 		curdur=curdur+0.1
-	--	print(data.Time)
 		data.Time=data.Time-0.1
-		if curdur>=dur then
+		--print(data.Time)
+		if curdur>=dur or not UnitAlive(hero) then
+			--print("Вышел из стана")
 			BlzPauseUnitEx(hero,false)
-		--	print("end")
+			--BlzPauseUnitEx(hero,false)
 			DestroyTimer(GetExpiredTimer())
 			data.Time=0
 			DestroyEffect(data.Eff)
+			data.Timer=nil
 		end
 	end)
 end
@@ -1895,7 +2014,41 @@ function InitUnitDeath()
 			end
 		end
 		-- просто кто-то умер
+		if IsUnitType(DeadUnit,UNIT_TYPE_HERO) and IsUnitInRangeXY(DeadUnit,IceBlast[1],IceBlast[2],325) then
+			CreateIceBlast(IceBlast[3],FourCC('A014'),GetUnitXY(DeadUnit))
+		end
 
+	end)
+end
+---
+--- Generated by EmmyLua(https://github.com/EmmyLua)
+--- Created by Bergi.
+--- DateTime: 06.05.2020 3:13
+---
+function CreateIceBlast(caster,spellId,x,y)
+	local lvl=GetUnitAbilityLevel(caster,spellId)
+	if lvl==0 then return end
+	local damage={60,80,100,120}
+	local range={200,220,260,300}
+	local delay={4,3,2,1}
+	local eff={}
+	for i=1,7 do
+		local angle=60
+		if i==1 then
+			eff[i]=AddSpecialEffect("Abilities\\Spells\\Undead\\FreezingBreath\\FreezingBreathTargetArt",x,y)
+		else
+			eff[i]=AddSpecialEffect("Abilities\\Spells\\Undead\\FreezingBreath\\FreezingBreathTargetArt",MoveXY(x,y,range[lvl]*.3,angle*i))
+		end
+	end
+
+	TimerStart(CreateTimer(), delay[lvl], false, function()
+		--print("destroy")
+		UnitDamageArea(caster,damage[lvl],x,y,range[lvl])
+		for i=1,7 do
+			--print(i.." d")
+			DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Undead\\FrostNova\\FrostNovaTarget",BlzGetLocalSpecialEffectX(eff[i]),BlzGetLocalSpecialEffectY(eff[i])))
+			DestroyEffect(eff[i])
+		end
 	end)
 end
 --- Generated by EmmyLua(https://github.com/EmmyLua)
