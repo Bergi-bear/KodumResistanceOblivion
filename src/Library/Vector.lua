@@ -36,13 +36,60 @@ function UnitAddForce(hero,angle,speed,distance,MaxHeight)-- псевдо век
 		SetUnitZ(hero,f)
 		i=i+1
 		local newX,newY=MoveX(x,speed,angle),MoveY(y,speed,angle)
+		local perepad=GetUnitZ(hero)-GetTerrainZ(MoveXY(x,y,speed*3,angle))
 		SetUnitX(hero,newX)
 		SetUnitY(hero,newY)
+
 		--main
 
+		if GetUnitAbilityLevel(hero,FourCC('A016'))>0 then -- прорыва хранителя сада
+			local lvl=GetUnitAbilityLevel(hero,FourCC('A016') )
+			local stun={1.5,2,3,4}
+			local range={90,100,110,120}
+			local damage={80,160,240,320}
 
 
-		if GetUnitAbilityLevel(hero,FourCC('A00G'))>0 then
+			local e=nil
+
+			GroupEnumUnitsInRange(perebor,GetUnitX(hero),GetUnitY(hero),range[lvl],nil)
+			while true do
+				e = FirstOfGroup(perebor)
+				if e == nil then break end
+				if UnitAlive(e) and IsUnitEnemy(e,GetOwningPlayer(hero)) and not IsUnitType(e,UNIT_TYPE_STRUCTURE) then
+					GroupAddUnit(ForceGroup[GetHandleId(hero)],e)
+				end
+				GroupRemoveUnit(perebor,e)
+			end
+
+
+
+			ForGroup(ForceGroup[GetHandleId(hero)],function()
+				local enum=GetEnumUnit()
+				local newXE,newYE=MoveXY(GetUnitX(enum),GetUnitY(enum),speed,angle)
+				SetUnitPositionSmooth(enum,newXE,newYE)
+			--	SetUnitX(enum,newXE)
+			--	SetUnitY(enum,newYE)
+			end)
+			--print(perepad)
+			if currentdistance>=distance or perepad<=-30 then
+				DestroyGroup(ForceGroup[GetHandleId(hero)])
+				ResetUnitAnimation(hero)
+				SetUnitTimeScale(hero,1)
+				BlzSetUnitFacingEx(hero,angle)
+				DestroyTimer(GetExpiredTimer())
+				SelectUnitForPlayerSingle(hero,GetOwningPlayer(hero))
+				--print("прибыл в точку назначения")
+				BlzPauseUnitEx(hero,false)
+				if perepad<=-30 then
+					StanArea(hero,range[lvl],stun[lvl])
+					DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\Thunderclap\\ThunderClapCaster",GetUnitXY(hero)))
+				end
+				UnitDamageArea(hero,damage[lvl],GetUnitX(hero),GetUnitY(hero),range[lvl]*2)
+			end
+		end
+
+
+		if GetUnitAbilityLevel(hero,FourCC('A00G'))>0 then --копать
 			DestroyEffect(AddSpecialEffect("Objects\\Spawnmodels\\Undead\\ImpaleTargetDust\\ImpaleTargetDust.mdl",newX,newY))
 			SetFogStateRadius(GetOwningPlayer(hero),FOG_OF_WAR_VISIBLE,newX,newY,400,true)
 			if currentdistance>=distance then

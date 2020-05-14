@@ -71,7 +71,7 @@ function InitSpellTrigger()
 		if spellId == FourCC('A00G') then -- Копать
 			local z=GetTerrainZ(x,y)
 
-			if z>=40 then
+			if z>=-190 then
 				local em="Objects\\Spawnmodels\\Undead\\ImpaleTargetDust\\ImpaleTargetDust.mdl"
 				local distance=DistanceBetweenXY(x,y,casterX,casterY)
 				local angle=AngleBetweenXY(x,y,GetUnitXY(caster))/bj_DEGTORAD
@@ -124,7 +124,7 @@ function InitSpellTrigger()
 
 			local z=GetTerrainZ(x,y)
 
-			if z>=40 then
+			if z>=-190 then
 				local distance=DistanceBetweenXY(x,y,casterX,casterY)
 				local angle=AngleBetweenXY(x,y,GetUnitXY(caster))/bj_DEGTORAD
 				BlzPauseUnitEx(caster,true)
@@ -343,7 +343,83 @@ function InitSpellTrigger()
 				end
 			end)
 		end
+		if spellId == FourCC('A016') then -- Прорыв хранителя сада
+			local lvl=GetUnitAbilityLevel(caster,FourCC('A016') )
+			local stun={1.5,2,3,4}
+			local range={90,100,110,120}
+			local z=GetTerrainZ(x,y)
+			local distanceMax={600,800,1000,1200}
+			if z>=-190 then
+				local distance=DistanceBetweenXY(x,y,casterX,casterY)
+				local angle=AngleBetweenXY(x,y,GetUnitXY(caster))/bj_DEGTORAD
+				BlzPauseUnitEx(caster,true)
+				SetUnitAnimationByIndex(caster,GetRandomInt(1,10))
+				SetUnitTimeScale(caster,4)
+
+
+				local e=nil
+				ForceGroup[GetHandleId(caster)]=CreateGroup()
+
+				GroupEnumUnitsInRange(perebor,GetUnitX(caster),GetUnitY(caster),range[lvl],nil)
+				while true do
+					e = FirstOfGroup(perebor)
+
+					if e == nil then break end
+					if UnitAlive(e) and IsUnitEnemy(e,GetOwningPlayer(caster)) and not IsUnitType(e,UNIT_TYPE_STRUCTURE) then
+						--print(GetUnitName(e))
+						--StunUnit(e,duration)
+						GroupAddUnit(ForceGroup[GetHandleId(caster)],e)
+					end
+					GroupRemoveUnit(perebor,e)
+				end
+
+				UnitAddForce(caster,angle-180,20,distance,0)
+
+			else
+				BlzEndUnitAbilityCooldown(caster,spellId)
+				print("cannot be used on water "..z)
+			end
+
+		end
+		if spellId == FourCC('A017') then -- Сокрашающий удар
+			local lvl=GetUnitAbilityLevel(caster,spellId )
+			local damage=BlzGetUnitBaseDamage(caster,0)*2
+			local addishenDamage={15,35,50,70}
+			local k=0
+			BlzPauseUnitEx(caster,true)
+			--local r=GetRandomInt(0,10)
+			--print(r)
+			SetUnitAnimationByIndex(caster,5)
+			TimerStart(CreateTimer(), 1.3, false, function()
+				ResetUnitAnimation(caster)
+			end)
+			TimerStart(CreateTimer(), 0.8, false, function()
+				BlzPauseUnitEx(caster,false)
+				--
+				--Считаем врагов
+				local e=nil
+				GroupEnumUnitsInRange(perebor,x,y,300,nil)
+				while true do
+					e = FirstOfGroup(perebor)
+
+					if e == nil then break end
+					if UnitAlive(e) and IsUnitEnemy(e,ownplayer) then
+						k=k+1
+					end
+					GroupRemoveUnit(perebor,e)
+				end
+				if k> 0 then
+					local totalDmg=damage+addishenDamage[lvl]*k
+					FlyTextTagCriticalStrike(caster,R2I(totalDmg),GetOwningPlayer(caster))
+					UnitDamageArea(caster,totalDmg,x,y,300)
+				end
+
+			end)
+
+		end
+
 	end)
 end
 TempUnit={}
 IceBlast={}
+ForceGroup={}

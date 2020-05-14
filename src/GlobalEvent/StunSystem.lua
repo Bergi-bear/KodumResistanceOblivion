@@ -46,3 +46,20 @@ function StunUnit(hero,dur)
 		end
 	end)
 end
+
+function StanArea(hero,range,duration)
+	local e=nil
+
+	GroupEnumUnitsInRange(perebor,GetUnitX(hero),GetUnitY(hero),range,nil)
+	while true do
+		e = FirstOfGroup(perebor)
+
+		if e == nil then break end
+		if UnitAlive(e) and IsUnitEnemy(e,GetOwningPlayer(hero)) and not IsUnitType(e,UNIT_TYPE_STRUCTURE) then
+		--	print(GetUnitName(e))
+			StunUnit(e,duration)
+		end
+		GroupRemoveUnit(perebor,e)
+	end
+
+end
