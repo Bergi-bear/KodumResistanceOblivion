@@ -136,3 +136,32 @@ function UnitAddForce(hero,angle,speed,distance,MaxHeight)-- псевдо век
 		end
 	end)
 end
+
+onForces = {}
+function UnitAddForceSimple(hero, angle, speed, distance)
+	-- псевдо вектор использовать только для юнитов
+	local currentdistance = 0
+	if onForces[GetHandleId(hero)] == nil then
+		onForces[GetHandleId(hero)] = true
+	end
+	if not IsUnitType(hero, UNIT_TYPE_STRUCTURE) and onForces[GetHandleId(hero)]  then
+		onForces[GetHandleId(hero)]=false
+		TimerStart(CreateTimer(), TIMER_PERIOD, true, function()
+			currentdistance = currentdistance + speed
+			--print(currentdistance)
+			local x, y = GetUnitX(hero), GetUnitY(hero)
+			local newX, newY = MoveX(x, speed, angle), MoveY(y, speed, angle)
+
+			SetUnitPositionSmooth(hero, newX, newY)
+
+			if currentdistance >= distance then
+				--or (data.OnWater and data.OnTorrent==false)
+				--data.IsDisabled=false
+				--data.OnWater=false
+				DestroyTimer(GetExpiredTimer())
+				onForces[GetHandleId(hero)]=true
+				--print("stop cur="..currentdistance.." dist="..distance)
+			end
+		end)
+	end
+end

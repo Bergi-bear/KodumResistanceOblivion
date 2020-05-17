@@ -106,6 +106,32 @@ function InitDamage()
 
 			end
 			--Получение урона любым существом
+			if GetUnitAbilityLevel(caster,FourCC('A018'))>0 and AttackType==ATTACK_TYPE_HERO and BlzGetUnitAbilityCooldownRemaining(caster,FourCC('A018'))<=0.1 then -- победоносец
+				print("победоносец")
+				local lvl=GetUnitAbilityLevel(caster,FourCC('A018'))
+				local bonusdmg={0.8,1.2,1.6,2}
+				local distance={500,600,700,800}
+				local cd={30,24,18,12}
+				local x,y=MoveXY(GetUnitX(caster),GetUnitY(caster),150,GetUnitFacing(caster))
+				local e=nil
+				if UnitDamageArea(caster,BlzGetUnitBaseDamage(caster,0)*bonusdmg[lvl],x,y,300) then
+					BlzStartUnitAbilityCooldown(caster,FourCC('A018'),cd[lvl])
+				end
+				GroupEnumUnitsInRange(perebor,x,y,150,nil)
+				while true do
+					e = FirstOfGroup(perebor)
+
+					if e == nil then break end
+					if UnitAlive(e) and IsUnitEnemy(e,GetOwningPlayer(caster)) then
+
+						UnitAddForceSimple(e,AngleBetweenUnits(caster,e),30,distance[lvl],0)
+					end
+					GroupRemoveUnit(perebor,e)
+				end
+
+			end
+
+
 			if GetUnitAbilityLevel(caster,FourCC('B004'))>0 and GetUnitAbilityLevel(caster,FourCC('A00I'))>0 and AttackType==ATTACK_TYPE_HERO then -- Критический удар под баффом
 				local rf=0
 				local lvl=GetUnitAbilityLevel(caster,FourCC('A00I')) -- Критический урон

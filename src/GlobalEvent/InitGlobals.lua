@@ -19,6 +19,7 @@ do
 		LeavePlayer()
 		LearnEvent()
 		InitTrig_Entire()
+		HideEverything()
 		--BadChat() -- Функция для починки чата
 	end
 
