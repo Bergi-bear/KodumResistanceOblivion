@@ -10,7 +10,7 @@ do
 	local InitGlobalsOrigin = InitGlobals -- записываем InitGlobals в переменную
 	function InitGlobals()
 		InitGlobalsOrigin() -- вызываем оригинальную InitGlobals из переменной
-		--InitGameCore()
+		InitHEROTable()
 		--InitMouseMoveTrigger()
 		InitDamage()
 		InitSpellTrigger()
@@ -20,7 +20,19 @@ do
 		LearnEvent()
 		InitTrig_Entire()
 		HideEverything()
+		KeyRegistration()
+		InitSelectionRegister()
+		InitMouseMoveTrigger()
 		--BadChat() -- Функция для починки чата
 	end
+end
 
+function InitHEROTable()
+	for i = 0, bj_MAX_PLAYER_SLOTS - 1 do
+		HERO[i]={
+			pid=i,
+			UnitHero=nil,
+			MarkIsActivated=false,
+		}
+	end
 end

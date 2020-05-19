@@ -353,7 +353,11 @@ function InitSpellTrigger()
 				local distance=DistanceBetweenXY(x,y,casterX,casterY)
 				local angle=AngleBetweenXY(x,y,GetUnitXY(caster))/bj_DEGTORAD
 				BlzPauseUnitEx(caster,true)
-				SetUnitAnimationByIndex(caster,GetRandomInt(1,10))
+				--IssueImmediateOrder(caster,"stop")
+				--SetUnitAnimation(caster,"walk")
+				local r=GetRandomInt(1,10)
+				--print(r)
+				SetUnitAnimationByIndex(caster,5)
 				SetUnitTimeScale(caster,4)
 
 
