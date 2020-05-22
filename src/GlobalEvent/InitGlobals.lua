@@ -19,7 +19,10 @@ do
 		LeavePlayer()
 		LearnEvent()
 		InitTrig_Entire()
+		--interface
 		HideEverything()
+
+		CreateAndStartClock()
 		KeyRegistration()
 		InitSelectionRegister()
 		InitMouseMoveTrigger()
