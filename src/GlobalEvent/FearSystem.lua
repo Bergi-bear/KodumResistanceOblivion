@@ -12,7 +12,6 @@ function FearUnit(hero,angle,time)
 		sec=sec+TIMER_PERIOD
 		--
 		if GetUnitCurrentOrder(hero)~=String2OrderIdBJ("move") then
-		--	print("errormove"..OrderId2String(GetUnitCurrentOrder(hero)))
 			IssuePointOrder(hero,"move",x,y)
 		end
 		if sec>=time then

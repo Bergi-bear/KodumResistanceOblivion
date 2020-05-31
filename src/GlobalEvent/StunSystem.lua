@@ -61,5 +61,4 @@ function StanArea(hero,range,duration)
 		end
 		GroupRemoveUnit(perebor,e)
 	end
-
 end

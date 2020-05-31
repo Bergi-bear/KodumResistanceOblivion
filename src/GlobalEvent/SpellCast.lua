@@ -421,6 +421,46 @@ function InitSpellTrigger()
 			end)
 
 		end
+		if spellId == FourCC('A01A') then -- Лесное колдовство
+			local lvl=GetUnitAbilityLevel(caster,spellId )
+			local rangeDmg={150,200,250,320}
+			local range={150,200,250,320}
+			local duration={2,4,6,8}
+			local dmgGroup=CreateGroup()
+			local ThisTrigger = CreateTrigger()
+			UnitAddAbility(caster,FourCC('A01B')) --скорость
+			SetUnitAbilityLevel(caster,FourCC('A01B'),lvl)
+			--print("Колдовство")
+			--DisablePathing(caster)
+			TriggerRegisterUnitInRangeSimple(ThisTrigger, range[lvl], caster)
+			TriggerAddAction(ThisTrigger, function()
+				local CollisionUnit=GetTriggerUnit()
+				if IsUnitEnemy(caster,GetOwningPlayer(CollisionUnit)) and not IsUnitInGroup(CollisionUnit,dmgGroup) then
+					GroupAddUnit(dmgGroup,CollisionUnit)
+					UnitDamageTarget( caster,CollisionUnit, rangeDmg[lvl], true, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC, WEAPON_TYPE_WHOKNOWS )
+				end
+			end)
+
+			local chkinvis=CreateTimer()
+
+			TimerStart(CreateTimer(), 1, false, function()
+				UnitAddAbility(caster,FourCC('A019'))
+				TimerStart(chkinvis, TIMER_PERIOD, true, function()
+					if GetUnitAbilityLevel(caster,FourCC('B009'))==0 then
+						UnitAddItemById(caster,FourCC('I000'))
+					end
+				end)
+			end)
+
+			TimerStart(CreateTimer(), duration[lvl], false, function()
+				UnitRemoveAbility(caster,FourCC('A019'))
+				UnitRemoveAbility(caster,FourCC('A01B'))
+				UnitRemoveAbility(caster,FourCC('B009'))
+				DestroyGroup(dmgGroup)
+				DestroyTimer(chkinvis)
+				DestroyTrigger(ThisTrigger)
+			end)
+		end
 
 	end)
 end

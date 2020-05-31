@@ -217,3 +217,15 @@ function AngleBetweenUnits(caster,target)
 	local yb,ya,xb,xa=GetUnitY(target),GetUnitY(caster),GetUnitX(target),GetUnitX(caster)
 	return Atan2BJ(yb - ya, xb - xa)
 end
+
+-- функия принадлежности точки сектора
+-- x1, x2 - координаты проверяемой точки
+-- x2, y2 - координаты вершины сектора
+-- orientation - ориентация сектора в мировых координатах
+-- width - уголовой размер сектора в градусах
+-- radius - окружности которой принадлежит сектор
+function IsPointInSector(x1,y1,x2,y2,orientation,width,radius)
+	local lenght=DistanceBetweenXY(x1,y1,x2,y2)
+	local angle=Acos(Cos(orientation*bj_DEGTORAD)*(x1-x2)/lenght+Sin(orientation*bj_DEGTORAD)*(y1-y2)/lenght )*bj_RADTODEG
+	return angle<=width and lenght<=radius
+end
