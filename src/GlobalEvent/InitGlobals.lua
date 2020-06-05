@@ -36,6 +36,11 @@ function InitHEROTable()
 			pid=i,
 			UnitHero=nil,
 			MarkIsActivated=false,
+			CallingBar=nil,
+			SelectedHero=CreateUnit(Player(i), DummyID, 0, 0, 0),
 		}
+		HealthBarAdd(HERO[i],0)
+		--print("попытка осздать бар")
+		HealthBarAdd(HERO[i],1)
 	end
 end

@@ -18,8 +18,8 @@ function InitSpellTrigger()
 		local x,y=GetSpellTargetX(),GetSpellTargetY()
 		local spellId          = GetSpellAbilityId()
 		local ownplayer=GetOwningPlayer(caster)
-		local id=GetPlayerId(ownplayer)
-
+		--local id=GetPlayerId(ownplayer)
+		local angleCast=AngleBetweenXY(casterX, casterY, x, y)/bj_DEGTORAD
 
 
 		if spellId == FourCC('A00N') then -- Проклятье
@@ -325,8 +325,9 @@ function InitSpellTrigger()
 					if UnitAlive(e) and IsUnitEnemy(e,ownplayer) then
 						--print("попытка замедлить"..GetUnitName(e))
 
-						local eff2=AddSpecialEffectTarget("Abilities\\Spells\\Undead\\FreezingBreath\\FreezingBreathTargetArt",e,"origin")
+
 						StunUnit(e,stun[lvl])
+						local eff2=AddSpecialEffectTarget("Abilities\\Spells\\Undead\\FreezingBreath\\FreezingBreathTargetArt",e,"origin")
 						TimerStart(CreateTimer(), stun[lvl], false, function()
 							DestroyEffect(eff2)
 						end)
@@ -428,38 +429,118 @@ function InitSpellTrigger()
 			local duration={2,4,6,8}
 			local dmgGroup=CreateGroup()
 			local ThisTrigger = CreateTrigger()
+			local onInvis=true
 			UnitAddAbility(caster,FourCC('A01B')) --скорость
 			SetUnitAbilityLevel(caster,FourCC('A01B'),lvl)
 			--print("Колдовство")
 			--DisablePathing(caster)
-			TriggerRegisterUnitInRangeSimple(ThisTrigger, range[lvl], caster)
-			TriggerAddAction(ThisTrigger, function()
-				local CollisionUnit=GetTriggerUnit()
-				if IsUnitEnemy(caster,GetOwningPlayer(CollisionUnit)) and not IsUnitInGroup(CollisionUnit,dmgGroup) then
-					GroupAddUnit(dmgGroup,CollisionUnit)
-					UnitDamageTarget( caster,CollisionUnit, rangeDmg[lvl], true, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC, WEAPON_TYPE_WHOKNOWS )
-				end
-			end)
+
 
 			local chkinvis=CreateTimer()
 
 			TimerStart(CreateTimer(), 1, false, function()
-				UnitAddAbility(caster,FourCC('A019'))
+				--UnitAddAbility(caster,FourCC('A019'))
+
+				TriggerRegisterUnitInRangeSimple(ThisTrigger, range[lvl], caster)
+				TriggerAddAction(ThisTrigger, function()
+					local CollisionUnit=GetTriggerUnit()
+					if IsUnitEnemy(caster,GetOwningPlayer(CollisionUnit)) and not IsUnitInGroup(CollisionUnit,dmgGroup) then
+						GroupAddUnit(dmgGroup,CollisionUnit)
+						UnitDamageTarget( caster,CollisionUnit, rangeDmg[lvl], true, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC, WEAPON_TYPE_WHOKNOWS )
+					end
+				end)
 				TimerStart(chkinvis, TIMER_PERIOD, true, function()
-					if GetUnitAbilityLevel(caster,FourCC('B009'))==0 then
+					if GetUnitAbilityLevel(caster,FourCC('B009'))==0 and onInvis then
+						--print("Даём руну инвиза")
 						UnitAddItemById(caster,FourCC('I000'))
 					end
 				end)
 			end)
 
 			TimerStart(CreateTimer(), duration[lvl], false, function()
-				UnitRemoveAbility(caster,FourCC('A019'))
-				UnitRemoveAbility(caster,FourCC('A01B'))
-				UnitRemoveAbility(caster,FourCC('B009'))
-				DestroyGroup(dmgGroup)
+				--UnitRemoveAbility(caster,FourCC('A019'))
+				--UnitRemoveAbility(caster,FourCC('A01B'))
+				onInvis=false
 				DestroyTimer(chkinvis)
 				DestroyTrigger(ThisTrigger)
+				if UnitRemoveAbility(caster,FourCC('B009')) then
+					--print("способность удалена")
+				else
+				--	print("провал удаления")
+				end
+				DestroyGroup(dmgGroup)
+
 			end)
+		end
+		if spellId == FourCC('A01R') then -- Телепатия
+			local lvl=GetUnitAbilityLevel(caster,spellId )
+			local stunDur={0.25,0.35,0.5,0.75}
+			local sec=0
+			local bar=CallingBar.Create(caster,4,"Телепатия")
+
+			TimerStart(CreateTimer(), 1, true, function()
+				sec=sec+1
+				StunUnit(target, stunDur[lvl])
+				if GetUnitAbilityLevel(target,FourCC('B00C'))	==0  or not IsUnitVisible(target,GetOwningPlayer(caster))  or sec>=4 or not CallingBar.IsStatus(caster,bar) then
+					UnitRemoveAbility(target,FourCC('B00C'))
+					DestroyTimer(GetExpiredTimer())
+					--CallingBar.Destroy(caster,bar)
+				end
+			end)
+
+		end
+
+		if spellId == FourCC('A01S') then -- Ледяная стена
+			local lvl=GetUnitAbilityLevel(caster,spellId )
+			local delayCreation={2,1.5,1,0.5}
+			local wallCount={3,4,5,6}
+			local stunSec=3
+			--print("ледяная стена")
+			TimerStart(CreateTimer(), delayCreation[lvl], false, function()
+				for i=1,wallCount[lvl] do
+					--print("effcreation"..75*(i-(wallCount[lvl]//2)+1))
+					local nx,ny=MoveXY(x,y,75*(i-(wallCount[lvl]//2)+1),angleCast-90)
+					local eff=AddSpecialEffect("Abilities\\Spells\\Undead\\FreezingBreath\\FreezingBreathTargetArt",nx,ny)
+					local timerFreezer=CreateTimer()
+					TimerStart(CreateTimer(), stunSec*2, false, function()
+						DestroyEffect(eff)
+						DestroyTimer(timerFreezer)
+					end)
+					TimerStart(timerFreezer, .5, true, function()
+
+						local e=nil
+						GroupEnumUnitsInRange(perebor,nx,ny,120,nil)
+						while true do
+							e = FirstOfGroup(perebor)
+
+							if e == nil then break end
+							if UnitAlive(e) and IsUnitEnemy(e,GetOwningPlayer(caster)) then
+								--print("Замедление")
+							end
+							GroupRemoveUnit(perebor,e)
+						end
+
+						local e=nil
+						GroupEnumUnitsInRange(perebor,nx,ny,80,nil)
+						while true do
+							e = FirstOfGroup(perebor)
+
+							if e == nil then break end
+							if UnitAlive(e) and IsUnitEnemy(e,GetOwningPlayer(caster))  and not IsUnitPaused(e) then
+								StunUnit(e,stunSec)
+								local eff2=AddSpecialEffectTarget("Abilities\\Spells\\Undead\\FreezingBreath\\FreezingBreathTargetArt",e,"origin")
+								TimerStart(CreateTimer(), stunSec, false, function()
+									DestroyEffect(eff2)
+								end)
+							end
+							GroupRemoveUnit(perebor,e)
+						end
+
+
+					end)
+				end
+			end)
+
 		end
 
 	end)

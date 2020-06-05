@@ -69,7 +69,7 @@ function InitUnitDeath()
 			end
 		end
 		-- просто кто-то умер
-		if IsUnitType(DeadUnit,UNIT_TYPE_HERO) and IsUnitInRangeXY(DeadUnit,IceBlast[1],IceBlast[2],325) then
+		if IsUnitType(DeadUnit,UNIT_TYPE_HERO) and GetUnitAbilityLevel(Killer,FourCC('A014'))>0 and IsUnitInRangeXY(DeadUnit,IceBlast[1],IceBlast[2],325) then
 			CreateIceBlast(IceBlast[3],FourCC('A014'),GetUnitXY(DeadUnit))
 		end
 

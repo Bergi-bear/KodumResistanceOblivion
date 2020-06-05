@@ -107,7 +107,7 @@ function InitDamage()
 			end
 			--Получение урона любым существом
 			if GetUnitAbilityLevel(caster,FourCC('A018'))>0 and AttackType==ATTACK_TYPE_HERO and BlzGetUnitAbilityCooldownRemaining(caster,FourCC('A018'))<=0.1 then -- победоносец
-				print("победоносец")
+				--print("победоносец")
 				local lvl=GetUnitAbilityLevel(caster,FourCC('A018'))
 				local bonusdmg={0.8,1.2,1.6,2}
 				local distance=70
@@ -128,8 +128,9 @@ function InitDamage()
 					-- width - уголовой размер сектора в градусах
 					-- radius - окружности которой принадлежит сектор
 					if e == nil then break end
-					if UnitAlive(e) and IsUnitEnemy(e,GetOwningPlayer(caster)) and IsPointInSector(GetUnitX(e),GetUnitY(e),x,y,GetUnitFacing(caster)-180,30,maxDistance[lvl]) then
+					if UnitAlive(e) and IsUnitEnemy(e,GetOwningPlayer(caster)) and IsPointInSector(GetUnitX(e),GetUnitY(e),x,y,GetUnitFacing(caster),30,maxDistance[lvl]) then
 						UnitAddForceSimple(e,AngleBetweenUnits(caster,e),30,distance,0)
+						UnitDamageTarget( caster,e, BlzGetUnitBaseDamage(caster,0)*bonusdmg[lvl], true, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_UNIVERSAL, WEAPON_TYPE_WHOKNOWS )
 					end
 					GroupRemoveUnit(perebor,e)
 				end

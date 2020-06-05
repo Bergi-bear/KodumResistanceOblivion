@@ -75,10 +75,14 @@ function InitSelectionRegister()
 	TriggerAddAction(this, function()
 		local hero=GetTriggerUnit()
 		--print(GetUnitName(hero))
-		if IsUnitType(hero,UNIT_TYPE_HERO) and GetOwningPlayer(hero)==GetTriggerPlayer() then
+		if IsUnitType(hero,UNIT_TYPE_HERO)   then
 			local data=HERO[GetPlayerId(GetTriggerPlayer())]
-			data.UnitHero=hero
-			--print("Выбрал своего нужного героя")
+			if GetOwningPlayer(hero)==GetTriggerPlayer() then
+
+				data.UnitHero=hero
+				--print("Выбрал своего нужного героя")
+			end
+			data.SelectedHero=hero
 		end
 	end)
 end
