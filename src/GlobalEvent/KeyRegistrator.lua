@@ -80,6 +80,7 @@ function InitSelectionRegister()
 			if GetOwningPlayer(hero)==GetTriggerPlayer() then
 
 				data.UnitHero=hero
+				UnitDisableAllPassAbilityTimed(hero,2)
 				--print("Выбрал своего нужного героя")
 			end
 			data.SelectedHero=hero

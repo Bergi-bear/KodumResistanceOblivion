@@ -38,6 +38,8 @@ function InitHEROTable()
 			MarkIsActivated=false,
 			CallingBar=nil,
 			SelectedHero=CreateUnit(Player(i), DummyID, 0, 0, 0),
+			FireShieldResist=0,--способность волшебницы огненный щит для определения количества полгощеного физ урона
+			PassAbilityIsDisabled=false, --Для отключения пассивный способностей
 		}
 		HealthBarAdd(HERO[i],0)
 		--print("попытка осздать бар")

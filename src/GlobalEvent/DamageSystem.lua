@@ -12,93 +12,112 @@ function InitDamage()
 		TriggerRegisterPlayerUnitEvent(DamageTrigger, Player(i), EVENT_PLAYER_UNIT_DAMAGED) -- После вычета брони
 	end
 	TriggerAddAction(DamageTrigger, function()
-		local damage     = GetEventDamage() -- число урона
+		local damage = GetEventDamage() -- число урона
 		local damageType = BlzGetEventDamageType()
-		local AttackType=BlzGetEventAttackType()
-		if damage < 1 then return end
+		local AttackType = BlzGetEventAttackType()
+		if damage < 1 then
+			return
+		end
 
-		local eventId         = GetHandleId(GetTriggerEventId())
+		local eventId = GetHandleId(GetTriggerEventId())
 		local isEventDamaging = eventId == GetHandleId(EVENT_PLAYER_UNIT_DAMAGING)
-		local isEventDamaged  = eventId == GetHandleId(EVENT_PLAYER_UNIT_DAMAGED)
+		local isEventDamaged = eventId == GetHandleId(EVENT_PLAYER_UNIT_DAMAGED)
 
-		local target          = GetTriggerUnit() -- тот кто получил урон
-		local targetHandleId  = GetHandleId(target)
-		local caster          = GetEventDamageSource() -- тот кто нанёс урон
-		local casterOwner     = GetOwningPlayer(caster)
+		local target = GetTriggerUnit() -- тот кто получил урон
+		local targetHandleId = GetHandleId(target)
+		local caster = GetEventDamageSource() -- тот кто нанёс урон
+		local casterOwner = GetOwningPlayer(caster)
 
 		if isEventDamaged then
-			if IsUnitType(target,UNIT_TYPE_HERO) then --Событие Любой герой получил урон
+			if IsUnitType(target, UNIT_TYPE_HERO) then
+				--Событие Любой герой получил урон
 				--print("Герой получил урон")
-				if GetUnitAbilityLevel(target,FourCC('A007'))>0  then--буйство
+				if GetUnitAbilityLevel(target, FourCC('A007')) > 0 then
+					--буйство
 					--print("урон под буйство")
-					local rf=0
-					local lvl=GetUnitAbilityLevel(target,FourCC('A007'))
-					local x,y=GetUnitXY(target)
-					if lvl==1 then	rf=GetRandomInt(1,33)
-					elseif lvl==2 then rf=GetRandomInt(1,20)
-					elseif lvl==3 then rf=GetRandomInt(1,14)
-					elseif lvl==4 then rf=GetRandomInt(1,10)
+					local rf = 0
+					local lvl = GetUnitAbilityLevel(target, FourCC('A007'))
+					local x, y = GetUnitXY(target)
+					if lvl == 1 then
+						rf = GetRandomInt(1, 33)
+					elseif lvl == 2 then
+						rf = GetRandomInt(1, 20)
+					elseif lvl == 3 then
+						rf = GetRandomInt(1, 14)
+					elseif lvl == 4 then
+						rf = GetRandomInt(1, 10)
 					end
-					if rf==1 then
+					if rf == 1 then
 						--print("рык прок")
-						CastArea(target,FourCC('A008'),x,y,lvl)
+						CastArea(target, FourCC('A008'), x, y, lvl)
 
 						--print("после попытки каста")
 					end
 				end
 
-
-
-				if GetUnitAbilityLevel(target,FourCC('A000'))>0 and GetUnitLifePercent(target)<=20 then  -- есть ярость пассивка
-					if BlzGetUnitAbilityCooldownRemaining(target,FourCC('A000'))<=1 then -- способность не на КД
+				if GetUnitAbilityLevel(target, FourCC('A000')) > 0 and GetUnitLifePercent(target) <= 20 then
+					-- есть ярость пассивка
+					if BlzGetUnitAbilityCooldownRemaining(target, FourCC('A000')) <= 1 then
+						-- способность не на КД
 						--print("запуск кд способности")
-						local lvl=GetUnitAbilityLevel(target,FourCC('A000'))
-						local amount=0
-						BlzStartUnitAbilityCooldown(target,FourCC('A000'),16)-- старт КД
-						UnitAddAbility(target,FourCC('A001'))--скорость передвижения
-						SetUnitAbilityLevel(target,FourCC('A001'),lvl)
-						BlzUnitHideAbility(target,FourCC('A001'),true)
+						local lvl = GetUnitAbilityLevel(target, FourCC('A000'))
+						local amount = 0
+						BlzStartUnitAbilityCooldown(target, FourCC('A000'), 16)-- старт КД
+						UnitAddAbility(target, FourCC('A001'))--скорость передвижения
+						SetUnitAbilityLevel(target, FourCC('A001'), lvl)
+						BlzUnitHideAbility(target, FourCC('A001'), true)
 
-						if lvl==1 then	amount=15
-						elseif lvl==2 then amount=22
-						elseif lvl==3 then amount=36
-						elseif lvl==4 then amount=50
+						if lvl == 1 then
+							amount = 15
+						elseif lvl == 2 then
+							amount = 22
+						elseif lvl == 3 then
+							amount = 36
+						elseif lvl == 4 then
+							amount = 50
 						end
 						--print("set bonus")
-						UnitAddBonus(target,4,amount)
-						TimerStart(CreateTimer(), 8, false, function() -- удаляем бонусы через 8 секунд
-							UnitAddBonus(target,4,-amount)-- урона
-							UnitRemoveAbility(target,FourCC('A001'))-- способность скорости движения
-							UnitRemoveAbility(target,FourCC('B000'))-- и сам бафф, чтобы он не висел ещё секунду
+						UnitAddBonus(target, 4, amount)
+						TimerStart(CreateTimer(), 8, false, function()
+							-- удаляем бонусы через 8 секунд
+							UnitAddBonus(target, 4, -amount)-- урона
+							UnitRemoveAbility(target, FourCC('A001'))-- способность скорости движения
+							UnitRemoveAbility(target, FourCC('B000'))-- и сам бафф, чтобы он не висел ещё секунду
 						end)
 					end
 				end
-				if GetUnitAbilityLevel(caster,FourCC('A003'))>0 and AttackType==ATTACK_TYPE_HERO then -- Герой под нирваной получил урон
-					local rf=0
-					local lvl=GetUnitAbilityLevel(caster,FourCC('A003')) -- Критический урон
-					local duration=30
-					local durationSleep=1+(lvl*.25)
-					if lvl==1 then	rf=GetRandomInt(1,20)--5 %%
-					elseif lvl==2 then rf=GetRandomInt(1,12)--8 %%
-					elseif lvl==3 then rf=GetRandomInt(1,8)--12 %%
-					elseif lvl==4 then rf=GetRandomInt(1,7)--14 %%
+				if GetUnitAbilityLevel(caster, FourCC('A003')) > 0 and AttackType == ATTACK_TYPE_HERO then
+					-- Герой под нирваной получил урон
+					local rf = 0
+					local lvl = GetUnitAbilityLevel(caster, FourCC('A003')) -- Критический урон
+					local duration = 30
+					local durationSleep = 1 + (lvl * .25)
+					if lvl == 1 then
+						rf = GetRandomInt(1, 20)--5 %%
+					elseif lvl == 2 then
+						rf = GetRandomInt(1, 12)--8 %%
+					elseif lvl == 3 then
+						rf = GetRandomInt(1, 8)--12 %%
+					elseif lvl == 4 then
+						rf = GetRandomInt(1, 7)--14 %%
 					end
 					--rf=1 Делает прок шанс 100%%
-					if rf==1 then
+					if rf == 1 then
 						--
-						BlzPauseUnitEx(target,true)
-						UnitAddAbility(target,FourCC('A004')) --антимагия
-						BlzUnitHideAbility(target,FourCC('A004'),true)
-						UnitAddBonus(caster,3,1)
-						local eff=AddSpecialEffectTarget("Abilities\\Spells\\Undead\\Sleep\\SleepTarget.mdl",target,"overhead")
-						DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\Sleep\\SleepSpecialArt.mdl",target,"overhead"))
+						BlzPauseUnitEx(target, true)
+						UnitAddAbility(target, FourCC('A004')) --антимагия
+						BlzUnitHideAbility(target, FourCC('A004'), true)
+						UnitAddBonus(caster, 3, 1)
+						local eff = AddSpecialEffectTarget("Abilities\\Spells\\Undead\\Sleep\\SleepTarget.mdl", target, "overhead")
+						DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\Sleep\\SleepSpecialArt.mdl", target, "overhead"))
 						TimerStart(CreateTimer(), durationSleep, false, function()
-							BlzPauseUnitEx(target,false)
+							BlzPauseUnitEx(target, false)
 							DestroyEffect(eff)
-							UnitRemoveAbility(target,FourCC('A004')) --антимагия
+							UnitRemoveAbility(target, FourCC('A004')) --антимагия
 						end)
-						TimerStart(CreateTimer(), duration, false, function()--возврат атрибута
-							UnitAddBonus(caster,3,-1)
+						TimerStart(CreateTimer(), duration, false, function()
+							--возврат атрибута
+							UnitAddBonus(caster, 3, -1)
 						end)
 					end
 				end
@@ -106,81 +125,110 @@ function InitDamage()
 
 			end
 			--Получение урона любым существом
-			if GetUnitAbilityLevel(caster,FourCC('A018'))>0 and AttackType==ATTACK_TYPE_HERO and BlzGetUnitAbilityCooldownRemaining(caster,FourCC('A018'))<=0.1 then -- победоносец
+			if damageType == DAMAGE_TYPE_NORMAL and GetUnitAbilityLevel(target, FourCC('B00D')) > 0 then
+				--Физический урон по огненному щиту
+				local data = HERO[GetPlayerId(GetOwningPlayer(target))]
+				local lvl = data.FireShieldResist
+				local Resist = { 100 - 22, 100 - 30, 100 - 45, 100 - 64 }
+				--print("phisdamageOnSHoeld ".. lvl)
+				BlzSetEventDamage(damage * (Resist[lvl] / 100))
+			end
+			if GetUnitAbilityLevel(caster, FourCC('A018')) > 0 and AttackType == ATTACK_TYPE_HERO and BlzGetUnitAbilityCooldownRemaining(caster, FourCC('A018')) <= 0.1 then
+				-- победоносец
 				--print("победоносец")
-				local lvl=GetUnitAbilityLevel(caster,FourCC('A018'))
-				local bonusdmg={0.8,1.2,1.6,2}
-				local distance=70
-				local cd={30,24,18,12}
-				local x,y=MoveXY(GetUnitX(caster),GetUnitY(caster),-80,GetUnitFacing(caster))
-				local e=nil
-				local maxDistance={500,600,700,800}
-				--if UnitDamageArea(caster,BlzGetUnitBaseDamage(caster,0)*bonusdmg[lvl],x,y,300) then
-					BlzStartUnitAbilityCooldown(caster,FourCC('A018'),cd[lvl])
-				--end
-				GroupEnumUnitsInRange(perebor,x,y,maxDistance[lvl],nil)
-				while true do
-					e = FirstOfGroup(perebor)
-					-- функия принадлежности точки сектора
-					-- x1, x2 - координаты проверяемой точки
-					-- x2, y2 - координаты вершины сектора
-					-- orientation - ориентация сектора в мировых координатах
-					-- width - уголовой размер сектора в градусах
-					-- radius - окружности которой принадлежит сектор
-					if e == nil then break end
-					if UnitAlive(e) and IsUnitEnemy(e,GetOwningPlayer(caster)) and IsPointInSector(GetUnitX(e),GetUnitY(e),x,y,GetUnitFacing(caster),30,maxDistance[lvl]) then
-						UnitAddForceSimple(e,AngleBetweenUnits(caster,e),30,distance,0)
-						UnitDamageTarget( caster,e, BlzGetUnitBaseDamage(caster,0)*bonusdmg[lvl], true, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_UNIVERSAL, WEAPON_TYPE_WHOKNOWS )
+				local data = HERO[GetPlayerId(GetOwningPlayer(caster))]
+				if not data.PassAbilityIsDisabled then
+					local lvl = GetUnitAbilityLevel(caster, FourCC('A018'))
+					local bonusdmg = { 0.8, 1.2, 1.6, 2 }
+					local distance = 70
+					local cd = { 30, 24, 18, 12 }
+					local x, y = MoveXY(GetUnitX(caster), GetUnitY(caster), -80, GetUnitFacing(caster))
+					local e = nil
+					local maxDistance = { 500, 600, 700, 800 }
+					BlzStartUnitAbilityCooldown(caster, FourCC('A018'), cd[lvl])
+					--end
+					GroupEnumUnitsInRange(perebor, x, y, maxDistance[lvl], nil)
+					while true do
+						e = FirstOfGroup(perebor)
+						-- функия принадлежности точки сектора
+						-- x1, x2 - координаты проверяемой точки
+						-- x2, y2 - координаты вершины сектора
+						-- orientation - ориентация сектора в мировых координатах
+						-- width - уголовой размер сектора в градусах
+						-- radius - окружности которой принадлежит сектор
+						if e == nil then
+							break
+						end
+						if UnitAlive(e) and IsUnitEnemy(e, GetOwningPlayer(caster)) and IsPointInSector(GetUnitX(e), GetUnitY(e), x, y, GetUnitFacing(caster), 30, maxDistance[lvl]) then
+							UnitAddForceSimple(e, AngleBetweenUnits(caster, e), 30, distance, 0)
+							UnitDamageTarget(caster, e, BlzGetUnitBaseDamage(caster, 0) * bonusdmg[lvl], true, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_UNIVERSAL, WEAPON_TYPE_WHOKNOWS)
+						end
+						GroupRemoveUnit(perebor, e)
 					end
-					GroupRemoveUnit(perebor,e)
+				else
+					print("способность заблкирована чем-то")
 				end
 
 			end
 
-
-			if GetUnitAbilityLevel(caster,FourCC('B004'))>0 and GetUnitAbilityLevel(caster,FourCC('A00I'))>0 and AttackType==ATTACK_TYPE_HERO then -- Критический удар под баффом
-				local rf=0
-				local lvl=GetUnitAbilityLevel(caster,FourCC('A00I')) -- Критический урон
-				local bonus={200,100,50,25}
-				if lvl==1 then	rf=GetRandomInt(1,100)--
-				elseif lvl==2 then rf=GetRandomInt(1,50)--
-				elseif lvl==3 then rf=GetRandomInt(1,25)--
-				elseif lvl==4 then rf=GetRandomInt(1,14)--
+			if GetUnitAbilityLevel(caster, FourCC('B004')) > 0 and GetUnitAbilityLevel(caster, FourCC('A00I')) > 0 and AttackType == ATTACK_TYPE_HERO then
+				-- Критический удар под баффом
+				local rf = 0
+				local lvl = GetUnitAbilityLevel(caster, FourCC('A00I')) -- Критический урон
+				local bonus = { 200, 100, 50, 25 }
+				if lvl == 1 then
+					rf = GetRandomInt(1, 100)--
+				elseif lvl == 2 then
+					rf = GetRandomInt(1, 50)--
+				elseif lvl == 3 then
+					rf = GetRandomInt(1, 25)--
+				elseif lvl == 4 then
+					rf = GetRandomInt(1, 14)--
 				end
 				--rf=1
-				if rf==1 then
-					DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Items\\ResourceItems\\ResourceEffectTarget",GetUnitXY(caster)))
-					AdjustPlayerStateBJ(bonus[lvl],GetOwningPlayer(caster), PLAYER_STATE_RESOURCE_GOLD )
-					FlyTextTagGoldBounty(caster,"+"..bonus[lvl],GetOwningPlayer(caster))
+				if rf == 1 then
+					DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Items\\ResourceItems\\ResourceEffectTarget", GetUnitXY(caster)))
+					AdjustPlayerStateBJ(bonus[lvl], GetOwningPlayer(caster), PLAYER_STATE_RESOURCE_GOLD)
+					FlyTextTagGoldBounty(caster, "+" .. bonus[lvl], GetOwningPlayer(caster))
 				end
 			end
 
-			if GetUnitAbilityLevel(caster,FourCC('B001'))>0 and AttackType==ATTACK_TYPE_HERO then -- Критический удар под баффом
-				local rf=0
-				local lvl=GetUnitAbilityLevel(caster,FourCC('A002')) -- Критический урон
-				if lvl==1 then	rf=GetRandomInt(1,10)--10 %%
-				elseif lvl==2 then rf=GetRandomInt(1,7)--15 %%
-				elseif lvl==3 then rf=GetRandomInt(1,4)--24 %%
-				elseif lvl==4 then rf=GetRandomInt(1,3)--30 %%
+			if GetUnitAbilityLevel(caster, FourCC('B001')) > 0 and AttackType == ATTACK_TYPE_HERO then
+				-- Критический удар под баффом
+				local rf = 0
+				local lvl = GetUnitAbilityLevel(caster, FourCC('A002')) -- Критический урон
+				if lvl == 1 then
+					rf = GetRandomInt(1, 10)--10 %%
+				elseif lvl == 2 then
+					rf = GetRandomInt(1, 7)--15 %%
+				elseif lvl == 3 then
+					rf = GetRandomInt(1, 4)--24 %%
+				elseif lvl == 4 then
+					rf = GetRandomInt(1, 3)--30 %%
 				end
-				if rf==1 then
-					damage=damage*3
+				if rf == 1 then
+					damage = damage * 3
 					BlzSetEventDamage(damage)
-					FlyTextTagCriticalStrike(caster,R2I(damage),GetOwningPlayer(caster))
-					UnitRemoveAbility(caster,FourCC('B001'))
+					FlyTextTagCriticalStrike(caster, R2I(damage), GetOwningPlayer(caster))
+					UnitRemoveAbility(caster, FourCC('B001'))
 				end
 			end
 
-			if GetUnitAbilityLevel(caster,FourCC('B000'))>0 and AttackType==ATTACK_TYPE_HERO then--вампирский удар, ещё нужны доп условия для проверки ближнего боя, иначер работает от любого типа урона
-				local effModel="Abilities\\Spells\\Human\\Heal\\HealTarget" --эффект лечения
-				local amount=0
-				local lvl=GetUnitAbilityLevel(caster,FourCC('A000'))-- у баффа нельзя просчитать вампирку
-				if lvl==1 then	amount=damage*0.07
-				elseif lvl==2 then amount=damage*0.11
-				elseif lvl==3 then amount=damage*0.14
-				elseif lvl==4 then amount=damage*0.17
+			if GetUnitAbilityLevel(caster, FourCC('B000')) > 0 and AttackType == ATTACK_TYPE_HERO then
+				--вампирский удар, ещё нужны доп условия для проверки ближнего боя, иначер работает от любого типа урона
+				local effModel = "Abilities\\Spells\\Human\\Heal\\HealTarget" --эффект лечения
+				local amount = 0
+				local lvl = GetUnitAbilityLevel(caster, FourCC('A000'))-- у баффа нельзя просчитать вампирку
+				if lvl == 1 then
+					amount = damage * 0.07
+				elseif lvl == 2 then
+					amount = damage * 0.11
+				elseif lvl == 3 then
+					amount = damage * 0.14
+				elseif lvl == 4 then
+					amount = damage * 0.17
 				end
-				HealUnit(caster,amount,1,effModel)--сам вампиризм, хотя это моя универсальная функция лечения
+				HealUnit(caster, amount, 1, effModel)--сам вампиризм, хотя это моя универсальная функция лечения
 			end
 
 			--[[if GetUnitAbilityLevel(caster,FourCC('B003'))>0 and AttackType==ATTACK_TYPE_HERO then --Усиленный удар божественного щита --ОШИБКА
@@ -189,47 +237,50 @@ function InitDamage()
 				UnitDamageTarget( caster,target, dmgbonus, true, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_UNIVERSAL, WEAPON_TYPE_WHOKNOWS )
 				FlyTextTagCriticalStrike(caster,R2I(dmgbonus),casterOwner)
 			end]]
-			if GetUnitAbilityLevel(caster,FourCC('A00O'))>0 and AttackType==ATTACK_TYPE_HERO and  BlzGetUnitAbilityCooldownRemaining(caster,FourCC('A00O'))<=0.1  then --Цепь молний
+			if GetUnitAbilityLevel(caster, FourCC('A00O')) > 0 and AttackType == ATTACK_TYPE_HERO and BlzGetUnitAbilityCooldownRemaining(caster, FourCC('A00O')) <= 0.1 then
+				--Цепь молний
 				--print("функция молнии")
-						--
-				local lvl=GetUnitAbilityLevel(caster,FourCC('A00O') )
-				local prok={
-					GetRandomInt(1,8),
-					GetRandomInt(1,7),
-					GetRandomInt(1,5),
-					GetRandomInt(1,4),
+				--
+				local lvl = GetUnitAbilityLevel(caster, FourCC('A00O'))
+				local prok = {
+					GetRandomInt(1, 8),
+					GetRandomInt(1, 7),
+					GetRandomInt(1, 5),
+					GetRandomInt(1, 4),
 				}
 				--print(BlzGetUnitAbilityCooldownRemaining(target,FourCC('A00O')))
 				--prok[lvl]=1
-				if prok[lvl]==1 then
-					BlzStartUnitAbilityCooldown(caster,FourCC('A00O'),4)
+				if prok[lvl] == 1 then
+					BlzStartUnitAbilityCooldown(caster, FourCC('A00O'), 4)
 
-					local dummy=CreateUnit(GetOwningPlayer(caster), DummyID, GetUnitX(caster), GetUnitY(caster), 0)
-					UnitApplyTimedLife(dummy,FourCC('BTLF'),1)
-					UnitAddAbility(dummy,FourCC('A00P'))
-					SetUnitAbilityLevel(dummy,FourCC('A00P'),lvl)
-					Cast(dummy,0,0,target)
+					local dummy = CreateUnit(GetOwningPlayer(caster), DummyID, GetUnitX(caster), GetUnitY(caster), 0)
+					UnitApplyTimedLife(dummy, FourCC('BTLF'), 1)
+					UnitAddAbility(dummy, FourCC('A00P'))
+					SetUnitAbilityLevel(dummy, FourCC('A00P'), lvl)
+					Cast(dummy, 0, 0, target)
 				end
 			end
-			if GetUnitAbilityLevel(caster,FourCC('B007'))>0 and AttackType==ATTACK_TYPE_HERO then --Есть бафф сильного удара
+			if GetUnitAbilityLevel(caster, FourCC('B007')) > 0 and AttackType == ATTACK_TYPE_HERO then
+				--Есть бафф сильного удара
 				--print("удар под бафом удаляем способность")
-				UnitRemoveAbility(caster,FourCC('B007'))
-				UnitRemoveAbility(caster,FourCC('A00Y'))
+				UnitRemoveAbility(caster, FourCC('B007'))
+				UnitRemoveAbility(caster, FourCC('A00Y'))
 			end
-			if GetUnitAbilityLevel(target,FourCC('BHca'))>0 and GetUnitAbilityLevel(caster,FourCC('A012'))>0 and AttackType==ATTACK_TYPE_HERO then --Есть бафф Оедяного дыхания
+			if GetUnitAbilityLevel(target, FourCC('BHca')) > 0 and GetUnitAbilityLevel(caster, FourCC('A012')) > 0 and AttackType == ATTACK_TYPE_HERO then
+				--Есть бафф Оедяного дыхания
 				--print("атака под ледяным дыханием")
-				local lvl=GetUnitAbilityLevel(caster,FourCC('A012') )
-				local proc={
-					GetRandomInt(1,100),
-					GetRandomInt(1,50),
-					GetRandomInt(1,33),
-					GetRandomInt(1,25),
+				local lvl = GetUnitAbilityLevel(caster, FourCC('A012'))
+				local proc = {
+					GetRandomInt(1, 100),
+					GetRandomInt(1, 50),
+					GetRandomInt(1, 33),
+					GetRandomInt(1, 25),
 				}
 				--proc[lvl]=1
 				--if true then
-				if proc[lvl]==1 then
-					local eff=AddSpecialEffectTarget("Abilities\\Spells\\Undead\\FreezingBreath\\FreezingBreathTargetArt",target,"origin")
-					StunUnit(target,2)
+				if proc[lvl] == 1 then
+					local eff = AddSpecialEffectTarget("Abilities\\Spells\\Undead\\FreezingBreath\\FreezingBreathTargetArt", target, "origin")
+					StunUnit(target, 2)
 					TimerStart(CreateTimer(), 2, false, function()
 						DestroyEffect(eff)
 					end)
@@ -240,87 +291,88 @@ function InitDamage()
 	end)
 end
 
-
-
-
-perebor=CreateGroup()
-function UnitDamageArea(u,damage,x,y,range,EffectModel)
-	local OnlyCHK=false
-	local isdamage=false
-	local e=nil
-	local hero=nil
+perebor = CreateGroup()
+function UnitDamageArea(u, damage, x, y, range, EffectModel)
+	local OnlyCHK = false
+	local isdamage = false
+	local e = nil
+	local hero = nil
 	--if ZDamageSource==nil then ZDamageSource=GetUnitZ(u)+60 end
-	if GetOwningPlayer(u)==Player(0) then
-	--	print("Выызов функции урона")
+	if GetOwningPlayer(u) == Player(0) then
+		--	print("Выызов функции урона")
 	end
 	--print("Поиск целей в на высоте "..ZDamageSource)
-	GroupEnumUnitsInRange(perebor,x,y,range,nil)
+	GroupEnumUnitsInRange(perebor, x, y, range, nil)
 	while true do
 		e = FirstOfGroup(perebor)
-		if e == nil then break end
-		if UnitAlive(e) and IsUnitEnemy(e,GetOwningPlayer(u)) then -- момент урона
-			if EffectModel~=nil then
+		if e == nil then
+			break
+		end
+		if UnitAlive(e) and IsUnitEnemy(e, GetOwningPlayer(u)) then
+			-- момент урона
+			if EffectModel ~= nil then
 				--print("эффеет")
-				local DE=AddSpecialEffect(EffectModel,GetUnitX(e),GetUnitY(e))
+				local DE = AddSpecialEffect(EffectModel, GetUnitX(e), GetUnitY(e))
 				--BlzSetSpecialEffectZ(DE,ZDamageSource)
 				DestroyEffect(DE)
 			end
 
-			UnitDamageTarget( u, e, damage, true, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_NORMAL, WEAPON_TYPE_WHOKNOWS )
-			isdamage=true
-			hero=e
+			UnitDamageTarget(u, e, damage, true, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_NORMAL, WEAPON_TYPE_WHOKNOWS)
+			isdamage = true
+			hero = e
 		end
 		--ремонт
-		if  UnitAlive(e) and IsUnitAlly(e,GetOwningPlayer(u)) and e~=u then -- момент ремонта
-			local data=HERO[GetPlayerId(GetOwningPlayer(u))]
-			if DistanceBetweenXY(GetUnitX(u),GetUnitY(u),GetUnitXY(e))<=200 and IsUnitType(e,UNIT_TYPE_STRUCTURE) then
+		if UnitAlive(e) and IsUnitAlly(e, GetOwningPlayer(u)) and e ~= u then
+			-- момент ремонта
+			local data = HERO[GetPlayerId(GetOwningPlayer(u))]
+			if DistanceBetweenXY(GetUnitX(u), GetUnitY(u), GetUnitXY(e)) <= 200 and IsUnitType(e, UNIT_TYPE_STRUCTURE) then
 
 			end
-			hero=e
+			hero = e
 		end
-		GroupRemoveUnit(perebor,e)
+		GroupRemoveUnit(perebor, e)
 	end
 	--if PointContentDestructable(x,y,range,true,1+damage/4,u) then	isdamage=true	end
 	return isdamage, hero
 end
 
-
-GlobalRect=Rect(0,0,0,0)
-function PointContentDestructable (x,y,range,iskill,damage,hero)
-	local content=false
-	if range==nil then range=80 end
-	if iskill==nil then iskill=false end
-	SetRect(GlobalRect, x - range, y - range, x + range, y +range)
-	EnumDestructablesInRect(GlobalRect,nil,function ()
-		local d=GetEnumDestructable()
-		if GetDestructableLife(d)>0 then
-			content=true
-			local data=HERO[GetPlayerId(GetOwningPlayer(hero))]
+GlobalRect = Rect(0, 0, 0, 0)
+function PointContentDestructable (x, y, range, iskill, damage, hero)
+	local content = false
+	if range == nil then
+		range = 80
+	end
+	if iskill == nil then
+		iskill = false
+	end
+	SetRect(GlobalRect, x - range, y - range, x + range, y + range)
+	EnumDestructablesInRect(GlobalRect, nil, function()
+		local d = GetEnumDestructable()
+		if GetDestructableLife(d) > 0 then
+			content = true
+			local data = HERO[GetPlayerId(GetOwningPlayer(hero))]
 			if data.HaveAFire then
-				damage=damage*5
-				data.HaveAFire=false
+				damage = damage * 5
+				data.HaveAFire = false
 				if not data.Perk16 then
-					UnitRemoveAbility(hero,FourCC('A006'))
+					UnitRemoveAbility(hero, FourCC('A006'))
 				end
 				--FlyTextTagCriticalStrike(e,I2S(R2I(damage)),GetOwningPlayer(u))
 			end
 
-
 			if iskill then
-				SetDestructableLife(d,GetDestructableLife(d)-damage)
+				SetDestructableLife(d, GetDestructableLife(d) - damage)
 
-
-
-				if GetDestructableLife(d)>=1 then
-					SetDestructableAnimation(d,"Stand Hit")
+				if GetDestructableLife(d) >= 1 then
+					SetDestructableAnimation(d, "Stand Hit")
 				else
 
-					if DistanceBetweenXY(GetDestructableX(d), GetDestructableY(d),GetUnitXY(hero))<=200 then
+					if DistanceBetweenXY(GetDestructableX(d), GetDestructableY(d), GetUnitXY(hero)) <= 200 then
 						if data.IsWood then
 							--print("Некуда класть звук")
 							CreateFreeWood(GetDestructableX(d), GetDestructableY(d))
 						else
-							data.IsWood=true
+							data.IsWood = true
 							--print("Добавляем 1 дерева для "..GetUnitName(hero))
 						end
 					else
@@ -329,22 +381,22 @@ function PointContentDestructable (x,y,range,iskill,damage,hero)
 
 				end
 				--блок голема
-				if GetDestructableTypeId(d)==FourCC('LTrc') then
+				if GetDestructableTypeId(d) == FourCC('LTrc') then
 					KillDestructable(d)
-					local  new=CreateUnit(Player(10), FourCC('n002'), GetDestructableX(d), GetDestructableY(d), 0)
+					local new = CreateUnit(Player(10), FourCC('n002'), GetDestructableX(d), GetDestructableY(d), 0)
 
-					TimerStart(CreateTimer(),10,false, function()
+					TimerStart(CreateTimer(), 10, false, function()
 						KillUnit(new)
-						local xn,yn=GetUnitXY(new)
+						local xn, yn = GetUnitXY(new)
 						--CreateDestructable(FourCC('LTrc'),xn,yn,GetRandomReal(0,360),GetRandomReal(0.5,1.2),GetRandomInt(1,3))
 					end)
 				end
 				--блок голема
 			end
 		else
-			local data=HERO(UnitGetPid(hero))
+			local data = HERO(UnitGetPid(hero))
 			--print("атака по мертвому "..GetUnitName(hero))
-			data.IsWood=true
+			data.IsWood = true
 		end
 	end)
 	return content

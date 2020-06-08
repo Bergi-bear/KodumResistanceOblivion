@@ -542,6 +542,21 @@ function InitSpellTrigger()
 			end)
 
 		end
+		if spellId == FourCC('A01U') then -- Огненный щит
+			local lvl=GetUnitAbilityLevel(caster,spellId )
+			local duration=8
+			local bonusArmor={8,16,24,32}
+			local data=HERO[GetPlayerId(GetOwningPlayer(target))]
+			data.FireShieldResist=lvl
+			if GetUnitLifePercent(target)<=20 then
+				UnitAddBonus(target,5,bonusArmor[lvl])
+				UnitMagicImmuneSetTimed(target,1.25)
+				TimerStart(CreateTimer(), duration, false, function()
+					UnitAddBonus(target,5,-bonusArmor[lvl])
+				end)
+			end
+
+		end
 
 	end)
 end

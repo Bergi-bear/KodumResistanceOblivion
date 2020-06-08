@@ -19,8 +19,8 @@ function CreateVisualPointerForUnit(hero,flag,long,step,minlong)
 	local size=step/100
 	--local k=10
 	local LastMouseX=0
-	local blockname="s_cube1"
-	local arrowname="s_arr1"
+	local blockname="SystemGeneric\\s_cube1"
+	local arrowname="SystemGeneric\\s_arr1"
 	data.MarkIsActivated=true
 	if GetLocalPlayer()~=Player(pid) then
 		blockname=""
