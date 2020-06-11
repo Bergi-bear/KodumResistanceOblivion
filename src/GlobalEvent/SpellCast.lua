@@ -354,31 +354,35 @@ function InitSpellTrigger()
 				local distance=DistanceBetweenXY(x,y,casterX,casterY)
 				local angle=AngleBetweenXY(x,y,GetUnitXY(caster))/bj_DEGTORAD
 				BlzPauseUnitEx(caster,true)
-				--IssueImmediateOrder(caster,"stop")
-				--SetUnitAnimation(caster,"walk")
-				local r=GetRandomInt(1,10)
-				--print(r)
-				SetUnitAnimationByIndex(caster,5)
-				SetUnitTimeScale(caster,4)
+
+				TimerStart(CreateTimer(), 0.01, false, function()
+					--IssueImmediateOrder(caster,"stop")
+					--SetUnitAnimation(caster,"walk")
+				--	if not r then r=0 end
+				--	print(r)
+					SetUnitAnimationByIndex(caster,1)
+					--r=r+1
+					SetUnitTimeScale(caster,4)
 
 
-				local e=nil
-				ForceGroup[GetHandleId(caster)]=CreateGroup()
+					local e=nil
+					ForceGroup[GetHandleId(caster)]=CreateGroup()
 
-				GroupEnumUnitsInRange(perebor,GetUnitX(caster),GetUnitY(caster),range[lvl],nil)
-				while true do
-					e = FirstOfGroup(perebor)
+					GroupEnumUnitsInRange(perebor,GetUnitX(caster),GetUnitY(caster),range[lvl],nil)
+					while true do
+						e = FirstOfGroup(perebor)
 
-					if e == nil then break end
-					if UnitAlive(e) and IsUnitEnemy(e,GetOwningPlayer(caster)) and not IsUnitType(e,UNIT_TYPE_STRUCTURE) then
-						--print(GetUnitName(e))
-						--StunUnit(e,duration)
-						GroupAddUnit(ForceGroup[GetHandleId(caster)],e)
+						if e == nil then break end
+						if UnitAlive(e) and IsUnitEnemy(e,GetOwningPlayer(caster)) and not IsUnitType(e,UNIT_TYPE_STRUCTURE) then
+							--print(GetUnitName(e))
+							--StunUnit(e,duration)
+							GroupAddUnit(ForceGroup[GetHandleId(caster)],e)
+						end
+						GroupRemoveUnit(perebor,e)
 					end
-					GroupRemoveUnit(perebor,e)
-				end
 
-				UnitAddForce(caster,angle-180,20,distance,0)
+					UnitAddForce(caster,angle-180,20,distance,0)
+				end)
 
 			else
 				BlzEndUnitAbilityCooldown(caster,spellId)
@@ -555,7 +559,23 @@ function InitSpellTrigger()
 					UnitAddBonus(target,5,-bonusArmor[lvl])
 				end)
 			end
-
+		end
+		if spellId == FourCC('A026') then -- Опустошение
+			local lvl=GetUnitAbilityLevel(caster,spellId )
+			local duration=6
+			local hpBonus={15,25,40,60}
+			UnitDisableAllPassAbilityTimed(target,duration)
+			TimerStart(CreateTimer(), 0.5, true, function()
+				if GetUnitAbilityLevel(target,FourCC('B00E'))==0 then
+				--	print("Бафоо окончен")
+					DestroyTimer(GetExpiredTimer())
+				end
+				if not UnitAlive(target) then
+					BlzSetUnitMaxHP(caster,BlzGetUnitMaxHP(caster)+hpBonus[lvl])
+					SetHeroInt(caster,GetHeroInt(caster,false)+1,true)
+					print("Умерт под действием опустошения, даём бонусы")
+				end
+			end)
 		end
 
 	end)

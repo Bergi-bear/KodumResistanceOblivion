@@ -222,7 +222,7 @@ function CreateUnitsForPlayer0()
     u = BlzCreateUnitWithSkin(p, FourCC("h02O"), -3964.2, -16287.4, 268.894, FourCC("h02O"))
     u = BlzCreateUnitWithSkin(p, FourCC("H00A"), -1636.5, -14176.7, 227.710, FourCC("H00A"))
     SetHeroLevel(u, 30, false)
-    u = BlzCreateUnitWithSkin(p, FourCC("H02T"), -1459.3, -14414.8, 165.250, FourCC("H02T"))
+    u = BlzCreateUnitWithSkin(p, FourCC("H02T"), -188.9, -16200.8, 165.250, FourCC("H02T"))
     SetHeroLevel(u, 30, false)
     u = BlzCreateUnitWithSkin(p, FourCC("H02U"), -1157.8, -15588.1, 273.872, FourCC("H02U"))
     SetUnitColor(u, ConvertPlayerColor(18))
@@ -243,6 +243,8 @@ function CreateUnitsForPlayer0()
     SetUnitColor(u, ConvertPlayerColor(18))
     u = BlzCreateUnitWithSkin(p, FourCC("H030"), -1177.6, -15322.4, 261.986, FourCC("H030"))
     SetUnitColor(u, ConvertPlayerColor(18))
+    u = BlzCreateUnitWithSkin(p, FourCC("H007"), -1754.6, -13907.2, 77.920, FourCC("H007"))
+    SetHeroLevel(u, 30, false)
 end
 
 function CreateBuildingsForPlayer1()
@@ -646,7 +648,8 @@ function HideEverything()
 	end
 
 	BlzFrameClearAllPoints(BlzGetOriginFrame(ORIGIN_FRAME_UBERTOOLTIP, 0)) -- ПОдсказка при наведении на дефолт фреймы
-	BlzFrameSetAbsPoint(BlzGetOriginFrame(ORIGIN_FRAME_UBERTOOLTIP, 0), FRAMEPOINT_CENTER, 0.4 ,0.22)
+	BlzFrameSetPoint(BlzGetOriginFrame(ORIGIN_FRAME_UBERTOOLTIP, 0), FRAMEPOINT_BOTTOM, BlzGetOriginFrame(ORIGIN_FRAME_GAME_UI, 0), FRAMEPOINT_BOTTOM, 0, 0.13)
+	--BlzFrameSetAbsPoint(BlzGetOriginFrame(ORIGIN_FRAME_UBERTOOLTIP, 0), FRAMEPOINT_CENTER, 0.4 ,0.22)
 
 
 
@@ -2621,31 +2624,35 @@ function InitSpellTrigger()
 				local distance=DistanceBetweenXY(x,y,casterX,casterY)
 				local angle=AngleBetweenXY(x,y,GetUnitXY(caster))/bj_DEGTORAD
 				BlzPauseUnitEx(caster,true)
-				--IssueImmediateOrder(caster,"stop")
-				--SetUnitAnimation(caster,"walk")
-				local r=GetRandomInt(1,10)
-				--print(r)
-				SetUnitAnimationByIndex(caster,5)
-				SetUnitTimeScale(caster,4)
+
+				TimerStart(CreateTimer(), 0.01, false, function()
+					--IssueImmediateOrder(caster,"stop")
+					--SetUnitAnimation(caster,"walk")
+				--	if not r then r=0 end
+				--	print(r)
+					SetUnitAnimationByIndex(caster,1)
+					--r=r+1
+					SetUnitTimeScale(caster,4)
 
 
-				local e=nil
-				ForceGroup[GetHandleId(caster)]=CreateGroup()
+					local e=nil
+					ForceGroup[GetHandleId(caster)]=CreateGroup()
 
-				GroupEnumUnitsInRange(perebor,GetUnitX(caster),GetUnitY(caster),range[lvl],nil)
-				while true do
-					e = FirstOfGroup(perebor)
+					GroupEnumUnitsInRange(perebor,GetUnitX(caster),GetUnitY(caster),range[lvl],nil)
+					while true do
+						e = FirstOfGroup(perebor)
 
-					if e == nil then break end
-					if UnitAlive(e) and IsUnitEnemy(e,GetOwningPlayer(caster)) and not IsUnitType(e,UNIT_TYPE_STRUCTURE) then
-						--print(GetUnitName(e))
-						--StunUnit(e,duration)
-						GroupAddUnit(ForceGroup[GetHandleId(caster)],e)
+						if e == nil then break end
+						if UnitAlive(e) and IsUnitEnemy(e,GetOwningPlayer(caster)) and not IsUnitType(e,UNIT_TYPE_STRUCTURE) then
+							--print(GetUnitName(e))
+							--StunUnit(e,duration)
+							GroupAddUnit(ForceGroup[GetHandleId(caster)],e)
+						end
+						GroupRemoveUnit(perebor,e)
 					end
-					GroupRemoveUnit(perebor,e)
-				end
 
-				UnitAddForce(caster,angle-180,20,distance,0)
+					UnitAddForce(caster,angle-180,20,distance,0)
+				end)
 
 			else
 				BlzEndUnitAbilityCooldown(caster,spellId)
@@ -2822,7 +2829,23 @@ function InitSpellTrigger()
 					UnitAddBonus(target,5,-bonusArmor[lvl])
 				end)
 			end
-
+		end
+		if spellId == FourCC('A026') then -- Опустошение
+			local lvl=GetUnitAbilityLevel(caster,spellId )
+			local duration=6
+			local hpBonus={15,25,40,60}
+			UnitDisableAllPassAbilityTimed(target,duration)
+			TimerStart(CreateTimer(), 0.5, true, function()
+				if GetUnitAbilityLevel(target,FourCC('B00E'))==0 then
+				--	print("Бафоо окончен")
+					DestroyTimer(GetExpiredTimer())
+				end
+				if not UnitAlive(target) then
+					BlzSetUnitMaxHP(caster,BlzGetUnitMaxHP(caster)+hpBonus[lvl])
+					SetHeroInt(caster,GetHeroInt(caster,false)+1,true)
+					print("Умерт под действием опустошения, даём бонусы")
+				end
+			end)
 		end
 
 	end)
@@ -2928,8 +2951,8 @@ function CreateVisualPointerForUnit(hero,flag,long,step,minlong)
 	local size=step/100
 	--local k=10
 	local LastMouseX=0
-	local blockname="s_cube1"
-	local arrowname="s_arr1"
+	local blockname="SystemGeneric\\s_cube1"
+	local arrowname="SystemGeneric\\s_arr1"
 	data.MarkIsActivated=true
 	if GetLocalPlayer()~=Player(pid) then
 		blockname=""
@@ -4896,16 +4919,6 @@ function StanArea(hero,range,duration)
 	end
 end
 --CUSTOM_CODE
-function Trig_poslushnik_tenei_Conditions()
-    if (not (GetUnitTypeId(GetAttacker()) == FourCC("h04I"))) then
-        return false
-    end
-    if (not (GetUnitTypeId(GetAttacker()) == FourCC("h04L"))) then
-        return false
-    end
-    return true
-end
-
 function Trig_poslushnik_tenei_Actions()
     IssueImmediateOrderBJ(GetAttacker(), "manashieldon")
     IssueImmediateOrderBJ(GetAttacker(), "coldarrows")
@@ -4914,15 +4927,7 @@ end
 function InitTrig_poslushnik_tenei()
     gg_trg_poslushnik_tenei = CreateTrigger()
     TriggerRegisterAnyUnitEventBJ(gg_trg_poslushnik_tenei, EVENT_PLAYER_UNIT_ATTACKED)
-    TriggerAddCondition(gg_trg_poslushnik_tenei, Condition(Trig_poslushnik_tenei_Conditions))
     TriggerAddAction(gg_trg_poslushnik_tenei, Trig_poslushnik_tenei_Actions)
-end
-
-function Trig_Wisp_Air_Conditions()
-    if (not (GetUnitTypeId(GetAttacker()) == FourCC("h06R"))) then
-        return false
-    end
-    return true
 end
 
 function Trig_Wisp_Air_Actions()
@@ -4932,15 +4937,7 @@ end
 function InitTrig_Wisp_Air()
     gg_trg_Wisp_Air = CreateTrigger()
     TriggerRegisterAnyUnitEventBJ(gg_trg_Wisp_Air, EVENT_PLAYER_UNIT_ATTACKED)
-    TriggerAddCondition(gg_trg_Wisp_Air, Condition(Trig_Wisp_Air_Conditions))
     TriggerAddAction(gg_trg_Wisp_Air, Trig_Wisp_Air_Actions)
-end
-
-function Trig_Wisp_Elder_Conditions()
-    if (not (GetUnitTypeId(GetAttacker()) == FourCC("h04H"))) then
-        return false
-    end
-    return true
 end
 
 function Trig_Wisp_Elder_Actions()
@@ -4950,15 +4947,7 @@ end
 function InitTrig_Wisp_Elder()
     gg_trg_Wisp_Elder = CreateTrigger()
     TriggerRegisterAnyUnitEventBJ(gg_trg_Wisp_Elder, EVENT_PLAYER_UNIT_ATTACKED)
-    TriggerAddCondition(gg_trg_Wisp_Elder, Condition(Trig_Wisp_Elder_Conditions))
     TriggerAddAction(gg_trg_Wisp_Elder, Trig_Wisp_Elder_Actions)
-end
-
-function Trig_Wisp_Conditions()
-    if (not (GetUnitTypeId(GetAttacker()) == FourCC("h04E"))) then
-        return false
-    end
-    return true
 end
 
 function Trig_Wisp_Actions()
@@ -4968,15 +4957,7 @@ end
 function InitTrig_Wisp()
     gg_trg_Wisp = CreateTrigger()
     TriggerRegisterAnyUnitEventBJ(gg_trg_Wisp, EVENT_PLAYER_UNIT_ATTACKED)
-    TriggerAddCondition(gg_trg_Wisp, Condition(Trig_Wisp_Conditions))
     TriggerAddAction(gg_trg_Wisp, Trig_Wisp_Actions)
-end
-
-function Trig_Troll_Assassin_Conditions()
-    if (not (GetUnitTypeId(GetEnteringUnit()) == FourCC("h02Z"))) then
-        return false
-    end
-    return true
 end
 
 function Trig_Troll_Assassin_Actions()
@@ -4986,15 +4967,7 @@ end
 function InitTrig_Troll_Assassin()
     gg_trg_Troll_Assassin = CreateTrigger()
     TriggerRegisterEnterRectSimple(gg_trg_Troll_Assassin, GetEntireMapRect())
-    TriggerAddCondition(gg_trg_Troll_Assassin, Condition(Trig_Troll_Assassin_Conditions))
     TriggerAddAction(gg_trg_Troll_Assassin, Trig_Troll_Assassin_Actions)
-end
-
-function Trig_Troll_berserker_Conditions()
-    if (not (GetUnitTypeId(GetAttacker()) == FourCC("h02W"))) then
-        return false
-    end
-    return true
 end
 
 function Trig_Troll_berserker_Func001C()
@@ -5014,15 +4987,7 @@ end
 function InitTrig_Troll_berserker()
     gg_trg_Troll_berserker = CreateTrigger()
     TriggerRegisterAnyUnitEventBJ(gg_trg_Troll_berserker, EVENT_PLAYER_UNIT_ATTACKED)
-    TriggerAddCondition(gg_trg_Troll_berserker, Condition(Trig_Troll_berserker_Conditions))
     TriggerAddAction(gg_trg_Troll_berserker, Trig_Troll_berserker_Actions)
-end
-
-function Trig_Head_hunter_Conditions()
-    if (not (GetUnitTypeId(GetAttacker()) == FourCC("h031"))) then
-        return false
-    end
-    return true
 end
 
 function Trig_Head_hunter_Func001C()
@@ -5042,7 +5007,6 @@ end
 function InitTrig_Head_hunter()
     gg_trg_Head_hunter = CreateTrigger()
     TriggerRegisterAnyUnitEventBJ(gg_trg_Head_hunter, EVENT_PLAYER_UNIT_ATTACKED)
-    TriggerAddCondition(gg_trg_Head_hunter, Condition(Trig_Head_hunter_Conditions))
     TriggerAddAction(gg_trg_Head_hunter, Trig_Head_hunter_Actions)
 end
 
@@ -5233,16 +5197,10 @@ function Trig_____________________________________001_Conditions()
 end
 
 function Trig_____________________________________001_Func001C()
-    if (not (GetUnitTypeId(GetKillingUnitBJ()) == FourCC("H044"))) then
-        return false
-    end
     return true
 end
 
 function Trig_____________________________________001_Func002C()
-    if (not (GetUnitTypeId(GetKillingUnitBJ()) == FourCC("H056"))) then
-        return false
-    end
     return true
 end
 
@@ -5254,51 +5212,30 @@ function Trig_____________________________________001_Func003C()
 end
 
 function Trig_____________________________________001_Func004C()
-    if (not (GetUnitTypeId(GetKillingUnitBJ()) == FourCC("H043"))) then
-        return false
-    end
     return true
 end
 
 function Trig_____________________________________001_Func005C()
-    if (not (GetUnitTypeId(GetKillingUnitBJ()) == FourCC("H03X"))) then
-        return false
-    end
     return true
 end
 
 function Trig_____________________________________001_Func006C()
-    if (not (GetUnitTypeId(GetKillingUnitBJ()) == FourCC("H057"))) then
-        return false
-    end
     return true
 end
 
 function Trig_____________________________________001_Func007C()
-    if (not (GetUnitTypeId(GetKillingUnitBJ()) == FourCC("H03Y"))) then
-        return false
-    end
     return true
 end
 
 function Trig_____________________________________001_Func008C()
-    if (not (GetUnitTypeId(GetKillingUnitBJ()) == FourCC("H07M"))) then
-        return false
-    end
     return true
 end
 
 function Trig_____________________________________001_Func009C()
-    if (not (GetUnitTypeId(GetKillingUnitBJ()) == FourCC("H07K"))) then
-        return false
-    end
     return true
 end
 
 function Trig_____________________________________001_Func010C()
-    if (not (GetUnitTypeId(GetKillingUnitBJ()) == FourCC("H0GE"))) then
-        return false
-    end
     return true
 end
 
@@ -5310,30 +5247,18 @@ function Trig_____________________________________001_Func011C()
 end
 
 function Trig_____________________________________001_Func012C()
-    if (not (GetUnitTypeId(GetKillingUnitBJ()) == FourCC("H07E"))) then
-        return false
-    end
     return true
 end
 
 function Trig_____________________________________001_Func013C()
-    if (not (GetUnitTypeId(GetKillingUnitBJ()) == FourCC("H0GK"))) then
-        return false
-    end
     return true
 end
 
 function Trig_____________________________________001_Func014C()
-    if (not (GetUnitTypeId(GetKillingUnitBJ()) == FourCC("H0GJ"))) then
-        return false
-    end
     return true
 end
 
 function Trig_____________________________________001_Func015C()
-    if (not (GetUnitTypeId(GetKillingUnitBJ()) == FourCC("H0GD"))) then
-        return false
-    end
     return true
 end
 
