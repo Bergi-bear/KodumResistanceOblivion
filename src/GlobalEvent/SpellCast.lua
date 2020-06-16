@@ -573,9 +573,49 @@ function InitSpellTrigger()
 				if not UnitAlive(target) then
 					BlzSetUnitMaxHP(caster,BlzGetUnitMaxHP(caster)+hpBonus[lvl])
 					SetHeroInt(caster,GetHeroInt(caster,false)+1,true)
-					print("Умерт под действием опустошения, даём бонусы")
+					print("Умер под действием опустошения, даём бонусы")
 				end
 			end)
+		end
+
+		if spellId == FourCC('A027') then -- Сожжение маны
+			local lvl=GetUnitAbilityLevel(caster,spellId )
+			local manaGet={75,150,200,320}
+			local aSpeed={40,80,120,160}
+			--print(UnitGetBonus(caster,9))
+			if GetUnitManaPercent(target)<50 then
+				UnitAddBonus(caster,9,aSpeed[lvl])
+				TimerStart(CreateTimer(), 20, false, function()
+					UnitAddBonus(caster,9,-aSpeed[lvl])
+				end)
+			end
+			UnitStealMana(caster,target,manaGet[lvl])
+		end
+		if spellId == FourCC('A028') then -- Разлом измерения
+			local lvl=GetUnitAbilityLevel(caster,spellId )
+			local range={250,300,350,400}
+			local slow=90
+			local damage={20,30,45,60}
+			local dur=4
+			UnitDamageArea(caster,damage[lvl],x,y,range[lvl],DAMAGE_TYPE_UNIVERSAL)
+			local e = nil
+
+			GroupEnumUnitsInRange(perebor, x, y, range[lvl], nil)
+			while true do
+				e = FirstOfGroup(perebor)
+				if e == nil then
+					break
+				end
+				if UnitAlive(e) and IsUnitEnemy(e, GetOwningPlayer(caster)) then
+					local angle=-180+AngleBetweenXY(x,y,GetUnitXY(e))/bj_DEGTORAD
+					local distance=DistanceBetweenXY(x,y,GetUnitXY(e))
+					UnitAddForceSimple(e,angle,25,distance)
+					DisarmUnitTimed(e,dur)
+					MakeUnitSlowTimed(e,slow,dur)
+				end
+				GroupRemoveUnit(perebor, e)
+			end
+
 		end
 
 	end)

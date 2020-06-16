@@ -292,7 +292,7 @@ function InitDamage()
 end
 
 perebor = CreateGroup()
-function UnitDamageArea(u, damage, x, y, range, EffectModel)
+function UnitDamageArea(u, damage, x, y, range, damageType)
 	local OnlyCHK = false
 	local isdamage = false
 	local e = nil
@@ -300,6 +300,9 @@ function UnitDamageArea(u, damage, x, y, range, EffectModel)
 	--if ZDamageSource==nil then ZDamageSource=GetUnitZ(u)+60 end
 	if GetOwningPlayer(u) == Player(0) then
 		--	print("Выызов функции урона")
+	end
+	if not damageType then
+		damageType=DAMAGE_TYPE_NORMAL
 	end
 	--print("Поиск целей в на высоте "..ZDamageSource)
 	GroupEnumUnitsInRange(perebor, x, y, range, nil)
@@ -310,14 +313,9 @@ function UnitDamageArea(u, damage, x, y, range, EffectModel)
 		end
 		if UnitAlive(e) and IsUnitEnemy(e, GetOwningPlayer(u)) then
 			-- момент урона
-			if EffectModel ~= nil then
-				--print("эффеет")
-				local DE = AddSpecialEffect(EffectModel, GetUnitX(e), GetUnitY(e))
-				--BlzSetSpecialEffectZ(DE,ZDamageSource)
-				DestroyEffect(DE)
-			end
 
-			UnitDamageTarget(u, e, damage, true, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_NORMAL, WEAPON_TYPE_WHOKNOWS)
+
+			UnitDamageTarget(u, e, damage, true, false, ATTACK_TYPE_NORMAL, damageType, WEAPON_TYPE_WHOKNOWS)
 			isdamage = true
 			hero = e
 		end

@@ -114,9 +114,23 @@ do
 		FourCC('ZxC9'), -- +512
 		FourCC('ZxCa'), -- +1024
 		FourCC('ZxCb'), -- +2048
-		FourCC('ZxCc') -- -4096
+		FourCC('ZxCc'), -- -4096
+		-- Attack Speed 9 [105-]
+		FourCC('ZxI0'), -- +1
+		FourCC('ZxI1'), -- +2
+		FourCC('ZxI2'), -- +4
+		FourCC('ZxI3'), -- +8
+		FourCC('ZxI4'), -- +16
+		FourCC('ZxI5'), -- +32
+		FourCC('ZxI6'), -- +64
+		FourCC('ZxI7'), -- +128
+		FourCC('ZxI8'), -- +256
+		FourCC('ZxI9'), -- +512
+		FourCC('ZxIa'), -- +1024
+		FourCC('ZxIb'), -- +2048
+		FourCC('ZxIc') -- -4096
 	}
-	local TYPES    = #ABILITY / #POWERS
+	local TYPES    = 1+(#ABILITY / #POWERS)
 
 	---@param target unit
 	---@param mod integer
@@ -173,6 +187,7 @@ do
 		local ammount = 0
 
 		if type(mod) ~= 'number' or mod < 1 or mod >= TYPES then
+			print("максимальное число модификаторов="..TYPES)
 			return print('UnitGetBonus: Invalid mod', mod)
 		end
 
