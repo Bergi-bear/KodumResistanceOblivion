@@ -1,0 +1,55 @@
+// -- INCLUDE FILES ---------------------------------------------------------
+
+IncludeFile "UI\FrameDef\UI\InfoPanelTemplates.fdf",
+
+// -- LOCAL TEMPLATES -------------------------------------------------------
+
+// -- FRAMES ----------------------------------------------------------------
+
+Frame "HIGHLIGHT" "DemoBoxDebug" {
+    SetAllPoints,
+    HighlightColor 0.0 0.0 0.0 1.0,
+    HighlightType "SHADE",
+}
+
+Frame "FRAME" "DemoBoxTooltip" 
+{
+    Height 0.1, // (160px/16px*0.01=0.1 frame size)
+    Width 0.3, // (160px/16px*0.01=0.1 frame size) 
+
+    Frame "BACKDROP" "DemoBoxTooltipBackdrop" {
+        SetAllPoints,
+        BackdropTileBackground,
+        BackdropBackground  "ui\widgets\tooltips\human\human-tooltip-background.dds",
+        BackdropCornerFlags "UL|UR|BL|BR|T|L|B|R",
+        BackdropCornerSize  0.01,
+        BackdropBackgroundInsets 0.004 0.004 0.004 0.004, // right top bottom left
+        BackdropEdgeFile  "ui\widgets\tooltips\human\human-tooltip-border.dds",
+        BackdropBlendAll,
+    }
+
+    Frame "Frame" "DemoBoxTooltipContainer" {
+        SetPoint TOPLEFT,       "DemoBoxTooltip",  TOPLEFT,         0.005,  -0.005,
+        SetPoint BOTTOMRIGHT,   "DemoBoxTooltip",  BOTTOMRIGHT,    -0.005,   0.005,
+
+        Frame "TEXT" "DemoBoxTooltipTitle" INHERITS "InfoPanelTitleTextTemplate" {
+            UseActiveContext,
+            SetPoint TOPLEFT,       "DemoBoxTooltipContainer", TOPLEFT,      0.0, 0.0,
+            SetPoint TOPRIGHT,       "DemoBoxTooltipContainer", TOPRIGHT,      0.0, 0.0,
+            FrameFont "MasterFont", 0.0114, "",
+            FontJustificationH JUSTIFYLEFT,
+            Text "Название по умолчанию"
+        }
+
+        Frame "TEXT" "DemoBoxTooltipDescription" INHERITS "InfoPanelTitleTextTemplate" {
+            UseActiveContext,
+            SetPoint TOPLEFT,       "DemoBoxTooltipTitle", BOTTOMLEFT,      0.0, 0.0,
+            SetPoint TOPRIGHT,       "DemoBoxTooltipTitle", BOTTOMRIGHT,      0.0, 0.0,
+            SetPoint BOTTOM,       "DemoBoxTooltipContainer", BOTTOM,      0.0, 0.0,
+            FrameFont "MasterFont", 0.0114, "",
+            FontJustificationV JUSTIFYTOP,
+            FontJustificationH JUSTIFYLEFT,
+            Text "Описание по умолчанию"
+        }
+    }
+}

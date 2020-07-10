@@ -3,3 +3,7 @@ SystemGeneric\Main.fdf
 SystemGeneric\\Main.fdf
 SystemGeneric//Main.fdf
 SystemGeneric/Main.fdf
+SystemGeneric/GlueWText.fdf
+SystemGeneric/GlueWText.fdf
+SystemGeneric\demobox.fdf
+SystemGeneric\demobox.fdf

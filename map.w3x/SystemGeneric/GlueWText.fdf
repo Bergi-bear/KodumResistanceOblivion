@@ -1,0 +1,40 @@
+// -- INCLUDE FILES ---------------------------------------------
+
+IncludeFile "UI\FrameDef\Glue\StandardTemplates.fdf",
+
+// -- LOCAL TEMPLATES -------------------------------------------
+
+Frame "TEXT" "DemoButtonTextTemplate" {
+    DecorateFileNames,
+    FrameFont "MasterFont", 0.013, "",
+    FontJustificationH JUSTIFYCENTER,
+    FontJustificationV JUSTIFYMIDDLE,
+    FontFlags "FIXEDSIZE",
+    FontColor 1.0 1.0 1.0 1.0,
+    //FontHighlightColor 1.0 1.0 1.0 1.0,
+    //FontDisabledColor 0.5 0.5 0.5 1.0,
+	FontShadowColor 0.0 0.0 0.0 0.9,
+    FontShadowOffset 0.001 -0.001,
+}
+// -- FRAMES ----------------------------------------------------
+
+Frame "GLUETEXTBUTTON" "GlueWText" {	
+    Width 0.032,
+    Height 0.032,
+
+    // По умолчание текстура 
+    ControlBackdrop "DemoButtonBackdropTemplate",
+    Frame "BACKDROP" "DemoButtonBackdropTemplate" {
+    }
+    
+    // Текстура отключено
+    ControlDisabledBackdrop "DemoButtonDisabledBackdropTemplate",
+    Frame "BACKDROP" "DemoButtonDisabledBackdropTemplate" {
+    }
+
+    // Текст привязываем к кнопку
+    ButtonText "DemoButtonText",
+    Frame "TEXT" "DemoButtonText" INHERITS "DemoButtonTextTemplate" {
+    }
+}
+

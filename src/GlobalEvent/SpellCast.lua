@@ -609,7 +609,7 @@ function InitSpellTrigger()
 				if UnitAlive(e) and IsUnitEnemy(e, GetOwningPlayer(caster)) then
 					local angle=-180+AngleBetweenXY(x,y,GetUnitXY(e))/bj_DEGTORAD
 					local distance=DistanceBetweenXY(x,y,GetUnitXY(e))
-					UnitAddForceSimple(e,angle,25,distance)
+					UnitAddForceSimple(e,angle,15,distance)
 					DisarmUnitTimed(e,dur)
 					MakeUnitSlowTimed(e,slow,dur)
 				end

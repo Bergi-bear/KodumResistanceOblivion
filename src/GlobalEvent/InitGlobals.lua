@@ -27,6 +27,9 @@ do
 		InitSelectionRegister()
 		InitMouseMoveTrigger()
 		--BadChat() -- Функция для починки чата
+		TimerStart(CreateTimer(), 0.05, false, function()
+			CreateTalentButton()
+		end)
 	end
 end
 

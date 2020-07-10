@@ -6,8 +6,6 @@
 CallingBar={}
 function CallingBar.Create(u,cd,text)
 
-
-
 	if not text then text="Подготовка" end
 	local amount=5/cd
 	local full=0

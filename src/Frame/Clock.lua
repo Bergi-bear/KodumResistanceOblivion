@@ -3,14 +3,11 @@
 --- Created by Bergi.
 --- DateTime: 26.04.2020 2:44
 function CreateAndStartClock()
-
 	local charges= BlzCreateFrameByType("BACKDROP", "Face", BlzGetOriginFrame(ORIGIN_FRAME_GAME_UI, 0), "", 0)
 	local new_FrameChargesText = BlzCreateFrameByType("TEXT", "ButtonChargesText", charges, "", 0)
-
 	BlzFrameSetTexture(charges, "ChargesTexture.blp", 0, true)
 	BlzFrameSetSize(charges, 0.08, 0.02)
 	BlzFrameSetAbsPoint(charges, FRAMEPOINT_CENTER,0.4-0.02 , 0.6-0.02)
-	--BlzFrameSetPoint(charges, FRAMEPOINT_BOTTOM, wood, FRAMEPOINT_BOTTOM, 0,0)
 	BlzFrameSetText(new_FrameChargesText, Zero(0)..":"..Zero(0)..":"..Zero(0))
 	BlzFrameSetPoint(new_FrameChargesText, FRAMEPOINT_CENTER, charges, FRAMEPOINT_CENTER, 0.,0.)
 	local sec=0
@@ -26,7 +23,6 @@ function CreateAndStartClock()
 			min=0
 			h=h+1
 		end
-
 		BlzFrameSetText(new_FrameChargesText, Zero(h)..":"..Zero(min)..":"..Zero(sec))
 	end)
 end
