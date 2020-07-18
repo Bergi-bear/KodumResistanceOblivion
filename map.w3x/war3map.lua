@@ -1,20 +1,6 @@
-gg_rct_DF = nil
-gg_rct_JBL_Spawn_Overhard = nil
-gg_rct_JBR_Spawn_Easy = nil
-gg_rct_JBR_Spawn_Hard = nil
-gg_rct_JBR_Spawn_Medium_Ogre_mage = nil
-gg_rct_JBR_Spawn_Medium_Satyr_or_Owlbear = nil
-gg_rct_JBR_Spawn_Overhard = nil
-gg_rct_P1T = nil
-gg_rct_P2T = nil
-gg_rct_P3T = nil
-gg_rct_P4T = nil
-gg_rct_P5T = nil
 gg_rct_Spawn_King_Bot = nil
-gg_rct_TPFDK = nil
 gg_rct_Tr_1_mid_Bot = nil
 gg_rct_Tr_2_mid_Bot = nil
-gg_rct_Tr_mid = nil
 gg_trg_poslushnik_tenei = nil
 gg_trg_Wisp_Air = nil
 gg_trg_Wisp_Elder = nil
@@ -29,7 +15,6 @@ gg_trg_HolyFoot = nil
 gg_trg_Witch = nil
 gg_trg_High_Wizard = nil
 gg_trg_HolyKnight = nil
-gg_trg_____________________________________001 = nil
 gg_trg_Respawn1p = nil
 gg_trg_Respawn2p = nil
 gg_trg_Respawn3p = nil
@@ -40,44 +25,10 @@ gg_trg_Respawn7p = nil
 gg_trg_Respawn8p = nil
 gg_trg_Respawn9p = nil
 gg_trg_Respawn10p = nil
-gg_trg_PostStart = nil
-gg_trg_Post = nil
-gg_trg_Start = nil
-gg_trg_Mid_Bottom = nil
-gg_trg_Left_Bot = nil
-gg_trg_Right_Bot = nil
-gg_trg_Mid_right = nil
-gg_trg_Left_Top = nil
-gg_trg_Right_Top = nil
-gg_trg_Mid_Bot = nil
-gg_trg_Mid_Top = nil
-gg_trg_Bot_Left_and_Right = nil
-gg_trg_Top_Left_and_Right = nil
-gg_trg_Camera = nil
-gg_trg_Cam_1p = nil
-gg_trg_Cam_2p = nil
-gg_trg_Cam_3p = nil
-gg_trg_Cam_4p = nil
-gg_trg_Cam_5p = nil
-gg_trg_Cam_6p = nil
-gg_trg_Timer = nil
 gg_trg_income = nil
-gg_trg_SpawnCreepLeftBot = nil
-gg_trg_SpawnCreepRightBot = nil
-gg_trg_SpawnCreepRightTop = nil
-gg_trg_SpawnCreepLeftTop = nil
-gg_trg_Victory4 = nil
-gg_trg_Victory8 = nil
-gg_trg_FixRegionTop = nil
-gg_trg_FixRegionBot = nil
+gg_trg_Start = nil
 gg_trg_Dont_attack = nil
-gg_trg_Shop_Bottom = nil
-gg_trg_Shop_Top = nil
 gg_trg_Feedback_to_kill_hero = nil
-gg_trg_System_upgrade = nil
-gg_trg_BossTo = nil
-gg_trg_BossIn = nil
-gg_trg_Vision = nil
 gg_trg_Untitled_Trigger_001 = nil
 gg_trg_EntireEvent = nil
 gg_trg_LearnEventConvert = nil
@@ -86,35 +37,17 @@ end
 
 function CreateAllItems()
     local itemID
-    BlzCreateItemWithSkin(FourCC("azhr"), -1660.7, -13922.5, FourCC("azhr"))
-    BlzCreateItemWithSkin(FourCC("fgdg"), -1483.4, -14038.9, FourCC("fgdg"))
-    BlzCreateItemWithSkin(FourCC("fgsk"), -1363.1, -14119.6, FourCC("fgsk"))
-    BlzCreateItemWithSkin(FourCC("gcel"), -1717.5, -14198.0, FourCC("gcel"))
-    BlzCreateItemWithSkin(FourCC("infs"), -1610.6, -14343.1, FourCC("infs"))
-    BlzCreateItemWithSkin(FourCC("pnvu"), -1511.2, -14192.5, FourCC("pnvu"))
-end
-
-function CreateBuildingsForPlayer0()
-    local p = Player(0)
-    local u
-    local unitID
-    local t
-    local life
-    u = BlzCreateUnitWithSkin(p, FourCC("h004"), 512.0, -1536.0, 270.000, FourCC("h004"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h004"), -512.0, -1536.0, 270.000, FourCC("h004"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h000"), -384.0, -11520.0, 270.000, FourCC("h000"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h000"), 384.0, -11520.0, 270.000, FourCC("h000"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h001"), 512.0, -10240.0, 270.000, FourCC("h001"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h001"), -512.0, -10240.0, 270.000, FourCC("h001"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h002"), -512.0, -7168.0, 270.000, FourCC("h002"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h003"), 512.0, -4096.0, 270.000, FourCC("h003"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h003"), -512.0, -4096.0, 270.000, FourCC("h003"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h002"), 512.0, -7168.0, 270.000, FourCC("h002"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h017"), 0.0, -16704.0, 270.000, FourCC("h017"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h004"), 8960.0, -4096.0, 270.000, FourCC("h004"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h003"), 8960.0, -7168.0, 270.000, FourCC("h003"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h002"), 8960.0, -9472.0, 270.000, FourCC("h002"))
-    u = BlzCreateUnitWithSkin(p, FourCC("n00U"), -16640.0, -16576.0, 270.000, FourCC("n00U"))
+    BlzCreateItemWithSkin(FourCC("engs"), -1007.3, -13085.7, FourCC("engs"))
+    BlzCreateItemWithSkin(FourCC("fgrg"), -639.2, -13007.2, FourCC("fgrg"))
+    BlzCreateItemWithSkin(FourCC("glsk"), -1125.7, -12949.1, FourCC("glsk"))
+    BlzCreateItemWithSkin(FourCC("gmfr"), -962.7, -12822.6, FourCC("gmfr"))
+    BlzCreateItemWithSkin(FourCC("kygh"), -1103.9, -12833.9, FourCC("kygh"))
+    BlzCreateItemWithSkin(FourCC("phlt"), -828.0, -13141.7, FourCC("phlt"))
+    BlzCreateItemWithSkin(FourCC("pnvu"), -342.6, -12871.4, FourCC("pnvu"))
+    BlzCreateItemWithSkin(FourCC("ratf"), -1126.5, -13068.0, FourCC("ratf"))
+    BlzCreateItemWithSkin(FourCC("rej3"), -811.1, -12963.7, FourCC("rej3"))
+    BlzCreateItemWithSkin(FourCC("wcyc"), -974.4, -12992.8, FourCC("wcyc"))
+    BlzCreateItemWithSkin(FourCC("wswd"), -1158.6, -12837.7, FourCC("wswd"))
 end
 
 function CreateUnitsForPlayer0()
@@ -123,166 +56,12 @@ function CreateUnitsForPlayer0()
     local unitID
     local t
     local life
-    u = BlzCreateUnitWithSkin(p, FourCC("h01B"), -1923.1, -16285.4, 280.000, FourCC("h01B"))
-    SetUnitColor(u, ConvertPlayerColor(16))
-    u = BlzCreateUnitWithSkin(p, FourCC("h01C"), -1847.7, -16284.9, 280.000, FourCC("h01C"))
-    SetUnitColor(u, ConvertPlayerColor(16))
-    u = BlzCreateUnitWithSkin(p, FourCC("h01D"), -1785.5, -16286.7, 280.000, FourCC("h01D"))
-    SetUnitColor(u, ConvertPlayerColor(16))
-    u = BlzCreateUnitWithSkin(p, FourCC("H012"), -1391.0, -13792.7, 308.620, FourCC("H012"))
-    SetHeroLevel(u, 30, false)
-    u = BlzCreateUnitWithSkin(p, FourCC("h01E"), -1923.7, -16198.2, 280.000, FourCC("h01E"))
-    SetUnitColor(u, ConvertPlayerColor(16))
-    u = BlzCreateUnitWithSkin(p, FourCC("h01F"), -1858.9, -16180.6, 280.000, FourCC("h01F"))
-    SetUnitColor(u, ConvertPlayerColor(16))
-    u = BlzCreateUnitWithSkin(p, FourCC("h01G"), -1777.8, -16192.7, 280.000, FourCC("h01G"))
-    SetUnitColor(u, ConvertPlayerColor(16))
-    u = BlzCreateUnitWithSkin(p, FourCC("h01H"), -2071.0, -16284.6, 280.000, FourCC("h01H"))
-    SetUnitColor(u, ConvertPlayerColor(16))
-    u = BlzCreateUnitWithSkin(p, FourCC("h01L"), -2151.9, -16282.4, 280.000, FourCC("h01L"))
-    SetUnitColor(u, ConvertPlayerColor(16))
-    u = BlzCreateUnitWithSkin(p, FourCC("h01M"), -2219.1, -16288.6, 280.000, FourCC("h01M"))
-    SetUnitColor(u, ConvertPlayerColor(16))
-    u = BlzCreateUnitWithSkin(p, FourCC("h01O"), -2506.6, -16284.5, 280.000, FourCC("h01O"))
-    SetUnitColor(u, ConvertPlayerColor(16))
-    u = BlzCreateUnitWithSkin(p, FourCC("h01P"), -2443.0, -16283.2, 280.000, FourCC("h01P"))
-    SetUnitColor(u, ConvertPlayerColor(16))
-    u = BlzCreateUnitWithSkin(p, FourCC("h01I"), -2375.9, -16271.9, 280.000, FourCC("h01I"))
-    SetUnitColor(u, ConvertPlayerColor(16))
-    u = BlzCreateUnitWithSkin(p, FourCC("h01N"), -2506.6, -16213.5, 280.000, FourCC("h01N"))
-    SetUnitColor(u, ConvertPlayerColor(16))
-    u = BlzCreateUnitWithSkin(p, FourCC("h01Q"), -2444.6, -16200.0, 280.000, FourCC("h01Q"))
-    SetUnitColor(u, ConvertPlayerColor(16))
-    u = BlzCreateUnitWithSkin(p, FourCC("h01J"), -2364.0, -16204.9, 280.000, FourCC("h01J"))
-    SetUnitColor(u, ConvertPlayerColor(16))
-    u = BlzCreateUnitWithSkin(p, FourCC("h01K"), -2421.1, -16058.4, 280.000, FourCC("h01K"))
-    SetUnitColor(u, ConvertPlayerColor(16))
-    u = BlzCreateUnitWithSkin(p, FourCC("H006"), -108.2, -15572.1, 278.413, FourCC("H006"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H007"), -11.7, -15549.0, 246.167, FourCC("H007"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H008"), 85.3, -15553.0, 36.256, FourCC("H008"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H009"), 198.7, -15566.9, 108.449, FourCC("H009"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00A"), 298.9, -15543.0, 321.635, FourCC("H00A"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00B"), -103.0, -15667.6, 252.924, FourCC("H00B"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00C"), -10.4, -15665.8, 265.822, FourCC("H00C"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00D"), 59.3, -15667.6, 127.412, FourCC("H00D"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00E"), 222.5, -15328.6, 31.521, FourCC("H00E"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00F"), 156.0, -15639.9, 104.132, FourCC("H00F"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00G"), 268.5, -15647.3, 266.339, FourCC("H00G"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00H"), -108.8, -15778.1, 106.307, FourCC("H00H"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00I"), -25.0, -15768.0, 50.330, FourCC("H00I"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00J"), 9.7, -15354.0, 60.976, FourCC("H00J"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00K"), 56.5, -15754.4, 266.460, FourCC("H00K"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00L"), 154.4, -15737.1, 90.871, FourCC("H00L"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00M"), 479.3, -15615.3, 212.043, FourCC("H00M"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00N"), 248.8, -15740.6, 250.529, FourCC("H00N"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00O"), -120.4, -15871.9, 92.662, FourCC("H00O"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00P"), -287.5, -15458.0, 26.643, FourCC("H00P"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00Q"), -111.6, -15449.5, 130.697, FourCC("H00Q"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00R"), -19.8, -15876.6, 142.047, FourCC("H00R"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00S"), 64.9, -15864.1, 188.916, FourCC("H00S"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00T"), 147.9, -15857.8, 259.933, FourCC("H00T"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00U"), 242.2, -15848.3, 119.084, FourCC("H00U"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00V"), -229.1, -15892.0, 247.002, FourCC("H00V"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00W"), -212.4, -15789.8, 331.160, FourCC("H00W"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00X"), -418.4, -15669.5, 151.902, FourCC("H00X"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00Y"), 148.6, -15970.5, 350.947, FourCC("H00Y"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00Z"), -25.5, -15973.4, 91.585, FourCC("H00Z"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H010"), 45.1, -15965.2, 265.086, FourCC("H010"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H011"), -377.8, -15195.9, 234.994, FourCC("H011"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H012"), -112.6, -15992.7, 211.230, FourCC("H012"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H013"), 326.4, -15883.6, 145.398, FourCC("H013"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H014"), -248.7, -16047.4, 137.707, FourCC("H014"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H015"), 404.4, -15174.3, 306.627, FourCC("H015"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h02S"), -1547.1, -16105.7, 271.299, FourCC("h02S"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h01Z"), -1552.0, -16209.1, 274.200, FourCC("h01Z"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h029"), -1628.4, -16283.7, 263.658, FourCC("h029"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h02A"), -1562.9, -16282.9, 269.968, FourCC("h02A"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h02B"), -1483.8, -16283.9, 266.779, FourCC("h02B"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h01W"), -2748.4, -16261.3, 274.573, FourCC("h01W"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h01V"), -2912.6, -16269.0, 273.500, FourCC("h01V"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h02D"), -2828.9, -16254.5, 283.659, FourCC("h02D"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h024"), -2828.3, -16175.4, 275.027, FourCC("h024"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h025"), -2916.7, -16146.9, 273.129, FourCC("h025"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h02G"), -2751.7, -16147.7, 266.722, FourCC("h02G"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h01R"), -3271.5, -16271.9, 278.236, FourCC("h01R"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h01X"), -3271.5, -16184.2, 266.991, FourCC("h01X"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h020"), -3186.6, -16180.2, 265.152, FourCC("h020"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h026"), -3086.0, -16184.2, 273.120, FourCC("h026"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h02H"), -3080.0, -16267.8, 271.030, FourCC("h02H"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h027"), -3417.5, -16183.1, 273.266, FourCC("h027"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h02R"), -3606.1, -16268.3, 265.849, FourCC("h02R"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h02J"), -3524.5, -16276.4, 270.654, FourCC("h02J"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h02N"), -3437.7, -16279.5, 271.457, FourCC("h02N"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h02L"), -3591.7, -16174.2, 259.279, FourCC("h02L"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h02K"), -3505.1, -16177.7, 269.498, FourCC("h02K"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h021"), -3869.8, -16169.7, 279.105, FourCC("h021"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h022"), -3861.7, -16291.8, 280.175, FourCC("h022"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h02C"), -3784.0, -16184.6, 274.888, FourCC("h02C"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h02F"), -3953.7, -16142.5, 270.276, FourCC("h02F"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h02O"), -3964.2, -16287.4, 268.894, FourCC("h02O"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00A"), -1636.5, -14176.7, 227.710, FourCC("H00A"))
-    SetHeroLevel(u, 30, false)
-    u = BlzCreateUnitWithSkin(p, FourCC("H02T"), -188.9, -16200.8, 165.250, FourCC("H02T"))
-    SetHeroLevel(u, 30, false)
-    u = BlzCreateUnitWithSkin(p, FourCC("H02U"), -1157.8, -15588.1, 273.872, FourCC("H02U"))
-    SetUnitColor(u, ConvertPlayerColor(18))
-    u = BlzCreateUnitWithSkin(p, FourCC("H032"), -1083.1, -15573.7, 253.770, FourCC("H032"))
-    SetUnitColor(u, ConvertPlayerColor(18))
-    u = BlzCreateUnitWithSkin(p, FourCC("H02Y"), -1111.4, -15447.2, 260.093, FourCC("H02Y"))
-    SetUnitColor(u, ConvertPlayerColor(18))
-    u = BlzCreateUnitWithSkin(p, FourCC("H02X"), -1002.6, -15505.4, 257.590, FourCC("H02X"))
-    SetUnitColor(u, ConvertPlayerColor(18))
-    u = BlzCreateUnitWithSkin(p, FourCC("H02Z"), -1228.5, -15485.3, 263.319, FourCC("H02Z"))
-    SetUnitColor(u, ConvertPlayerColor(18))
-    u = BlzCreateUnitWithSkin(p, FourCC("H02T"), -923.0, -15396.5, 342.443, FourCC("H02T"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H02W"), -899.5, -15534.1, 248.337, FourCC("H02W"))
-    SetUnitColor(u, ConvertPlayerColor(18))
-    u = BlzCreateUnitWithSkin(p, FourCC("H02V"), -1018.3, -15600.6, 255.315, FourCC("H02V"))
-    SetUnitColor(u, ConvertPlayerColor(18))
-    u = BlzCreateUnitWithSkin(p, FourCC("H031"), -930.6, -15621.2, 255.055, FourCC("H031"))
-    SetUnitColor(u, ConvertPlayerColor(18))
-    u = BlzCreateUnitWithSkin(p, FourCC("H030"), -1177.6, -15322.4, 261.986, FourCC("H030"))
-    SetUnitColor(u, ConvertPlayerColor(18))
-    u = BlzCreateUnitWithSkin(p, FourCC("H007"), -1754.6, -13907.2, 77.920, FourCC("H007"))
-    SetHeroLevel(u, 30, false)
-end
-
-function CreateBuildingsForPlayer1()
-    local p = Player(1)
-    local u
-    local unitID
-    local t
-    local life
-    u = BlzCreateUnitWithSkin(p, FourCC("h017"), -8448.0, -16704.0, 270.000, FourCC("h017"))
-    u = BlzCreateUnitWithSkin(p, FourCC("n00U"), -16768.0, -16448.0, 270.000, FourCC("n00U"))
-end
-
-function CreateBuildingsForPlayer2()
-    local p = Player(2)
-    local u
-    local unitID
-    local t
-    local life
-    u = BlzCreateUnitWithSkin(p, FourCC("h017"), 8448.0, -16704.0, 270.000, FourCC("h017"))
-    u = BlzCreateUnitWithSkin(p, FourCC("n00U"), -16512.0, -16448.0, 270.000, FourCC("n00U"))
-end
-
-function CreateBuildingsForPlayer3()
-    local p = Player(3)
-    local u
-    local unitID
-    local t
-    local life
-    u = BlzCreateUnitWithSkin(p, FourCC("n00U"), -16896.0, -16320.0, 270.000, FourCC("n00U"))
-end
-
-function CreateBuildingsForPlayer9()
-    local p = Player(9)
-    local u
-    local unitID
-    local t
-    local life
-    u = BlzCreateUnitWithSkin(p, FourCC("n00U"), -16384.0, -16320.0, 270.000, FourCC("n00U"))
+    u = BlzCreateUnitWithSkin(p, FourCC("H006"), -1354.6, -13383.8, 270.000, FourCC("H006"))
+    u = BlzCreateUnitWithSkin(p, FourCC("H00C"), -1145.6, -13382.8, 270.000, FourCC("H00C"))
+    u = BlzCreateUnitWithSkin(p, FourCC("H00E"), -989.0, -13370.5, 270.000, FourCC("H00E"))
+    u = BlzCreateUnitWithSkin(p, FourCC("H00L"), -787.5, -13357.9, 270.000, FourCC("H00L"))
+    u = BlzCreateUnitWithSkin(p, FourCC("H010"), -612.4, -13376.3, 270.000, FourCC("H010"))
+    u = BlzCreateUnitWithSkin(p, FourCC("H012"), -1331.5, -12945.4, 321.239, FourCC("H012"))
 end
 
 function CreateNeutralHostile()
@@ -291,81 +70,21 @@ function CreateNeutralHostile()
     local unitID
     local t
     local life
-    u = BlzCreateUnitWithSkin(p, FourCC("n009"), 3724.2, -2880.2, 226.976, FourCC("n009"))
-    u = BlzCreateUnitWithSkin(p, FourCC("n009"), 3540.4, -2804.4, 264.411, FourCC("n009"))
-    u = BlzCreateUnitWithSkin(p, FourCC("n009"), 3666.5, -2771.1, 257.756, FourCC("n009"))
-    u = BlzCreateUnitWithSkin(p, FourCC("n00D"), 3587.0, -2934.2, 260.648, FourCC("n00D"))
-    u = BlzCreateUnitWithSkin(p, FourCC("n00O"), 5112.9, -6153.6, 121.920, FourCC("n00O"))
-    u = BlzCreateUnitWithSkin(p, FourCC("n00H"), 2248.3, -8092.0, 73.259, FourCC("n00H"))
-    SetUnitColor(u, ConvertPlayerColor(1))
-    u = BlzCreateUnitWithSkin(p, FourCC("n00H"), 1940.2, -7851.8, 39.692, FourCC("n00H"))
-    SetUnitColor(u, ConvertPlayerColor(1))
-    u = BlzCreateUnitWithSkin(p, FourCC("n00L"), 2193.0, -7836.9, 51.218, FourCC("n00L"))
-    SetUnitColor(u, ConvertPlayerColor(1))
-    u = BlzCreateUnitWithSkin(p, FourCC("n00C"), 5864.9, -2192.4, 305.205, FourCC("n00C"))
-    u = BlzCreateUnitWithSkin(p, FourCC("n001"), 6941.8, -7455.5, 230.197, FourCC("n001"))
-    u = BlzCreateUnitWithSkin(p, FourCC("n001"), 6664.6, -7435.7, 302.105, FourCC("n001"))
-    u = BlzCreateUnitWithSkin(p, FourCC("n001"), 6664.7, -7626.4, 34.330, FourCC("n001"))
-    u = BlzCreateUnitWithSkin(p, FourCC("n004"), 6792.2, -7421.3, 259.163, FourCC("n004"))
-    u = BlzCreateUnitWithSkin(p, FourCC("n00M"), -5120.1, -2339.7, 298.249, FourCC("n00M"))
-    u = BlzCreateUnitWithSkin(p, FourCC("n001"), -3378.3, -3685.4, 1.637, FourCC("n001"))
-    u = BlzCreateUnitWithSkin(p, FourCC("n001"), -3172.8, -3763.0, 117.733, FourCC("n001"))
-    u = BlzCreateUnitWithSkin(p, FourCC("n001"), -3151.4, -3513.0, 221.271, FourCC("n001"))
-    u = BlzCreateUnitWithSkin(p, FourCC("H00V"), -1694.0, -13000.2, 67.150, FourCC("H00V"))
-    SetUnitAcquireRange(u, 200.0)
-    u = BlzCreateUnitWithSkin(p, FourCC("H00V"), -2564.8, -12370.4, 67.150, FourCC("H00V"))
-    SetHeroLevel(u, 5, false)
-    SetUnitAcquireRange(u, 200.0)
-    u = BlzCreateUnitWithSkin(p, FourCC("H00V"), -3766.9, -13475.8, 67.150, FourCC("H00V"))
-    SetUnitAcquireRange(u, 200.0)
-    u = BlzCreateUnitWithSkin(p, FourCC("H00V"), -2745.6, -10986.5, 67.150, FourCC("H00V"))
-    SetHeroLevel(u, 10, false)
-    SetUnitAcquireRange(u, 200.0)
-    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -3847.1, -13406.4, 163.921, FourCC("hfoo"))
-    SetUnitAcquireRange(u, 200.0)
-    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -3866.6, -13506.8, 200.045, FourCC("hfoo"))
-    SetUnitAcquireRange(u, 200.0)
-    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -3858.5, -13569.9, 312.065, FourCC("hfoo"))
-    SetUnitAcquireRange(u, 200.0)
-    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -3828.0, -13639.7, 243.475, FourCC("hfoo"))
-    SetUnitAcquireRange(u, 200.0)
-    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -3775.2, -13695.1, 252.419, FourCC("hfoo"))
-    SetUnitAcquireRange(u, 200.0)
-    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -3645.1, -13636.5, 27.994, FourCC("hfoo"))
-    SetUnitAcquireRange(u, 200.0)
-    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -3608.0, -13575.0, 45.243, FourCC("hfoo"))
-    SetUnitAcquireRange(u, 200.0)
-    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -3618.5, -13512.2, 102.330, FourCC("hfoo"))
-    SetUnitAcquireRange(u, 200.0)
-    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -3701.1, -13436.9, 86.201, FourCC("hfoo"))
-    SetUnitAcquireRange(u, 200.0)
-    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -3771.8, -13410.2, 156.615, FourCC("hfoo"))
-    SetUnitAcquireRange(u, 200.0)
-    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -3778.1, -13571.6, 322.437, FourCC("hfoo"))
-    SetUnitAcquireRange(u, 200.0)
-    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -3711.9, -13625.1, 280.204, FourCC("hfoo"))
-    SetUnitAcquireRange(u, 200.0)
-    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -3714.9, -13528.2, 354.990, FourCC("hfoo"))
-    SetUnitAcquireRange(u, 200.0)
-    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -2825.7, -14152.5, 27.994, FourCC("hfoo"))
-    SetUnitAcquireRange(u, 200.0)
-    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -2507.1, -13858.7, 295.232, FourCC("hfoo"))
-    SetUnitAcquireRange(u, 200.0)
-    u = BlzCreateUnitWithSkin(p, FourCC("hfoo"), -2827.2, -13561.7, 27.994, FourCC("hfoo"))
-    SetUnitAcquireRange(u, 200.0)
-    u = BlzCreateUnitWithSkin(p, FourCC("h029"), -5807.2, -15735.8, 85.169, FourCC("h029"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h029"), -5672.2, -15772.5, 155.890, FourCC("h029"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h029"), -5782.6, -15796.7, 43.782, FourCC("h029"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h029"), -5678.8, -15858.8, 90.783, FourCC("h029"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h029"), -5637.5, -15941.5, 129.950, FourCC("h029"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h029"), -5739.2, -15941.5, 114.942, FourCC("h029"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h029"), -5864.1, -15913.4, 121.534, FourCC("h029"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h029"), -5950.1, -15935.9, 281.577, FourCC("h029"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h029"), -5881.4, -16071.1, 158.021, FourCC("h029"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h029"), -5985.5, -16036.8, 222.853, FourCC("h029"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h029"), -5831.8, -16147.8, 44.353, FourCC("h029"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h029"), -6003.8, -16102.2, 231.544, FourCC("h029"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h029"), -5917.7, -16190.0, 293.717, FourCC("h029"))
+    u = BlzCreateUnitWithSkin(p, FourCC("h01B"), 1996.6, -15645.2, 233.520, FourCC("h01B"))
+    SetUnitColor(u, ConvertPlayerColor(16))
+    u = BlzCreateUnitWithSkin(p, FourCC("h01B"), 1841.1, -15797.3, 233.520, FourCC("h01B"))
+    SetUnitColor(u, ConvertPlayerColor(16))
+    u = BlzCreateUnitWithSkin(p, FourCC("h01B"), 1818.2, -15613.8, 233.520, FourCC("h01B"))
+    SetUnitColor(u, ConvertPlayerColor(16))
+    u = BlzCreateUnitWithSkin(p, FourCC("h01B"), 1669.1, -15719.2, 233.520, FourCC("h01B"))
+    SetUnitColor(u, ConvertPlayerColor(16))
+    u = BlzCreateUnitWithSkin(p, FourCC("h01B"), 1651.2, -15512.8, 233.520, FourCC("h01B"))
+    SetUnitColor(u, ConvertPlayerColor(16))
+    u = BlzCreateUnitWithSkin(p, FourCC("h01B"), 1845.8, -15439.0, 233.520, FourCC("h01B"))
+    SetUnitColor(u, ConvertPlayerColor(16))
+    u = BlzCreateUnitWithSkin(p, FourCC("H009"), 1936.8, -15988.4, 177.110, FourCC("H009"))
+    u = BlzCreateUnitWithSkin(p, FourCC("H009"), 1302.0, -16257.5, 91.630, FourCC("H009"))
+    SetHeroLevel(u, 30, false)
 end
 
 function CreateNeutralPassiveBuildings()
@@ -374,14 +93,7 @@ function CreateNeutralPassiveBuildings()
     local unitID
     local t
     local life
-    u = BlzCreateUnitWithSkin(p, FourCC("nwgt"), -4352.0, -11392.0, 270.000, FourCC("nwgt"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h005"), -10240.0, 0.0, 270.000, FourCC("h005"))
-    SetUnitColor(u, ConvertPlayerColor(14))
-    u = BlzCreateUnitWithSkin(p, FourCC("h005"), 10240.0, 0.0, 270.000, FourCC("h005"))
-    SetUnitColor(u, ConvertPlayerColor(14))
-    u = BlzCreateUnitWithSkin(p, FourCC("n00V"), -16192.0, -17088.0, 270.000, FourCC("n00V"))
-    u = BlzCreateUnitWithSkin(p, FourCC("n00W"), -17088.0, -17088.0, 270.000, FourCC("n00W"))
-    u = BlzCreateUnitWithSkin(p, FourCC("n00X"), -16640.0, -16192.0, 270.000, FourCC("n00X"))
+    u = BlzCreateUnitWithSkin(p, FourCC("h017"), 1728.0, -16192.0, 270.000, FourCC("h017"))
 end
 
 function CreateNeutralPassive()
@@ -390,18 +102,24 @@ function CreateNeutralPassive()
     local unitID
     local t
     local life
-    u = BlzCreateUnitWithSkin(p, FourCC("h018"), -1396.7, -1292.5, 225.900, FourCC("h018"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h019"), 5879.5, -4230.0, 122.780, FourCC("h019"))
-    u = BlzCreateUnitWithSkin(p, FourCC("h01A"), 10085.7, -1814.4, 215.440, FourCC("h01A"))
-    u = BlzCreateUnitWithSkin(p, FourCC("n00Q"), -16640.0, -17184.0, 75.000, FourCC("n00Q"))
+    u = BlzCreateUnitWithSkin(p, FourCC("h01B"), 1505.0, -15634.2, 233.520, FourCC("h01B"))
+    SetUnitColor(u, ConvertPlayerColor(16))
+    u = BlzCreateUnitWithSkin(p, FourCC("h01B"), 1349.5, -15786.3, 233.520, FourCC("h01B"))
+    SetUnitColor(u, ConvertPlayerColor(16))
+    u = BlzCreateUnitWithSkin(p, FourCC("h01B"), 1326.6, -15602.8, 233.520, FourCC("h01B"))
+    SetUnitColor(u, ConvertPlayerColor(16))
+    u = BlzCreateUnitWithSkin(p, FourCC("h01B"), 1177.5, -15708.3, 233.520, FourCC("h01B"))
+    SetUnitColor(u, ConvertPlayerColor(16))
+    u = BlzCreateUnitWithSkin(p, FourCC("h01B"), 1159.6, -15501.8, 233.520, FourCC("h01B"))
+    SetUnitColor(u, ConvertPlayerColor(16))
+    u = BlzCreateUnitWithSkin(p, FourCC("h01B"), 1354.3, -15428.1, 233.520, FourCC("h01B"))
+    SetUnitColor(u, ConvertPlayerColor(16))
+    u = BlzCreateUnitWithSkin(p, FourCC("h018"), -961.9, -12781.8, 270.000, FourCC("h018"))
+    u = BlzCreateUnitWithSkin(p, FourCC("h01A"), -824.2, -12775.7, 270.000, FourCC("h01A"))
+    u = BlzCreateUnitWithSkin(p, FourCC("h019"), -667.7, -12763.2, 270.000, FourCC("h019"))
 end
 
 function CreatePlayerBuildings()
-    CreateBuildingsForPlayer0()
-    CreateBuildingsForPlayer1()
-    CreateBuildingsForPlayer2()
-    CreateBuildingsForPlayer3()
-    CreateBuildingsForPlayer9()
 end
 
 function CreatePlayerUnits()
@@ -418,23 +136,9 @@ end
 
 function CreateRegions()
     local we
-    gg_rct_DF = Rect(-17312.0, -17312.0, -15968.0, -15968.0)
-    gg_rct_JBL_Spawn_Overhard = Rect(-5312.0, -2496.0, -4928.0, -2112.0)
-    gg_rct_JBR_Spawn_Easy = Rect(6528.0, -7712.0, 7040.0, -7264.0)
-    gg_rct_JBR_Spawn_Hard = Rect(1888.0, -8128.0, 2400.0, -7680.0)
-    gg_rct_JBR_Spawn_Medium_Ogre_mage = Rect(5728.0, -2368.0, 6016.0, -2048.0)
-    gg_rct_JBR_Spawn_Medium_Satyr_or_Owlbear = Rect(3392.0, -3040.0, 3904.0, -2592.0)
-    gg_rct_JBR_Spawn_Overhard = Rect(4928.0, -6336.0, 5312.0, -5952.0)
-    gg_rct_P1T = Rect(-16736.0, -16672.0, -16544.0, -16480.0)
-    gg_rct_P2T = Rect(-16864.0, -16544.0, -16672.0, -16352.0)
-    gg_rct_P3T = Rect(-16608.0, -16544.0, -16416.0, -16352.0)
-    gg_rct_P4T = Rect(-16992.0, -16416.0, -16800.0, -16224.0)
-    gg_rct_P5T = Rect(-16480.0, -16416.0, -16288.0, -16224.0)
     gg_rct_Spawn_King_Bot = Rect(-320.0, -16640.0, 320.0, -16224.0)
-    gg_rct_TPFDK = Rect(-16768.0, -17376.0, -16512.0, -16960.0)
     gg_rct_Tr_1_mid_Bot = Rect(-320.0, -16224.0, 320.0, -12512.0)
-    gg_rct_Tr_2_mid_Bot = Rect(-320.0, -12544.0, 320.0, -832.0)
-    gg_rct_Tr_mid = Rect(-384.0, -704.0, 384.0, 640.0)
+    gg_rct_Tr_2_mid_Bot = Rect(-320.0, -12544.0, 320.0, -8704.0)
 end
 
 --CUSTOM_CODE
@@ -494,10 +198,13 @@ end
 end]]
 
 FrameStep=0.039
-function CreateTalentButton()
-	--CreateTalentTree()
+local TalentTable={}
+function CreateTalentButton(pid)
+	TalentTable[pid]={
+		miniTalentTable={}
+	}
+	local data=TalentTable[pid]
 	-- наведение на глюбаттон гооврит что это таланты
-	-- создаёт поле из 10 глюбаттонов
 	-- глик по фрейму учит талант, если есть свободное очко
 
 	local next = FrameStep
@@ -505,16 +212,15 @@ function CreateTalentButton()
 	local buttonIconFrame = BlzCreateFrameByType("BACKDROP", "FaceButtonIcon", buttonFrame, "", 0)
 	BlzFrameSetAllPoints(buttonIconFrame, buttonFrame)
 	BlzFrameSetTexture(buttonIconFrame, "ReplaceableTextures\\CommandButtons\\BTNSelectHeroOn", 0, true)
-	BlzFrameSetAbsPoint(buttonFrame, FRAMEPOINT_LEFT, 0, 0.3)
+	BlzFrameSetAbsPoint(buttonFrame, FRAMEPOINT_LEFT, 0, 0.4)
 	BlzFrameSetSize(buttonFrame, next, next * 2.5)
-
-	local tree=CreateTalentTree(buttonFrame,0) --TODO Сюда игрока передать
+	local tree=CreateTalentTree(buttonFrame,pid) --TODO Сюда игрока передать
 
 	local ClickTrig = CreateTrigger()
 	BlzTriggerRegisterFrameEvent(ClickTrig, buttonFrame, FRAMEEVENT_CONTROL_CLICK)
 	local showState=false
 	TriggerAddAction(ClickTrig, function()
-		print("Нажата кнопка ")
+		--print("Нажата кнопка ")
 		BlzFrameSetEnable(BlzGetTriggerFrame(), false)
 		BlzFrameSetEnable(BlzGetTriggerFrame(), true)
 		if not showState then
@@ -528,27 +234,29 @@ function CreateTalentButton()
 	local TrigMOUSE_ENTER = CreateTrigger()
 	BlzTriggerRegisterFrameEvent(TrigMOUSE_ENTER, buttonFrame, FRAMEEVENT_MOUSE_ENTER)
 	TriggerAddAction(TrigMOUSE_ENTER, function()
-		print("показать подсказку")
+		--print("показать подсказку")
 	end)
 	local TrigMOUSE_LEAVE = CreateTrigger()
 	BlzTriggerRegisterFrameEvent(TrigMOUSE_LEAVE, buttonFrame, FRAMEEVENT_MOUSE_LEAVE)
 	TriggerAddAction(TrigMOUSE_LEAVE, function()
-		print("убрать подсказку")
+		--print("убрать подсказку")
 	end)
 	local k = 0
 	local m = 0
+
 	for i = 1, 10 do
-		local cd = BlzCreateFrameByType("BACKDROP", "Face", buttonFrame, "", 0)
-		BlzFrameSetTexture(cd, "ReplaceableTextures\\CommandButtons\\BTNSelectHeroOn", 0, true)
+		local miniTalent = BlzCreateFrameByType("BACKDROP", "Face", buttonFrame, "", 0)
+		data.miniTalentTable[i]=miniTalent
+		BlzFrameSetTexture(miniTalent, "ReplaceableTextures\\CommandButtons\\BTNSelectHeroOn", 0, true)
 		--BlzFrameSetAlpha(cd, 128)
-		BlzFrameSetSize(cd, next / 2, next / 2)
+		BlzFrameSetSize(miniTalent, next / 2, next / 2)
 
 		if k == 5 then
 			m = 1
 			k = 0
 		end
 		k = k + 1
-		BlzFrameSetPoint(cd, FRAMEPOINT_TOPLEFT, buttonFrame, FRAMEPOINT_TOPLEFT, 0 + m * (next / 2), 0 - (k - 1) * (next / 2))
+		BlzFrameSetPoint(miniTalent, FRAMEPOINT_BOTTOMLEFT, buttonFrame, FRAMEPOINT_BOTTOMLEFT, 0 + m * (next / 2), 0 + (k - 1) * (next / 2))
 	end
 end
 
@@ -556,6 +264,7 @@ function CreateTalentTree(buttonFrame,pid)
 
 	-- заголовок
 	-- текстблоки глюбаттоны 3 на 5
+	local data=TalentTable[pid]
 	local next = FrameStep
 	local tree={}
 	tree[pid]={
@@ -574,7 +283,11 @@ function CreateTalentTree(buttonFrame,pid)
 		local trig = CreateTrigger()
 		BlzTriggerRegisterFrameEvent(trig, mainButton, FRAMEEVENT_CONTROL_CLICK)
 		TriggerAddAction(trig, function()
-			print("выбран этот левый талант"..i)
+			print("выбран этот левый талант "..i)
+
+
+			BlzFrameSetTexture(data.miniTalentTable[i], "", 0, true)
+
 			BlzFrameSetEnable(mainButton,false)
 			BlzFrameSetEnable(tree[pid].right[i],false)
 		end)
@@ -602,7 +315,8 @@ function CreateTalentTree(buttonFrame,pid)
 		local trig = CreateTrigger()
 		BlzTriggerRegisterFrameEvent(trig, mainButton, FRAMEEVENT_CONTROL_CLICK)
 		TriggerAddAction(trig, function()
-			print("выбран этот правый талант"..i)
+			print("выбран этот правый талант "..i)
+			BlzFrameSetTexture(data.miniTalentTable[i+5], "", 0, true)
 			BlzFrameSetEnable(mainButton,false)
 			BlzFrameSetEnable(tree[pid].left[i],false)
 		end)
@@ -675,75 +389,27 @@ end
 ---
 
 function HideEverything()
-	local next=0.039
 	BlzHideOriginFrames(true)
-	CreateInterface()
 	BlzEnableUIAutoPosition ( false )
-
 	local GAME_UI     = BlzGetOriginFrame(ORIGIN_FRAME_GAME_UI, 0)
 	local WORLD_FRAME = BlzGetOriginFrame(ORIGIN_FRAME_WORLD_FRAME, 0)
 	BlzFrameSetAllPoints(WORLD_FRAME, GAME_UI)
-	--BlzFrameSetVisible(BlzGetFrameByName("ConsoleUIBackdrop",0), false)
-
-	--	// Hide Inventory Cover
 	BlzFrameSetAlpha(BlzGetFrameByName("SimpleInventoryCover", 0), 0)
-
-	--// Show Minimap
-	local map=BlzGetOriginFrame(ORIGIN_FRAME_MINIMAP, 0)
-	BlzFrameClearAllPoints(map)
-	BlzFrameSetVisible(map, true)
-	BlzFrameSetAbsPoint(map, FRAMEPOINT_CENTER, 0.7 ,0.05)
-	BlzFrameSetSize(map,0.1,.1)
-
-	--	// Show Inventory, without unitInfo
 	BlzFrameSetVisible(BlzFrameGetParent(BlzGetOriginFrame(ORIGIN_FRAME_ITEM_BUTTON, 0)), true)
-	--// Show UnitInfos parent to show inventory and unit info
-	--BlzFrameSetVisible(BlzFrameGetParent(BlzGetFrameByName("SimpleInfoPanelUnitDetail",0)),true) --Панель юнита
-	--// Show Hero Icons at the left top of the screen
 	BlzFrameSetVisible(BlzGetOriginFrame(ORIGIN_FRAME_HERO_BAR,0), false)
-	--	//  //Quests, Menu, Allies, Log
-
-	--// //Gold, Lumber, food and Upkeep; also enables /fps /ping /apm
 	BlzFrameSetVisible(BlzGetFrameByName("ResourceBarFrame",0),true)
-
-
-	--Вернуть F10
-	BlzFrameSetVisible(BlzGetFrameByName("UpperButtonBarFrame",0),true)
-	for i=0,3 do
-		local f10=BlzGetOriginFrame(ORIGIN_FRAME_SYSTEM_BUTTON, i)
-		BlzFrameSetVisible(f10, true) --не не работает
-		BlzFrameClearAllPoints(f10)
-		BlzFrameSetAbsPoint(f10, FRAMEPOINT_CENTER, 0.00+(0.08*i) ,0.59)
-		--BlzFrameSetSize(f10, 0.2, 0.022)
-	end
-
-
-	BlzFrameSetVisible(BlzGetFrameByName("ConsoleUIBackdrop", 0), false)-- черная рамка
-	--BlzFrameSetAbsPoint(BlzGetFrameByName("ConsoleUI",0), FRAMEPOINT_BOTTOMLEFT, 0.0 ,8) --для смещения бага некликабельности в нижнем правом углу
 	BlzFrameSetScale(BlzFrameGetChild(BlzGetFrameByName("ConsoleUI",0),5), 0.001)
-
-	BlzFrameSetAbsPoint(BlzGetOriginFrame(ORIGIN_FRAME_CHAT_MSG, 0), FRAMEPOINT_BOTTOMLEFT, 0.1 ,0.15)
-	BlzFrameSetAbsPoint(BlzGetOriginFrame(ORIGIN_FRAME_UNIT_MSG, 0), FRAMEPOINT_BOTTOMLEFT, 0.15 ,0.2)
-
-	local portrait=BlzGetOriginFrame(ORIGIN_FRAME_PORTRAIT, 0)
-	BlzFrameClearAllPoints(portrait)
-	BlzFrameSetVisible(portrait, true)
-	BlzFrameSetAbsPoint(portrait, FRAMEPOINT_CENTER, 0.025 ,0.025)
-	BlzFrameSetSize(portrait,0.05,0.05)
-
+	--BlzFrameSetAbsPoint(BlzGetOriginFrame(ORIGIN_FRAME_CHAT_MSG, 0), FRAMEPOINT_BOTTOMLEFT, 0.1 ,0.15)
+	--BlzFrameSetAbsPoint(BlzGetOriginFrame(ORIGIN_FRAME_UNIT_MSG, 0), FRAMEPOINT_BOTTOMLEFT, 0.15 ,0.2)
 	local fps=BlzGetFrameByName("ResourceBarFrame",0)
 	BlzFrameClearAllPoints(fps)
 	BlzFrameSetAbsPoint(fps, FRAMEPOINT_CENTER, 0.9 ,0.61)
-	--SimpleInfoPanelIconGold [5]
-
-
-	Resources()
-
---------------------------------------------------------------------------------------------------
 	local infoPanel=BlzFrameGetParent(BlzGetFrameByName("SimpleInfoPanelUnitDetail",0)) -- панель стат героя
 	BlzFrameClearAllPoints(infoPanel)
-	BlzFrameSetVisible(infoPanel,true)
-	BlzFrameSetAbsPoint(infoPanel, FRAMEPOINT_CENTER, 0.4 ,0.05) --0,9 чтобы полностью убрать
+    BlzFrameSetVisible(infoPanel,true)
+	BlzFrameSetAbsPoint(infoPanel, FRAMEPOINT_CENTER, 0,9) --0,9 чтобы полностью убрать
+
+
 	--BlzFrameSetSize(infoPanel, 0.05, 0.05)
 	--убираем всю инфопанель кроме статуса
 	--[[
@@ -761,53 +427,38 @@ function HideEverything()
 	BlzFrameSetAbsPoint(BlzGetFrameByName("InfoPanelIconBackdrop",5), FRAMEPOINT_CENTER, 0.9 ,0.9)
 	]]
 
-	--FrameGe
 
 
 
-	--BlzFrameSetVisible(BlzGetFrameByName("SimpleBuildTimeIndicator",0),false)
-	--BlzFrameSetVisible(BlzGetOriginFrame(ORIGIN_FRAME_UNIT_PANEL_BUFF_BAR , 0), false)
-	--
-	--ORIGIN_FRAME_TOP_MSG
-	--ПРЕДЕТЫ но не работают
-	local InvBackdrop = {}
-	local InfoBackdrop     = BlzCreateFrame('Steel-Backdrop', WORLD_FRAME, 0, 0)
-	for i = 0, 5 do
-		--[[InvBackdrop[i] = BlzCreateFrame('Item-Backdrop', WORLD_FRAME, 0, 0)
-		BlzFrameSetSize(InvBackdrop[i], 0.034, 0.034)
-		if i == 0 then
-			BlzFrameSetPoint(InvBackdrop[i], FRAMEPOINT_TOPLEFT, InfoBackdrop, FRAMEPOINT_TOPRIGHT, 0, 0)
-		elseif i < 2 then
-			BlzFrameSetPoint(InvBackdrop[i], FRAMEPOINT_LEFT, InvBackdrop[i - 1], FRAMEPOINT_RIGHT, -0.001, 0)
-		else
-			BlzFrameSetPoint(InvBackdrop[i], FRAMEPOINT_TOP, InvBackdrop[i - 2], FRAMEPOINT_BOTTOM, 0, 0.001)
-		end]]
-		local item = BlzGetOriginFrame(ORIGIN_FRAME_ITEM_BUTTON, i)
-		BlzFrameSetVisible(item, true)
-		BlzFrameClearAllPoints(item)
-		BlzFrameSetSize(item, next, next)
-		if i>=3 then
-			BlzFrameSetAbsPoint(item, FRAMEPOINT_CENTER, 0.515-(next*3)+next*i ,(next*1)-0.005)
-		else
-			BlzFrameSetAbsPoint(item, FRAMEPOINT_CENTER, 0.515+(next*i) ,(next*2)-0.005)
-		end
-	end
 
 	BlzFrameClearAllPoints(BlzGetOriginFrame(ORIGIN_FRAME_UBERTOOLTIP, 0)) -- ПОдсказка при наведении на дефолт фреймы
 	BlzFrameSetPoint(BlzGetOriginFrame(ORIGIN_FRAME_UBERTOOLTIP, 0), FRAMEPOINT_BOTTOM, BlzGetOriginFrame(ORIGIN_FRAME_GAME_UI, 0), FRAMEPOINT_BOTTOM, 0, 0.13)
-	--BlzFrameSetAbsPoint(BlzGetOriginFrame(ORIGIN_FRAME_UBERTOOLTIP, 0), FRAMEPOINT_CENTER, 0.4 ,0.22)
-
 
 
 	for i = 0,11 do --отвязка всех кнопок
+		--print("очистка.. "..i)
 		BlzFrameClearAllPoints(BlzGetFrameByName("CommandButton_"..i, 0))
+		BlzFrameSetAbsPoint(BlzGetFrameByName("CommandButton_"..i, 0),FRAMEPOINT_CENTER,1,1)
+		--
 	end
+--[[
+
 	for i=0,2 do --QWE
 		BlzFrameSetAbsPoint(BlzGetFrameByName("CommandButton_"..i+8, 0), FRAMEPOINT_CENTER, 0.2065+next*i ,(next*2)-0.005)
 	end
 	for i=0,2 do --RTY
 		BlzFrameSetAbsPoint(BlzGetFrameByName("CommandButton_"..i+5, 0), FRAMEPOINT_CENTER, 0.2065+next*i ,(next*1)-0.005)
 	end
+]]
+
+
+	local black=ResizeBlackPanel()
+	Resources()
+	MenuFrame()
+	ShowMap()
+	ShowPortraitFrame(black)
+	ShowInventory(black)
+	CreateQWERDFG()
 
 end
 
@@ -843,6 +494,67 @@ function Resources()
 	local LumberText = BlzGetFrameByName('ResourceBarLumberText', 0)
 	BlzFrameClearAllPoints(LumberText)
 	BlzFrameSetPoint(LumberText, FRAMEPOINT_CENTER, LumberIcon, FRAMEPOINT_CENTER, 0, 0)
+end
+
+function MenuFrame()
+	BlzFrameSetVisible(BlzGetFrameByName("UpperButtonBarFrame",0),true)
+	for i=0,3 do
+		local f10=BlzGetOriginFrame(ORIGIN_FRAME_SYSTEM_BUTTON, i)
+		BlzFrameSetVisible(f10, true) --не не работает
+		BlzFrameClearAllPoints(f10)
+		BlzFrameSetAbsPoint(f10, FRAMEPOINT_CENTER, 0.00+(0.08*i) ,0.59)
+	end
+end
+
+function ShowPortraitFrame(black)
+	local portrait=BlzGetOriginFrame(ORIGIN_FRAME_PORTRAIT, 0)
+	BlzFrameClearAllPoints(portrait)
+	BlzFrameSetVisible(portrait, true)
+	--BlzFrameSetAbsPoint(portrait, FRAMEPOINT_CENTER, 0.025 ,0.025)
+	BlzFrameSetSize(portrait,0.05,0.05)
+	BlzFrameSetPoint(portrait,FRAMEPOINT_LEFT,black,FRAMEPOINT_LEFT,0.088,0.015)
+end
+
+function ShowMap()
+	local map=BlzGetOriginFrame(ORIGIN_FRAME_MINIMAP, 0)
+	BlzFrameClearAllPoints(map)
+	BlzFrameSetVisible(map, false)
+	BlzFrameSetAbsPoint(map, FRAMEPOINT_CENTER, 0.7 ,0.05)
+	BlzFrameSetSize(map,0.1,.1)
+end
+
+function ShowInventory(black)
+	local next=0.039
+	local step=(next*6)+next/2
+	for i = 0, 5 do
+		local item = BlzGetOriginFrame(ORIGIN_FRAME_ITEM_BUTTON, i)
+		BlzFrameSetVisible(item, true)
+		BlzFrameClearAllPoints(item)
+		BlzFrameSetSize(item, next, next)
+		if i>=3 then
+			BlzFrameSetPoint(item,FRAMEPOINT_BOTTOM,black,FRAMEPOINT_BOTTOM,step-(next*3)+next*i,0)
+			--BlzFrameSetAbsPoint(item, FRAMEPOINT_CENTER, 0.515-(next*3)+next*i ,(next*1)-0.005)
+		else
+			BlzFrameSetPoint(item,FRAMEPOINT_BOTTOM,black,FRAMEPOINT_BOTTOM,step+(next*i),next)
+			--BlzFrameSetAbsPoint(item, FRAMEPOINT_CENTER, 0.515+(next*i) ,next*2)-0.005)
+		end
+	end
+end
+
+function CreateQWERDFG()
+	local next=0.039
+	for i=0,8 do --RTY
+		BlzFrameSetAbsPoint(BlzGetFrameByName("CommandButton_"..i, 0), FRAMEPOINT_CENTER, 0.2065+next*i ,(next*1)+next/8)
+	end
+end
+
+function ResizeBlackPanel()
+	local black=BlzGetFrameByName("ConsoleUIBackdrop", 0)
+	BlzFrameSetVisible(black, true)
+	BlzFrameClearAllPoints(black)
+	BlzFrameSetSize(black,0.7,0.04*2)
+	BlzFrameSetPoint(black,FRAMEPOINT_BOTTOM,BlzGetOriginFrame(ORIGIN_FRAME_GAME_UI, 0),FRAMEPOINT_BOTTOM,0,0)
+	return black
 end
 do
 	local POWERS   = { 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096 }
@@ -2049,15 +1761,16 @@ do
 		LearnEvent()
 		InitTrig_Entire()
 		--interface
-		HideEverything()
 
-		CreateAndStartClock()
+		--CreateAndStartClock()
 		KeyRegistration()
 		InitSelectionRegister()
 		InitMouseMoveTrigger()
-		--BadChat() -- Функция для починки чата
 		TimerStart(CreateTimer(), 0.05, false, function()
-			CreateTalentButton()
+			--CreateTalentButton(0)
+			HideEverything()
+			--CreateInterface()
+			Resources()
 		end)
 	end
 end
@@ -5495,134 +5208,6 @@ function InitTrig_HolyKnight()
     TriggerAddAction(gg_trg_HolyKnight, Trig_HolyKnight_Actions)
 end
 
-function Trig_____________________________________001_Conditions()
-    if (not (IsUnitType(GetDyingUnit(), UNIT_TYPE_HERO) == true)) then
-        return false
-    end
-    return true
-end
-
-function Trig_____________________________________001_Func001C()
-    return true
-end
-
-function Trig_____________________________________001_Func002C()
-    return true
-end
-
-function Trig_____________________________________001_Func003C()
-    if (not (GetUnitTypeId(GetKillingUnitBJ()) == FourCC("H00D"))) then
-        return false
-    end
-    return true
-end
-
-function Trig_____________________________________001_Func004C()
-    return true
-end
-
-function Trig_____________________________________001_Func005C()
-    return true
-end
-
-function Trig_____________________________________001_Func006C()
-    return true
-end
-
-function Trig_____________________________________001_Func007C()
-    return true
-end
-
-function Trig_____________________________________001_Func008C()
-    return true
-end
-
-function Trig_____________________________________001_Func009C()
-    return true
-end
-
-function Trig_____________________________________001_Func010C()
-    return true
-end
-
-function Trig_____________________________________001_Func011C()
-    if (not (GetUnitTypeId(GetKillingUnitBJ()) == FourCC("H00Z"))) then
-        return false
-    end
-    return true
-end
-
-function Trig_____________________________________001_Func012C()
-    return true
-end
-
-function Trig_____________________________________001_Func013C()
-    return true
-end
-
-function Trig_____________________________________001_Func014C()
-    return true
-end
-
-function Trig_____________________________________001_Func015C()
-    return true
-end
-
-function Trig_____________________________________001_Actions()
-    if (Trig_____________________________________001_Func001C()) then
-    else
-    end
-    if (Trig_____________________________________001_Func002C()) then
-    else
-    end
-    if (Trig_____________________________________001_Func003C()) then
-    else
-    end
-    if (Trig_____________________________________001_Func004C()) then
-    else
-    end
-    if (Trig_____________________________________001_Func005C()) then
-    else
-    end
-    if (Trig_____________________________________001_Func006C()) then
-    else
-    end
-    if (Trig_____________________________________001_Func007C()) then
-    else
-    end
-    if (Trig_____________________________________001_Func008C()) then
-    else
-    end
-    if (Trig_____________________________________001_Func009C()) then
-    else
-    end
-    if (Trig_____________________________________001_Func010C()) then
-    else
-    end
-    if (Trig_____________________________________001_Func011C()) then
-    else
-    end
-    if (Trig_____________________________________001_Func012C()) then
-    else
-    end
-    if (Trig_____________________________________001_Func013C()) then
-    else
-    end
-    if (Trig_____________________________________001_Func014C()) then
-    else
-    end
-    if (Trig_____________________________________001_Func015C()) then
-    else
-    end
-end
-
-function InitTrig_____________________________________001()
-    gg_trg_____________________________________001 = CreateTrigger()
-    TriggerRegisterAnyUnitEventBJ(gg_trg_____________________________________001, EVENT_PLAYER_UNIT_DEATH)
-    TriggerAddCondition(gg_trg_____________________________________001, Condition(Trig_____________________________________001_Conditions))
-    TriggerAddAction(gg_trg_____________________________________001, Trig_____________________________________001_Actions)
-end
-
 function Trig_Respawn1p_Conditions()
     if (not (IsUnitType(GetTriggerUnit(), UNIT_TYPE_HERO) == true)) then
         return false
@@ -5813,1240 +5398,6 @@ function InitTrig_Respawn10p()
     TriggerAddAction(gg_trg_Respawn10p, Trig_Respawn10p_Actions)
 end
 
-function Trig_PostStart_Actions()
-    EnableTrigger(gg_trg_Post)
-end
-
-function InitTrig_PostStart()
-    gg_trg_PostStart = CreateTrigger()
-    DisableTrigger(gg_trg_PostStart)
-    TriggerRegisterTimerEventSingle(gg_trg_PostStart, 900.00)
-    TriggerAddAction(gg_trg_PostStart, Trig_PostStart_Actions)
-end
-
-function Trig_Post_Func001C()
-    return true
-end
-
-function Trig_Post_Func002C()
-    return true
-end
-
-function Trig_Post_Actions()
-    if (Trig_Post_Func001C()) then
-        AdjustPlayerStateBJ(2, Player(0), PLAYER_STATE_RESOURCE_GOLD)
-        AdjustPlayerStateBJ(2, Player(1), PLAYER_STATE_RESOURCE_GOLD)
-        AdjustPlayerStateBJ(2, Player(2), PLAYER_STATE_RESOURCE_GOLD)
-    else
-    end
-    if (Trig_Post_Func002C()) then
-        AdjustPlayerStateBJ(2, Player(5), PLAYER_STATE_RESOURCE_GOLD)
-        AdjustPlayerStateBJ(2, Player(6), PLAYER_STATE_RESOURCE_GOLD)
-        AdjustPlayerStateBJ(2, Player(7), PLAYER_STATE_RESOURCE_GOLD)
-    else
-    end
-end
-
-function InitTrig_Post()
-    gg_trg_Post = CreateTrigger()
-    DisableTrigger(gg_trg_Post)
-    TriggerRegisterTimerEventPeriodic(gg_trg_Post, 1.00)
-    TriggerAddAction(gg_trg_Post, Trig_Post_Actions)
-end
-
-function Trig_Start_Actions()
-    SetPlayerTaxRateBJ(10, PLAYER_STATE_RESOURCE_GOLD, Player(1), Player(0))
-    SetPlayerTaxRateBJ(25, PLAYER_STATE_RESOURCE_GOLD, Player(2), Player(0))
-    SetPlayerTaxRateBJ(50, PLAYER_STATE_RESOURCE_GOLD, Player(3), Player(0))
-    SetPlayerTaxRateBJ(50, PLAYER_STATE_RESOURCE_GOLD, Player(4), Player(0))
-    SetPlayerTaxRateBJ(10, PLAYER_STATE_RESOURCE_GOLD, Player(6), Player(5))
-    SetPlayerTaxRateBJ(25, PLAYER_STATE_RESOURCE_GOLD, Player(7), Player(5))
-    SetPlayerTaxRateBJ(50, PLAYER_STATE_RESOURCE_GOLD, Player(8), Player(5))
-    SetPlayerTaxRateBJ(50, PLAYER_STATE_RESOURCE_GOLD, Player(9), Player(5))
-    SetTimeOfDay(0.00)
-    SetPlayerStateBJ(Player(0), PLAYER_STATE_RESOURCE_GOLD, 250)
-    SetPlayerStateBJ(Player(1), PLAYER_STATE_RESOURCE_GOLD, 200)
-    SetPlayerStateBJ(Player(2), PLAYER_STATE_RESOURCE_GOLD, 200)
-    SetPlayerStateBJ(Player(3), PLAYER_STATE_RESOURCE_GOLD, 500)
-    SetPlayerStateBJ(Player(4), PLAYER_STATE_RESOURCE_GOLD, 500)
-    SetPlayerStateBJ(Player(0), PLAYER_STATE_RESOURCE_LUMBER, 10)
-    SetPlayerStateBJ(Player(1), PLAYER_STATE_RESOURCE_LUMBER, 5)
-    SetPlayerStateBJ(Player(2), PLAYER_STATE_RESOURCE_LUMBER, 5)
-    SetPlayerStateBJ(Player(3), PLAYER_STATE_RESOURCE_LUMBER, 0)
-    SetPlayerStateBJ(Player(4), PLAYER_STATE_RESOURCE_LUMBER, 0)
-    SetPlayerStateBJ(Player(5), PLAYER_STATE_RESOURCE_GOLD, 250)
-    SetPlayerStateBJ(Player(6), PLAYER_STATE_RESOURCE_GOLD, 200)
-    SetPlayerStateBJ(Player(7), PLAYER_STATE_RESOURCE_GOLD, 200)
-    SetPlayerStateBJ(Player(8), PLAYER_STATE_RESOURCE_GOLD, 500)
-    SetPlayerStateBJ(Player(9), PLAYER_STATE_RESOURCE_GOLD, 500)
-    SetPlayerStateBJ(Player(5), PLAYER_STATE_RESOURCE_LUMBER, 10)
-    SetPlayerStateBJ(Player(6), PLAYER_STATE_RESOURCE_LUMBER, 5)
-    SetPlayerStateBJ(Player(7), PLAYER_STATE_RESOURCE_LUMBER, 5)
-    SetPlayerStateBJ(Player(8), PLAYER_STATE_RESOURCE_LUMBER, 0)
-    SetPlayerStateBJ(Player(9), PLAYER_STATE_RESOURCE_LUMBER, 0)
-    SetPlayerMaxHeroesAllowed(1, Player(0))
-    SetPlayerMaxHeroesAllowed(1, Player(1))
-    SetPlayerMaxHeroesAllowed(1, Player(2))
-    SetPlayerMaxHeroesAllowed(1, Player(3))
-    SetPlayerMaxHeroesAllowed(1, Player(4))
-    SetPlayerMaxHeroesAllowed(1, Player(5))
-    SetPlayerMaxHeroesAllowed(1, Player(6))
-    SetPlayerMaxHeroesAllowed(1, Player(7))
-    SetPlayerMaxHeroesAllowed(1, Player(8))
-    SetPlayerMaxHeroesAllowed(1, Player(9))
-    CreateQuestBJ(bj_QUESTTYPE_OPT_DISCOVERED, "TRIGSTR_1549", "TRIGSTR_1550", "ReplaceableTextures\\WorldEditUI\\Editor-ItemSet.blp")
-    CreateQuestBJ(bj_QUESTTYPE_OPT_DISCOVERED, "TRIGSTR_1551", "TRIGSTR_1552", "ReplaceableTextures\\WorldEditUI\\Editor-Ally-NoPriority.blp")
-    CreateQuestBJ(bj_QUESTTYPE_OPT_DISCOVERED, "TRIGSTR_1553", "TRIGSTR_1554", "ReplaceableTextures\\WorldEditUI\\Editor-Ally-NoPriority.blp")
-    CreateQuestBJ(bj_QUESTTYPE_OPT_DISCOVERED, "TRIGSTR_1555", "TRIGSTR_1556", "ReplaceableTextures\\WorldEditUI\\Editor-Ally-NoPriority.blp")
-    CreateQuestBJ(bj_QUESTTYPE_OPT_DISCOVERED, "TRIGSTR_1557", "TRIGSTR_1558", "ReplaceableTextures\\WorldEditUI\\Editor-Ally-NoPriority.blp")
-end
-
-function InitTrig_Start()
-    gg_trg_Start = CreateTrigger()
-    TriggerAddAction(gg_trg_Start, Trig_Start_Actions)
-end
-
-function Trig_Mid_Bottom_Func001Func001C()
-    return true
-end
-
-function Trig_Mid_Bottom_Func001A()
-    if (Trig_Mid_Bottom_Func001Func001C()) then
-    else
-    end
-end
-
-function Trig_Mid_Bottom_Actions()
-    ForGroupBJ(GetUnitsInRectAll(GetPlayableMapRect()), Trig_Mid_Bottom_Func001A)
-end
-
-function InitTrig_Mid_Bottom()
-    gg_trg_Mid_Bottom = CreateTrigger()
-    TriggerRegisterAnyUnitEventBJ(gg_trg_Mid_Bottom, EVENT_PLAYER_UNIT_SPELL_EFFECT)
-    TriggerAddAction(gg_trg_Mid_Bottom, Trig_Mid_Bottom_Actions)
-end
-
-function Trig_Left_Bot_Func001Func001C()
-    return true
-end
-
-function Trig_Left_Bot_Func001A()
-    if (Trig_Left_Bot_Func001Func001C()) then
-    else
-    end
-end
-
-function Trig_Left_Bot_Actions()
-    ForGroupBJ(GetUnitsInRectAll(GetPlayableMapRect()), Trig_Left_Bot_Func001A)
-end
-
-function InitTrig_Left_Bot()
-    gg_trg_Left_Bot = CreateTrigger()
-    TriggerAddAction(gg_trg_Left_Bot, Trig_Left_Bot_Actions)
-end
-
-function Trig_Right_Bot_Func001Func001C()
-    return true
-end
-
-function Trig_Right_Bot_Func001A()
-    if (Trig_Right_Bot_Func001Func001C()) then
-    else
-    end
-end
-
-function Trig_Right_Bot_Actions()
-    ForGroupBJ(GetUnitsInRectAll(GetPlayableMapRect()), Trig_Right_Bot_Func001A)
-end
-
-function InitTrig_Right_Bot()
-    gg_trg_Right_Bot = CreateTrigger()
-    TriggerAddAction(gg_trg_Right_Bot, Trig_Right_Bot_Actions)
-end
-
-function Trig_Mid_right_Func001Func001C()
-    return true
-end
-
-function Trig_Mid_right_Func001A()
-    if (Trig_Mid_right_Func001Func001C()) then
-    else
-    end
-end
-
-function Trig_Mid_right_Actions()
-    ForGroupBJ(GetUnitsInRectAll(GetPlayableMapRect()), Trig_Mid_right_Func001A)
-end
-
-function InitTrig_Mid_right()
-    gg_trg_Mid_right = CreateTrigger()
-    TriggerRegisterAnyUnitEventBJ(gg_trg_Mid_right, EVENT_PLAYER_UNIT_SPELL_EFFECT)
-    TriggerAddAction(gg_trg_Mid_right, Trig_Mid_right_Actions)
-end
-
-function Trig_Left_Top_Func001Func001C()
-    return true
-end
-
-function Trig_Left_Top_Func001A()
-    if (Trig_Left_Top_Func001Func001C()) then
-    else
-    end
-end
-
-function Trig_Left_Top_Actions()
-    ForGroupBJ(GetUnitsInRectAll(GetPlayableMapRect()), Trig_Left_Top_Func001A)
-end
-
-function InitTrig_Left_Top()
-    gg_trg_Left_Top = CreateTrigger()
-    TriggerAddAction(gg_trg_Left_Top, Trig_Left_Top_Actions)
-end
-
-function Trig_Right_Top_Func001Func001C()
-    return true
-end
-
-function Trig_Right_Top_Func001A()
-    if (Trig_Right_Top_Func001Func001C()) then
-    else
-    end
-end
-
-function Trig_Right_Top_Actions()
-    ForGroupBJ(GetUnitsInRectAll(GetPlayableMapRect()), Trig_Right_Top_Func001A)
-end
-
-function InitTrig_Right_Top()
-    gg_trg_Right_Top = CreateTrigger()
-    TriggerAddAction(gg_trg_Right_Top, Trig_Right_Top_Actions)
-end
-
-function Trig_Mid_Bot_Func002Func001C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(0))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Bot_Func002Func002C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(1))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Bot_Func002Func003C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(2))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Bot_Func002C()
-    if (not (IsUnitType(GetDyingUnit(), UNIT_TYPE_MELEE_ATTACKER) == true)) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Bot_Func003Func001C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(0))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Bot_Func003Func002C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(1))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Bot_Func003Func003C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(2))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Bot_Func003C()
-    if (not (IsUnitType(GetDyingUnit(), UNIT_TYPE_RANGED_ATTACKER) == true)) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Bot_Func005Func001C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(4))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Bot_Func005Func002C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(5))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Bot_Func005Func003C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(6))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Bot_Func005C()
-    if (not (IsUnitType(GetDyingUnit(), UNIT_TYPE_MELEE_ATTACKER) == true)) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Bot_Func006Func001C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(4))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Bot_Func006Func002C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(5))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Bot_Func006Func003C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(6))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Bot_Func006C()
-    if (not (IsUnitType(GetDyingUnit(), UNIT_TYPE_RANGED_ATTACKER) == true)) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Bot_Actions()
-    if (Trig_Mid_Bot_Func002C()) then
-        if (Trig_Mid_Bot_Func002Func001C()) then
-            AdjustPlayerStateBJ(30, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1537", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Mid_Bot_Func002Func002C()) then
-            AdjustPlayerStateBJ(30, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1538", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Mid_Bot_Func002Func003C()) then
-            AdjustPlayerStateBJ(30, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1539", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-    else
-    end
-    if (Trig_Mid_Bot_Func003C()) then
-        if (Trig_Mid_Bot_Func003Func001C()) then
-            AdjustPlayerStateBJ(60, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1540", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Mid_Bot_Func003Func002C()) then
-            AdjustPlayerStateBJ(60, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1541", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Mid_Bot_Func003Func003C()) then
-            AdjustPlayerStateBJ(60, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1542", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-    else
-    end
-    if (Trig_Mid_Bot_Func005C()) then
-        if (Trig_Mid_Bot_Func005Func001C()) then
-            AdjustPlayerStateBJ(15, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1543", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Mid_Bot_Func005Func002C()) then
-            AdjustPlayerStateBJ(15, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1544", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Mid_Bot_Func005Func003C()) then
-            AdjustPlayerStateBJ(15, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1545", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-    else
-    end
-    if (Trig_Mid_Bot_Func006C()) then
-        if (Trig_Mid_Bot_Func006Func001C()) then
-            AdjustPlayerStateBJ(30, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1546", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Mid_Bot_Func006Func002C()) then
-            AdjustPlayerStateBJ(30, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1547", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Mid_Bot_Func006Func003C()) then
-            AdjustPlayerStateBJ(30, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1548", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-    else
-    end
-end
-
-function InitTrig_Mid_Bot()
-    gg_trg_Mid_Bot = CreateTrigger()
-    TriggerRegisterPlayerUnitEventSimple(gg_trg_Mid_Bot, Player(7), EVENT_PLAYER_UNIT_DEATH)
-    TriggerAddAction(gg_trg_Mid_Bot, Trig_Mid_Bot_Actions)
-end
-
-function Trig_Mid_Top_Func002Func001C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(4))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Top_Func002Func002C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(5))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Top_Func002Func003C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(6))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Top_Func002C()
-    if (not (IsUnitType(GetDyingUnit(), UNIT_TYPE_MELEE_ATTACKER) == true)) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Top_Func003Func001C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(4))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Top_Func003Func002C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(5))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Top_Func003Func003C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(6))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Top_Func003C()
-    if (not (IsUnitType(GetDyingUnit(), UNIT_TYPE_RANGED_ATTACKER) == true)) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Top_Func005Func001C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(0))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Top_Func005Func002C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(1))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Top_Func005Func003C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(2))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Top_Func005C()
-    if (not (IsUnitType(GetDyingUnit(), UNIT_TYPE_MELEE_ATTACKER) == true)) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Top_Func006Func001C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(0))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Top_Func006Func002C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(1))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Top_Func006Func003C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(2))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Top_Func006C()
-    if (not (IsUnitType(GetDyingUnit(), UNIT_TYPE_RANGED_ATTACKER) == true)) then
-        return false
-    end
-    return true
-end
-
-function Trig_Mid_Top_Actions()
-    if (Trig_Mid_Top_Func002C()) then
-        if (Trig_Mid_Top_Func002Func001C()) then
-            AdjustPlayerStateBJ(30, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1525", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Mid_Top_Func002Func002C()) then
-            AdjustPlayerStateBJ(30, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1526", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Mid_Top_Func002Func003C()) then
-            AdjustPlayerStateBJ(30, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1527", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-    else
-    end
-    if (Trig_Mid_Top_Func003C()) then
-        if (Trig_Mid_Top_Func003Func001C()) then
-            AdjustPlayerStateBJ(60, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1528", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Mid_Top_Func003Func002C()) then
-            AdjustPlayerStateBJ(60, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1529", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Mid_Top_Func003Func003C()) then
-            AdjustPlayerStateBJ(60, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1530", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-    else
-    end
-    if (Trig_Mid_Top_Func005C()) then
-        if (Trig_Mid_Top_Func005Func001C()) then
-            AdjustPlayerStateBJ(15, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1531", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Mid_Top_Func005Func002C()) then
-            AdjustPlayerStateBJ(15, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1532", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Mid_Top_Func005Func003C()) then
-            AdjustPlayerStateBJ(15, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1533", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-    else
-    end
-    if (Trig_Mid_Top_Func006C()) then
-        if (Trig_Mid_Top_Func006Func001C()) then
-            AdjustPlayerStateBJ(30, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1534", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Mid_Top_Func006Func002C()) then
-            AdjustPlayerStateBJ(30, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1535", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Mid_Top_Func006Func003C()) then
-            AdjustPlayerStateBJ(30, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1536", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-    else
-    end
-end
-
-function InitTrig_Mid_Top()
-    gg_trg_Mid_Top = CreateTrigger()
-    TriggerRegisterPlayerUnitEventSimple(gg_trg_Mid_Top, Player(3), EVENT_PLAYER_UNIT_DEATH)
-    TriggerAddAction(gg_trg_Mid_Top, Trig_Mid_Top_Actions)
-end
-
-function Trig_Bot_Left_and_Right_Func002Func001C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(4))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Bot_Left_and_Right_Func002Func002C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(5))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Bot_Left_and_Right_Func002Func003C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(6))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Bot_Left_and_Right_Func002C()
-    if (not (IsUnitType(GetDyingUnit(), UNIT_TYPE_MELEE_ATTACKER) == true)) then
-        return false
-    end
-    return true
-end
-
-function Trig_Bot_Left_and_Right_Func003Func001C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(4))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Bot_Left_and_Right_Func003Func002C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(5))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Bot_Left_and_Right_Func003Func003C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(6))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Bot_Left_and_Right_Func003C()
-    if (not (IsUnitType(GetDyingUnit(), UNIT_TYPE_RANGED_ATTACKER) == true)) then
-        return false
-    end
-    return true
-end
-
-function Trig_Bot_Left_and_Right_Func005Func001C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(0))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Bot_Left_and_Right_Func005Func002C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(1))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Bot_Left_and_Right_Func005Func003C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(2))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Bot_Left_and_Right_Func005C()
-    if (not (IsUnitType(GetDyingUnit(), UNIT_TYPE_MELEE_ATTACKER) == true)) then
-        return false
-    end
-    return true
-end
-
-function Trig_Bot_Left_and_Right_Func006Func001C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(0))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Bot_Left_and_Right_Func006Func002C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(1))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Bot_Left_and_Right_Func006Func003C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(2))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Bot_Left_and_Right_Func006C()
-    if (not (IsUnitType(GetDyingUnit(), UNIT_TYPE_RANGED_ATTACKER) == true)) then
-        return false
-    end
-    return true
-end
-
-function Trig_Bot_Left_and_Right_Actions()
-    if (Trig_Bot_Left_and_Right_Func002C()) then
-        if (Trig_Bot_Left_and_Right_Func002Func001C()) then
-            AdjustPlayerStateBJ(10, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1513", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Bot_Left_and_Right_Func002Func002C()) then
-            AdjustPlayerStateBJ(10, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1514", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Bot_Left_and_Right_Func002Func003C()) then
-            AdjustPlayerStateBJ(10, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1515", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-    else
-    end
-    if (Trig_Bot_Left_and_Right_Func003C()) then
-        if (Trig_Bot_Left_and_Right_Func003Func001C()) then
-            AdjustPlayerStateBJ(20, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1516", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Bot_Left_and_Right_Func003Func002C()) then
-            AdjustPlayerStateBJ(20, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1517", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Bot_Left_and_Right_Func003Func003C()) then
-            AdjustPlayerStateBJ(20, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1518", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-    else
-    end
-    if (Trig_Bot_Left_and_Right_Func005C()) then
-        if (Trig_Bot_Left_and_Right_Func005Func001C()) then
-            AdjustPlayerStateBJ(5, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1519", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Bot_Left_and_Right_Func005Func002C()) then
-            AdjustPlayerStateBJ(5, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1520", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Bot_Left_and_Right_Func005Func003C()) then
-            AdjustPlayerStateBJ(5, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1521", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-    else
-    end
-    if (Trig_Bot_Left_and_Right_Func006C()) then
-        if (Trig_Bot_Left_and_Right_Func006Func001C()) then
-            AdjustPlayerStateBJ(10, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1522", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Bot_Left_and_Right_Func006Func002C()) then
-            AdjustPlayerStateBJ(10, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1523", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Bot_Left_and_Right_Func006Func003C()) then
-            AdjustPlayerStateBJ(10, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1524", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-    else
-    end
-end
-
-function InitTrig_Bot_Left_and_Right()
-    gg_trg_Bot_Left_and_Right = CreateTrigger()
-    TriggerRegisterPlayerUnitEventSimple(gg_trg_Bot_Left_and_Right, Player(10), EVENT_PLAYER_UNIT_DEATH)
-    TriggerRegisterPlayerUnitEventSimple(gg_trg_Bot_Left_and_Right, Player(8), EVENT_PLAYER_UNIT_DEATH)
-    TriggerAddAction(gg_trg_Bot_Left_and_Right, Trig_Bot_Left_and_Right_Actions)
-end
-
-function Trig_Top_Left_and_Right_Func002Func001C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(0))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Top_Left_and_Right_Func002Func002C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(1))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Top_Left_and_Right_Func002Func003C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(2))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Top_Left_and_Right_Func002C()
-    if (not (IsUnitType(GetDyingUnit(), UNIT_TYPE_MELEE_ATTACKER) == true)) then
-        return false
-    end
-    return true
-end
-
-function Trig_Top_Left_and_Right_Func003Func001C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(0))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Top_Left_and_Right_Func003Func002C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(1))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Top_Left_and_Right_Func003Func003C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(2))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Top_Left_and_Right_Func003C()
-    if (not (IsUnitType(GetDyingUnit(), UNIT_TYPE_RANGED_ATTACKER) == true)) then
-        return false
-    end
-    return true
-end
-
-function Trig_Top_Left_and_Right_Func005Func001C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(4))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Top_Left_and_Right_Func005Func002C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(5))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Top_Left_and_Right_Func005Func003C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(6))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Top_Left_and_Right_Func005C()
-    if (not (IsUnitType(GetDyingUnit(), UNIT_TYPE_MELEE_ATTACKER) == true)) then
-        return false
-    end
-    return true
-end
-
-function Trig_Top_Left_and_Right_Func006Func001C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(4))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Top_Left_and_Right_Func006Func002C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(5))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Top_Left_and_Right_Func006Func003C()
-    if (not (GetOwningPlayer(GetKillingUnitBJ()) == Player(6))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Top_Left_and_Right_Func006C()
-    if (not (IsUnitType(GetDyingUnit(), UNIT_TYPE_RANGED_ATTACKER) == true)) then
-        return false
-    end
-    return true
-end
-
-function Trig_Top_Left_and_Right_Actions()
-    if (Trig_Top_Left_and_Right_Func002C()) then
-        if (Trig_Top_Left_and_Right_Func002Func001C()) then
-            AdjustPlayerStateBJ(10, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1501", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Top_Left_and_Right_Func002Func002C()) then
-            AdjustPlayerStateBJ(10, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1502", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Top_Left_and_Right_Func002Func003C()) then
-            AdjustPlayerStateBJ(10, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1503", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-    else
-    end
-    if (Trig_Top_Left_and_Right_Func003C()) then
-        if (Trig_Top_Left_and_Right_Func003Func001C()) then
-            AdjustPlayerStateBJ(20, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1504", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Top_Left_and_Right_Func003Func002C()) then
-            AdjustPlayerStateBJ(20, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1505", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Top_Left_and_Right_Func003Func003C()) then
-            AdjustPlayerStateBJ(20, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1506", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 100.00, 80.00, 0.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-    else
-    end
-    if (Trig_Top_Left_and_Right_Func005C()) then
-        if (Trig_Top_Left_and_Right_Func005Func001C()) then
-            AdjustPlayerStateBJ(5, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1507", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Top_Left_and_Right_Func005Func002C()) then
-            AdjustPlayerStateBJ(5, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1508", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Top_Left_and_Right_Func005Func003C()) then
-            AdjustPlayerStateBJ(5, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1509", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-    else
-    end
-    if (Trig_Top_Left_and_Right_Func006C()) then
-        if (Trig_Top_Left_and_Right_Func006Func001C()) then
-            AdjustPlayerStateBJ(10, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1510", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Top_Left_and_Right_Func006Func002C()) then
-            AdjustPlayerStateBJ(10, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1511", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-        if (Trig_Top_Left_and_Right_Func006Func003C()) then
-            AdjustPlayerStateBJ(10, GetOwningPlayer(GetKillingUnitBJ()), PLAYER_STATE_RESOURCE_GOLD)
-            CreateTextTagLocBJ("TRIGSTR_1512", GetUnitLoc(GetDyingUnit()), 10.00, 6.00, 0.00, 90.00, 90.00, 0)
-            SetTextTagVelocityBJ(GetLastCreatedTextTag(), 64, 92.00)
-            SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-            SetTextTagLifespanBJ(GetLastCreatedTextTag(), 1.00)
-        else
-        end
-    else
-    end
-end
-
-function InitTrig_Top_Left_and_Right()
-    gg_trg_Top_Left_and_Right = CreateTrigger()
-    TriggerRegisterPlayerUnitEventSimple(gg_trg_Top_Left_and_Right, Player(11), EVENT_PLAYER_UNIT_DEATH)
-    TriggerRegisterPlayerUnitEventSimple(gg_trg_Top_Left_and_Right, Player(9), EVENT_PLAYER_UNIT_DEATH)
-    TriggerAddAction(gg_trg_Top_Left_and_Right, Trig_Top_Left_and_Right_Actions)
-end
-
-function Trig_Camera_Actions()
-    PanCameraToTimedLocForPlayer(Player(0), GetPlayerStartLocationLoc(Player(0)), 0)
-    PanCameraToTimedLocForPlayer(Player(1), GetPlayerStartLocationLoc(Player(1)), 0)
-    PanCameraToTimedLocForPlayer(Player(2), GetPlayerStartLocationLoc(Player(2)), 0)
-    PanCameraToTimedLocForPlayer(Player(4), GetPlayerStartLocationLoc(Player(4)), 0)
-    PanCameraToTimedLocForPlayer(Player(5), GetPlayerStartLocationLoc(Player(5)), 0)
-    PanCameraToTimedLocForPlayer(Player(6), GetPlayerStartLocationLoc(Player(6)), 0)
-end
-
-function InitTrig_Camera()
-    gg_trg_Camera = CreateTrigger()
-    TriggerAddAction(gg_trg_Camera, Trig_Camera_Actions)
-end
-
-function Trig_Cam_1p_Actions()
-    CameraSetSmoothingFactorBJ(4.00)
-    CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 4.00, "ReplaceableTextures\\CameraMasks\\HazeFilter_mask.blp", 0, 0, 0, 0)
-    PanCameraToTimedLocForPlayer(Player(0), CameraSetupGetDestPositionLoc(GetCurrentCameraSetup()), 0)
-end
-
-function InitTrig_Cam_1p()
-    gg_trg_Cam_1p = CreateTrigger()
-    TriggerRegisterPlayerChatEvent(gg_trg_Cam_1p, Player(0), "-cam", false)
-    TriggerAddAction(gg_trg_Cam_1p, Trig_Cam_1p_Actions)
-end
-
-function Trig_Cam_2p_Actions()
-    CameraSetSmoothingFactorBJ(4.00)
-    CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 4.00, "ReplaceableTextures\\CameraMasks\\HazeFilter_mask.blp", 0, 0, 0, 0)
-    PanCameraToTimedLocForPlayer(Player(1), CameraSetupGetDestPositionLoc(GetCurrentCameraSetup()), 0)
-end
-
-function InitTrig_Cam_2p()
-    gg_trg_Cam_2p = CreateTrigger()
-    TriggerRegisterPlayerChatEvent(gg_trg_Cam_2p, Player(1), "-cam", false)
-    TriggerAddAction(gg_trg_Cam_2p, Trig_Cam_2p_Actions)
-end
-
-function Trig_Cam_3p_Actions()
-    CameraSetSmoothingFactorBJ(4.00)
-    CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 4.00, "ReplaceableTextures\\CameraMasks\\HazeFilter_mask.blp", 0, 0, 0, 0)
-    PanCameraToTimedLocForPlayer(Player(2), CameraSetupGetDestPositionLoc(GetCurrentCameraSetup()), 0)
-end
-
-function InitTrig_Cam_3p()
-    gg_trg_Cam_3p = CreateTrigger()
-    TriggerRegisterPlayerChatEvent(gg_trg_Cam_3p, Player(2), "-cam", false)
-    TriggerAddAction(gg_trg_Cam_3p, Trig_Cam_3p_Actions)
-end
-
-function Trig_Cam_4p_Actions()
-    CameraSetSmoothingFactorBJ(4.00)
-    CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 4.00, "ReplaceableTextures\\CameraMasks\\HazeFilter_mask.blp", 0, 0, 0, 0)
-    PanCameraToTimedLocForPlayer(Player(4), CameraSetupGetDestPositionLoc(GetCurrentCameraSetup()), 0)
-end
-
-function InitTrig_Cam_4p()
-    gg_trg_Cam_4p = CreateTrigger()
-    TriggerRegisterPlayerChatEvent(gg_trg_Cam_4p, Player(4), "-cam", false)
-    TriggerAddAction(gg_trg_Cam_4p, Trig_Cam_4p_Actions)
-end
-
-function Trig_Cam_5p_Actions()
-    CameraSetSmoothingFactorBJ(4.00)
-    CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 4.00, "ReplaceableTextures\\CameraMasks\\HazeFilter_mask.blp", 0, 0, 0, 0)
-    PanCameraToTimedLocForPlayer(Player(5), CameraSetupGetDestPositionLoc(GetCurrentCameraSetup()), 0)
-end
-
-function InitTrig_Cam_5p()
-    gg_trg_Cam_5p = CreateTrigger()
-    TriggerRegisterPlayerChatEvent(gg_trg_Cam_5p, Player(5), "-cam", false)
-    TriggerAddAction(gg_trg_Cam_5p, Trig_Cam_5p_Actions)
-end
-
-function Trig_Cam_6p_Actions()
-    CameraSetSmoothingFactorBJ(4.00)
-    CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 4.00, "ReplaceableTextures\\CameraMasks\\HazeFilter_mask.blp", 0, 0, 0, 0)
-    PanCameraToTimedLocForPlayer(Player(6), CameraSetupGetDestPositionLoc(GetCurrentCameraSetup()), 0)
-end
-
-function InitTrig_Cam_6p()
-    gg_trg_Cam_6p = CreateTrigger()
-    TriggerRegisterPlayerChatEvent(gg_trg_Cam_6p, Player(6), "-cam", false)
-    TriggerAddAction(gg_trg_Cam_6p, Trig_Cam_6p_Actions)
-end
-
-function Trig_Timer_Actions()
-    DisplayTextToForce(GetPlayersAll(), "TRIGSTR_1498")
-    TriggerSleepAction(10.00)
-    EnableTrigger(gg_trg_SpawnCreepLeftBot)
-    EnableTrigger(gg_trg_SpawnCreepLeftTop)
-    EnableTrigger(gg_trg_SpawnCreepRightBot)
-    EnableTrigger(gg_trg_SpawnCreepRightTop)
-    EnableTrigger(gg_trg_PostStart)
-    EnableTrigger(gg_trg_income)
-    TimerDialogSetTimeColorBJ(GetLastCreatedTimerDialogBJ(), 40.00, 100.00, 100.00, 0)
-    TriggerSleepAction(3540.00)
-    DestroyTimerDialogBJ(GetLastCreatedTimerDialogBJ())
-    TimerDialogSetTimeColorBJ(GetLastCreatedTimerDialogBJ(), 40.00, 100.00, 100.00, 0)
-end
-
-function InitTrig_Timer()
-    gg_trg_Timer = CreateTrigger()
-    TriggerRegisterTimerEventSingle(gg_trg_Timer, 80.00)
-    TriggerAddAction(gg_trg_Timer, Trig_Timer_Actions)
-end
-
 function Trig_income_Actions()
     AdjustPlayerStateBJ(1, Player(0), PLAYER_STATE_RESOURCE_GOLD)
     AdjustPlayerStateBJ(1, Player(1), PLAYER_STATE_RESOURCE_GOLD)
@@ -7058,413 +5409,36 @@ end
 
 function InitTrig_income()
     gg_trg_income = CreateTrigger()
-    DisableTrigger(gg_trg_income)
     TriggerRegisterTimerEventPeriodic(gg_trg_income, 1.00)
     TriggerAddAction(gg_trg_income, Trig_income_Actions)
 end
 
-function Trig_SpawnCreepLeftBot_Func002C()
-    return true
+function Trig_Start_Actions()
+    SetPlayerTaxRateBJ(50, PLAYER_STATE_RESOURCE_GOLD, Player(3), Player(0))
+    SetPlayerTaxRateBJ(50, PLAYER_STATE_RESOURCE_GOLD, Player(4), Player(0))
+    SetPlayerTaxRateBJ(50, PLAYER_STATE_RESOURCE_GOLD, Player(8), Player(5))
+    SetPlayerTaxRateBJ(50, PLAYER_STATE_RESOURCE_GOLD, Player(9), Player(5))
+    SetTimeOfDay(0.00)
+    SetPlayerStateBJ(Player(0), PLAYER_STATE_RESOURCE_GOLD, 600)
+    SetPlayerStateBJ(Player(1), PLAYER_STATE_RESOURCE_GOLD, 600)
+    SetPlayerStateBJ(Player(2), PLAYER_STATE_RESOURCE_GOLD, 600)
+    SetPlayerStateBJ(Player(3), PLAYER_STATE_RESOURCE_GOLD, 300)
+    SetPlayerStateBJ(Player(4), PLAYER_STATE_RESOURCE_GOLD, 300)
+    SetPlayerStateBJ(Player(5), PLAYER_STATE_RESOURCE_GOLD, 600)
+    SetPlayerStateBJ(Player(6), PLAYER_STATE_RESOURCE_GOLD, 600)
+    SetPlayerStateBJ(Player(7), PLAYER_STATE_RESOURCE_GOLD, 600)
+    SetPlayerStateBJ(Player(8), PLAYER_STATE_RESOURCE_GOLD, 300)
+    SetPlayerStateBJ(Player(9), PLAYER_STATE_RESOURCE_GOLD, 300)
+    CreateQuestBJ(bj_QUESTTYPE_OPT_DISCOVERED, "TRIGSTR_1549", "TRIGSTR_1550", "ReplaceableTextures\\WorldEditUI\\Editor-ItemSet.blp")
+    CreateQuestBJ(bj_QUESTTYPE_OPT_DISCOVERED, "TRIGSTR_1551", "TRIGSTR_1552", "ReplaceableTextures\\WorldEditUI\\Editor-Ally-NoPriority.blp")
+    CreateQuestBJ(bj_QUESTTYPE_OPT_DISCOVERED, "TRIGSTR_1553", "TRIGSTR_1554", "ReplaceableTextures\\WorldEditUI\\Editor-Ally-NoPriority.blp")
+    CreateQuestBJ(bj_QUESTTYPE_OPT_DISCOVERED, "TRIGSTR_1555", "TRIGSTR_1556", "ReplaceableTextures\\WorldEditUI\\Editor-Ally-NoPriority.blp")
+    CreateQuestBJ(bj_QUESTTYPE_OPT_DISCOVERED, "TRIGSTR_1557", "TRIGSTR_1558", "ReplaceableTextures\\WorldEditUI\\Editor-Ally-NoPriority.blp")
 end
 
-function Trig_SpawnCreepLeftBot_Func003C()
-    return true
-end
-
-function Trig_SpawnCreepLeftBot_Func004C()
-    return true
-end
-
-function Trig_SpawnCreepLeftBot_Func005C()
-    return true
-end
-
-function Trig_SpawnCreepLeftBot_Func006C()
-    return true
-end
-
-function Trig_SpawnCreepLeftBot_Func007C()
-    return true
-end
-
-function Trig_SpawnCreepLeftBot_Func008C()
-    return true
-end
-
-function Trig_SpawnCreepLeftBot_Func009C()
-    return true
-end
-
-function Trig_SpawnCreepLeftBot_Func010C()
-    return true
-end
-
-function Trig_SpawnCreepLeftBot_Actions()
-    if (Trig_SpawnCreepLeftBot_Func002C()) then
-    else
-    end
-    if (Trig_SpawnCreepLeftBot_Func003C()) then
-    else
-    end
-    if (Trig_SpawnCreepLeftBot_Func004C()) then
-    else
-    end
-    if (Trig_SpawnCreepLeftBot_Func005C()) then
-    else
-    end
-    if (Trig_SpawnCreepLeftBot_Func006C()) then
-    else
-    end
-    if (Trig_SpawnCreepLeftBot_Func007C()) then
-    else
-    end
-    if (Trig_SpawnCreepLeftBot_Func008C()) then
-    else
-    end
-    if (Trig_SpawnCreepLeftBot_Func009C()) then
-    else
-    end
-    if (Trig_SpawnCreepLeftBot_Func010C()) then
-    else
-    end
-end
-
-function InitTrig_SpawnCreepLeftBot()
-    gg_trg_SpawnCreepLeftBot = CreateTrigger()
-    DisableTrigger(gg_trg_SpawnCreepLeftBot)
-    TriggerRegisterTimerEventPeriodic(gg_trg_SpawnCreepLeftBot, 60.00)
-    TriggerAddAction(gg_trg_SpawnCreepLeftBot, Trig_SpawnCreepLeftBot_Actions)
-end
-
-function Trig_SpawnCreepRightBot_Func001C()
-    return true
-end
-
-function Trig_SpawnCreepRightBot_Func002C()
-    return true
-end
-
-function Trig_SpawnCreepRightBot_Func003C()
-    return true
-end
-
-function Trig_SpawnCreepRightBot_Func004C()
-    return true
-end
-
-function Trig_SpawnCreepRightBot_Actions()
-    if (Trig_SpawnCreepRightBot_Func001C()) then
-    else
-    end
-    if (Trig_SpawnCreepRightBot_Func002C()) then
-    else
-    end
-    if (Trig_SpawnCreepRightBot_Func003C()) then
-    else
-    end
-    if (Trig_SpawnCreepRightBot_Func004C()) then
-    else
-    end
-end
-
-function InitTrig_SpawnCreepRightBot()
-    gg_trg_SpawnCreepRightBot = CreateTrigger()
-    DisableTrigger(gg_trg_SpawnCreepRightBot)
-    TriggerRegisterTimerEventPeriodic(gg_trg_SpawnCreepRightBot, 60.00)
-    TriggerAddAction(gg_trg_SpawnCreepRightBot, Trig_SpawnCreepRightBot_Actions)
-end
-
-function Trig_SpawnCreepRightTop_Func001C()
-    return true
-end
-
-function Trig_SpawnCreepRightTop_Func002C()
-    return true
-end
-
-function Trig_SpawnCreepRightTop_Func003C()
-    return true
-end
-
-function Trig_SpawnCreepRightTop_Func004C()
-    return true
-end
-
-function Trig_SpawnCreepRightTop_Func005C()
-    return true
-end
-
-function Trig_SpawnCreepRightTop_Func006C()
-    return true
-end
-
-function Trig_SpawnCreepRightTop_Func007C()
-    return true
-end
-
-function Trig_SpawnCreepRightTop_Func008C()
-    return true
-end
-
-function Trig_SpawnCreepRightTop_Func009C()
-    return true
-end
-
-function Trig_SpawnCreepRightTop_Actions()
-    if (Trig_SpawnCreepRightTop_Func001C()) then
-    else
-    end
-    if (Trig_SpawnCreepRightTop_Func002C()) then
-    else
-    end
-    if (Trig_SpawnCreepRightTop_Func003C()) then
-    else
-    end
-    if (Trig_SpawnCreepRightTop_Func004C()) then
-    else
-    end
-    if (Trig_SpawnCreepRightTop_Func005C()) then
-    else
-    end
-    if (Trig_SpawnCreepRightTop_Func006C()) then
-    else
-    end
-    if (Trig_SpawnCreepRightTop_Func007C()) then
-    else
-    end
-    if (Trig_SpawnCreepRightTop_Func008C()) then
-    else
-    end
-    if (Trig_SpawnCreepRightTop_Func009C()) then
-    else
-    end
-end
-
-function InitTrig_SpawnCreepRightTop()
-    gg_trg_SpawnCreepRightTop = CreateTrigger()
-    DisableTrigger(gg_trg_SpawnCreepRightTop)
-    TriggerRegisterTimerEventPeriodic(gg_trg_SpawnCreepRightTop, 60.00)
-    TriggerAddAction(gg_trg_SpawnCreepRightTop, Trig_SpawnCreepRightTop_Actions)
-end
-
-function Trig_SpawnCreepLeftTop_Func001C()
-    return true
-end
-
-function Trig_SpawnCreepLeftTop_Func002C()
-    return true
-end
-
-function Trig_SpawnCreepLeftTop_Func003C()
-    return true
-end
-
-function Trig_SpawnCreepLeftTop_Func004C()
-    return true
-end
-
-function Trig_SpawnCreepLeftTop_Actions()
-    if (Trig_SpawnCreepLeftTop_Func001C()) then
-    else
-    end
-    if (Trig_SpawnCreepLeftTop_Func002C()) then
-    else
-    end
-    if (Trig_SpawnCreepLeftTop_Func003C()) then
-    else
-    end
-    if (Trig_SpawnCreepLeftTop_Func004C()) then
-    else
-    end
-end
-
-function InitTrig_SpawnCreepLeftTop()
-    gg_trg_SpawnCreepLeftTop = CreateTrigger()
-    DisableTrigger(gg_trg_SpawnCreepLeftTop)
-    TriggerRegisterTimerEventPeriodic(gg_trg_SpawnCreepLeftTop, 60.00)
-    TriggerAddAction(gg_trg_SpawnCreepLeftTop, Trig_SpawnCreepLeftTop_Actions)
-end
-
-function Trig_Victory4_Actions()
-    PauseGameOn()
-    CustomVictoryBJ(Player(0), true, true)
-    CustomVictoryBJ(Player(1), true, true)
-    CustomVictoryBJ(Player(2), true, true)
-    CustomDefeatBJ(Player(4), "TRIGSTR_1495")
-    CustomDefeatBJ(Player(5), "TRIGSTR_1496")
-    CustomDefeatBJ(Player(6), "TRIGSTR_1497")
-end
-
-function InitTrig_Victory4()
-    gg_trg_Victory4 = CreateTrigger()
-    TriggerAddAction(gg_trg_Victory4, Trig_Victory4_Actions)
-end
-
-function Trig_Victory8_Actions()
-    PauseGameOn()
-    CustomVictoryBJ(Player(4), true, true)
-    CustomVictoryBJ(Player(5), true, true)
-    CustomVictoryBJ(Player(6), true, true)
-    CustomDefeatBJ(Player(0), "TRIGSTR_1492")
-    CustomDefeatBJ(Player(1), "TRIGSTR_1493")
-    CustomDefeatBJ(Player(2), "TRIGSTR_1494")
-end
-
-function InitTrig_Victory8()
-    gg_trg_Victory8 = CreateTrigger()
-    TriggerAddAction(gg_trg_Victory8, Trig_Victory8_Actions)
-end
-
-function Trig_FixRegionTop_Conditions()
-    if (not (IsUnitType(GetTriggerUnit(), UNIT_TYPE_HERO) == true)) then
-        return false
-    end
-    return true
-end
-
-function Trig_FixRegionTop_Func001C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(0))) then
-        return false
-    end
-    return true
-end
-
-function Trig_FixRegionTop_Func002C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(1))) then
-        return false
-    end
-    return true
-end
-
-function Trig_FixRegionTop_Func003C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(2))) then
-        return false
-    end
-    return true
-end
-
-function Trig_FixRegionTop_Func004C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(4))) then
-        return false
-    end
-    return true
-end
-
-function Trig_FixRegionTop_Func005C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(5))) then
-        return false
-    end
-    return true
-end
-
-function Trig_FixRegionTop_Func006C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(6))) then
-        return false
-    end
-    return true
-end
-
-function Trig_FixRegionTop_Actions()
-    if (Trig_FixRegionTop_Func001C()) then
-    else
-    end
-    if (Trig_FixRegionTop_Func002C()) then
-    else
-    end
-    if (Trig_FixRegionTop_Func003C()) then
-    else
-    end
-    if (Trig_FixRegionTop_Func004C()) then
-    else
-    end
-    if (Trig_FixRegionTop_Func005C()) then
-    else
-    end
-    if (Trig_FixRegionTop_Func006C()) then
-    else
-    end
-end
-
-function InitTrig_FixRegionTop()
-    gg_trg_FixRegionTop = CreateTrigger()
-    TriggerAddCondition(gg_trg_FixRegionTop, Condition(Trig_FixRegionTop_Conditions))
-    TriggerAddAction(gg_trg_FixRegionTop, Trig_FixRegionTop_Actions)
-end
-
-function Trig_FixRegionBot_Conditions()
-    if (not (IsUnitType(GetTriggerUnit(), UNIT_TYPE_HERO) == true)) then
-        return false
-    end
-    return true
-end
-
-function Trig_FixRegionBot_Func001C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(0))) then
-        return false
-    end
-    return true
-end
-
-function Trig_FixRegionBot_Func002C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(1))) then
-        return false
-    end
-    return true
-end
-
-function Trig_FixRegionBot_Func003C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(2))) then
-        return false
-    end
-    return true
-end
-
-function Trig_FixRegionBot_Func004C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(4))) then
-        return false
-    end
-    return true
-end
-
-function Trig_FixRegionBot_Func005C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(5))) then
-        return false
-    end
-    return true
-end
-
-function Trig_FixRegionBot_Func006C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(6))) then
-        return false
-    end
-    return true
-end
-
-function Trig_FixRegionBot_Actions()
-    if (Trig_FixRegionBot_Func001C()) then
-    else
-    end
-    if (Trig_FixRegionBot_Func002C()) then
-    else
-    end
-    if (Trig_FixRegionBot_Func003C()) then
-    else
-    end
-    if (Trig_FixRegionBot_Func004C()) then
-    else
-    end
-    if (Trig_FixRegionBot_Func005C()) then
-    else
-    end
-    if (Trig_FixRegionBot_Func006C()) then
-    else
-    end
-end
-
-function InitTrig_FixRegionBot()
-    gg_trg_FixRegionBot = CreateTrigger()
-    TriggerAddCondition(gg_trg_FixRegionBot, Condition(Trig_FixRegionBot_Conditions))
-    TriggerAddAction(gg_trg_FixRegionBot, Trig_FixRegionBot_Actions)
+function InitTrig_Start()
+    gg_trg_Start = CreateTrigger()
+    TriggerAddAction(gg_trg_Start, Trig_Start_Actions)
 end
 
 function Trig_Dont_attack_Conditions()
@@ -7491,82 +5465,6 @@ function InitTrig_Dont_attack()
     TriggerRegisterAnyUnitEventBJ(gg_trg_Dont_attack, EVENT_PLAYER_UNIT_ATTACKED)
     TriggerAddCondition(gg_trg_Dont_attack, Condition(Trig_Dont_attack_Conditions))
     TriggerAddAction(gg_trg_Dont_attack, Trig_Dont_attack_Actions)
-end
-
-function Trig_Shop_Bottom_Func001C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(0))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Shop_Bottom_Func002C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(1))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Shop_Bottom_Func003C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(2))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Shop_Bottom_Actions()
-    if (Trig_Shop_Bottom_Func001C()) then
-    else
-    end
-    if (Trig_Shop_Bottom_Func002C()) then
-    else
-    end
-    if (Trig_Shop_Bottom_Func003C()) then
-    else
-    end
-end
-
-function InitTrig_Shop_Bottom()
-    gg_trg_Shop_Bottom = CreateTrigger()
-    TriggerAddAction(gg_trg_Shop_Bottom, Trig_Shop_Bottom_Actions)
-end
-
-function Trig_Shop_Top_Func001C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(4))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Shop_Top_Func002C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(5))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Shop_Top_Func003C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(6))) then
-        return false
-    end
-    return true
-end
-
-function Trig_Shop_Top_Actions()
-    if (Trig_Shop_Top_Func001C()) then
-    else
-    end
-    if (Trig_Shop_Top_Func002C()) then
-    else
-    end
-    if (Trig_Shop_Top_Func003C()) then
-    else
-    end
-end
-
-function InitTrig_Shop_Top()
-    gg_trg_Shop_Top = CreateTrigger()
-    TriggerAddAction(gg_trg_Shop_Top, Trig_Shop_Top_Actions)
 end
 
 function Trig_Feedback_to_kill_hero_Conditions()
@@ -7606,315 +5504,6 @@ function InitTrig_Feedback_to_kill_hero()
     TriggerRegisterAnyUnitEventBJ(gg_trg_Feedback_to_kill_hero, EVENT_PLAYER_UNIT_DEATH)
     TriggerAddCondition(gg_trg_Feedback_to_kill_hero, Condition(Trig_Feedback_to_kill_hero_Conditions))
     TriggerAddAction(gg_trg_Feedback_to_kill_hero, Trig_Feedback_to_kill_hero_Actions)
-end
-
-function Trig_System_upgrade_Func001Func001C()
-    if (not (GetResearched() == FourCC("R00C"))) then
-        return false
-    end
-    return true
-end
-
-function Trig_System_upgrade_Func001Func002C()
-    if (not (GetResearched() == FourCC("R00B"))) then
-        return false
-    end
-    return true
-end
-
-function Trig_System_upgrade_Func001C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(0))) then
-        return false
-    end
-    return true
-end
-
-function Trig_System_upgrade_Func002Func001C()
-    if (not (GetResearched() == FourCC("R00C"))) then
-        return false
-    end
-    return true
-end
-
-function Trig_System_upgrade_Func002Func002C()
-    if (not (GetResearched() == FourCC("R00B"))) then
-        return false
-    end
-    return true
-end
-
-function Trig_System_upgrade_Func002C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(1))) then
-        return false
-    end
-    return true
-end
-
-function Trig_System_upgrade_Func003Func001C()
-    if (not (GetResearched() == FourCC("R00C"))) then
-        return false
-    end
-    return true
-end
-
-function Trig_System_upgrade_Func003Func002C()
-    if (not (GetResearched() == FourCC("R00B"))) then
-        return false
-    end
-    return true
-end
-
-function Trig_System_upgrade_Func003C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(2))) then
-        return false
-    end
-    return true
-end
-
-function Trig_System_upgrade_Func004Func001C()
-    if (not (GetResearched() == FourCC("R00C"))) then
-        return false
-    end
-    return true
-end
-
-function Trig_System_upgrade_Func004Func002C()
-    if (not (GetResearched() == FourCC("R00B"))) then
-        return false
-    end
-    return true
-end
-
-function Trig_System_upgrade_Func004C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(4))) then
-        return false
-    end
-    return true
-end
-
-function Trig_System_upgrade_Func005Func001C()
-    if (not (GetResearched() == FourCC("R00C"))) then
-        return false
-    end
-    return true
-end
-
-function Trig_System_upgrade_Func005Func002C()
-    if (not (GetResearched() == FourCC("R00B"))) then
-        return false
-    end
-    return true
-end
-
-function Trig_System_upgrade_Func005C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(5))) then
-        return false
-    end
-    return true
-end
-
-function Trig_System_upgrade_Func006Func001C()
-    if (not (GetResearched() == FourCC("R00C"))) then
-        return false
-    end
-    return true
-end
-
-function Trig_System_upgrade_Func006Func002C()
-    if (not (GetResearched() == FourCC("R00B"))) then
-        return false
-    end
-    return true
-end
-
-function Trig_System_upgrade_Func006C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(6))) then
-        return false
-    end
-    return true
-end
-
-function Trig_System_upgrade_Actions()
-    if (Trig_System_upgrade_Func001C()) then
-        if (Trig_System_upgrade_Func001Func001C()) then
-        else
-        end
-        if (Trig_System_upgrade_Func001Func002C()) then
-        else
-        end
-    else
-    end
-    if (Trig_System_upgrade_Func002C()) then
-        if (Trig_System_upgrade_Func002Func001C()) then
-        else
-        end
-        if (Trig_System_upgrade_Func002Func002C()) then
-        else
-        end
-    else
-    end
-    if (Trig_System_upgrade_Func003C()) then
-        if (Trig_System_upgrade_Func003Func001C()) then
-        else
-        end
-        if (Trig_System_upgrade_Func003Func002C()) then
-        else
-        end
-    else
-    end
-    if (Trig_System_upgrade_Func004C()) then
-        if (Trig_System_upgrade_Func004Func001C()) then
-        else
-        end
-        if (Trig_System_upgrade_Func004Func002C()) then
-        else
-        end
-    else
-    end
-    if (Trig_System_upgrade_Func005C()) then
-        if (Trig_System_upgrade_Func005Func001C()) then
-        else
-        end
-        if (Trig_System_upgrade_Func005Func002C()) then
-        else
-        end
-    else
-    end
-    if (Trig_System_upgrade_Func006C()) then
-        if (Trig_System_upgrade_Func006Func001C()) then
-        else
-        end
-        if (Trig_System_upgrade_Func006Func002C()) then
-        else
-        end
-    else
-    end
-end
-
-function InitTrig_System_upgrade()
-    gg_trg_System_upgrade = CreateTrigger()
-    TriggerRegisterAnyUnitEventBJ(gg_trg_System_upgrade, EVENT_PLAYER_UNIT_RESEARCH_FINISH)
-    TriggerAddAction(gg_trg_System_upgrade, Trig_System_upgrade_Actions)
-end
-
-function Trig_BossTo_Conditions()
-    if (not (IsUnitType(GetTriggerUnit(), UNIT_TYPE_HERO) == true)) then
-        return false
-    end
-    return true
-end
-
-function Trig_BossTo_Func001C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(0))) then
-        return false
-    end
-    return true
-end
-
-function Trig_BossTo_Func002C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(4))) then
-        return false
-    end
-    return true
-end
-
-function Trig_BossTo_Actions()
-    if (Trig_BossTo_Func001C()) then
-    else
-    end
-    if (Trig_BossTo_Func002C()) then
-    else
-    end
-end
-
-function InitTrig_BossTo()
-    gg_trg_BossTo = CreateTrigger()
-    TriggerAddCondition(gg_trg_BossTo, Condition(Trig_BossTo_Conditions))
-    TriggerAddAction(gg_trg_BossTo, Trig_BossTo_Actions)
-end
-
-function Trig_BossIn_Conditions()
-    if (not (IsUnitType(GetTriggerUnit(), UNIT_TYPE_HERO) == true)) then
-        return false
-    end
-    return true
-end
-
-function Trig_BossIn_Func001C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(0))) then
-        return false
-    end
-    return true
-end
-
-function Trig_BossIn_Func002C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(1))) then
-        return false
-    end
-    return true
-end
-
-function Trig_BossIn_Func003C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(2))) then
-        return false
-    end
-    return true
-end
-
-function Trig_BossIn_Func004C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(4))) then
-        return false
-    end
-    return true
-end
-
-function Trig_BossIn_Func005C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(5))) then
-        return false
-    end
-    return true
-end
-
-function Trig_BossIn_Func006C()
-    if (not (GetOwningPlayer(GetTriggerUnit()) == Player(6))) then
-        return false
-    end
-    return true
-end
-
-function Trig_BossIn_Actions()
-    if (Trig_BossIn_Func001C()) then
-    else
-    end
-    if (Trig_BossIn_Func002C()) then
-    else
-    end
-    if (Trig_BossIn_Func003C()) then
-    else
-    end
-    if (Trig_BossIn_Func004C()) then
-    else
-    end
-    if (Trig_BossIn_Func005C()) then
-    else
-    end
-    if (Trig_BossIn_Func006C()) then
-    else
-    end
-end
-
-function InitTrig_BossIn()
-    gg_trg_BossIn = CreateTrigger()
-    TriggerAddCondition(gg_trg_BossIn, Condition(Trig_BossIn_Conditions))
-    TriggerAddAction(gg_trg_BossIn, Trig_BossIn_Actions)
-end
-
-function Trig_Vision_Actions()
-end
-
-function InitTrig_Vision()
-    gg_trg_Vision = CreateTrigger()
-    TriggerAddAction(gg_trg_Vision, Trig_Vision_Actions)
 end
 
 function Trig_Untitled_Trigger_001_Actions()
@@ -7959,7 +5548,6 @@ function InitCustomTriggers()
     InitTrig_Witch()
     InitTrig_High_Wizard()
     InitTrig_HolyKnight()
-    InitTrig_____________________________________001()
     InitTrig_Respawn1p()
     InitTrig_Respawn2p()
     InitTrig_Respawn3p()
@@ -7970,44 +5558,10 @@ function InitCustomTriggers()
     InitTrig_Respawn8p()
     InitTrig_Respawn9p()
     InitTrig_Respawn10p()
-    InitTrig_PostStart()
-    InitTrig_Post()
-    InitTrig_Start()
-    InitTrig_Mid_Bottom()
-    InitTrig_Left_Bot()
-    InitTrig_Right_Bot()
-    InitTrig_Mid_right()
-    InitTrig_Left_Top()
-    InitTrig_Right_Top()
-    InitTrig_Mid_Bot()
-    InitTrig_Mid_Top()
-    InitTrig_Bot_Left_and_Right()
-    InitTrig_Top_Left_and_Right()
-    InitTrig_Camera()
-    InitTrig_Cam_1p()
-    InitTrig_Cam_2p()
-    InitTrig_Cam_3p()
-    InitTrig_Cam_4p()
-    InitTrig_Cam_5p()
-    InitTrig_Cam_6p()
-    InitTrig_Timer()
     InitTrig_income()
-    InitTrig_SpawnCreepLeftBot()
-    InitTrig_SpawnCreepRightBot()
-    InitTrig_SpawnCreepRightTop()
-    InitTrig_SpawnCreepLeftTop()
-    InitTrig_Victory4()
-    InitTrig_Victory8()
-    InitTrig_FixRegionTop()
-    InitTrig_FixRegionBot()
+    InitTrig_Start()
     InitTrig_Dont_attack()
-    InitTrig_Shop_Bottom()
-    InitTrig_Shop_Top()
     InitTrig_Feedback_to_kill_hero()
-    InitTrig_System_upgrade()
-    InitTrig_BossTo()
-    InitTrig_BossIn()
-    InitTrig_Vision()
     InitTrig_Untitled_Trigger_001()
     InitTrig_EntireEvent()
     InitTrig_LearnEventConvert()
@@ -8015,8 +5569,6 @@ end
 
 function RunInitializationTriggers()
     ConditionalTriggerExecute(gg_trg_Start)
-    ConditionalTriggerExecute(gg_trg_Camera)
-    ConditionalTriggerExecute(gg_trg_Vision)
     ConditionalTriggerExecute(gg_trg_Untitled_Trigger_001)
 end
 
@@ -8071,16 +5623,46 @@ function InitCustomPlayerSlots()
     SetPlayerRacePreference(Player(9), RACE_PREF_HUMAN)
     SetPlayerRaceSelectable(Player(9), true)
     SetPlayerController(Player(9), MAP_CONTROL_USER)
-    SetPlayerStartLocation(Player(10), 10)
-    SetPlayerColor(Player(10), ConvertPlayerColor(10))
-    SetPlayerRacePreference(Player(10), RACE_PREF_NIGHTELF)
-    SetPlayerRaceSelectable(Player(10), true)
-    SetPlayerController(Player(10), MAP_CONTROL_COMPUTER)
-    SetPlayerStartLocation(Player(11), 11)
-    SetPlayerColor(Player(11), ConvertPlayerColor(11))
-    SetPlayerRacePreference(Player(11), RACE_PREF_NIGHTELF)
-    SetPlayerRaceSelectable(Player(11), true)
-    SetPlayerController(Player(11), MAP_CONTROL_COMPUTER)
+    SetPlayerStartLocation(Player(13), 10)
+    SetPlayerColor(Player(13), ConvertPlayerColor(13))
+    SetPlayerRacePreference(Player(13), RACE_PREF_HUMAN)
+    SetPlayerRaceSelectable(Player(13), true)
+    SetPlayerController(Player(13), MAP_CONTROL_COMPUTER)
+    SetPlayerStartLocation(Player(14), 11)
+    SetPlayerColor(Player(14), ConvertPlayerColor(14))
+    SetPlayerRacePreference(Player(14), RACE_PREF_HUMAN)
+    SetPlayerRaceSelectable(Player(14), true)
+    SetPlayerController(Player(14), MAP_CONTROL_COMPUTER)
+    SetPlayerStartLocation(Player(18), 12)
+    SetPlayerColor(Player(18), ConvertPlayerColor(18))
+    SetPlayerRacePreference(Player(18), RACE_PREF_HUMAN)
+    SetPlayerRaceSelectable(Player(18), true)
+    SetPlayerController(Player(18), MAP_CONTROL_COMPUTER)
+    SetPlayerStartLocation(Player(19), 13)
+    SetPlayerColor(Player(19), ConvertPlayerColor(19))
+    SetPlayerRacePreference(Player(19), RACE_PREF_HUMAN)
+    SetPlayerRaceSelectable(Player(19), true)
+    SetPlayerController(Player(19), MAP_CONTROL_COMPUTER)
+    SetPlayerStartLocation(Player(20), 14)
+    SetPlayerColor(Player(20), ConvertPlayerColor(20))
+    SetPlayerRacePreference(Player(20), RACE_PREF_HUMAN)
+    SetPlayerRaceSelectable(Player(20), true)
+    SetPlayerController(Player(20), MAP_CONTROL_COMPUTER)
+    SetPlayerStartLocation(Player(21), 15)
+    SetPlayerColor(Player(21), ConvertPlayerColor(21))
+    SetPlayerRacePreference(Player(21), RACE_PREF_HUMAN)
+    SetPlayerRaceSelectable(Player(21), true)
+    SetPlayerController(Player(21), MAP_CONTROL_COMPUTER)
+    SetPlayerStartLocation(Player(22), 16)
+    SetPlayerColor(Player(22), ConvertPlayerColor(22))
+    SetPlayerRacePreference(Player(22), RACE_PREF_HUMAN)
+    SetPlayerRaceSelectable(Player(22), true)
+    SetPlayerController(Player(22), MAP_CONTROL_COMPUTER)
+    SetPlayerStartLocation(Player(23), 17)
+    SetPlayerColor(Player(23), ConvertPlayerColor(23))
+    SetPlayerRacePreference(Player(23), RACE_PREF_HUMAN)
+    SetPlayerRaceSelectable(Player(23), true)
+    SetPlayerController(Player(23), MAP_CONTROL_COMPUTER)
 end
 
 function InitCustomTeams()
@@ -8094,68 +5676,158 @@ function InitCustomTeams()
     SetPlayerState(Player(3), PLAYER_STATE_ALLIED_VICTORY, 1)
     SetPlayerTeam(Player(4), 0)
     SetPlayerState(Player(4), PLAYER_STATE_ALLIED_VICTORY, 1)
-    SetPlayerTeam(Player(10), 0)
-    SetPlayerState(Player(10), PLAYER_STATE_ALLIED_VICTORY, 1)
+    SetPlayerTeam(Player(13), 0)
+    SetPlayerState(Player(13), PLAYER_STATE_ALLIED_VICTORY, 1)
+    SetPlayerTeam(Player(18), 0)
+    SetPlayerState(Player(18), PLAYER_STATE_ALLIED_VICTORY, 1)
+    SetPlayerTeam(Player(19), 0)
+    SetPlayerState(Player(19), PLAYER_STATE_ALLIED_VICTORY, 1)
+    SetPlayerTeam(Player(20), 0)
+    SetPlayerState(Player(20), PLAYER_STATE_ALLIED_VICTORY, 1)
     SetPlayerAllianceStateAllyBJ(Player(0), Player(1), true)
     SetPlayerAllianceStateAllyBJ(Player(0), Player(2), true)
     SetPlayerAllianceStateAllyBJ(Player(0), Player(3), true)
     SetPlayerAllianceStateAllyBJ(Player(0), Player(4), true)
-    SetPlayerAllianceStateAllyBJ(Player(0), Player(10), true)
+    SetPlayerAllianceStateAllyBJ(Player(0), Player(13), true)
+    SetPlayerAllianceStateAllyBJ(Player(0), Player(18), true)
+    SetPlayerAllianceStateAllyBJ(Player(0), Player(19), true)
+    SetPlayerAllianceStateAllyBJ(Player(0), Player(20), true)
     SetPlayerAllianceStateAllyBJ(Player(1), Player(0), true)
     SetPlayerAllianceStateAllyBJ(Player(1), Player(2), true)
     SetPlayerAllianceStateAllyBJ(Player(1), Player(3), true)
     SetPlayerAllianceStateAllyBJ(Player(1), Player(4), true)
-    SetPlayerAllianceStateAllyBJ(Player(1), Player(10), true)
+    SetPlayerAllianceStateAllyBJ(Player(1), Player(13), true)
+    SetPlayerAllianceStateAllyBJ(Player(1), Player(18), true)
+    SetPlayerAllianceStateAllyBJ(Player(1), Player(19), true)
+    SetPlayerAllianceStateAllyBJ(Player(1), Player(20), true)
     SetPlayerAllianceStateAllyBJ(Player(2), Player(0), true)
     SetPlayerAllianceStateAllyBJ(Player(2), Player(1), true)
     SetPlayerAllianceStateAllyBJ(Player(2), Player(3), true)
     SetPlayerAllianceStateAllyBJ(Player(2), Player(4), true)
-    SetPlayerAllianceStateAllyBJ(Player(2), Player(10), true)
+    SetPlayerAllianceStateAllyBJ(Player(2), Player(13), true)
+    SetPlayerAllianceStateAllyBJ(Player(2), Player(18), true)
+    SetPlayerAllianceStateAllyBJ(Player(2), Player(19), true)
+    SetPlayerAllianceStateAllyBJ(Player(2), Player(20), true)
     SetPlayerAllianceStateAllyBJ(Player(3), Player(0), true)
     SetPlayerAllianceStateAllyBJ(Player(3), Player(1), true)
     SetPlayerAllianceStateAllyBJ(Player(3), Player(2), true)
     SetPlayerAllianceStateAllyBJ(Player(3), Player(4), true)
-    SetPlayerAllianceStateAllyBJ(Player(3), Player(10), true)
+    SetPlayerAllianceStateAllyBJ(Player(3), Player(13), true)
+    SetPlayerAllianceStateAllyBJ(Player(3), Player(18), true)
+    SetPlayerAllianceStateAllyBJ(Player(3), Player(19), true)
+    SetPlayerAllianceStateAllyBJ(Player(3), Player(20), true)
     SetPlayerAllianceStateAllyBJ(Player(4), Player(0), true)
     SetPlayerAllianceStateAllyBJ(Player(4), Player(1), true)
     SetPlayerAllianceStateAllyBJ(Player(4), Player(2), true)
     SetPlayerAllianceStateAllyBJ(Player(4), Player(3), true)
-    SetPlayerAllianceStateAllyBJ(Player(4), Player(10), true)
-    SetPlayerAllianceStateAllyBJ(Player(10), Player(0), true)
-    SetPlayerAllianceStateAllyBJ(Player(10), Player(1), true)
-    SetPlayerAllianceStateAllyBJ(Player(10), Player(2), true)
-    SetPlayerAllianceStateAllyBJ(Player(10), Player(3), true)
-    SetPlayerAllianceStateAllyBJ(Player(10), Player(4), true)
+    SetPlayerAllianceStateAllyBJ(Player(4), Player(13), true)
+    SetPlayerAllianceStateAllyBJ(Player(4), Player(18), true)
+    SetPlayerAllianceStateAllyBJ(Player(4), Player(19), true)
+    SetPlayerAllianceStateAllyBJ(Player(4), Player(20), true)
+    SetPlayerAllianceStateAllyBJ(Player(13), Player(0), true)
+    SetPlayerAllianceStateAllyBJ(Player(13), Player(1), true)
+    SetPlayerAllianceStateAllyBJ(Player(13), Player(2), true)
+    SetPlayerAllianceStateAllyBJ(Player(13), Player(3), true)
+    SetPlayerAllianceStateAllyBJ(Player(13), Player(4), true)
+    SetPlayerAllianceStateAllyBJ(Player(13), Player(18), true)
+    SetPlayerAllianceStateAllyBJ(Player(13), Player(19), true)
+    SetPlayerAllianceStateAllyBJ(Player(13), Player(20), true)
+    SetPlayerAllianceStateAllyBJ(Player(18), Player(0), true)
+    SetPlayerAllianceStateAllyBJ(Player(18), Player(1), true)
+    SetPlayerAllianceStateAllyBJ(Player(18), Player(2), true)
+    SetPlayerAllianceStateAllyBJ(Player(18), Player(3), true)
+    SetPlayerAllianceStateAllyBJ(Player(18), Player(4), true)
+    SetPlayerAllianceStateAllyBJ(Player(18), Player(13), true)
+    SetPlayerAllianceStateAllyBJ(Player(18), Player(19), true)
+    SetPlayerAllianceStateAllyBJ(Player(18), Player(20), true)
+    SetPlayerAllianceStateAllyBJ(Player(19), Player(0), true)
+    SetPlayerAllianceStateAllyBJ(Player(19), Player(1), true)
+    SetPlayerAllianceStateAllyBJ(Player(19), Player(2), true)
+    SetPlayerAllianceStateAllyBJ(Player(19), Player(3), true)
+    SetPlayerAllianceStateAllyBJ(Player(19), Player(4), true)
+    SetPlayerAllianceStateAllyBJ(Player(19), Player(13), true)
+    SetPlayerAllianceStateAllyBJ(Player(19), Player(18), true)
+    SetPlayerAllianceStateAllyBJ(Player(19), Player(20), true)
+    SetPlayerAllianceStateAllyBJ(Player(20), Player(0), true)
+    SetPlayerAllianceStateAllyBJ(Player(20), Player(1), true)
+    SetPlayerAllianceStateAllyBJ(Player(20), Player(2), true)
+    SetPlayerAllianceStateAllyBJ(Player(20), Player(3), true)
+    SetPlayerAllianceStateAllyBJ(Player(20), Player(4), true)
+    SetPlayerAllianceStateAllyBJ(Player(20), Player(13), true)
+    SetPlayerAllianceStateAllyBJ(Player(20), Player(18), true)
+    SetPlayerAllianceStateAllyBJ(Player(20), Player(19), true)
     SetPlayerAllianceStateVisionBJ(Player(0), Player(1), true)
     SetPlayerAllianceStateVisionBJ(Player(0), Player(2), true)
     SetPlayerAllianceStateVisionBJ(Player(0), Player(3), true)
     SetPlayerAllianceStateVisionBJ(Player(0), Player(4), true)
-    SetPlayerAllianceStateVisionBJ(Player(0), Player(10), true)
+    SetPlayerAllianceStateVisionBJ(Player(0), Player(13), true)
+    SetPlayerAllianceStateVisionBJ(Player(0), Player(18), true)
+    SetPlayerAllianceStateVisionBJ(Player(0), Player(19), true)
+    SetPlayerAllianceStateVisionBJ(Player(0), Player(20), true)
     SetPlayerAllianceStateVisionBJ(Player(1), Player(0), true)
     SetPlayerAllianceStateVisionBJ(Player(1), Player(2), true)
     SetPlayerAllianceStateVisionBJ(Player(1), Player(3), true)
     SetPlayerAllianceStateVisionBJ(Player(1), Player(4), true)
-    SetPlayerAllianceStateVisionBJ(Player(1), Player(10), true)
+    SetPlayerAllianceStateVisionBJ(Player(1), Player(13), true)
+    SetPlayerAllianceStateVisionBJ(Player(1), Player(18), true)
+    SetPlayerAllianceStateVisionBJ(Player(1), Player(19), true)
+    SetPlayerAllianceStateVisionBJ(Player(1), Player(20), true)
     SetPlayerAllianceStateVisionBJ(Player(2), Player(0), true)
     SetPlayerAllianceStateVisionBJ(Player(2), Player(1), true)
     SetPlayerAllianceStateVisionBJ(Player(2), Player(3), true)
     SetPlayerAllianceStateVisionBJ(Player(2), Player(4), true)
-    SetPlayerAllianceStateVisionBJ(Player(2), Player(10), true)
+    SetPlayerAllianceStateVisionBJ(Player(2), Player(13), true)
+    SetPlayerAllianceStateVisionBJ(Player(2), Player(18), true)
+    SetPlayerAllianceStateVisionBJ(Player(2), Player(19), true)
+    SetPlayerAllianceStateVisionBJ(Player(2), Player(20), true)
     SetPlayerAllianceStateVisionBJ(Player(3), Player(0), true)
     SetPlayerAllianceStateVisionBJ(Player(3), Player(1), true)
     SetPlayerAllianceStateVisionBJ(Player(3), Player(2), true)
     SetPlayerAllianceStateVisionBJ(Player(3), Player(4), true)
-    SetPlayerAllianceStateVisionBJ(Player(3), Player(10), true)
+    SetPlayerAllianceStateVisionBJ(Player(3), Player(13), true)
+    SetPlayerAllianceStateVisionBJ(Player(3), Player(18), true)
+    SetPlayerAllianceStateVisionBJ(Player(3), Player(19), true)
+    SetPlayerAllianceStateVisionBJ(Player(3), Player(20), true)
     SetPlayerAllianceStateVisionBJ(Player(4), Player(0), true)
     SetPlayerAllianceStateVisionBJ(Player(4), Player(1), true)
     SetPlayerAllianceStateVisionBJ(Player(4), Player(2), true)
     SetPlayerAllianceStateVisionBJ(Player(4), Player(3), true)
-    SetPlayerAllianceStateVisionBJ(Player(4), Player(10), true)
-    SetPlayerAllianceStateVisionBJ(Player(10), Player(0), true)
-    SetPlayerAllianceStateVisionBJ(Player(10), Player(1), true)
-    SetPlayerAllianceStateVisionBJ(Player(10), Player(2), true)
-    SetPlayerAllianceStateVisionBJ(Player(10), Player(3), true)
-    SetPlayerAllianceStateVisionBJ(Player(10), Player(4), true)
+    SetPlayerAllianceStateVisionBJ(Player(4), Player(13), true)
+    SetPlayerAllianceStateVisionBJ(Player(4), Player(18), true)
+    SetPlayerAllianceStateVisionBJ(Player(4), Player(19), true)
+    SetPlayerAllianceStateVisionBJ(Player(4), Player(20), true)
+    SetPlayerAllianceStateVisionBJ(Player(13), Player(0), true)
+    SetPlayerAllianceStateVisionBJ(Player(13), Player(1), true)
+    SetPlayerAllianceStateVisionBJ(Player(13), Player(2), true)
+    SetPlayerAllianceStateVisionBJ(Player(13), Player(3), true)
+    SetPlayerAllianceStateVisionBJ(Player(13), Player(4), true)
+    SetPlayerAllianceStateVisionBJ(Player(13), Player(18), true)
+    SetPlayerAllianceStateVisionBJ(Player(13), Player(19), true)
+    SetPlayerAllianceStateVisionBJ(Player(13), Player(20), true)
+    SetPlayerAllianceStateVisionBJ(Player(18), Player(0), true)
+    SetPlayerAllianceStateVisionBJ(Player(18), Player(1), true)
+    SetPlayerAllianceStateVisionBJ(Player(18), Player(2), true)
+    SetPlayerAllianceStateVisionBJ(Player(18), Player(3), true)
+    SetPlayerAllianceStateVisionBJ(Player(18), Player(4), true)
+    SetPlayerAllianceStateVisionBJ(Player(18), Player(13), true)
+    SetPlayerAllianceStateVisionBJ(Player(18), Player(19), true)
+    SetPlayerAllianceStateVisionBJ(Player(18), Player(20), true)
+    SetPlayerAllianceStateVisionBJ(Player(19), Player(0), true)
+    SetPlayerAllianceStateVisionBJ(Player(19), Player(1), true)
+    SetPlayerAllianceStateVisionBJ(Player(19), Player(2), true)
+    SetPlayerAllianceStateVisionBJ(Player(19), Player(3), true)
+    SetPlayerAllianceStateVisionBJ(Player(19), Player(4), true)
+    SetPlayerAllianceStateVisionBJ(Player(19), Player(13), true)
+    SetPlayerAllianceStateVisionBJ(Player(19), Player(18), true)
+    SetPlayerAllianceStateVisionBJ(Player(19), Player(20), true)
+    SetPlayerAllianceStateVisionBJ(Player(20), Player(0), true)
+    SetPlayerAllianceStateVisionBJ(Player(20), Player(1), true)
+    SetPlayerAllianceStateVisionBJ(Player(20), Player(2), true)
+    SetPlayerAllianceStateVisionBJ(Player(20), Player(3), true)
+    SetPlayerAllianceStateVisionBJ(Player(20), Player(4), true)
+    SetPlayerAllianceStateVisionBJ(Player(20), Player(13), true)
+    SetPlayerAllianceStateVisionBJ(Player(20), Player(18), true)
+    SetPlayerAllianceStateVisionBJ(Player(20), Player(19), true)
     SetPlayerTeam(Player(5), 1)
     SetPlayerState(Player(5), PLAYER_STATE_ALLIED_VICTORY, 1)
     SetPlayerTeam(Player(6), 1)
@@ -8166,68 +5838,158 @@ function InitCustomTeams()
     SetPlayerState(Player(8), PLAYER_STATE_ALLIED_VICTORY, 1)
     SetPlayerTeam(Player(9), 1)
     SetPlayerState(Player(9), PLAYER_STATE_ALLIED_VICTORY, 1)
-    SetPlayerTeam(Player(11), 1)
-    SetPlayerState(Player(11), PLAYER_STATE_ALLIED_VICTORY, 1)
+    SetPlayerTeam(Player(14), 1)
+    SetPlayerState(Player(14), PLAYER_STATE_ALLIED_VICTORY, 1)
+    SetPlayerTeam(Player(21), 1)
+    SetPlayerState(Player(21), PLAYER_STATE_ALLIED_VICTORY, 1)
+    SetPlayerTeam(Player(22), 1)
+    SetPlayerState(Player(22), PLAYER_STATE_ALLIED_VICTORY, 1)
+    SetPlayerTeam(Player(23), 1)
+    SetPlayerState(Player(23), PLAYER_STATE_ALLIED_VICTORY, 1)
     SetPlayerAllianceStateAllyBJ(Player(5), Player(6), true)
     SetPlayerAllianceStateAllyBJ(Player(5), Player(7), true)
     SetPlayerAllianceStateAllyBJ(Player(5), Player(8), true)
     SetPlayerAllianceStateAllyBJ(Player(5), Player(9), true)
-    SetPlayerAllianceStateAllyBJ(Player(5), Player(11), true)
+    SetPlayerAllianceStateAllyBJ(Player(5), Player(14), true)
+    SetPlayerAllianceStateAllyBJ(Player(5), Player(21), true)
+    SetPlayerAllianceStateAllyBJ(Player(5), Player(22), true)
+    SetPlayerAllianceStateAllyBJ(Player(5), Player(23), true)
     SetPlayerAllianceStateAllyBJ(Player(6), Player(5), true)
     SetPlayerAllianceStateAllyBJ(Player(6), Player(7), true)
     SetPlayerAllianceStateAllyBJ(Player(6), Player(8), true)
     SetPlayerAllianceStateAllyBJ(Player(6), Player(9), true)
-    SetPlayerAllianceStateAllyBJ(Player(6), Player(11), true)
+    SetPlayerAllianceStateAllyBJ(Player(6), Player(14), true)
+    SetPlayerAllianceStateAllyBJ(Player(6), Player(21), true)
+    SetPlayerAllianceStateAllyBJ(Player(6), Player(22), true)
+    SetPlayerAllianceStateAllyBJ(Player(6), Player(23), true)
     SetPlayerAllianceStateAllyBJ(Player(7), Player(5), true)
     SetPlayerAllianceStateAllyBJ(Player(7), Player(6), true)
     SetPlayerAllianceStateAllyBJ(Player(7), Player(8), true)
     SetPlayerAllianceStateAllyBJ(Player(7), Player(9), true)
-    SetPlayerAllianceStateAllyBJ(Player(7), Player(11), true)
+    SetPlayerAllianceStateAllyBJ(Player(7), Player(14), true)
+    SetPlayerAllianceStateAllyBJ(Player(7), Player(21), true)
+    SetPlayerAllianceStateAllyBJ(Player(7), Player(22), true)
+    SetPlayerAllianceStateAllyBJ(Player(7), Player(23), true)
     SetPlayerAllianceStateAllyBJ(Player(8), Player(5), true)
     SetPlayerAllianceStateAllyBJ(Player(8), Player(6), true)
     SetPlayerAllianceStateAllyBJ(Player(8), Player(7), true)
     SetPlayerAllianceStateAllyBJ(Player(8), Player(9), true)
-    SetPlayerAllianceStateAllyBJ(Player(8), Player(11), true)
+    SetPlayerAllianceStateAllyBJ(Player(8), Player(14), true)
+    SetPlayerAllianceStateAllyBJ(Player(8), Player(21), true)
+    SetPlayerAllianceStateAllyBJ(Player(8), Player(22), true)
+    SetPlayerAllianceStateAllyBJ(Player(8), Player(23), true)
     SetPlayerAllianceStateAllyBJ(Player(9), Player(5), true)
     SetPlayerAllianceStateAllyBJ(Player(9), Player(6), true)
     SetPlayerAllianceStateAllyBJ(Player(9), Player(7), true)
     SetPlayerAllianceStateAllyBJ(Player(9), Player(8), true)
-    SetPlayerAllianceStateAllyBJ(Player(9), Player(11), true)
-    SetPlayerAllianceStateAllyBJ(Player(11), Player(5), true)
-    SetPlayerAllianceStateAllyBJ(Player(11), Player(6), true)
-    SetPlayerAllianceStateAllyBJ(Player(11), Player(7), true)
-    SetPlayerAllianceStateAllyBJ(Player(11), Player(8), true)
-    SetPlayerAllianceStateAllyBJ(Player(11), Player(9), true)
+    SetPlayerAllianceStateAllyBJ(Player(9), Player(14), true)
+    SetPlayerAllianceStateAllyBJ(Player(9), Player(21), true)
+    SetPlayerAllianceStateAllyBJ(Player(9), Player(22), true)
+    SetPlayerAllianceStateAllyBJ(Player(9), Player(23), true)
+    SetPlayerAllianceStateAllyBJ(Player(14), Player(5), true)
+    SetPlayerAllianceStateAllyBJ(Player(14), Player(6), true)
+    SetPlayerAllianceStateAllyBJ(Player(14), Player(7), true)
+    SetPlayerAllianceStateAllyBJ(Player(14), Player(8), true)
+    SetPlayerAllianceStateAllyBJ(Player(14), Player(9), true)
+    SetPlayerAllianceStateAllyBJ(Player(14), Player(21), true)
+    SetPlayerAllianceStateAllyBJ(Player(14), Player(22), true)
+    SetPlayerAllianceStateAllyBJ(Player(14), Player(23), true)
+    SetPlayerAllianceStateAllyBJ(Player(21), Player(5), true)
+    SetPlayerAllianceStateAllyBJ(Player(21), Player(6), true)
+    SetPlayerAllianceStateAllyBJ(Player(21), Player(7), true)
+    SetPlayerAllianceStateAllyBJ(Player(21), Player(8), true)
+    SetPlayerAllianceStateAllyBJ(Player(21), Player(9), true)
+    SetPlayerAllianceStateAllyBJ(Player(21), Player(14), true)
+    SetPlayerAllianceStateAllyBJ(Player(21), Player(22), true)
+    SetPlayerAllianceStateAllyBJ(Player(21), Player(23), true)
+    SetPlayerAllianceStateAllyBJ(Player(22), Player(5), true)
+    SetPlayerAllianceStateAllyBJ(Player(22), Player(6), true)
+    SetPlayerAllianceStateAllyBJ(Player(22), Player(7), true)
+    SetPlayerAllianceStateAllyBJ(Player(22), Player(8), true)
+    SetPlayerAllianceStateAllyBJ(Player(22), Player(9), true)
+    SetPlayerAllianceStateAllyBJ(Player(22), Player(14), true)
+    SetPlayerAllianceStateAllyBJ(Player(22), Player(21), true)
+    SetPlayerAllianceStateAllyBJ(Player(22), Player(23), true)
+    SetPlayerAllianceStateAllyBJ(Player(23), Player(5), true)
+    SetPlayerAllianceStateAllyBJ(Player(23), Player(6), true)
+    SetPlayerAllianceStateAllyBJ(Player(23), Player(7), true)
+    SetPlayerAllianceStateAllyBJ(Player(23), Player(8), true)
+    SetPlayerAllianceStateAllyBJ(Player(23), Player(9), true)
+    SetPlayerAllianceStateAllyBJ(Player(23), Player(14), true)
+    SetPlayerAllianceStateAllyBJ(Player(23), Player(21), true)
+    SetPlayerAllianceStateAllyBJ(Player(23), Player(22), true)
     SetPlayerAllianceStateVisionBJ(Player(5), Player(6), true)
     SetPlayerAllianceStateVisionBJ(Player(5), Player(7), true)
     SetPlayerAllianceStateVisionBJ(Player(5), Player(8), true)
     SetPlayerAllianceStateVisionBJ(Player(5), Player(9), true)
-    SetPlayerAllianceStateVisionBJ(Player(5), Player(11), true)
+    SetPlayerAllianceStateVisionBJ(Player(5), Player(14), true)
+    SetPlayerAllianceStateVisionBJ(Player(5), Player(21), true)
+    SetPlayerAllianceStateVisionBJ(Player(5), Player(22), true)
+    SetPlayerAllianceStateVisionBJ(Player(5), Player(23), true)
     SetPlayerAllianceStateVisionBJ(Player(6), Player(5), true)
     SetPlayerAllianceStateVisionBJ(Player(6), Player(7), true)
     SetPlayerAllianceStateVisionBJ(Player(6), Player(8), true)
     SetPlayerAllianceStateVisionBJ(Player(6), Player(9), true)
-    SetPlayerAllianceStateVisionBJ(Player(6), Player(11), true)
+    SetPlayerAllianceStateVisionBJ(Player(6), Player(14), true)
+    SetPlayerAllianceStateVisionBJ(Player(6), Player(21), true)
+    SetPlayerAllianceStateVisionBJ(Player(6), Player(22), true)
+    SetPlayerAllianceStateVisionBJ(Player(6), Player(23), true)
     SetPlayerAllianceStateVisionBJ(Player(7), Player(5), true)
     SetPlayerAllianceStateVisionBJ(Player(7), Player(6), true)
     SetPlayerAllianceStateVisionBJ(Player(7), Player(8), true)
     SetPlayerAllianceStateVisionBJ(Player(7), Player(9), true)
-    SetPlayerAllianceStateVisionBJ(Player(7), Player(11), true)
+    SetPlayerAllianceStateVisionBJ(Player(7), Player(14), true)
+    SetPlayerAllianceStateVisionBJ(Player(7), Player(21), true)
+    SetPlayerAllianceStateVisionBJ(Player(7), Player(22), true)
+    SetPlayerAllianceStateVisionBJ(Player(7), Player(23), true)
     SetPlayerAllianceStateVisionBJ(Player(8), Player(5), true)
     SetPlayerAllianceStateVisionBJ(Player(8), Player(6), true)
     SetPlayerAllianceStateVisionBJ(Player(8), Player(7), true)
     SetPlayerAllianceStateVisionBJ(Player(8), Player(9), true)
-    SetPlayerAllianceStateVisionBJ(Player(8), Player(11), true)
+    SetPlayerAllianceStateVisionBJ(Player(8), Player(14), true)
+    SetPlayerAllianceStateVisionBJ(Player(8), Player(21), true)
+    SetPlayerAllianceStateVisionBJ(Player(8), Player(22), true)
+    SetPlayerAllianceStateVisionBJ(Player(8), Player(23), true)
     SetPlayerAllianceStateVisionBJ(Player(9), Player(5), true)
     SetPlayerAllianceStateVisionBJ(Player(9), Player(6), true)
     SetPlayerAllianceStateVisionBJ(Player(9), Player(7), true)
     SetPlayerAllianceStateVisionBJ(Player(9), Player(8), true)
-    SetPlayerAllianceStateVisionBJ(Player(9), Player(11), true)
-    SetPlayerAllianceStateVisionBJ(Player(11), Player(5), true)
-    SetPlayerAllianceStateVisionBJ(Player(11), Player(6), true)
-    SetPlayerAllianceStateVisionBJ(Player(11), Player(7), true)
-    SetPlayerAllianceStateVisionBJ(Player(11), Player(8), true)
-    SetPlayerAllianceStateVisionBJ(Player(11), Player(9), true)
+    SetPlayerAllianceStateVisionBJ(Player(9), Player(14), true)
+    SetPlayerAllianceStateVisionBJ(Player(9), Player(21), true)
+    SetPlayerAllianceStateVisionBJ(Player(9), Player(22), true)
+    SetPlayerAllianceStateVisionBJ(Player(9), Player(23), true)
+    SetPlayerAllianceStateVisionBJ(Player(14), Player(5), true)
+    SetPlayerAllianceStateVisionBJ(Player(14), Player(6), true)
+    SetPlayerAllianceStateVisionBJ(Player(14), Player(7), true)
+    SetPlayerAllianceStateVisionBJ(Player(14), Player(8), true)
+    SetPlayerAllianceStateVisionBJ(Player(14), Player(9), true)
+    SetPlayerAllianceStateVisionBJ(Player(14), Player(21), true)
+    SetPlayerAllianceStateVisionBJ(Player(14), Player(22), true)
+    SetPlayerAllianceStateVisionBJ(Player(14), Player(23), true)
+    SetPlayerAllianceStateVisionBJ(Player(21), Player(5), true)
+    SetPlayerAllianceStateVisionBJ(Player(21), Player(6), true)
+    SetPlayerAllianceStateVisionBJ(Player(21), Player(7), true)
+    SetPlayerAllianceStateVisionBJ(Player(21), Player(8), true)
+    SetPlayerAllianceStateVisionBJ(Player(21), Player(9), true)
+    SetPlayerAllianceStateVisionBJ(Player(21), Player(14), true)
+    SetPlayerAllianceStateVisionBJ(Player(21), Player(22), true)
+    SetPlayerAllianceStateVisionBJ(Player(21), Player(23), true)
+    SetPlayerAllianceStateVisionBJ(Player(22), Player(5), true)
+    SetPlayerAllianceStateVisionBJ(Player(22), Player(6), true)
+    SetPlayerAllianceStateVisionBJ(Player(22), Player(7), true)
+    SetPlayerAllianceStateVisionBJ(Player(22), Player(8), true)
+    SetPlayerAllianceStateVisionBJ(Player(22), Player(9), true)
+    SetPlayerAllianceStateVisionBJ(Player(22), Player(14), true)
+    SetPlayerAllianceStateVisionBJ(Player(22), Player(21), true)
+    SetPlayerAllianceStateVisionBJ(Player(22), Player(23), true)
+    SetPlayerAllianceStateVisionBJ(Player(23), Player(5), true)
+    SetPlayerAllianceStateVisionBJ(Player(23), Player(6), true)
+    SetPlayerAllianceStateVisionBJ(Player(23), Player(7), true)
+    SetPlayerAllianceStateVisionBJ(Player(23), Player(8), true)
+    SetPlayerAllianceStateVisionBJ(Player(23), Player(9), true)
+    SetPlayerAllianceStateVisionBJ(Player(23), Player(14), true)
+    SetPlayerAllianceStateVisionBJ(Player(23), Player(21), true)
+    SetPlayerAllianceStateVisionBJ(Player(23), Player(22), true)
 end
 
 function InitAllyPriorities()
@@ -8308,29 +6070,69 @@ function InitAllyPriorities()
     SetStartLocPrio(9, 5, 7, MAP_LOC_PRIO_HIGH)
     SetStartLocPrio(9, 6, 8, MAP_LOC_PRIO_HIGH)
     SetStartLocPrioCount(10, 3)
-    SetStartLocPrio(10, 0, 2, MAP_LOC_PRIO_LOW)
-    SetStartLocPrio(10, 1, 4, MAP_LOC_PRIO_LOW)
-    SetStartLocPrio(10, 2, 5, MAP_LOC_PRIO_LOW)
-    SetEnemyStartLocPrioCount(10, 3)
-    SetEnemyStartLocPrio(10, 0, 2, MAP_LOC_PRIO_LOW)
-    SetEnemyStartLocPrio(10, 1, 4, MAP_LOC_PRIO_LOW)
-    SetEnemyStartLocPrio(10, 2, 5, MAP_LOC_PRIO_LOW)
-    SetStartLocPrioCount(11, 3)
-    SetStartLocPrio(11, 0, 2, MAP_LOC_PRIO_LOW)
-    SetStartLocPrio(11, 1, 4, MAP_LOC_PRIO_LOW)
-    SetStartLocPrio(11, 2, 5, MAP_LOC_PRIO_LOW)
+    SetStartLocPrio(10, 0, 12, MAP_LOC_PRIO_LOW)
+    SetStartLocPrio(10, 1, 14, MAP_LOC_PRIO_LOW)
+    SetStartLocPrio(10, 2, 16, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrioCount(10, 4)
+    SetEnemyStartLocPrio(10, 0, 12, MAP_LOC_PRIO_HIGH)
+    SetEnemyStartLocPrio(10, 1, 14, MAP_LOC_PRIO_HIGH)
+    SetEnemyStartLocPrio(10, 2, 15, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrio(10, 3, 16, MAP_LOC_PRIO_LOW)
+    SetStartLocPrioCount(11, 4)
+    SetStartLocPrio(11, 0, 12, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrio(11, 1, 14, MAP_LOC_PRIO_LOW)
+    SetStartLocPrio(11, 2, 15, MAP_LOC_PRIO_LOW)
+    SetStartLocPrio(11, 3, 16, MAP_LOC_PRIO_LOW)
     SetEnemyStartLocPrioCount(11, 3)
-    SetEnemyStartLocPrio(11, 0, 2, MAP_LOC_PRIO_LOW)
-    SetEnemyStartLocPrio(11, 1, 4, MAP_LOC_PRIO_LOW)
-    SetEnemyStartLocPrio(11, 2, 5, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrio(11, 0, 13, MAP_LOC_PRIO_HIGH)
+    SetEnemyStartLocPrio(11, 1, 15, MAP_LOC_PRIO_HIGH)
+    SetEnemyStartLocPrio(11, 2, 16, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrioCount(12, 4)
+    SetStartLocPrio(12, 0, 13, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrio(12, 1, 14, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrio(12, 2, 15, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrio(12, 3, 16, MAP_LOC_PRIO_HIGH)
+    SetEnemyStartLocPrioCount(12, 2)
+    SetEnemyStartLocPrio(12, 0, 14, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrio(12, 1, 16, MAP_LOC_PRIO_LOW)
+    SetStartLocPrioCount(13, 2)
+    SetStartLocPrio(13, 0, 14, MAP_LOC_PRIO_LOW)
+    SetStartLocPrio(13, 1, 16, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrioCount(13, 5)
+    SetEnemyStartLocPrio(13, 0, 4, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrio(13, 1, 5, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrio(13, 2, 7, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrio(13, 3, 8, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrio(13, 4, 9, MAP_LOC_PRIO_LOW)
+    SetStartLocPrioCount(15, 4)
+    SetStartLocPrio(15, 0, 14, MAP_LOC_PRIO_LOW)
+    SetStartLocPrio(15, 1, 16, MAP_LOC_PRIO_LOW)
+    SetStartLocPrio(15, 2, 17, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrioCount(15, 5)
+    SetEnemyStartLocPrio(15, 0, 13, MAP_LOC_PRIO_HIGH)
+    SetEnemyStartLocPrio(15, 1, 14, MAP_LOC_PRIO_HIGH)
+    SetEnemyStartLocPrio(15, 2, 16, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrio(15, 3, 17, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrioCount(16, 5)
+    SetStartLocPrio(16, 0, 7, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrio(16, 1, 12, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrio(16, 2, 14, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrio(16, 3, 15, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrio(16, 4, 17, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrioCount(16, 5)
+    SetEnemyStartLocPrio(16, 0, 1, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrio(16, 1, 7, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrio(16, 2, 12, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrio(16, 3, 14, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrio(16, 4, 15, MAP_LOC_PRIO_LOW)
 end
 
 function main()
-    SetCameraBounds(-17792.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), -17792.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM), 17792.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), 17792.0 - GetCameraMargin(CAMERA_MARGIN_TOP), -17792.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), 17792.0 - GetCameraMargin(CAMERA_MARGIN_TOP), 17792.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), -17792.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM))
-    SetDayNightModels("Environment\\DNC\\DNCLordaeron\\DNCLordaeronTerrain\\DNCLordaeronTerrain.mdl", "Environment\\DNC\\DNCLordaeron\\DNCLordaeronUnit\\DNCLordaeronUnit.mdl")
+    SetCameraBounds(-5120.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), -16896.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM), 3072.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), -8704.0 - GetCameraMargin(CAMERA_MARGIN_TOP), -5120.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), -8704.0 - GetCameraMargin(CAMERA_MARGIN_TOP), 3072.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), -16896.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM))
+    SetDayNightModels("Environment\\DNC\\DNCFelwood\\DNCFelwoodTerrain\\DNCFelwoodTerrain.mdl", "Environment\\DNC\\DNCFelwood\\DNCFelwoodUnit\\DNCFelwoodUnit.mdl")
     NewSoundEnvironment("Default")
-    SetAmbientDaySound("CityScapeDay")
-    SetAmbientNightSound("CityScapeNight")
+    SetAmbientDaySound("FelwoodDay")
+    SetAmbientNightSound("FelwoodNight")
     SetMapMusic("Music", true, 0)
     CreateRegions()
     CreateAllItems()
@@ -8344,21 +6146,27 @@ end
 function config()
     SetMapName("TRIGSTR_003")
     SetMapDescription("")
-    SetPlayers(12)
-    SetTeams(12)
+    SetPlayers(18)
+    SetTeams(18)
     SetGamePlacement(MAP_PLACEMENT_TEAMS_TOGETHER)
-    DefineStartLocation(0, 64.0, -13952.0)
-    DefineStartLocation(1, 8448.0, 15168.0)
-    DefineStartLocation(2, -8448.0, 15168.0)
-    DefineStartLocation(3, 2944.0, 1152.0)
-    DefineStartLocation(4, -1856.0, 10304.0)
-    DefineStartLocation(5, 0.0, -16576.0)
-    DefineStartLocation(6, -8448.0, -14656.0)
-    DefineStartLocation(7, 8448.0, -14656.0)
-    DefineStartLocation(8, 768.0, 1664.0)
-    DefineStartLocation(9, -10304.0, -8960.0)
-    DefineStartLocation(10, 9856.0, -6528.0)
-    DefineStartLocation(11, -4608.0, 6976.0)
+    DefineStartLocation(0, -4352.0, -9472.0)
+    DefineStartLocation(1, -4352.0, -9472.0)
+    DefineStartLocation(2, -4352.0, -9472.0)
+    DefineStartLocation(3, -4352.0, -9472.0)
+    DefineStartLocation(4, -4352.0, -9472.0)
+    DefineStartLocation(5, -4352.0, -9472.0)
+    DefineStartLocation(6, -4352.0, -9472.0)
+    DefineStartLocation(7, -4352.0, -9472.0)
+    DefineStartLocation(8, -4352.0, -9472.0)
+    DefineStartLocation(9, -4352.0, -9472.0)
+    DefineStartLocation(10, -4352.0, -9472.0)
+    DefineStartLocation(11, -4352.0, -9472.0)
+    DefineStartLocation(12, -4352.0, -9472.0)
+    DefineStartLocation(13, -4352.0, -9472.0)
+    DefineStartLocation(14, -4352.0, -9472.0)
+    DefineStartLocation(15, -4352.0, -9472.0)
+    DefineStartLocation(16, -4352.0, -9472.0)
+    DefineStartLocation(17, -4352.0, -9472.0)
     InitCustomPlayerSlots()
     InitCustomTeams()
     InitAllyPriorities()

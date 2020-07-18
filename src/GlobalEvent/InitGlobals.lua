@@ -20,15 +20,16 @@ do
 		LearnEvent()
 		InitTrig_Entire()
 		--interface
-		HideEverything()
 
-		CreateAndStartClock()
+		--CreateAndStartClock()
 		KeyRegistration()
 		InitSelectionRegister()
 		InitMouseMoveTrigger()
-		--BadChat() -- Функция для починки чата
 		TimerStart(CreateTimer(), 0.05, false, function()
-			CreateTalentButton()
+			--CreateTalentButton(0)
+			HideEverything()
+			--CreateInterface()
+			Resources()
 		end)
 	end
 end

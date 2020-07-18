@@ -457,56 +457,8 @@ STRING 80
 Over easy
 }
 
-STRING 83
-// Units: H006 (|c00F0F000Анти-маг), EditorSuffix (Name - Editor Suffix)
-{
-(Раса высших людей)
-}
-
-STRING 84
-// Units: H006 (|c00F0F000Анти-маг), Name (Name)
-{
-|c00F0F000Анти-маг
-}
-
-STRING 85
-// Units: H006 (|c00F0F000Анти-маг), Tip (Tooltip - Basic)
-{
-|c00F0F000Анти-маг
-}
-
-STRING 86
-// Units: H006 (|c00F0F000Анти-маг), Awakentip (Tooltip - Awaken)
-{
-|c00F0F000Анти-маг
-}
-
-STRING 87
-// Units: H006 (|c00F0F000Анти-маг), Revivetip (Tooltip - Revive)
-{
-|c00F0F000Анти-маг
-}
-
-STRING 88
-// Units: H006 (|c00F0F000Анти-маг), Ubertip (Tooltip - Extended)
-{
-Раса высших людей
-Характеристики:
-Сила: 40 (+1.5)
-Ловкость: 0 (+0.0)
-Разум: 10 (+1.0)
-
-Один из энтов бежащих с леса Дремучих скал, где были сожжены его собратья.
-}
-
-STRING 89
-// Units: H006 (|c00F0F000Анти-маг), Propernames (Proper Names)
-{
-|c00F0F000Калканир
-}
-
 STRING 90
-// Units: H006 (|c00F0F000Анти-маг), Description (Description)
+// Units: H007 (|c00F0F000Архикрыса), Description (Description)
 {
  
 }
@@ -560,7 +512,7 @@ STRING 97
 }
 
 STRING 98
-// Units: H007 (|c00F0F000Архикрыса), Description (Description)
+// Units: H008 (|c00F0F000Вампир), Description (Description)
 {
  
 }
@@ -614,7 +566,7 @@ STRING 105
 }
 
 STRING 106
-// Units: H008 (|c00F0F000Вампир), Description (Description)
+// Units: H00B (|c00F0F000Вурдалак), Description (Description)
 {
  
 }
@@ -765,61 +717,19 @@ STRING 127
 }
 
 STRING 128
-// Units: H00B (|c00F0F000Вурдалак), Description (Description)
+// Units: H00G (|c00F0F000Копатель), Description (Description)
 {
  
 }
 
 STRING 129
-// Units: H00C (|c00F0F000Высший колдун), EditorSuffix (Name - Editor Suffix)
+// Units: H00J (|c00F0F000Ледяная виверна), EditorSuffix (Name - Editor Suffix)
 {
 (Раса гномов)
 }
 
-STRING 130
-// Units: H00C (|c00F0F000Высший колдун), Name (Name)
-{
-|c00F0F000Высший колдун
-}
-
-STRING 131
-// Units: H00C (|c00F0F000Высший колдун), Tip (Tooltip - Basic)
-{
-|c00F0F000Высший колдун
-}
-
-STRING 132
-// Units: H00C (|c00F0F000Высший колдун), Awakentip (Tooltip - Awaken)
-{
-|c00F0F000Высший колдун
-}
-
-STRING 133
-// Units: H00C (|c00F0F000Высший колдун), Revivetip (Tooltip - Revive)
-{
-|c00F0F000Высший колдун
-}
-
-STRING 134
-// Units: H00C (|c00F0F000Высший колдун), Ubertip (Tooltip - Extended)
-{
-Раса гномов
-Характеристики:
-Сила: 10 (+1.2)
-Ловкость: 10 (+0.8)
-Разум: 30 (+1.2)
-
-Правнук Андуина Чёрнобородого, Корнаш изучал трактаты и руны древней Апокрефали, с помощью чего и смог добиться великих магических составляющих.
-}
-
-STRING 135
-// Units: H00C (|c00F0F000Высший колдун), Propernames (Proper Names)
-{
-|c00F0F000Корнаш
-}
-
 STRING 136
-// Units: H00C (|c00F0F000Высший колдун), Description (Description)
+// Units: H00I (|c00F0F000Крыса), Description (Description)
 {
  
 }
@@ -872,56 +782,8 @@ STRING 143
 |c00F0F000Эннис
 }
 
-STRING 144
-// Units: H00E (|c00F0F000Древо Жизни), EditorSuffix (Name - Editor Suffix)
-{
-(Раса высших людей)
-}
-
-STRING 145
-// Units: H00E (|c00F0F000Древо Жизни), Name (Name)
-{
-|c00F0F000Древо Жизни
-}
-
-STRING 146
-// Units: H00E (|c00F0F000Древо Жизни), Tip (Tooltip - Basic)
-{
-|c00F0F000Древо Жизни
-}
-
-STRING 147
-// Units: H00E (|c00F0F000Древо Жизни), Awakentip (Tooltip - Awaken)
-{
-|c00F0F000Древо Жизни
-}
-
-STRING 148
-// Units: H00E (|c00F0F000Древо Жизни), Revivetip (Tooltip - Revive)
-{
-|c00F0F000Древо Жизни
-}
-
-STRING 149
-// Units: H00E (|c00F0F000Древо Жизни), Ubertip (Tooltip - Extended)
-{
-Раса высших людей
-Характеристики:
-Сила: 40 (+1.5)
-Ловкость: 0 (+0.0)
-Разум: 10 (+1.0)
-
-Один из энтов бежащих с леса Дремучих скал, где были сожжены его собратья.
-}
-
-STRING 150
-// Units: H00E (|c00F0F000Древо Жизни), Propernames (Proper Names)
-{
-|c00F0F000Древо Жизни
-}
-
 STRING 151
-// Units: H00E (|c00F0F000Древо Жизни), Description (Description)
+// Units: H00J (|c00F0F000Ледяная виверна), Description (Description)
 {
  
 }
@@ -1023,7 +885,7 @@ STRING 165
 }
 
 STRING 166
-// Units: H00G (|c00F0F000Копатель), Description (Description)
+// Units: H00M (|c00F0F000Мать пауков), Description (Description)
 {
  
 }
@@ -1125,13 +987,13 @@ STRING 180
 }
 
 STRING 181
-// Units: H00I (|c00F0F000Крыса), Description (Description)
+// Units: H00N (|c00F0F000Молотобоец), Description (Description)
 {
  
 }
 
 STRING 182
-// Units: H00J (|c00F0F000Ледяная виверна), EditorSuffix (Name - Editor Suffix)
+// Units: H00M (|c00F0F000Мать пауков), EditorSuffix (Name - Editor Suffix)
 {
 (Раса гномов)
 }
@@ -1179,7 +1041,7 @@ STRING 188
 }
 
 STRING 189
-// Units: H00J (|c00F0F000Ледяная виверна), Description (Description)
+// Units: H00O (|c00F0F000Некромант), Description (Description)
 {
  
 }
@@ -1239,37 +1101,13 @@ STRING 197
 }
 
 STRING 198
-// Units: H00L (|c00F0F000Мастер Клинка), EditorSuffix (Name - Editor Suffix)
+// Units: H00N (|c00F0F000Молотобоец), EditorSuffix (Name - Editor Suffix)
 {
 (Раса гномов)
 }
 
-STRING 199
-// Units: H00L (|c00F0F000Мастер Клинка), Name (Name)
-{
-|c00F0F000Мастер Клинка
-}
-
-STRING 200
-// Units: H00L (|c00F0F000Мастер Клинка), Tip (Tooltip - Basic)
-{
-|c00F0F000Мастер Клинка
-}
-
-STRING 201
-// Units: H00L (|c00F0F000Мастер Клинка), Awakentip (Tooltip - Awaken)
-{
-|c00F0F000Мастер Клинка
-}
-
-STRING 202
-// Units: H00L (|c00F0F000Мастер Клинка), Revivetip (Tooltip - Revive)
-{
-|c00F0F000Мастер Клинка
-}
-
 STRING 203
-// Units: H00L (|c00F0F000Мастер Клинка), Ubertip (Tooltip - Extended)
+// Units: H00M (|c00F0F000Мать пауков), Ubertip (Tooltip - Extended)
 {
 Раса гномов
 Характеристики:
@@ -1280,20 +1118,14 @@ STRING 203
 Один среди ветеранов Чёрного камня, Вартрук был призван на службу.
 }
 
-STRING 204
-// Units: H00L (|c00F0F000Мастер Клинка), Propernames (Proper Names)
-{
-|c00F0F000Дораш
-}
-
 STRING 205
-// Units: H00L (|c00F0F000Мастер Клинка), Description (Description)
+// Units: H00P (|c00F0F000Некрофил), Description (Description)
 {
  
 }
 
 STRING 206
-// Units: H00M (|c00F0F000Мать пауков), EditorSuffix (Name - Editor Suffix)
+// Units: H00Q (|c00F0F000Несущий огонь), EditorSuffix (Name - Editor Suffix)
 {
 (Раса гномов)
 }
@@ -1323,7 +1155,7 @@ STRING 210
 }
 
 STRING 211
-// Units: H00M (|c00F0F000Мать пауков), Ubertip (Tooltip - Extended)
+// Units: H00N (|c00F0F000Молотобоец), Ubertip (Tooltip - Extended)
 {
 Раса гномов
 Характеристики:
@@ -1341,13 +1173,13 @@ STRING 212
 }
 
 STRING 213
-// Units: H00M (|c00F0F000Мать пауков), Description (Description)
+// Units: H00Q (|c00F0F000Несущий огонь), Description (Description)
 {
  
 }
 
 STRING 214
-// Units: H00N (|c00F0F000Молотобоец), EditorSuffix (Name - Editor Suffix)
+// Units: H00R (|c00F0F000Орк-чемпион), EditorSuffix (Name - Editor Suffix)
 {
 (Раса гномов)
 }
@@ -1377,7 +1209,7 @@ STRING 218
 }
 
 STRING 219
-// Units: H00N (|c00F0F000Молотобоец), Ubertip (Tooltip - Extended)
+// Units: H00Q (|c00F0F000Несущий огонь), Ubertip (Tooltip - Extended)
 {
 Раса гномов
 Характеристики:
@@ -1395,7 +1227,7 @@ STRING 220
 }
 
 STRING 221
-// Units: H00N (|c00F0F000Молотобоец), Description (Description)
+// Units: H00R (|c00F0F000Орк-чемпион), Description (Description)
 {
  
 }
@@ -1449,7 +1281,7 @@ STRING 228
 }
 
 STRING 229
-// Units: H00O (|c00F0F000Некромант), Description (Description)
+// Units: H00S (|c00F0F000Падший король), Description (Description)
 {
  
 }
@@ -1503,13 +1335,13 @@ STRING 236
 }
 
 STRING 237
-// Units: H00P (|c00F0F000Некрофил), Description (Description)
+// Units: H00V (|c00F0F000Повелитель Могил), Description (Description)
 {
  
 }
 
 STRING 238
-// Units: H00Q (|c00F0F000Несущий огонь), EditorSuffix (Name - Editor Suffix)
+// Units: H00S (|c00F0F000Падший король), EditorSuffix (Name - Editor Suffix)
 {
 (Раса гномов)
 }
@@ -1539,7 +1371,7 @@ STRING 242
 }
 
 STRING 243
-// Units: H00Q (|c00F0F000Несущий огонь), Ubertip (Tooltip - Extended)
+// Units: H00R (|c00F0F000Орк-чемпион), Ubertip (Tooltip - Extended)
 {
 Раса гномов
 Характеристики:
@@ -1557,13 +1389,13 @@ STRING 244
 }
 
 STRING 245
-// Units: H00Q (|c00F0F000Несущий огонь), Description (Description)
+// Units: H00Y (|c00F0F000Рыцарь Смерти), Description (Description)
 {
  
 }
 
 STRING 246
-// Units: H00R (|c00F0F000Орк-чемпион), EditorSuffix (Name - Editor Suffix)
+// Units: H00V (|c00F0F000Повелитель Могил), EditorSuffix (Name - Editor Suffix)
 {
 (Раса гномов)
 }
@@ -1593,7 +1425,7 @@ STRING 250
 }
 
 STRING 251
-// Units: H00R (|c00F0F000Орк-чемпион), Ubertip (Tooltip - Extended)
+// Units: H00V (|c00F0F000Повелитель Могил), Ubertip (Tooltip - Extended)
 {
 Раса гномов
 Характеристики:
@@ -1611,13 +1443,13 @@ STRING 252
 }
 
 STRING 253
-// Units: H00R (|c00F0F000Орк-чемпион), Description (Description)
+// Units: H00Z (|c00F0F000Рыцарь смерти), Description (Description)
 {
  
 }
 
 STRING 254
-// Units: H00S (|c00F0F000Падший король), EditorSuffix (Name - Editor Suffix)
+// Units: H012 (|c00F0F000Хранитель сада), EditorSuffix (Name - Editor Suffix)
 {
 (Раса гномов)
 }
@@ -1666,7 +1498,7 @@ STRING 260
 }
 
 STRING 261
-// Units: H00S (|c00F0F000Падший король), Description (Description)
+// Units: H012 (|c00F0F000Хранитель сада), Description (Description)
 {
  
 }
@@ -1780,7 +1612,7 @@ STRING 277
 }
 
 STRING 278
-// Units: H00V (|c00F0F000Повелитель Могил), EditorSuffix (Name - Editor Suffix)
+// Units: H014 (|c00F0F000Шаман), EditorSuffix (Name - Editor Suffix)
 {
 (Раса гномов)
 }
@@ -1810,7 +1642,7 @@ STRING 282
 }
 
 STRING 283
-// Units: H00V (|c00F0F000Повелитель Могил), Ubertip (Tooltip - Extended)
+// Units: H012 (|c00F0F000Хранитель сада), Ubertip (Tooltip - Extended)
 {
 Раса гномов
 Характеристики:
@@ -1828,7 +1660,7 @@ STRING 284
 }
 
 STRING 285
-// Units: H00V (|c00F0F000Повелитель Могил), Description (Description)
+// Units: H014 (|c00F0F000Шаман), Description (Description)
 {
  
 }
@@ -1990,7 +1822,7 @@ STRING 308
 }
 
 STRING 309
-// Units: H00Y (|c00F0F000Рыцарь Смерти), Description (Description)
+// Units: H00C (|c00F0F000Победитель Бездны), Description (Description)
 {
  
 }
@@ -2044,43 +1876,18 @@ STRING 316
 }
 
 STRING 317
-// Units: H00Z (|c00F0F000Рыцарь смерти), Description (Description)
 {
  
 }
 
 STRING 318
-// Units: H010 (|c00F0F000Скорпион), EditorSuffix (Name - Editor Suffix)
+// Units: h01U (Гном-ветеран), EditorSuffix (Name - Editor Suffix)
 {
 (Раса гномов)
 }
 
-STRING 319
-// Units: H010 (|c00F0F000Скорпион), Name (Name)
-{
-|c00F0F000Скорпион
-}
-
-STRING 320
-// Units: H010 (|c00F0F000Скорпион), Tip (Tooltip - Basic)
-{
-|c00F0F000Скорпион
-}
-
-STRING 321
-// Units: H010 (|c00F0F000Скорпион), Awakentip (Tooltip - Awaken)
-{
-|c00F0F000Скорпион
-}
-
-STRING 322
-// Units: H010 (|c00F0F000Скорпион), Revivetip (Tooltip - Revive)
-{
-|c00F0F000Скорпион
-}
-
 STRING 323
-// Units: H010 (|c00F0F000Скорпион), Ubertip (Tooltip - Extended)
+// Units: H014 (|c00F0F000Шаман), Ubertip (Tooltip - Extended)
 {
 Раса гномов
 Характеристики:
@@ -2089,18 +1896,6 @@ STRING 323
 Разум: 14 (+2.4)
 
 Один среди ветеранов Чёрного камня, Вартрук был призван на службу.
-}
-
-STRING 324
-// Units: H010 (|c00F0F000Скорпион), Propernames (Proper Names)
-{
-|c00F0F000Спящий Арак
-}
-
-STRING 325
-// Units: H010 (|c00F0F000Скорпион), Description (Description)
-{
- 
 }
 
 STRING 326
@@ -2158,7 +1953,7 @@ STRING 333
 }
 
 STRING 334
-// Units: H012 (|c00F0F000Хранитель сада), EditorSuffix (Name - Editor Suffix)
+// Units: h023 (Метатель топоров |c00FF3200II|r), EditorSuffix (Name - Editor Suffix)
 {
 (Раса гномов)
 }
@@ -2188,7 +1983,7 @@ STRING 338
 }
 
 STRING 339
-// Units: H012 (|c00F0F000Хранитель сада), Ubertip (Tooltip - Extended)
+// Units: H00C (|c00F0F000Победитель Бездны), Ubertip (Tooltip - Extended)
 {
 Раса гномов
 Характеристики:
@@ -2203,12 +1998,6 @@ STRING 340
 // Units: H012 (|c00F0F000Хранитель сада), Propernames (Proper Names)
 {
 |c00F0F000Малганис
-}
-
-STRING 341
-// Units: H012 (|c00F0F000Хранитель сада), Description (Description)
-{
- 
 }
 
 STRING 342
@@ -2266,7 +2055,7 @@ STRING 349
 }
 
 STRING 350
-// Units: H014 (|c00F0F000Шаман), EditorSuffix (Name - Editor Suffix)
+// Units: h028 (Пехотинец |c00FF3200I|r), EditorSuffix (Name - Editor Suffix)
 {
 (Раса гномов)
 }
@@ -2295,122 +2084,15 @@ STRING 354
 |c00F0F000Шаман
 }
 
-STRING 355
-// Units: H014 (|c00F0F000Шаман), Ubertip (Tooltip - Extended)
-{
-Раса гномов
-Характеристики:
-Сила: 20 (+2.0)
-Ловкость: 22 (+2.1)
-Разум: 14 (+2.4)
-
-Один среди ветеранов Чёрного камня, Вартрук был призван на службу.
-}
-
 STRING 356
 // Units: H014 (|c00F0F000Шаман), Propernames (Proper Names)
 {
 |c00F0F000Олдарокай
 }
 
-STRING 357
-// Units: H014 (|c00F0F000Шаман), Description (Description)
-{
- 
-}
-
-STRING 358
-// Units: H015 (|c00F0F000Энт), EditorSuffix (Name - Editor Suffix)
-{
-(Раса высших людей)
-}
-
-STRING 359
-// Units: H015 (|c00F0F000Энт), Name (Name)
-{
-|c00F0F000Энт
-}
-
-STRING 360
-// Units: H015 (|c00F0F000Энт), Tip (Tooltip - Basic)
-{
-|c00F0F000Энт
-}
-
-STRING 361
-// Units: H015 (|c00F0F000Энт), Awakentip (Tooltip - Awaken)
-{
-|c00F0F000Энт
-}
-
-STRING 362
-// Units: H015 (|c00F0F000Энт), Revivetip (Tooltip - Revive)
-{
-|c00F0F000Энт
-}
-
-STRING 363
-// Units: H015 (|c00F0F000Энт), Ubertip (Tooltip - Extended)
-{
-Раса высших людей
-Характеристики:
-Сила: 40 (+1.5)
-Ловкость: 0 (+0.0)
-Разум: 10 (+1.0)
-
-Один из энтов бежащих с леса Дремучих скал, где были сожжены его собратья.
-}
-
-STRING 364
-// Units: H015 (|c00F0F000Энт), Propernames (Proper Names)
-{
-|c00F0F000Энт
-}
-
-STRING 365
-// Units: H015 (|c00F0F000Энт), Description (Description)
-{
- 
-}
-
 STRING 366
 {
 KODUM Resistance
-}
-
-STRING 367
-{
-King
-}
-
-STRING 368
-{
-Carry
-}
-
-STRING 369
-{
-Tank
-}
-
-STRING 370
-{
-Support
-}
-
-STRING 371
-{
-Builder
-}
-
-STRING 372
-{
-Bot High Kingdom
-}
-
-STRING 373
-{
-Bot Dawn Kingdom
 }
 
 STRING 374
@@ -6798,11 +6480,6 @@ STRING 943
  (Хранитель сада)
 }
 
-STRING 944
-{
- 
-}
-
 STRING 945
 // Abilities: A01A (Лесное колдовство ), Name (Name)
 {
@@ -7173,72 +6850,6 @@ STRING 999
 Феникс
 }
 
-STRING 1000
-// Items: I001 (Проклятое кольцо), Ubertip (Tooltip - Extended)
-{
-+5 сила
--5 разум
-Пассивная:
-Восстанавливает 2ед. манны всем дружественным войскам в радиусе 450.
-
-}
-
-STRING 1001
-// Items: I001 (Проклятое кольцо), Tip (Tooltip - Basic)
-{
-+5 сила
--5 разум
-Пассивная:
-Восстанавливает 2ед. манны всем дружественным войскам в радиусе 450.
-
-}
-
-STRING 1002
-// Items: I001 (Проклятое кольцо), Description (Description)
-{
-+5 сила
--5 разум
-}
-
-STRING 1003
-// Items: I001 (Проклятое кольцо), Name (Name)
-{
-Проклятое кольцо
-}
-
-STRING 1004
-// Items: I002 (Проклятое кольцо), Ubertip (Tooltip - Extended)
-{
-+5 сила
--5 разум
-Пассивная:
-Восстанавливает 2ед. манны всем дружественным войскам в радиусе 450.
-
-}
-
-STRING 1005
-// Items: I002 (Проклятое кольцо), Tip (Tooltip - Basic)
-{
-+5 сила
--5 разум
-Пассивная:
-Восстанавливает 2ед. манны всем дружественным войскам в радиусе 450.
-
-}
-
-STRING 1006
-// Items: I002 (Проклятое кольцо), Description (Description)
-{
-+5 сила
--5 разум
-}
-
-STRING 1007
-// Items: I002 (Проклятое кольцо), Name (Name)
-{
-Проклятое кольцо
-}
-
 STRING 1008
 // Units: h01R (Боевой топор), Name (Name)
 {
@@ -7378,7 +6989,7 @@ STRING 1022
 }
 
 STRING 1023
-// Units: h01U (Гном-ветеран), EditorSuffix (Name - Editor Suffix)
+// Units: h02I (Стрелок |c00FF3200II|r), EditorSuffix (Name - Editor Suffix)
 {
 (Раса гномов)
 }
@@ -7684,7 +7295,7 @@ STRING 1058
 }
 
 STRING 1059
-// Units: h023 (Метатель топоров |c00FF3200II|r), EditorSuffix (Name - Editor Suffix)
+// Units: h02P (Целитель |c00FF3200II|r), EditorSuffix (Name - Editor Suffix)
 {
 (Раса гномов)
 }
@@ -7862,12 +7473,6 @@ STRING 1078
 Защита: 3
 Тип защиты: Доспехи
 Скорость передвижения: 300
-}
-
-STRING 1079
-// Units: h028 (Пехотинец |c00FF3200I|r), EditorSuffix (Name - Editor Suffix)
-{
-(Раса гномов)
 }
 
 STRING 1080
@@ -8224,12 +7829,6 @@ STRING 1118
 Скорость передвижения: 320
 }
 
-STRING 1119
-// Units: h02I (Стрелок |c00FF3200II|r), EditorSuffix (Name - Editor Suffix)
-{
-(Раса гномов)
-}
-
 STRING 1120
 // Units: h02J (Тролль-берсерк |c00FF3200I|r), Name (Name)
 {
@@ -8474,12 +8073,6 @@ STRING 1146
 Защита: 3
 Тип защиты: Тяжелые доспехи
 Скорость передвижения: 270
-}
-
-STRING 1147
-// Units: h02P (Целитель |c00FF3200II|r), EditorSuffix (Name - Editor Suffix)
-{
-(Раса гномов)
 }
 
 STRING 1148
@@ -9763,118 +9356,10 @@ STRING 1326
 Огненный щит
 }
 
-STRING 1328
-// Units: H02T (|c00F0F000Светлячок), Name (Name)
-{
-|c00F0F000Светлячок
-}
-
-STRING 1329
-// Units: H02T (|c00F0F000Светлячок), Tip (Tooltip - Basic)
-{
-|c00F0F000Светлячок
-}
-
-STRING 1330
-// Units: H02T (|c00F0F000Светлячок), Awakentip (Tooltip - Awaken)
-{
-|c00F0F000Светлячок
-}
-
-STRING 1331
-// Units: H02T (|c00F0F000Светлячок), Revivetip (Tooltip - Revive)
-{
-|c00F0F000Светлячок
-}
-
-STRING 1332
-// Units: H02T (|c00F0F000Светлячок), Ubertip (Tooltip - Extended)
-{
-Раса древних
-Характеристики:
-Сила: 12 (+2.0)
-Ловкость: 7 (+2.0)
-Разум: 21 (+2.0)
-
-Велентор - долина черепах и планета семи морей рыцарей Тереноса. После сильного землетрясения, планета начала раскалывать себя на части и освободила жизненную энергию Неоклону.
-}
-
-STRING 1333
-// Units: H02T (|c00F0F000Светлячок), Propernames (Proper Names)
-{
-|c00F0F000Яшур
-}
-
 STRING 1334
 // Abilities: A01T (Злые чары), EditorSuffix (Editor Suffix)
 {
 (Enchantress)
-}
-
-STRING 1335
-// Abilities: A01V (Кристаллизация [|cffffcc00Светлячок|r]), Name (Name)
-{
-Кристаллизация [|cffffcc00Светлячок|r]
-}
-
-STRING 1336
-// Abilities: A01V (Кристаллизация [|cffffcc00Светлячок|r]), Tip (Tooltip - Normal)
-{
-Кристаллизация [|cffffcc00Светлячок|r]
-}
-
-STRING 1337
-// Abilities: A01V (Кристаллизация [|cffffcc00Светлячок|r]), Hotkey (Hotkey - Normal)
-{
-E
-}
-
-STRING 1338
-// Abilities: A01V (Кристаллизация [|cffffcc00Светлячок|r]), Tip (Tooltip - Normal)
-{
-Кристаллизация [|cffffcc00Светлячок|r]
-}
-
-STRING 1339
-// Abilities: A01V (Кристаллизация [|cffffcc00Светлячок|r]), Tip (Tooltip - Normal)
-{
-Кристаллизация [|cffffcc00Светлячок|r]
-}
-
-STRING 1340
-// Abilities: A01V (Кристаллизация [|cffffcc00Светлячок|r]), Ubertip (Tooltip - Normal - Extended)
-{
-Повышение скорости атаки на 400%.
-}
-
-STRING 1341
-// Abilities: A01V (Кристаллизация [|cffffcc00Светлячок|r]), Ubertip (Tooltip - Normal - Extended)
-{
-Повышение скорости атаки на 500%.
-}
-
-STRING 1342
-// Abilities: A01V (Кристаллизация [|cffffcc00Светлячок|r]), Ubertip (Tooltip - Normal - Extended)
-{
-Повышение скорости атаки на 600%.
-}
-
-STRING 1343
-// Abilities: A01V (Кристаллизация [|cffffcc00Светлячок|r]), Tip (Tooltip - Normal)
-{
-Кристаллизация [|cffffcc00Светлячок|r]
-}
-
-STRING 1344
-// Abilities: A01V (Кристаллизация [|cffffcc00Светлячок|r]), Ubertip (Tooltip - Normal - Extended)
-{
-Повышение скорости атаки на 800%.
-}
-
-STRING 1345
-// Abilities: A01W (Скачок), Tip (Tooltip - Normal)
-{
-Скачок [|cffffcc004-й уровень|r]
 }
 
 STRING 1346
@@ -10280,31 +9765,25 @@ STRING 1419
 }
 
 STRING 1420
-// Abilities: A01X (Исцеление), Hotkey (Hotkey - Normal)
+// Abilities: A020 (Опутывание), Hotkey (Hotkey - Normal)
 {
 W
 }
 
 STRING 1421
-// Abilities: A01X (Исцеление), Unhotkey (Hotkey - Turn Off)
+// Abilities: A028 (Разлом Измерения), Hotkey (Hotkey - Normal)
 {
 W
 }
 
-STRING 1422
-// Abilities: A01X (Исцеление), EditorSuffix (Editor Suffix)
-{
-висп
-}
-
 STRING 1423
-// Units: H02T (|c00F0F000Светлячок), EditorSuffix (Name - Editor Suffix)
+// Units: H02U (|c00F0F000Заклинатель), EditorSuffix (Name - Editor Suffix)
 {
 Поддержка
 }
 
 STRING 1424
-// Units: H02U (|c00F0F000Заклинатель), EditorSuffix (Name - Editor Suffix)
+// Units: H02V (|c00F0F000Убийца рыбаков), EditorSuffix (Name - Editor Suffix)
 {
 Поддержка
 }
@@ -10316,7 +9795,7 @@ STRING 1425
 }
 
 STRING 1426
-// Units: H02V (|c00F0F000Убийца рыбаков), EditorSuffix (Name - Editor Suffix)
+// Units: H02W (|c00F0F000Страж печатей), EditorSuffix (Name - Editor Suffix)
 {
 Поддержка
 }
@@ -10328,13 +9807,13 @@ STRING 1427
 }
 
 STRING 1428
-// Units: H02W (|c00F0F000Страж печатей), EditorSuffix (Name - Editor Suffix)
+// Units: H02X (|c00F0F000Мортирный отряд), EditorSuffix (Name - Editor Suffix)
 {
 Поддержка
 }
 
 STRING 1429
-// Units: H02X (|c00F0F000Мортирный отряд), EditorSuffix (Name - Editor Suffix)
+// Units: H02Y (|c00F0F000Колдун), EditorSuffix (Name - Editor Suffix)
 {
 Поддержка
 }
@@ -10352,7 +9831,7 @@ STRING 1431
 }
 
 STRING 1432
-// Units: H02Y (|c00F0F000Колдун), EditorSuffix (Name - Editor Suffix)
+// Units: H02Z (|c00F0F000Огр), EditorSuffix (Name - Editor Suffix)
 {
 Поддержка
 }
@@ -10364,7 +9843,7 @@ STRING 1433
 }
 
 STRING 1434
-// Units: H02Z (|c00F0F000Огр), EditorSuffix (Name - Editor Suffix)
+// Units: H030 (|c00F0F000Архитектор), EditorSuffix (Name - Editor Suffix)
 {
 Поддержка
 }
@@ -10376,13 +9855,13 @@ STRING 1435
 }
 
 STRING 1436
-// Units: H030 (|c00F0F000Архитектор), EditorSuffix (Name - Editor Suffix)
+// Units: H031 (|c00F0F000Чародей), EditorSuffix (Name - Editor Suffix)
 {
 Поддержка
 }
 
 STRING 1437
-// Units: H031 (|c00F0F000Чародей), EditorSuffix (Name - Editor Suffix)
+// Units: H032 (|c00F0F000Капитан), EditorSuffix (Name - Editor Suffix)
 {
 Поддержка
 }
@@ -10393,28 +9872,16 @@ STRING 1438
 |c00F0F000Ильвинос
 }
 
-STRING 1439
-// Units: H032 (|c00F0F000Капитан), EditorSuffix (Name - Editor Suffix)
-{
-Поддержка
-}
-
 STRING 1440
-// Abilities: A01W (Скачок), Researchhotkey (Hotkey - Learn)
+// Abilities: A027 (Поглощение маны), Hotkey (Hotkey - Normal)
 {
 Q
 }
 
 STRING 1441
-// Abilities: A01W (Скачок), Hotkey (Hotkey - Normal)
+// Abilities: A027 (Поглощение маны), Researchhotkey (Hotkey - Learn)
 {
 Q
-}
-
-STRING 1442
-// Abilities: A01Z (Внутренний огонь), EditorSuffix (Editor Suffix)
-{
-(Капитан)
 }
 
 STRING 1443
@@ -10453,20 +9920,8 @@ STRING 1448
 Капитан
 }
 
-STRING 1449
-// Abilities: A01Z (Внутренний огонь), Hotkey (Hotkey - Normal)
-{
-Q
-}
-
-STRING 1450
-// Abilities: A01Z (Внутренний огонь), Unhotkey (Hotkey - Turn Off)
-{
-Q
-}
-
 STRING 1451
-// Abilities: A020 (Опутывание), Hotkey (Hotkey - Normal)
+// Abilities: A028 (Разлом Измерения), Researchhotkey (Hotkey - Learn)
 {
 W
 }
@@ -10511,135 +9966,6 @@ STRING 1458
 // Abilities: A020 (Опутывание), EditorSuffix (Editor Suffix)
 {
 Убийца рыбаков
-}
-
-STRING 1459
-// Abilities: A021 (Сглаз), EditorSuffix (Editor Suffix)
-{
-(Колдун)
-}
-
-STRING 1460
-// Abilities: A022 (Цепная молния), Tip (Tooltip - Normal)
-{
-Цепная молния [|cffffcc004-й уровень|r]
-}
-
-STRING 1461
-// Abilities: A022 (Цепная молния), Ubertip (Tooltip - Normal - Extended)
-{
-Призывает молнию, которая наносит 200 урона цели и рикошетит до 7 раз, нанося меньше урона с каждым рикошетом.
-}
-
-STRING 1462
-// Abilities: A022 (Цепная молния), EditorSuffix (Editor Suffix)
-{
-(Колдун)
-}
-
-STRING 1463
-// Abilities: A023 (Разрушение), Name (Name)
-{
-Разрушение
-}
-
-STRING 1464
-// Abilities: A023 (Разрушение), Researchtip (Tooltip - Learn)
-{
-Изучить «Разрушение» [|cffffcc00%d-й уровень|r]
-}
-
-STRING 1465
-// Abilities: A023 (Разрушение), Researchhotkey (Hotkey - Learn)
-{
-Q
-}
-
-STRING 1466
-// Abilities: A023 (Разрушение), Hotkey (Hotkey - Normal)
-{
-Q
-}
-
-STRING 1467
-// Abilities: A023 (Разрушение), Tip (Tooltip - Normal)
-{
-Разрушение |cffff0000I|r
-}
-
-STRING 1468
-// Abilities: A023 (Разрушение), Tip (Tooltip - Normal)
-{
-Разрушение |cffff0000II|r
-}
-
-STRING 1469
-// Abilities: A023 (Разрушение), Tip (Tooltip - Normal)
-{
-Разрушение |cffff0000III|r
-}
-
-STRING 1470
-// Abilities: A023 (Разрушение), Tip (Tooltip - Normal)
-{
-Разрушение |cffff0000IV|r
-}
-
-STRING 1471
-// Abilities: A023 (Разрушение), Ubertip (Tooltip - Normal - Extended)
-{
-Хаотическая масса поражающая цель нанося ей урон и оглушает на 1 секунду.
-Урон: |cff00ff00120|r\150\180\210
-Перезарядка: |cff00ff0015|r\12\9\6
-Требует маны: |cff00ff00120|r\150\180\210
-}
-
-STRING 1472
-// Abilities: A023 (Разрушение), Ubertip (Tooltip - Normal - Extended)
-{
-Хаотическая масса поражающая цель нанося ей урон и оглушает на 1 секунду.
-Урон: 120\|cff00ff00150|r\180\210
-Перезарядка: 15\|cff00ff0012|r\9\6
-Требует маны: 120\|cff00ff00150|r\180\210
-}
-
-STRING 1473
-// Abilities: A023 (Разрушение), Ubertip (Tooltip - Normal - Extended)
-{
-Хаотическая масса поражающая цель нанося ей урон и оглушает на 1 секунду.
-Урон: 120\150\|cff00ff00180|r\210
-Перезарядка: 15\12\|cff00ff009|r\6
-Требует маны: 120\150\|cff00ff00180|r\210
-}
-
-STRING 1474
-// Abilities: A023 (Разрушение), Ubertip (Tooltip - Normal - Extended)
-{
-Хаотическая масса поражающая цель нанося ей урон и оглушает на 1 секунду.
-Урон: 120\150\180\|cff00ff00210|r
-Перезарядка: 15\12\9\|cff00ff006|r
-Требует маны: 120\150\180\|cff00ff00210|r
-}
-
-STRING 1475
-// Abilities: A023 (Разрушение), EditorSuffix (Editor Suffix)
-{
-(Страж печатей)
-}
-
-STRING 1476
-// Abilities: A023 (Разрушение), Researchubertip (Tooltip - Learn - Extended)
-{
-Хаотическая масса поражающая цель нанося ей урон и оглушает на 1 секунду.
-Урон: 120\150\180\210
-Перезарядка: 15\12\9\6
-Требует маны: 120\150\180\210
-}
-
-STRING 1477
-// Abilities: A024 (Кодой), Name (Name)
-{
-Кодой
 }
 
 STRING 1478
@@ -10724,304 +10050,6 @@ STRING 1491
 // Units: n00X (Фонтан), Description (Description)
 {
 Восполняет здоровье и ману войскам рядом с собой. Не действует на технику.
-}
-
-STRING 1492
-{
-Вы проиграли!
-}
-
-STRING 1493
-{
-Вы проиграли!
-}
-
-STRING 1494
-{
-Вы проиграли!
-}
-
-STRING 1495
-{
-Вы проиграли!
-}
-
-STRING 1496
-{
-Вы проиграли!
-}
-
-STRING 1497
-{
-Вы проиграли!
-}
-
-STRING 1498
-{
-Старт через 10 секунд
-}
-
-STRING 1499
-{
-Открытие Бездны:
-
-}
-
-STRING 1500
-{
- 
-}
-
-STRING 1501
-{
-+10
-}
-
-STRING 1502
-{
-+10
-}
-
-STRING 1503
-{
-+10
-}
-
-STRING 1504
-{
-+20
-
-
-}
-
-STRING 1505
-{
-+20
-
-
-}
-
-STRING 1506
-{
-+20
-
-
-}
-
-STRING 1507
-{
-+5
-}
-
-STRING 1508
-{
-+5
-}
-
-STRING 1509
-{
-+5
-}
-
-STRING 1510
-{
-+10
-}
-
-STRING 1511
-{
-+10
-}
-
-STRING 1512
-{
-+10
-}
-
-STRING 1513
-{
-+10
-}
-
-STRING 1514
-{
-+10
-}
-
-STRING 1515
-{
-+10
-}
-
-STRING 1516
-{
-+20
-
-
-}
-
-STRING 1517
-{
-+20
-
-
-}
-
-STRING 1518
-{
-+20
-
-
-}
-
-STRING 1519
-{
-+5
-}
-
-STRING 1520
-{
-+5
-}
-
-STRING 1521
-{
-+5
-}
-
-STRING 1522
-{
-+10
-}
-
-STRING 1523
-{
-+10
-}
-
-STRING 1524
-{
-+10
-}
-
-STRING 1525
-{
-+30
-}
-
-STRING 1526
-{
-+30
-}
-
-STRING 1527
-{
-+30
-}
-
-STRING 1528
-{
-+60
-}
-
-STRING 1529
-{
-+60
-}
-
-STRING 1530
-{
-+60
-}
-
-STRING 1531
-{
-+15
-}
-
-STRING 1532
-{
-+15
-}
-
-STRING 1533
-{
-+15
-}
-
-STRING 1534
-{
-+30
-}
-
-STRING 1535
-{
-+30
-}
-
-STRING 1536
-{
-+30
-}
-
-STRING 1537
-{
-+30
-}
-
-STRING 1538
-{
-+30
-}
-
-STRING 1539
-{
-+30
-}
-
-STRING 1540
-{
-+60
-}
-
-STRING 1541
-{
-+60
-}
-
-STRING 1542
-{
-+60
-}
-
-STRING 1543
-{
-+15
-}
-
-STRING 1544
-{
-+15
-}
-
-STRING 1545
-{
-+15
-}
-
-STRING 1546
-{
-+30
-}
-
-STRING 1547
-{
-+30
-}
-
-STRING 1548
-{
-+30
 }
 
 STRING 1549
@@ -11402,18 +10430,6 @@ STRING 1599
 Перезарядка: 9 сек.
 }
 
-STRING 1600
-// Abilities: A027 (Поглощение маны), Hotkey (Hotkey - Normal)
-{
-Q
-}
-
-STRING 1601
-// Abilities: A027 (Поглощение маны), Researchhotkey (Hotkey - Learn)
-{
-Q
-}
-
 STRING 1602
 // Abilities: A006 (Прорыв), EditorSuffix (Editor Suffix)
 {
@@ -11563,18 +10579,6 @@ STRING 1615
 Перезарядка: 9 сек.
 }
 
-STRING 1616
-// Abilities: A028 (Разлом Измерения), Hotkey (Hotkey - Normal)
-{
-W
-}
-
-STRING 1617
-// Abilities: A028 (Разлом Измерения), Researchhotkey (Hotkey - Learn)
-{
-W
-}
-
 STRING 1618
 // Abilities: A028 (Разлом Измерения), EditorSuffix (Editor Suffix)
 {
@@ -11615,5 +10619,1169 @@ STRING 1626
 // Abilities: A026 (Опустошение), Researchhotkey (Hotkey - Learn)
 {
 R
+}
+
+STRING 1627
+{
+Король (Нижний)
+}
+
+STRING 1628
+{
+Основа (Нижний)
+}
+
+STRING 1629
+{
+Танк (Нижний)
+}
+
+STRING 1630
+{
+Поддержка (Нижний)
+}
+
+STRING 1631
+{
+Полная поддержка (Нижний)
+}
+
+STRING 1632
+{
+Король (Высший)
+}
+
+STRING 1633
+{
+Основа (Высший)
+}
+
+STRING 1634
+{
+Танк (Высший)
+}
+
+STRING 1635
+{
+Поддержка (Высший)
+}
+
+STRING 1636
+{
+Полная поддержка (Высший)
+}
+
+STRING 1637
+{
+Призванные существа (Нижний)
+}
+
+STRING 1638
+{
+Призванные существа (Высший)
+}
+
+STRING 1639
+{
+Король (Нижний) Отряды
+}
+
+STRING 1640
+{
+Основа (Нижний) Отряды
+}
+
+STRING 1641
+{
+Танк (Нижний) Отряды
+}
+
+STRING 1642
+{
+Король (Высший) Отряды
+}
+
+STRING 1643
+{
+Основа (Высший) Отряды
+}
+
+STRING 1644
+{
+Танк (Высший) Отряды
+}
+
+STRING 1645
+// Units: H006 (|c00F0F000Часовой|r), Name (Name)
+{
+|c00F0F000Часовой|r
+}
+
+STRING 1646
+// Units: H006 (|c00F0F000Часовой|r), Tip (Tooltip - Basic)
+{
+|c00F0F000Часовой|r
+}
+
+STRING 1647
+// Units: H006 (|c00F0F000Часовой|r), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Часовой|r
+}
+
+STRING 1648
+// Units: H006 (|c00F0F000Часовой|r), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Часовой|r
+}
+
+STRING 1649
+// Units: H006 (|c00F0F000Часовой|r), Ubertip (Tooltip - Extended)
+{
+Раса деногридов
+Характеристики:
+Сила: 15 (+0.8)
+Ловкость: 8 (+1.2)
+Разум: 25 (+2.7)
+
+Кастер - один из сильных магов Бездны Теракостра. Являеться наивысшим магом ордена Тальканиса Исшкра. Нынче повелитель ордена Чёрного Камня.
+}
+
+STRING 1650
+// Units: H006 (|c00F0F000Часовой|r), Propernames (Proper Names)
+{
+|c00F0F000Неизвестный|r
+}
+
+STRING 1651
+// Units: H006 (|c00F0F000Часовой|r), EditorSuffix (Name - Editor Suffix)
+{
+(Легендарный)
+}
+
+STRING 1652
+// Units: H00C (|c00F0F000Победитель Бездны), EditorSuffix (Name - Editor Suffix)
+{
+(Легендарный)
+}
+
+STRING 1653
+// Units: H00C (|c00F0F000Победитель Бездны), Name (Name)
+{
+|c00F0F000Победитель Бездны
+}
+
+STRING 1654
+// Units: H00C (|c00F0F000Победитель Бездны), Tip (Tooltip - Basic)
+{
+|c00F0F000Победитель Бездны
+}
+
+STRING 1655
+// Units: H00C (|c00F0F000Победитель Бездны), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Победитель Бездны
+}
+
+STRING 1656
+// Units: H00C (|c00F0F000Победитель Бездны), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Победитель Бездны
+}
+
+STRING 1657
+// Units: H00C (|c00F0F000Победитель Бездны), Propernames (Proper Names)
+{
+|c00F0F000Арнакул
+}
+
+STRING 1658
+// Units: H00E (|c00F0F000Архонт), Name (Name)
+{
+|c00F0F000Архонт
+}
+
+STRING 1659
+// Units: H00E (|c00F0F000Архонт), Tip (Tooltip - Basic)
+{
+|c00F0F000Архонт
+}
+
+STRING 1660
+// Units: H00E (|c00F0F000Архонт), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Архонт
+}
+
+STRING 1661
+// Units: H00E (|c00F0F000Архонт), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Архонт
+}
+
+STRING 1662
+// Units: H00E (|c00F0F000Архонт), Ubertip (Tooltip - Extended)
+{
+Раса деногридов
+Характеристики:
+Сила: 15 (+0.8)
+Ловкость: 8 (+1.2)
+Разум: 25 (+2.7)
+
+Кастер - один из сильных магов Бездны Теракостра. Являеться наивысшим магом ордена Тальканиса Исшкра. Нынче повелитель ордена Чёрного Камня.
+}
+
+STRING 1663
+// Units: H00E (|c00F0F000Архонт), Propernames (Proper Names)
+{
+|c00F0F000Секнтар|r
+}
+
+STRING 1664
+// Units: H00E (|c00F0F000Архонт), EditorSuffix (Name - Editor Suffix)
+{
+(Легендарный)
+}
+
+STRING 1665
+// Units: H00L (|c00F0F000Хранитель морей), Name (Name)
+{
+|c00F0F000Хранитель морей
+}
+
+STRING 1666
+// Units: H00L (|c00F0F000Хранитель морей), Tip (Tooltip - Basic)
+{
+|c00F0F000Хранитель морей
+}
+
+STRING 1667
+// Units: H00L (|c00F0F000Хранитель морей), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Хранитель морей
+}
+
+STRING 1668
+// Units: H00L (|c00F0F000Хранитель морей), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Хранитель морей
+}
+
+STRING 1669
+// Units: H00L (|c00F0F000Хранитель морей), Ubertip (Tooltip - Extended)
+{
+Раса деногридов
+Характеристики:
+Сила: 15 (+0.8)
+Ловкость: 8 (+1.2)
+Разум: 25 (+2.7)
+
+Кастер - один из сильных магов Бездны Теракостра. Являеться наивысшим магом ордена Тальканиса Исшкра. Нынче повелитель ордена Чёрного Камня.
+}
+
+STRING 1670
+// Units: H00L (|c00F0F000Хранитель морей), Propernames (Proper Names)
+{
+|c00F0F000Океанус|r
+}
+
+STRING 1671
+// Units: H00L (|c00F0F000Хранитель морей), EditorSuffix (Name - Editor Suffix)
+{
+(Легендарный)
+}
+
+STRING 1672
+// Units: H010 (|c00F0F000Алхимик), EditorSuffix (Name - Editor Suffix)
+{
+(Легендарный)
+}
+
+STRING 1673
+// Units: H010 (|c00F0F000Алхимик), Name (Name)
+{
+|c00F0F000Алхимик
+}
+
+STRING 1674
+// Units: H010 (|c00F0F000Алхимик), Tip (Tooltip - Basic)
+{
+|c00F0F000Алхимик
+}
+
+STRING 1675
+// Units: H010 (|c00F0F000Алхимик), Awakentip (Tooltip - Awaken)
+{
+|c00F0F000Алхимик
+}
+
+STRING 1676
+// Units: H010 (|c00F0F000Алхимик), Revivetip (Tooltip - Revive)
+{
+|c00F0F000Алхимик
+}
+
+STRING 1677
+// Units: H010 (|c00F0F000Алхимик), Ubertip (Tooltip - Extended)
+{
+Раса троллей
+Характеристики:
+Сила: 35 (+5.0)
+Ловкость: 5 (+0.0)
+Разум: 5 (+1.5)
+
+Кабан любит очень много поесть.
+}
+
+STRING 1678
+// Units: H010 (|c00F0F000Алхимик), Propernames (Proper Names)
+{
+|c00F0F000Биглаз|r
+}
+
+STRING 1679
+// Items: I002 (Браслет силы), Ubertip (Tooltip - Extended)
+{
+Сила: 6
+Ловкость: -3
+Разум: -3
+
+}
+
+STRING 1680
+// Items: I002 (Браслет силы), Tip (Tooltip - Basic)
+{
+Сила: 6
+Ловкость: -3
+Разум: -3
+
+}
+
+STRING 1681
+// Items: I002 (Браслет силы), Name (Name)
+{
+Браслет силы
+}
+
+STRING 1682
+// Items: I001 (Браслет ловкости), Ubertip (Tooltip - Extended)
+{
+Дает владельцу предмета 4 к ловкости и 10% скорости атаки.
+}
+
+STRING 1683
+// Items: I001 (Браслет ловкости), Tip (Tooltip - Basic)
+{
+Дает владельцу предмета 4 к ловкости и 10% скорости атаки.
+}
+
+STRING 1684
+// Items: I001 (Браслет ловкости), Name (Name)
+{
+Браслет ловкости
+}
+
+STRING 1685
+// Items: I003 (Магический браслет), Ubertip (Tooltip - Extended)
+{
+Увеличивает запас маны на 60 и дает владельцу предмета 3 к разуму.
+}
+
+STRING 1686
+// Items: I003 (Магический браслет), Tip (Tooltip - Basic)
+{
+Увеличивает запас маны на 60 и дает владельцу предмета 3 к разуму.
+}
+
+STRING 1687
+// Items: I003 (Магический браслет), Name (Name)
+{
+Магический браслет
+}
+
+STRING 1688
+// Items: I004 (Кольцо регенерации здоровья), Ubertip (Tooltip - Extended)
+{
+Увеличивает регенерацию здоровья на 3.
+}
+
+STRING 1689
+// Items: I004 (Кольцо регенерации здоровья), Tip (Tooltip - Basic)
+{
+Увеличивает регенерацию здоровья на 3.
+}
+
+STRING 1690
+// Items: I004 (Кольцо регенерации здоровья), Name (Name)
+{
+Кольцо регенерации здоровья
+}
+
+STRING 1691
+// Items: I005 (Браслет защиты), Ubertip (Tooltip - Extended)
+{
++2 к защите
+}
+
+STRING 1692
+// Items: I005 (Браслет защиты), Tip (Tooltip - Basic)
+{
++2 к защите
+}
+
+STRING 1693
+// Items: I005 (Браслет защиты), Name (Name)
+{
+Браслет защиты
+}
+
+STRING 1694
+// Items: I006 (Корона), Ubertip (Tooltip - Extended)
+{
+Увеличивает регенерацию здоровья на 3.
+}
+
+STRING 1695
+// Items: I006 (Корона), Tip (Tooltip - Basic)
+{
++2 ко всем атрибутам
+}
+
+STRING 1696
+// Items: I006 (Корона), Name (Name)
+{
+Корона
+}
+
+STRING 1697
+// Items: I007 (Талисман мертвых), Ubertip (Tooltip - Extended)
+{
++5 ко всем характеристикам
+Мана: -50
+
+}
+
+STRING 1698
+// Items: I007 (Талисман мертвых), Tip (Tooltip - Basic)
+{
++5 ко всем характеристикам
+Мана: -50
+
+}
+
+STRING 1699
+// Items: I007 (Талисман мертвых), Name (Name)
+{
+Талисман мертвых
+}
+
+STRING 1700
+// Items: I008 (Ожерелье), Ubertip (Tooltip - Extended)
+{
+Здоровье: 120
+Мана: 100
+Урон от способностей: 4%
+
+}
+
+STRING 1701
+// Items: I008 (Ожерелье), Tip (Tooltip - Basic)
+{
+Здоровье: 120
+Мана: 100
+Урон от способностей: 4%
+
+}
+
+STRING 1702
+// Items: I008 (Ожерелье), Name (Name)
+{
+Ожерелье
+}
+
+STRING 1703
+// Items: I009 (Амулет защиты), Ubertip (Tooltip - Extended)
+{
+Аура: повышает защиту всех существ поблизости на 5.
+}
+
+STRING 1704
+// Items: I009 (Амулет защиты), Tip (Tooltip - Basic)
+{
+Аура: повышает защиту всех существ поблизости на 5.
+}
+
+STRING 1705
+// Items: I009 (Амулет защиты), Name (Name)
+{
+Амулет защиты
+}
+
+STRING 1706
+// Items: I00A (Амулет здоровья), Ubertip (Tooltip - Extended)
+{
+Здоровье: 450
+Регенерация здоровья: 8
+
+}
+
+STRING 1707
+// Items: I00A (Амулет здоровья), Tip (Tooltip - Basic)
+{
+Здоровье: 450
+Регенерация здоровья: 8
+
+}
+
+STRING 1708
+// Items: I00A (Амулет здоровья), Name (Name)
+{
+Амулет здоровья
+}
+
+STRING 1709
+// Items: I00B (Быстроход), Ubertip (Tooltip - Extended)
+{
+Скорость передвижения: 150
+Регенерация маны: -1
+Пассивная: Если у владельца предмета меньше 30% здоровье, то увеличивает скорость регенерацию здоровья на 5 ед.
+Длительность: 8
+Перезарядка: 120
+
+}
+
+STRING 1710
+// Items: I00B (Быстроход), Tip (Tooltip - Basic)
+{
+Скорость передвижения: 150
+Регенерация маны: -1
+Пассивная: Если у владельца предмета меньше 30% здоровье, то увеличивает скорость регенерацию здоровья на 5 ед.
+Длительность: 8
+Перезарядка: 120
+
+}
+
+STRING 1711
+// Items: I00B (Быстроход), Name (Name)
+{
+Быстроход
+}
+
+STRING 1712
+// Items: I00C (Усиленные сапоги), Ubertip (Tooltip - Extended)
+{
+Скорость передвижения: 50
+Урон: 22
+Скорость атаки: 25%
+
+}
+
+STRING 1713
+// Items: I00C (Усиленные сапоги), Tip (Tooltip - Basic)
+{
+Скорость передвижения: 50
+Урон: 22
+Скорость атаки: 25%
+
+}
+
+STRING 1714
+// Items: I00C (Усиленные сапоги), Name (Name)
+{
+Усиленные сапоги
+}
+
+STRING 1715
+// Items: I00D (Старые ботинки), Ubertip (Tooltip - Extended)
+{
+Скорость передвижения: 30
+Защита: 3
+
+}
+
+STRING 1716
+// Items: I00D (Старые ботинки), Tip (Tooltip - Basic)
+{
+Скорость передвижения: 30
+Защита: 3
+
+}
+
+STRING 1717
+// Items: I00D (Старые ботинки), Name (Name)
+{
+Старые ботинки
+}
+
+STRING 1718
+// Items: I00E (Ускорители), Ubertip (Tooltip - Extended)
+{
+Скорость передвижения: 100
+Активная: Ускоряет героя на 200 и дает шанс 15% уклониться от атак противника.
+Длительность: 4
+Перезарядка: 60
+Пассивная: После каждого произнесенного заклинания, ускоряет владельца предмета на 50%
+Длительность: 2
+Перезарядка: 8 
+
+}
+
+STRING 1719
+// Items: I00E (Ускорители), Tip (Tooltip - Basic)
+{
+Скорость передвижения: 100
+Активная: Ускоряет героя на 200 и дает шанс 15% уклониться от атак противника.
+Длительность: 4
+Перезарядка: 60
+Пассивная: После каждого произнесенного заклинания, ускоряет владельца предмета на 50%
+Длительность: 2
+Перезарядка: 8 
+
+}
+
+STRING 1720
+// Items: I00E (Ускорители), Name (Name)
+{
+Ускорители
+}
+
+STRING 1721
+// Items: I00F (Перчатки скорости), Ubertip (Tooltip - Extended)
+{
+Скорость атаки: 25%
+}
+
+STRING 1722
+// Items: I00F (Перчатки скорости), Tip (Tooltip - Basic)
+{
+Скорость атаки: 25%
+}
+
+STRING 1723
+// Items: I00F (Перчатки скорости), Name (Name)
+{
+Перчатки скорости
+}
+
+STRING 1724
+// Items: I00G (Перчатки огра), Ubertip (Tooltip - Extended)
+{
+Урон: 5
+Сила: 5
+
+}
+
+STRING 1725
+// Items: I00G (Перчатки огра), Tip (Tooltip - Basic)
+{
+Урон: 5
+Сила: 5
+
+}
+
+STRING 1726
+// Items: I00G (Перчатки огра), Name (Name)
+{
+Перчатки огра
+}
+
+STRING 1727
+// Items: I00H (Перчатки падшего паладина), Ubertip (Tooltip - Extended)
+{
+Сила: 10
+Пассивная: Накладывает на врага безмолвие.
+Длительность: 1.5 секунд
+Перезарядка: 8 секунд
+
+}
+
+STRING 1728
+// Items: I00H (Перчатки падшего паладина), Tip (Tooltip - Basic)
+{
+Сила: 10
+Пассивная: Накладывает на врага безмолвие.
+Длительность: 1.5 секунд
+Перезарядка: 8 секунд
+
+}
+
+STRING 1729
+// Items: I00H (Перчатки падшего паладина), Name (Name)
+{
+Перчатки падшего паладина
+}
+
+STRING 1730
+// Items: I00I (Кастет), Ubertip (Tooltip - Extended)
+{
+Скорость атаки: 10%
+Пассивная: дает каждой атаки 25 ед.магического урона.
+
+}
+
+STRING 1731
+// Items: I00I (Кастет), Tip (Tooltip - Basic)
+{
+Скорость атаки: 10%
+Пассивная: дает каждой атаки 25 ед.магического урона.
+
+}
+
+STRING 1732
+// Items: I00I (Кастет), Name (Name)
+{
+Кастет
+}
+
+STRING 1733
+// Items: I00J (Шлем высших людей), Ubertip (Tooltip - Extended)
+{
+Защита: 5
+Регенерация здоровья: 2
+Ловкость: 10
+Пассивная: Шанс в 5% уклониться от атак противника.
+
+}
+
+STRING 1734
+// Items: I00J (Шлем высших людей), Tip (Tooltip - Basic)
+{
+Защита: 5
+Регенерация здоровья: 2
+Ловкость: 10
+Пассивная: Шанс в 5% уклониться от атак противника.
+
+}
+
+STRING 1735
+// Items: I00J (Шлем высших людей), Name (Name)
+{
+Шлем высших людей
+}
+
+STRING 1736
+// Items: I00K (Головной убор друида), Ubertip (Tooltip - Extended)
+{
+Защита: 1
+Сила: 2
+Разум: 2
+Регенерация маны: 0.75
+
+}
+
+STRING 1737
+// Items: I00K (Головной убор друида), Tip (Tooltip - Basic)
+{
+Защита: 1
+Сила: 2
+Разум: 2
+Регенерация маны: 0.75
+
+}
+
+STRING 1738
+// Items: I00K (Головной убор друида), Name (Name)
+{
+Головной убор друида
+}
+
+STRING 1739
+// Items: I00L (Шлем деногрида), Ubertip (Tooltip - Extended)
+{
+Защита: 3 
+Урон: 12
+Сила: 3
+
+}
+
+STRING 1740
+// Items: I00L (Шлем деногрида), Tip (Tooltip - Basic)
+{
+Защита: 3 
+Урон: 12
+Сила: 3
+
+}
+
+STRING 1741
+// Items: I00L (Шлем деногрида), Name (Name)
+{
+Шлем деногрида
+}
+
+STRING 1742
+// Items: I00M (Маска вампиризма), Ubertip (Tooltip - Extended)
+{
+Вампиризм от атак: 5%
+Урон: 8
+Ловкость: 2
+Скорость передвижения: 10
+
+}
+
+STRING 1743
+// Items: I00M (Маска вампиризма), Tip (Tooltip - Basic)
+{
+Вампиризм от атак: 5%
+Урон: 8
+Ловкость: 2
+Скорость передвижения: 10
+
+}
+
+STRING 1744
+// Items: I00M (Маска вампиризма), Name (Name)
+{
+Маска вампиризма
+}
+
+STRING 1745
+// Items: I00N (Маска страданий), Ubertip (Tooltip - Extended)
+{
+Здоровье: -150
+Регенерация маны: 1
+Вампиризм от атак: 2%
+Активная: Ускоряет скорость атаки и передвижения при этом снимает всю бонусную защиту.
+Скорость атаки: 200%
+Скорость передвижения: 50%
+
+}
+
+STRING 1746
+// Items: I00N (Маска страданий), Tip (Tooltip - Basic)
+{
+Здоровье: -150
+Регенерация маны: 1
+Вампиризм от атак: 2%
+Активная: Ускоряет скорость атаки и передвижения при этом снимает всю бонусную защиту.
+Скорость атаки: 200%
+Скорость передвижения: 50%
+
+}
+
+STRING 1747
+// Items: I00N (Маска страданий), Name (Name)
+{
+Маска страданий
+}
+
+STRING 1748
+// Items: I00O (Шлем паладина), Ubertip (Tooltip - Extended)
+{
+Защита: 5
+Регенерация маны: 0.5
+
+}
+
+STRING 1749
+// Items: I00O (Шлем паладина), Tip (Tooltip - Basic)
+{
+Защита: 5
+Регенерация маны: 0.5
+
+}
+
+STRING 1750
+// Items: I00O (Шлем паладина), Name (Name)
+{
+Шлем паладина
+}
+
+STRING 1751
+// Items: I00P (Плащ мага), Ubertip (Tooltip - Extended)
+{
+Разум: 5
+Ловкость: -2
+Регенерация маны: 1.5
+
+}
+
+STRING 1752
+// Items: I00P (Плащ мага), Tip (Tooltip - Basic)
+{
+Разум: 5
+Ловкость: -2
+Регенерация маны: 1.5
+
+}
+
+STRING 1753
+// Items: I00P (Плащ мага), Name (Name)
+{
+Плащ мага
+}
+
+STRING 1754
+// Items: I00Q (Наплечники разбойника), Ubertip (Tooltip - Extended)
+{
+Защита: 5
+Здоровье: 150
+
+}
+
+STRING 1755
+// Items: I00Q (Наплечники разбойника), Tip (Tooltip - Basic)
+{
+Защита: 5
+Здоровье: 150
+
+}
+
+STRING 1756
+// Items: I00Q (Наплечники разбойника), Name (Name)
+{
+Наплечники разбойника
+}
+
+STRING 1757
+// Items: I00R (Рубаха), Ubertip (Tooltip - Extended)
+{
+Пассивная: 7% шанс уклониться от атак противника.
+Перезарядка: 12
+
+}
+
+STRING 1758
+// Items: I00R (Рубаха), Tip (Tooltip - Basic)
+{
+Пассивная: 7% шанс уклониться от атак противника.
+Перезарядка: 12
+
+}
+
+STRING 1759
+// Items: I00R (Рубаха), Name (Name)
+{
+Рубаха
+}
+
+STRING 1760
+// Items: I00S (Эмеральдовый доспех), Ubertip (Tooltip - Extended)
+{
+Защита: 12
+Ловкость: 12
+Скорость регенерации здоровья: 4
+
+}
+
+STRING 1761
+// Items: I00S (Эмеральдовый доспех), Tip (Tooltip - Basic)
+{
+Защита: 12
+Ловкость: 12
+Скорость регенерации здоровья: 4
+
+}
+
+STRING 1762
+// Items: I00S (Эмеральдовый доспех), Name (Name)
+{
+Эмеральдовый доспех
+}
+
+STRING 1763
+// Items: I00T (Доспех паладина), Ubertip (Tooltip - Extended)
+{
+Защита: 8
+}
+
+STRING 1764
+// Items: I00T (Доспех паладина), Tip (Tooltip - Basic)
+{
+Защита: 8
+}
+
+STRING 1765
+// Items: I00T (Доспех паладина), Name (Name)
+{
+Доспех паладина
+}
+
+STRING 1766
+// Items: I00U (Кираса), Ubertip (Tooltip - Extended)
+{
+Защита: 32
+Пассивная: Поглощает 36% физического урона.
+
+}
+
+STRING 1767
+// Items: I00U (Кираса), Tip (Tooltip - Basic)
+{
+Защита: 32
+Пассивная: Поглощает 36% физического урона.
+
+}
+
+STRING 1768
+// Items: I00U (Кираса), Name (Name)
+{
+Кираса
+}
+
+STRING 1769
+// Items: I00V (Сейшая), Ubertip (Tooltip - Extended)
+{
+Урон: 6
+Дополнительный основной атрибут: 6
+
+}
+
+STRING 1770
+// Items: I00V (Сейшая), Tip (Tooltip - Basic)
+{
+Урон: 6
+Дополнительный основной атрибут: 6
+
+}
+
+STRING 1771
+// Items: I00V (Сейшая), Name (Name)
+{
+Сейшая
+}
+
+STRING 1772
+// Items: I00W (Клинок Кронуса), Ubertip (Tooltip - Extended)
+{
+Урон: 10
+Скорость атаки: 24%
+
+}
+
+STRING 1773
+// Items: I00W (Клинок Кронуса), Tip (Tooltip - Basic)
+{
+Урон: 10
+Скорость атаки: 24%
+
+}
+
+STRING 1774
+// Items: I00W (Клинок Кронуса), Name (Name)
+{
+Клинок Кронуса
+}
+
+STRING 1775
+// Items: I00X (Мантракора), Ubertip (Tooltip - Extended)
+{
+Ловкость: 12
+Сила: 6
+Разум: 6
+
+}
+
+STRING 1776
+// Items: I00X (Мантракора), Tip (Tooltip - Basic)
+{
+Ловкость: 12
+Сила: 6
+Разум: 6
+
+}
+
+STRING 1777
+// Items: I00X (Мантракора), Name (Name)
+{
+Мантракора
+}
+
+STRING 1778
+// Items: I00Y (Мастакор), Ubertip (Tooltip - Extended)
+{
+Урон: 15
+Разум: 8
+Пассивная: Замедляет атаки противника на 40%
+Длительность: 4 секунды
+Перезарядка: 14 секунд
+
+}
+
+STRING 1779
+// Items: I00Y (Мастакор), Tip (Tooltip - Basic)
+{
+Урон: 15
+Разум: 8
+Пассивная: Замедляет атаки противника на 40%
+Длительность: 4 секунды
+Перезарядка: 14 секунд
+
+}
+
+STRING 1780
+// Items: I00Y (Мастакор), Name (Name)
+{
+Мастакор
+}
+
+STRING 1781
+// Items: I00Z (Зератул), Ubertip (Tooltip - Extended)
+{
+Урон: 60
+Сила: 8
+
+}
+
+STRING 1782
+// Items: I00Z (Зератул), Tip (Tooltip - Basic)
+{
+Урон: 60
+Сила: 8
+
+}
+
+STRING 1783
+// Items: I00Z (Зератул), Name (Name)
+{
+Зератул
+}
+
+STRING 1784
+// Items: I010 (Меч Сарафа), Ubertip (Tooltip - Extended)
+{
+Урон: 40
+Скорость передвижения: 15
+
+}
+
+STRING 1785
+// Items: I010 (Меч Сарафа), Tip (Tooltip - Basic)
+{
+Урон: 40
+Скорость передвижения: 15
+
+}
+
+STRING 1786
+// Items: I010 (Меч Сарафа), Name (Name)
+{
+Меч Сарафа
+}
+
+STRING 1787
+// Items: I011 (Клинок Фаракея), Ubertip (Tooltip - Extended)
+{
+Урон: 24
+Сила: 4
+Пассивная: Атака наносит дополнительно 40 ед. урона.
+Перезарядка: 8 секунд
+
+}
+
+STRING 1788
+// Items: I011 (Клинок Фаракея), Tip (Tooltip - Basic)
+{
+Урон: 24
+Сила: 4
+Пассивная: Атака наносит дополнительно 40 ед. урона.
+Перезарядка: 8 секунд
+
+}
+
+STRING 1789
+// Items: I011 (Клинок Фаракея), Name (Name)
+{
+Клинок Фаракея
 }
 

@@ -7,75 +7,27 @@
 ---
 
 function HideEverything()
-	local next=0.039
 	BlzHideOriginFrames(true)
-	CreateInterface()
 	BlzEnableUIAutoPosition ( false )
-
 	local GAME_UI     = BlzGetOriginFrame(ORIGIN_FRAME_GAME_UI, 0)
 	local WORLD_FRAME = BlzGetOriginFrame(ORIGIN_FRAME_WORLD_FRAME, 0)
 	BlzFrameSetAllPoints(WORLD_FRAME, GAME_UI)
-	--BlzFrameSetVisible(BlzGetFrameByName("ConsoleUIBackdrop",0), false)
-
-	--	// Hide Inventory Cover
 	BlzFrameSetAlpha(BlzGetFrameByName("SimpleInventoryCover", 0), 0)
-
-	--// Show Minimap
-	local map=BlzGetOriginFrame(ORIGIN_FRAME_MINIMAP, 0)
-	BlzFrameClearAllPoints(map)
-	BlzFrameSetVisible(map, true)
-	BlzFrameSetAbsPoint(map, FRAMEPOINT_CENTER, 0.7 ,0.05)
-	BlzFrameSetSize(map,0.1,.1)
-
-	--	// Show Inventory, without unitInfo
 	BlzFrameSetVisible(BlzFrameGetParent(BlzGetOriginFrame(ORIGIN_FRAME_ITEM_BUTTON, 0)), true)
-	--// Show UnitInfos parent to show inventory and unit info
-	--BlzFrameSetVisible(BlzFrameGetParent(BlzGetFrameByName("SimpleInfoPanelUnitDetail",0)),true) --Панель юнита
-	--// Show Hero Icons at the left top of the screen
 	BlzFrameSetVisible(BlzGetOriginFrame(ORIGIN_FRAME_HERO_BAR,0), false)
-	--	//  //Quests, Menu, Allies, Log
-
-	--// //Gold, Lumber, food and Upkeep; also enables /fps /ping /apm
 	BlzFrameSetVisible(BlzGetFrameByName("ResourceBarFrame",0),true)
-
-
-	--Вернуть F10
-	BlzFrameSetVisible(BlzGetFrameByName("UpperButtonBarFrame",0),true)
-	for i=0,3 do
-		local f10=BlzGetOriginFrame(ORIGIN_FRAME_SYSTEM_BUTTON, i)
-		BlzFrameSetVisible(f10, true) --не не работает
-		BlzFrameClearAllPoints(f10)
-		BlzFrameSetAbsPoint(f10, FRAMEPOINT_CENTER, 0.00+(0.08*i) ,0.59)
-		--BlzFrameSetSize(f10, 0.2, 0.022)
-	end
-
-
-	BlzFrameSetVisible(BlzGetFrameByName("ConsoleUIBackdrop", 0), false)-- черная рамка
-	--BlzFrameSetAbsPoint(BlzGetFrameByName("ConsoleUI",0), FRAMEPOINT_BOTTOMLEFT, 0.0 ,8) --для смещения бага некликабельности в нижнем правом углу
 	BlzFrameSetScale(BlzFrameGetChild(BlzGetFrameByName("ConsoleUI",0),5), 0.001)
-
-	BlzFrameSetAbsPoint(BlzGetOriginFrame(ORIGIN_FRAME_CHAT_MSG, 0), FRAMEPOINT_BOTTOMLEFT, 0.1 ,0.15)
-	BlzFrameSetAbsPoint(BlzGetOriginFrame(ORIGIN_FRAME_UNIT_MSG, 0), FRAMEPOINT_BOTTOMLEFT, 0.15 ,0.2)
-
-	local portrait=BlzGetOriginFrame(ORIGIN_FRAME_PORTRAIT, 0)
-	BlzFrameClearAllPoints(portrait)
-	BlzFrameSetVisible(portrait, true)
-	BlzFrameSetAbsPoint(portrait, FRAMEPOINT_CENTER, 0.025 ,0.025)
-	BlzFrameSetSize(portrait,0.05,0.05)
-
+	--BlzFrameSetAbsPoint(BlzGetOriginFrame(ORIGIN_FRAME_CHAT_MSG, 0), FRAMEPOINT_BOTTOMLEFT, 0.1 ,0.15)
+	--BlzFrameSetAbsPoint(BlzGetOriginFrame(ORIGIN_FRAME_UNIT_MSG, 0), FRAMEPOINT_BOTTOMLEFT, 0.15 ,0.2)
 	local fps=BlzGetFrameByName("ResourceBarFrame",0)
 	BlzFrameClearAllPoints(fps)
 	BlzFrameSetAbsPoint(fps, FRAMEPOINT_CENTER, 0.9 ,0.61)
-	--SimpleInfoPanelIconGold [5]
-
-
-	Resources()
-
---------------------------------------------------------------------------------------------------
 	local infoPanel=BlzFrameGetParent(BlzGetFrameByName("SimpleInfoPanelUnitDetail",0)) -- панель стат героя
 	BlzFrameClearAllPoints(infoPanel)
-	BlzFrameSetVisible(infoPanel,true)
-	BlzFrameSetAbsPoint(infoPanel, FRAMEPOINT_CENTER, 0.4 ,0.05) --0,9 чтобы полностью убрать
+    BlzFrameSetVisible(infoPanel,true)
+	BlzFrameSetAbsPoint(infoPanel, FRAMEPOINT_CENTER, 0,9) --0,9 чтобы полностью убрать
+
+
 	--BlzFrameSetSize(infoPanel, 0.05, 0.05)
 	--убираем всю инфопанель кроме статуса
 	--[[
@@ -93,53 +45,38 @@ function HideEverything()
 	BlzFrameSetAbsPoint(BlzGetFrameByName("InfoPanelIconBackdrop",5), FRAMEPOINT_CENTER, 0.9 ,0.9)
 	]]
 
-	--FrameGe
 
 
 
-	--BlzFrameSetVisible(BlzGetFrameByName("SimpleBuildTimeIndicator",0),false)
-	--BlzFrameSetVisible(BlzGetOriginFrame(ORIGIN_FRAME_UNIT_PANEL_BUFF_BAR , 0), false)
-	--
-	--ORIGIN_FRAME_TOP_MSG
-	--ПРЕДЕТЫ но не работают
-	local InvBackdrop = {}
-	local InfoBackdrop     = BlzCreateFrame('Steel-Backdrop', WORLD_FRAME, 0, 0)
-	for i = 0, 5 do
-		--[[InvBackdrop[i] = BlzCreateFrame('Item-Backdrop', WORLD_FRAME, 0, 0)
-		BlzFrameSetSize(InvBackdrop[i], 0.034, 0.034)
-		if i == 0 then
-			BlzFrameSetPoint(InvBackdrop[i], FRAMEPOINT_TOPLEFT, InfoBackdrop, FRAMEPOINT_TOPRIGHT, 0, 0)
-		elseif i < 2 then
-			BlzFrameSetPoint(InvBackdrop[i], FRAMEPOINT_LEFT, InvBackdrop[i - 1], FRAMEPOINT_RIGHT, -0.001, 0)
-		else
-			BlzFrameSetPoint(InvBackdrop[i], FRAMEPOINT_TOP, InvBackdrop[i - 2], FRAMEPOINT_BOTTOM, 0, 0.001)
-		end]]
-		local item = BlzGetOriginFrame(ORIGIN_FRAME_ITEM_BUTTON, i)
-		BlzFrameSetVisible(item, true)
-		BlzFrameClearAllPoints(item)
-		BlzFrameSetSize(item, next, next)
-		if i>=3 then
-			BlzFrameSetAbsPoint(item, FRAMEPOINT_CENTER, 0.515-(next*3)+next*i ,(next*1)-0.005)
-		else
-			BlzFrameSetAbsPoint(item, FRAMEPOINT_CENTER, 0.515+(next*i) ,(next*2)-0.005)
-		end
-	end
 
 	BlzFrameClearAllPoints(BlzGetOriginFrame(ORIGIN_FRAME_UBERTOOLTIP, 0)) -- ПОдсказка при наведении на дефолт фреймы
 	BlzFrameSetPoint(BlzGetOriginFrame(ORIGIN_FRAME_UBERTOOLTIP, 0), FRAMEPOINT_BOTTOM, BlzGetOriginFrame(ORIGIN_FRAME_GAME_UI, 0), FRAMEPOINT_BOTTOM, 0, 0.13)
-	--BlzFrameSetAbsPoint(BlzGetOriginFrame(ORIGIN_FRAME_UBERTOOLTIP, 0), FRAMEPOINT_CENTER, 0.4 ,0.22)
-
 
 
 	for i = 0,11 do --отвязка всех кнопок
+		--print("очистка.. "..i)
 		BlzFrameClearAllPoints(BlzGetFrameByName("CommandButton_"..i, 0))
+		BlzFrameSetAbsPoint(BlzGetFrameByName("CommandButton_"..i, 0),FRAMEPOINT_CENTER,1,1)
+		--
 	end
+--[[
+
 	for i=0,2 do --QWE
 		BlzFrameSetAbsPoint(BlzGetFrameByName("CommandButton_"..i+8, 0), FRAMEPOINT_CENTER, 0.2065+next*i ,(next*2)-0.005)
 	end
 	for i=0,2 do --RTY
 		BlzFrameSetAbsPoint(BlzGetFrameByName("CommandButton_"..i+5, 0), FRAMEPOINT_CENTER, 0.2065+next*i ,(next*1)-0.005)
 	end
+]]
+
+
+	local black=ResizeBlackPanel()
+	Resources()
+	MenuFrame()
+	ShowMap()
+	ShowPortraitFrame(black)
+	ShowInventory(black)
+	CreateQWERDFG()
 
 end
 
@@ -175,4 +112,65 @@ function Resources()
 	local LumberText = BlzGetFrameByName('ResourceBarLumberText', 0)
 	BlzFrameClearAllPoints(LumberText)
 	BlzFrameSetPoint(LumberText, FRAMEPOINT_CENTER, LumberIcon, FRAMEPOINT_CENTER, 0, 0)
+end
+
+function MenuFrame()
+	BlzFrameSetVisible(BlzGetFrameByName("UpperButtonBarFrame",0),true)
+	for i=0,3 do
+		local f10=BlzGetOriginFrame(ORIGIN_FRAME_SYSTEM_BUTTON, i)
+		BlzFrameSetVisible(f10, true) --не не работает
+		BlzFrameClearAllPoints(f10)
+		BlzFrameSetAbsPoint(f10, FRAMEPOINT_CENTER, 0.00+(0.08*i) ,0.59)
+	end
+end
+
+function ShowPortraitFrame(black)
+	local portrait=BlzGetOriginFrame(ORIGIN_FRAME_PORTRAIT, 0)
+	BlzFrameClearAllPoints(portrait)
+	BlzFrameSetVisible(portrait, true)
+	--BlzFrameSetAbsPoint(portrait, FRAMEPOINT_CENTER, 0.025 ,0.025)
+	BlzFrameSetSize(portrait,0.05,0.05)
+	BlzFrameSetPoint(portrait,FRAMEPOINT_LEFT,black,FRAMEPOINT_LEFT,0.088,0.015)
+end
+
+function ShowMap()
+	local map=BlzGetOriginFrame(ORIGIN_FRAME_MINIMAP, 0)
+	BlzFrameClearAllPoints(map)
+	BlzFrameSetVisible(map, false)
+	BlzFrameSetAbsPoint(map, FRAMEPOINT_CENTER, 0.7 ,0.05)
+	BlzFrameSetSize(map,0.1,.1)
+end
+
+function ShowInventory(black)
+	local next=0.039
+	local step=(next*6)+next/2
+	for i = 0, 5 do
+		local item = BlzGetOriginFrame(ORIGIN_FRAME_ITEM_BUTTON, i)
+		BlzFrameSetVisible(item, true)
+		BlzFrameClearAllPoints(item)
+		BlzFrameSetSize(item, next, next)
+		if i>=3 then
+			BlzFrameSetPoint(item,FRAMEPOINT_BOTTOM,black,FRAMEPOINT_BOTTOM,step-(next*3)+next*i,0)
+			--BlzFrameSetAbsPoint(item, FRAMEPOINT_CENTER, 0.515-(next*3)+next*i ,(next*1)-0.005)
+		else
+			BlzFrameSetPoint(item,FRAMEPOINT_BOTTOM,black,FRAMEPOINT_BOTTOM,step+(next*i),next)
+			--BlzFrameSetAbsPoint(item, FRAMEPOINT_CENTER, 0.515+(next*i) ,next*2)-0.005)
+		end
+	end
+end
+
+function CreateQWERDFG()
+	local next=0.039
+	for i=0,8 do --RTY
+		BlzFrameSetAbsPoint(BlzGetFrameByName("CommandButton_"..i, 0), FRAMEPOINT_CENTER, 0.2065+next*i ,(next*1)+next/8)
+	end
+end
+
+function ResizeBlackPanel()
+	local black=BlzGetFrameByName("ConsoleUIBackdrop", 0)
+	BlzFrameSetVisible(black, true)
+	BlzFrameClearAllPoints(black)
+	BlzFrameSetSize(black,0.7,0.04*2)
+	BlzFrameSetPoint(black,FRAMEPOINT_BOTTOM,BlzGetOriginFrame(ORIGIN_FRAME_GAME_UI, 0),FRAMEPOINT_BOTTOM,0,0)
+	return black
 end

@@ -16,8 +16,12 @@
 end]]
 
 FrameStep=0.039
-function CreateTalentButton()
-
+local TalentTable={}
+function CreateTalentButton(pid)
+	TalentTable[pid]={
+		miniTalentTable={}
+	}
+	local data=TalentTable[pid]
 	-- наведение на глюбаттон гооврит что это таланты
 	-- глик по фрейму учит талант, если есть свободное очко
 
@@ -28,8 +32,7 @@ function CreateTalentButton()
 	BlzFrameSetTexture(buttonIconFrame, "ReplaceableTextures\\CommandButtons\\BTNSelectHeroOn", 0, true)
 	BlzFrameSetAbsPoint(buttonFrame, FRAMEPOINT_LEFT, 0, 0.4)
 	BlzFrameSetSize(buttonFrame, next, next * 2.5)
-
-	local tree=CreateTalentTree(buttonFrame,0) --TODO Сюда игрока передать
+	local tree=CreateTalentTree(buttonFrame,pid) --TODO Сюда игрока передать
 
 	local ClickTrig = CreateTrigger()
 	BlzTriggerRegisterFrameEvent(ClickTrig, buttonFrame, FRAMEEVENT_CONTROL_CLICK)
@@ -58,8 +61,10 @@ function CreateTalentButton()
 	end)
 	local k = 0
 	local m = 0
+
 	for i = 1, 10 do
 		local miniTalent = BlzCreateFrameByType("BACKDROP", "Face", buttonFrame, "", 0)
+		data.miniTalentTable[i]=miniTalent
 		BlzFrameSetTexture(miniTalent, "ReplaceableTextures\\CommandButtons\\BTNSelectHeroOn", 0, true)
 		--BlzFrameSetAlpha(cd, 128)
 		BlzFrameSetSize(miniTalent, next / 2, next / 2)
@@ -69,7 +74,7 @@ function CreateTalentButton()
 			k = 0
 		end
 		k = k + 1
-		BlzFrameSetPoint(miniTalent, FRAMEPOINT_TOPLEFT, buttonFrame, FRAMEPOINT_TOPLEFT, 0 + m * (next / 2), 0 - (k - 1) * (next / 2))
+		BlzFrameSetPoint(miniTalent, FRAMEPOINT_BOTTOMLEFT, buttonFrame, FRAMEPOINT_BOTTOMLEFT, 0 + m * (next / 2), 0 + (k - 1) * (next / 2))
 	end
 end
 
@@ -77,6 +82,7 @@ function CreateTalentTree(buttonFrame,pid)
 
 	-- заголовок
 	-- текстблоки глюбаттоны 3 на 5
+	local data=TalentTable[pid]
 	local next = FrameStep
 	local tree={}
 	tree[pid]={
@@ -96,6 +102,10 @@ function CreateTalentTree(buttonFrame,pid)
 		BlzTriggerRegisterFrameEvent(trig, mainButton, FRAMEEVENT_CONTROL_CLICK)
 		TriggerAddAction(trig, function()
 			print("выбран этот левый талант "..i)
+
+
+			BlzFrameSetTexture(data.miniTalentTable[i], "", 0, true)
+
 			BlzFrameSetEnable(mainButton,false)
 			BlzFrameSetEnable(tree[pid].right[i],false)
 		end)
@@ -124,6 +134,7 @@ function CreateTalentTree(buttonFrame,pid)
 		BlzTriggerRegisterFrameEvent(trig, mainButton, FRAMEEVENT_CONTROL_CLICK)
 		TriggerAddAction(trig, function()
 			print("выбран этот правый талант "..i)
+			BlzFrameSetTexture(data.miniTalentTable[i+5], "", 0, true)
 			BlzFrameSetEnable(mainButton,false)
 			BlzFrameSetEnable(tree[pid].left[i],false)
 		end)
