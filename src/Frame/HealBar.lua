@@ -7,8 +7,8 @@ function HealthBarAdd(data,color)
 	BlzLoadTOCFile("SystemGeneric\\Main.toc")
 	local bar = BlzCreateSimpleFrame("MyFakeBar", BlzGetOriginFrame(ORIGIN_FRAME_GAME_UI, 0), 0)
 	BlzFrameSetVisible(bar,false)
-	local xBar=0.33
-	if color==1 then xBar=0.4 end
+	local xBar=0.189
+	if color==1 then xBar=0.365 end
 
 	if GetPlayerId(GetLocalPlayer())==data.pid  then -- хп бары, они точно в норме
 		BlzFrameSetVisible(bar,true)
@@ -35,7 +35,7 @@ function HealthBarAdd(data,color)
 	end
 	TimerStart(CreateTimer(),0.5,true, on_timer)
 
-	BlzFrameSetAbsPoint(bar, FRAMEPOINT_LEFT, xBar, 0.12)
-	BlzFrameSetSize(bar,.07,.015)
+	BlzFrameSetAbsPoint(bar, FRAMEPOINT_LEFT, xBar, 0.072)
+	BlzFrameSetSize(bar,.175,.015)
 
 end
