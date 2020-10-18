@@ -23,13 +23,13 @@ do
 
 		--CreateAndStartClock()
 		KeyRegistration()
-		InitSelectionRegister()
+		--InitSelectionRegister()
 		InitMouseMoveTrigger()
 		TimerStart(CreateTimer(), 0.05, false, function()
 			--CreateTalentButton(0)
-			HideEverything()
+			--HideEverything()
 			--CreateInterface()
-			Resources()
+			--Resources()
 		end)
 	end
 end
@@ -45,8 +45,8 @@ function InitHEROTable()
 			FireShieldResist=0,--способность волшебницы огненный щит для определения количества полгощеного физ урона
 			PassAbilityIsDisabled=false, --Для отключения пассивный способностей
 		}
-		HealthBarAdd(HERO[i],0)
+		--HealthBarAdd(HERO[i],0)
 		--print("попытка осздать бар")
-		HealthBarAdd(HERO[i],1)
+		--HealthBarAdd(HERO[i],1)
 	end
 end

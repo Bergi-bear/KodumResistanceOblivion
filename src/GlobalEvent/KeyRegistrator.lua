@@ -67,24 +67,3 @@ function KeyRegistration()
 	end)
 end
 ------------------------------------------------------------------------------------------- EVENT_PLAYER_UNIT_SELECTED
-function InitSelectionRegister()
-	local this = CreateTrigger()
-	for i = 0, bj_MAX_PLAYER_SLOTS - 1 do
-		TriggerRegisterPlayerUnitEvent(this, Player(i), EVENT_PLAYER_UNIT_SELECTED, nil)
-	end
-	TriggerAddAction(this, function()
-		local hero=GetTriggerUnit()
-		--print(GetUnitName(hero))
-		if IsUnitType(hero,UNIT_TYPE_HERO)   then
-			local data=HERO[GetPlayerId(GetTriggerPlayer())]
-			if GetOwningPlayer(hero)==GetTriggerPlayer() then
-
-				data.UnitHero=hero
-				--UnitDisableAllPassAbilityTimed(hero,2)
-				--UnitTestMS(hero)
-				--print("Выбрал своего нужного героя")
-			end
-			data.SelectedHero=hero
-		end
-	end)
-end

@@ -80,7 +80,7 @@ STRING 17
 }
 
 STRING 18
-// Units: h004 (Guard Tower), Tip (Tooltip - Basic)
+// Units: h004 (Сторожевая башня), Tip (Tooltip - Basic)
 {
 Сторожевая башня
 }
@@ -2701,13 +2701,13 @@ STRING 480
 }
 
 STRING 481
-// Abilities: AHhb (Holy Light), Researchhotkey (Hotkey - Learn)
+// Abilities: AHhb (Свет небес), Researchhotkey (Hotkey - Learn)
 {
 Q
 }
 
 STRING 482
-// Abilities: AHhb (Holy Light), Hotkey (Hotkey - Normal)
+// Abilities: AHhb (Свет небес), Hotkey (Hotkey - Normal)
 {
 Q
 }
@@ -2967,7 +2967,7 @@ STRING 520
 }
 
 STRING 522
-// Abilities: A004 (Spell Immunity), EditorSuffix (Editor Suffix)
+// Abilities: A004 (Невосприимчивость к магии), EditorSuffix (Editor Suffix)
 {
 (Нирвана)
 }
@@ -3320,7 +3320,7 @@ STRING 576
 }
 
 STRING 578
-// Abilities: A00A (Sell Units), EditorSuffix (Editor Suffix)
+// Abilities: A00A (Продать войска), EditorSuffix (Editor Suffix)
 {
  (самопродажа)
 }
@@ -4017,7 +4017,7 @@ STRING 694
 }
 
 STRING 696
-// Abilities: A00P (Chain Lightning), EditorSuffix (Editor Suffix)
+// Abilities: A00P (Цепная молния), EditorSuffix (Editor Suffix)
 {
 (цепь молний)
 }
@@ -4191,7 +4191,7 @@ STRING 739
 }
 
 STRING 741
-// Abilities: A00U (Silence), EditorSuffix (Editor Suffix)
+// Abilities: A00U (Немота), EditorSuffix (Editor Suffix)
 {
  (огненная буря)
 }
@@ -4456,13 +4456,13 @@ STRING 770
 }
 
 STRING 771
-// Abilities: A00Q (Inferno), Researchhotkey (Hotkey - Learn)
+// Abilities: A00Q (Инферно), Researchhotkey (Hotkey - Learn)
 {
 Q
 }
 
 STRING 772
-// Abilities: A00Q (Inferno), Hotkey (Hotkey - Normal)
+// Abilities: A00Q (Инферно), Hotkey (Hotkey - Normal)
 {
 Q
 }
@@ -4548,7 +4548,7 @@ STRING 782
 }
 
 STRING 786
-// Abilities: A00Y (Bash), EditorSuffix (Editor Suffix)
+// Abilities: A00Y (Сильный удар), EditorSuffix (Editor Suffix)
 {
  (падший король)
 }
@@ -6998,7 +6998,7 @@ STRING 1190
 }
 
 STRING 1191
-// Abilities: Ahsb (Sundering Blades), Tip (Tooltip - Normal)
+// Abilities: Ahsb (Тяжелые клинки), Tip (Tooltip - Normal)
 {
 Тяжелые клинки [|cffffcc00Пехотинец железных кулаков|r]
 }
@@ -8308,7 +8308,7 @@ STRING 1419
 }
 
 STRING 1420
-// Abilities: A020 (Ensnare), Hotkey (Hotkey - Normal)
+// Abilities: A020 (Опутывание), Hotkey (Hotkey - Normal)
 {
 W
 }
@@ -8410,49 +8410,49 @@ STRING 1437
 }
 
 STRING 1440
-// Abilities: A022 (Heal), Hotkey (Hotkey - Normal)
+// Abilities: A022 (Исцеление), Hotkey (Hotkey - Normal)
 {
 Q
 }
 
 STRING 1441
-// Abilities: A022 (Heal), Unhotkey (Hotkey - Turn Off)
+// Abilities: A022 (Исцеление), Unhotkey (Hotkey - Turn Off)
 {
 Q
 }
 
 STRING 1443
-// Abilities: AHhb (Holy Light), EditorSuffix (Editor Suffix)
+// Abilities: AHhb (Свет небес), EditorSuffix (Editor Suffix)
 {
 Капитан
 }
 
 STRING 1444
-// Abilities: AHhb (Holy Light), Tip (Tooltip - Normal)
+// Abilities: AHhb (Свет небес), Tip (Tooltip - Normal)
 {
 Свет небес [|cffffcc004-й уровень|r]
 }
 
 STRING 1445
-// Abilities: AHhb (Holy Light), Ubertip (Tooltip - Normal - Extended)
+// Abilities: AHhb (Свет небес), Ubertip (Tooltip - Normal - Extended)
 {
 Восполняет 360 здоровья живому союзнику или наносит вдвое меньше урона врагу-нежити.
 }
 
 STRING 1446
-// Abilities: AHad (Devotion Aura), Tip (Tooltip - Normal)
+// Abilities: AHad (Аура благочестия), Tip (Tooltip - Normal)
 {
 Аура благочестия [|cffffcc004-й уровень|r]
 }
 
 STRING 1447
-// Abilities: AHad (Devotion Aura), Ubertip (Tooltip - Normal - Extended)
+// Abilities: AHad (Аура благочестия), Ubertip (Tooltip - Normal - Extended)
 {
 +8 к броне находящихся рядом союзников.
 }
 
 STRING 1448
-// Abilities: AHad (Devotion Aura), EditorSuffix (Editor Suffix)
+// Abilities: AHad (Аура благочестия), EditorSuffix (Editor Suffix)
 {
 Капитан
 }
@@ -8464,43 +8464,43 @@ W
 }
 
 STRING 1452
-// Abilities: A020 (Ensnare), Tip (Tooltip - Normal)
+// Abilities: A020 (Опутывание), Tip (Tooltip - Normal)
 {
 Опутывание
 }
 
 STRING 1453
-// Abilities: A020 (Ensnare), Tip (Tooltip - Normal)
+// Abilities: A020 (Опутывание), Tip (Tooltip - Normal)
 {
 Опутывание
 }
 
 STRING 1454
-// Abilities: A020 (Ensnare), Tip (Tooltip - Normal)
+// Abilities: A020 (Опутывание), Tip (Tooltip - Normal)
 {
 Опутывание
 }
 
 STRING 1455
-// Abilities: A020 (Ensnare), Ubertip (Tooltip - Normal - Extended)
+// Abilities: A020 (Опутывание), Ubertip (Tooltip - Normal - Extended)
 {
 Притягивает врага к земле и обездвиживает его на <Aens,Dur1> сек. Опутанные воздушные цели считаются наземными.
 }
 
 STRING 1456
-// Abilities: A020 (Ensnare), Ubertip (Tooltip - Normal - Extended)
+// Abilities: A020 (Опутывание), Ubertip (Tooltip - Normal - Extended)
 {
 Притягивает врага к земле и обездвиживает его на <Aens,Dur1> сек. Опутанные воздушные цели считаются наземными.
 }
 
 STRING 1457
-// Abilities: A020 (Ensnare), Ubertip (Tooltip - Normal - Extended)
+// Abilities: A020 (Опутывание), Ubertip (Tooltip - Normal - Extended)
 {
 Притягивает врага к земле и обездвиживает его на <Aens,Dur1> сек. Опутанные воздушные цели считаются наземными.
 }
 
 STRING 1458
-// Abilities: A020 (Ensnare), EditorSuffix (Editor Suffix)
+// Abilities: A020 (Опутывание), EditorSuffix (Editor Suffix)
 {
 Убийца рыбаков
 }
@@ -10345,7 +10345,7 @@ STRING 1802
 }
 
 STRING 1803
-// Abilities: A00Q (Inferno), Researchubertip (Tooltip - Learn - Extended)
+// Abilities: A00Q (Инферно), Researchubertip (Tooltip - Learn - Extended)
 {
 Тип урона: |cffffff00Чистый|r
 Тип применения: в точку
@@ -10358,7 +10358,7 @@ STRING 1803
 }
 
 STRING 1804
-// Abilities: A00Q (Inferno), Ubertip (Tooltip - Normal - Extended)
+// Abilities: A00Q (Инферно), Ubertip (Tooltip - Normal - Extended)
 {
 Тип урона: |cffffff00Чистый|r
 Тип применения: в точку
@@ -10371,7 +10371,7 @@ STRING 1804
 }
 
 STRING 1805
-// Abilities: A00Q (Inferno), Ubertip (Tooltip - Normal - Extended)
+// Abilities: A00Q (Инферно), Ubertip (Tooltip - Normal - Extended)
 {
 Тип урона: |cffffff00Чистый|r
 Тип применения: в точку
@@ -10384,7 +10384,7 @@ STRING 1805
 }
 
 STRING 1806
-// Abilities: A00Q (Inferno), Ubertip (Tooltip - Normal - Extended)
+// Abilities: A00Q (Инферно), Ubertip (Tooltip - Normal - Extended)
 {
 Тип урона: |cffffff00Чистый|r
 Тип применения: в точку
@@ -10397,7 +10397,7 @@ STRING 1806
 }
 
 STRING 1807
-// Abilities: A00Q (Inferno), Ubertip (Tooltip - Normal - Extended)
+// Abilities: A00Q (Инферно), Ubertip (Tooltip - Normal - Extended)
 {
 Тип урона: |cffffff00Чистый|r
 Тип применения: в точку
@@ -12370,7 +12370,7 @@ STRING 2081
 }
 
 STRING 2083
-// Abilities: A022 (Heal), EditorSuffix (Editor Suffix)
+// Abilities: A022 (Исцеление), EditorSuffix (Editor Suffix)
 {
 (Колдун)
 }
@@ -12517,13 +12517,13 @@ STRING 2105
 }
 
 STRING 2106
-// Abilities: A02A (Unholy Aura), Researchtip (Tooltip - Learn)
+// Abilities: A02A (Нечистая аура), Researchtip (Tooltip - Learn)
 {
 Нечистая аура
 }
 
 STRING 2107
-// Abilities: A02A (Unholy Aura), Researchubertip (Tooltip - Learn - Extended)
+// Abilities: A02A (Нечистая аура), Researchubertip (Tooltip - Learn - Extended)
 {
 Увеличивает скорость регенерации и перемещения всех дружественных существ\героев.
 Радиус: 600
@@ -12533,7 +12533,7 @@ STRING 2107
 }
 
 STRING 2108
-// Abilities: A02A (Unholy Aura), Ubertip (Tooltip - Normal - Extended)
+// Abilities: A02A (Нечистая аура), Ubertip (Tooltip - Normal - Extended)
 {
 Увеличивает скорость регенерации и перемещения всех дружественных существ\героев.
 Радиус: |cff00ff00600|r
@@ -12543,7 +12543,7 @@ STRING 2108
 }
 
 STRING 2109
-// Abilities: A02A (Unholy Aura), Ubertip (Tooltip - Normal - Extended)
+// Abilities: A02A (Нечистая аура), Ubertip (Tooltip - Normal - Extended)
 {
 Увеличивает скорость регенерации и перемещения всех дружественных существ\героев.
 Радиус: |cff00ff00600|r
@@ -12553,7 +12553,7 @@ STRING 2109
 }
 
 STRING 2110
-// Abilities: A02A (Unholy Aura), Ubertip (Tooltip - Normal - Extended)
+// Abilities: A02A (Нечистая аура), Ubertip (Tooltip - Normal - Extended)
 {
 Увеличивает скорость регенерации и перемещения всех дружественных существ\героев.
 Радиус: |cff00ff00600|r
@@ -12563,25 +12563,25 @@ STRING 2110
 }
 
 STRING 2111
-// Abilities: A02A (Unholy Aura), Tip (Tooltip - Normal)
+// Abilities: A02A (Нечистая аура), Tip (Tooltip - Normal)
 {
 Нечистая аура
 }
 
 STRING 2112
-// Abilities: A02A (Unholy Aura), Tip (Tooltip - Normal)
+// Abilities: A02A (Нечистая аура), Tip (Tooltip - Normal)
 {
 Нечистая аура
 }
 
 STRING 2113
-// Abilities: A02A (Unholy Aura), Tip (Tooltip - Normal)
+// Abilities: A02A (Нечистая аура), Tip (Tooltip - Normal)
 {
 Нечистая аура
 }
 
 STRING 2114
-// Abilities: A02A (Unholy Aura), Ubertip (Tooltip - Normal - Extended)
+// Abilities: A02A (Нечистая аура), Ubertip (Tooltip - Normal - Extended)
 {
 Увеличивает скорость регенерации и перемещения всех дружественных существ\героев.
 Радиус: |cff00ff00600|r
@@ -12591,19 +12591,19 @@ STRING 2114
 }
 
 STRING 2115
-// Abilities: A02A (Unholy Aura), Tip (Tooltip - Normal)
+// Abilities: A02A (Нечистая аура), Tip (Tooltip - Normal)
 {
 Нечистая аура
 }
 
 STRING 2116
-// Abilities: A02A (Unholy Aura), Researchhotkey (Hotkey - Learn)
+// Abilities: A02A (Нечистая аура), Researchhotkey (Hotkey - Learn)
 {
 E
 }
 
 STRING 2117
-// Abilities: A02A (Unholy Aura), EditorSuffix (Editor Suffix)
+// Abilities: A02A (Нечистая аура), EditorSuffix (Editor Suffix)
 {
 (Страж Небытия)
 }
@@ -13098,37 +13098,37 @@ STRING 2181
 }
 
 STRING 2182
-// Abilities: A02D (Frenzy), Hotkey (Hotkey - Normal)
+// Abilities: A02D (Бешенство), Hotkey (Hotkey - Normal)
 {
 Q
 }
 
 STRING 2183
-// Abilities: A02D (Frenzy), Unhotkey (Hotkey - Turn Off)
+// Abilities: A02D (Бешенство), Unhotkey (Hotkey - Turn Off)
 {
 Q
 }
 
 STRING 2184
-// Abilities: A02D (Frenzy), EditorSuffix (Editor Suffix)
+// Abilities: A02D (Бешенство), EditorSuffix (Editor Suffix)
 {
 (Тролль-берсерк)
 }
 
 STRING 2185
-// Abilities: A02E (Pulverize), EditorSuffix (Editor Suffix)
+// Abilities: A02E (Сокрушение), EditorSuffix (Editor Suffix)
 {
 (Маргарин-завоеватель)
 }
 
 STRING 2186
-// Abilities: A02F (Envenomed Weapons), EditorSuffix (Editor Suffix)
+// Abilities: A02F (Отравленное оружие), EditorSuffix (Editor Suffix)
 {
 (Троль-метатель)
 }
 
 STRING 2187
-// Abilities: A02G (Anti-magic Shell), EditorSuffix (Editor Suffix)
+// Abilities: A02G (Антимагический панцирь), EditorSuffix (Editor Suffix)
 {
 (Смотрящий сада)
 }

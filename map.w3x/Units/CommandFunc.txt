@@ -1,58 +1,58 @@
 [CmdMove]
 Art=CommandMove
-Buttonpos=0,-11
+Buttonpos=0,0
 
 [CmdAttack]
 Art=CommandAttack
-Buttonpos=3,2
+Buttonpos=3,0
 
 [CmdAttackGround]
 Art=CommandAttackGround
-Buttonpos=0,0
+Buttonpos=3,1
 
 [CmdBuild]
 Art=CommandBasicStruct
-Buttonpos=0,0
+Buttonpos=0,2
 
 [CmdBuildHuman]
 Art=CommandBasicStructHuman
-Buttonpos=0,0
+Buttonpos=0,2
 
 [CmdBuildOrc]
 Art=CommandBasicStructOrc
-Buttonpos=0,0
+Buttonpos=0,2
 
 [CmdBuildNightElf]
 Art=CommandBasicStructNightElf
-Buttonpos=0,0
+Buttonpos=0,2
 
 [CmdBuildUndead]
 Art=CommandBasicStructUndead
-Buttonpos=0,0
+Buttonpos=0,2
 
 [CmdCancel]
 Art=CommandCancel
-ButtonPos=0,2
+ButtonPos=3,2
 
 [CmdCancelBuild]
 Art=CommandCancel
-ButtonPos=3,1
+ButtonPos=3,2
 
 [CmdCancelTrain]
 Art=CommandCancel
-ButtonPos=3,1
+ButtonPos=3,2
 
 [CmdCancelRevive]
 Art=CommandCancel
-ButtonPos=3,1
+ButtonPos=3,2
 
 [CmdHoldPos]
 Art=CommandHoldPosition
-Buttonpos=3,2
+Buttonpos=2,0
 
 [CmdPatrol]
 Art=CommandPatrol
-Buttonpos=0,-11
+Buttonpos=0,1
 
 [CmdPurchase]
 Art=CommandPurchase
@@ -60,7 +60,7 @@ Buttonpos=0,0
 
 [CmdRally]
 Art=CommandRally
-Buttonpos=0,0
+Buttonpos=3,1
 PlacementModel=UI\Feedback\RallyPoint\RallyPoint.mdl
 
 [CmdSelectSkill]
@@ -69,7 +69,7 @@ Buttonpos=3,1
 
 [CmdStop]
 Art=CommandStop
-Buttonpos=3,2
+Buttonpos=1,0
 
 //[CmdUnivAgi]
 //Art=
