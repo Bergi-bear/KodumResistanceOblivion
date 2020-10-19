@@ -31,13 +31,16 @@ function InitSelectionRegister()
 					CreateTalonButtons(data)
 				else
 					if hero==data.UnitHero then
-						print("повтроное отображение талантов")
+						--print("повтроное отображение талантов")
+						ShowTalonAll(data,true)
 					else
-						print("очистка дерева талантов, выбран другой герой")
+						--print("очистка дерева талантов, выбран другой герой")
+						ShowTalonAll(data,false)
 					end
 				end
 			else
-				print("очистка дерева талантов, выбран другой герой")
+				--print("очистка дерева талантов, выбран другой герой")
+				ShowTalonAll(data,false)
 			end
 			data.SelectedHero=hero
 		end
@@ -60,9 +63,10 @@ function CreateTalonButtons(data)
 		learnedButtons={},
 		status={},
 		currentLearned=0,
-		show=false
+		show=false,
+		strTalon={},
 	}
-	data.TalonTable.self=CreateSimpleFrameGlue(BlzGetOriginFrame(ORIGIN_FRAME_GAME_UI, 0),0.22,0.15,step,nil,1,nil,data)
+	data.TalonTable.self=CreateSimpleFrameGlue(BlzGetOriginFrame(ORIGIN_FRAME_GAME_UI, 0),0.22,0.15,step,"ReplaceableTextures\\CommandButtons\\BTNTomeRed.blp",1,nil,data)
 	data.TalonTable.learnBox = BlzCreateFrameByType('BACKDROP', 'FaceButtonIcon', data.TalonTable.self, '', 0)
 
 	--СОздаём сам таланты
@@ -79,6 +83,7 @@ function CreateTalonButtons(data)
 				-- cами таланты кликабельные
 				data.TalonTable.arrayButtons[k]=CreateSimpleFrameGlue(data.TalonTable.learnBox,sx+step*i,sy+step*j,step,TalonBD[indexHero].Icons[k],1,nil,data,k)
 				data.TalonTable.status[k]=true
+				data.TalonTable.strTalon[k]=j
 			end
 			k=k+1
 		end
@@ -97,7 +102,7 @@ end
 
 function CreateSimpleFrameGlue(parent,posX, PosY,scale,texture, flag,text,data,k)
 	if not texture then
-		texture = "ReplaceableTextures\\CommandButtons\\BTNSelectHeroOn"
+		texture = "ReplaceableTextures\\CommandButtons\\BTNCancel"
 	end
 	local SelfFrame = BlzCreateFrameByType('GLUEBUTTON', 'FaceButton', parent, 'ScoreScreenTabButtonTemplate', 0)
 	local buttonIconFrame = BlzCreateFrameByType('BACKDROP', 'FaceButtonIcon', SelfFrame, '', 0)
@@ -120,19 +125,32 @@ function CreateSimpleFrameGlue(parent,posX, PosY,scale,texture, flag,text,data,k
 				if not data.TalonTable.show then
 					data.TalonTable.show=true
 					ShowTalonTree(data,true)
+					BlzFrameSetTexture(buttonIconFrame, "ReplaceableTextures\\CommandButtons\\BTNCancel", 0, true)
+					--
 				else
 					data.TalonTable.show=false
 					ShowTalonTree(data,false)
+					BlzFrameSetTexture(buttonIconFrame, texture, 0, true)
 				end
 			end
 
 
 			if  data.TalonTable.status[k]  then
+				local lvl={5,15,20,25,30}
+				local currentLvl=GetHeroLevel(data.UnitHero)
+				local str=1+data.TalonTable.currentLearned
 				if k then
-					DisabledAnotherTalon(data,k)
-					AddTalonToLearned(data,k)
-				else -- клик для меню талантов
-
+					if currentLvl>=lvl[str] then
+						if data.TalonTable.strTalon[k]==str-1 then
+							DisabledAnotherTalon(data,k)
+							AddTalonToLearned(data,k)
+							--print("сила таланта ="..data.TalonTable.strTalon[k])
+						else
+							print("необходимо изучить предыдущий талант")
+					    end
+					else
+						print("уровень героя слишком низок, нужен "..lvl[str])
+					end
 				end
 			else
 				--print("Эти таланты уже изучены")
@@ -205,12 +223,12 @@ end
 
 
 
-mouseOnFrame=false
+--mouseOnFrame=false
 --mainTooltip=nil
 function CreateToolTipBox(parent,posX,posY)
 	local tooltip = BlzCreateFrameByType("FRAME", "TestDialog", parent, "StandardFrameTemplate", 0)
-	local text = BlzCreateFrameByType("TEXT", "ButtonChargesText", tooltip, "", 0)
 	local backdrop = BlzCreateFrame("QuestButtonDisabledBackdropTemplate", tooltip, 0, 0)
+	local text = BlzCreateFrameByType("TEXT", "ButtonChargesText", tooltip, "", 0)
 	BlzFrameSetAbsPoint(tooltip, FRAMEPOINT_CENTER, posX,posY)
 	BlzFrameSetSize(tooltip, 0.12, 0.04)
 	BlzFrameSetSize(backdrop, 0.12, 0.04)
@@ -224,64 +242,7 @@ function CreateToolTipBox(parent,posX,posY)
 	return tooltip,backdrop,text
 end
 
-do -- BD
-	TalonBD={
-		[1]={ --Падший король H00S
-			description={
-				"+2 регенерации маны",
-				"",
-				"+20 урона",
-				"+75 к урону от \nмолний",
-				"",
-				"+8 к силе",
-				"+100 к сильному \nудару",
-				"",
-				"Цепь молний без \nперезарядки",
-				"+18 процентов шанса\n удар молнии",
-				"",
-				"+50 скорости \nперемещения",
-				"-50 сек перезарядки \nпробуждения",
-				"",
-				"Сильный удар \nстановится пассивным",
 
-			},
-			Icons={
-				"ReplaceableTextures\\CommandButtons\\BTNSobiMask.blp",
-				"",
-				"ReplaceableTextures\\CommandButtons\\BTNClawsOfAttack.blp",
-				"ReplaceableTextures\\CommandButtons\\BTNOrbOfLightning.blp",
-				"",
-				"ReplaceableTextures\\CommandButtons\\BTNGauntletsOfOgrePower.blp",
-				"ReplaceableTextures\\CommandButtons\\BTNBash.blp",
-				"",
-				"ReplaceableTextures\\CommandButtons\\BTNChainLightning.blp",
-				"ReplaceableTextures\\CommandButtons\\BTNChainLightning.blp",
-				"",
-				"ReplaceableTextures\\CommandButtons\\BTNBootsOfSpeed.blp",
-				"ReplaceableTextures\\CommandButtons\\BTNAvatarOn.blp",
-				"",
-				"ReplaceableTextures\\PassiveButtons\\PASBTNBash.blp",
-			}
-		},
-		[2]={ -- другой герой
-			description={
-				-- описания
-			},
-			Icons={
-				--пути для иконок
-			}
-		},
-	}
-end
-function GetHeroIndexInTable(HeroID)
-	local table={}
-	table[FourCC('H00S')]=1
-
-	if not table[HeroID] then
-		print("Герой так и не был найден в базе данных")
-	end
-	return table[HeroID]
-end
 
 function DisabledAnotherTalon(data,k)
 	local b=0
@@ -320,4 +281,100 @@ end
 
 function ShowTalonTree(data,state)
 	BlzFrameSetVisible(data.TalonTable.learnBox,state)
+end
+
+function ShowTalonAll(data,state)
+	BlzFrameSetVisible(data.TalonTable.self,state)
+end
+
+do -- BD
+	TalonBD={
+		[1]={ --Падший король H00S
+			description={
+				"+2 регенерации маны",
+				"",
+				"+20 урона",
+				"+75 к урону от \nмолний",
+				"",
+				"+8 к силе",
+				"+100 к сильному \nудару",
+				"",
+				"Цепь молний без \nперезарядки",
+				"+18 процентов шанса\n удар молнии",
+				"",
+				"+50 скорости \nперемещения",
+				"-50 сек перезарядки \nпробуждения",
+				"",
+				"Сильный удар \nстановится пассивным",
+
+			},
+			Icons={
+				"ReplaceableTextures\\CommandButtons\\BTNManaStone.blp",
+				"",
+				"ReplaceableTextures\\CommandButtons\\BTNAttack.blp",
+				"war3mapImported\\BTN_[Q]_Lighting_Chain.blp",
+				"",
+				"UI\\Widgets\\Console\\Human\\infocard-heroattributes-str.blp",
+				"war3mapImported\\BTN_[W]_Iron_Hit.blp",
+				"",
+				"war3mapImported\\BTN_[Q]_Lighting_Chain.blp",
+				"war3mapImported\\BTN_[Q]_Lighting_Chain.blp",
+				"",
+				"ReplaceableTextures\\CommandButtons\\BTNSlippersOfAgility.blp",
+				"ReplaceableTextures\\CommandButtons\\BTNAvatarOn.blp",
+				"",
+				"war3mapImported\\BTN_[W]_Iron_Hit.blp",
+			}
+		},
+		[2]={ -- Провидец Пустоты H00D
+			description={
+				"+150 к здоровью",
+				"",
+				"-15%% перезарядки \nспособностей",
+				"+2 существа \nПаразит",
+				"",
+				"+40 к урону",
+				"+20%% урона по постройкам \nКритический удар",
+				"",
+				"+2 к минимальному \nоглушению",
+				"+Критический удар наносит \nурон по области 500",
+				"",
+				"+15%% к уклонению",
+				"100%% шанс молний",
+				"",
+				"Ярость превращается \nв ауру",
+
+			},
+			Icons={
+				"ReplaceableTextures\\CommandButtons\\BTNHealthStone.blp",
+				"",
+				"ReplaceableTextures\\CommandButtons\\BTNEngineeringUpgrade.blp",
+				"war3mapImported\\BTN_[E]_Parasite.blp",
+				"",
+				"ReplaceableTextures\\CommandButtons\\BTNAttack.blp",
+				"ReplaceableTextures\\CommandButtons\\BTNCriticalStrike.blp",
+				"",
+				"ReplaceableTextures\\CommandButtons\\BTNOrbOfLightning.blp",
+				"ReplaceableTextures\\CommandButtons\\BTNCriticalStrike.blp",
+				"",
+				"ReplaceableTextures\\CommandButtons\\BTNHoldPosition.blp",
+				"ReplaceableTextures\\CommandButtons\\BTNOrbOfLightning.blp",
+				"",
+				"war3mapImported\\BTN_[Q]_Rage.blp",
+			}
+		},
+	}
+end
+
+
+
+function GetHeroIndexInTable(HeroID)
+	local table={}
+	table[FourCC('H00S')]=1 -- падший король
+	table[FourCC('H00X')]=2 -- провидец пустоты
+
+	if not table[HeroID] then
+		print("Герой так и не был найден в базе данных")
+	end
+	return table[HeroID]
 end

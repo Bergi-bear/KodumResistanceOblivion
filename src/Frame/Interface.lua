@@ -6,7 +6,7 @@
 ---
 ---
 
-function HideEverything()
+function HideEverythingOld()
 	BlzHideOriginFrames(true)
 	BlzEnableUIAutoPosition ( false )
 	local GAME_UI     = BlzGetOriginFrame(ORIGIN_FRAME_GAME_UI, 0)
@@ -174,3 +174,4 @@ function ResizeBlackPanel()
 	BlzFrameSetPoint(black,FRAMEPOINT_BOTTOM,BlzGetOriginFrame(ORIGIN_FRAME_GAME_UI, 0),FRAMEPOINT_BOTTOM,0,0)
 	return black
 end
+
