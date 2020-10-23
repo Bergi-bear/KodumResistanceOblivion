@@ -5,15 +5,7 @@
 ---
 ---
 
---[[do --Инициализация
-	TimerStart(CreateTimer(), 0.1, false, function()
-		if BlzLoadTOCFile("SystemGeneric\\Main.toc") then
-			--print("успех")
-		else
-			print("провал загрузки ТОС ")
-		end
-	end)
-end]]
+
 
 FrameStep=0.039
 local TalentTable={}

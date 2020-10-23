@@ -4,7 +4,8 @@
 --- DateTime: 19.10.2020 21:40
 ---
 
-do --Инициализация
+do
+    --Инициализация
     TimerStart(CreateTimer(), 0.1, false, function()
         CreatePickTable()
     end)
@@ -15,8 +16,8 @@ function CreatePickTable()
     --CreateBlackTip() -- создаём внешнюю рамку
     CreateAllHeroID() -- создаём болванчиков
     CreateAllHeroInBox(10)
+    CreateInfoBoxes()
 end
-
 
 function HideEverything()
     BlzFrameSetVisible(BlzGetFrameByName("ConsoleUIBackdrop", 0), false)
@@ -28,103 +29,65 @@ function HideEverything()
 end
 
 function ShowEverything(player)
-    BlzFrameSetVisible(BlzGetFrameByName("ConsoleUIBackdrop", 0), GetLocalPlayer()==player)
-    local normal=0
-    if GetLocalPlayer()==player then
-        normal=0.039
+    BlzFrameSetVisible(BlzGetFrameByName("ConsoleUIBackdrop", 0), GetLocalPlayer() == player)
+    local normal = 0
+    if GetLocalPlayer() == player then
+        normal = 0.039
     end
     for i = 0, 11 do
         --BlzFrameSetVisible(BlzGetFrameByName("CommandButton_"..i, 0), false)
         BlzFrameSetSize(BlzGetFrameByName("CommandButton_" .. i, 0), normal, normal)
     end
-    BlzHideOriginFrames(not GetLocalPlayer()==player)--скрыть всё
+    BlzHideOriginFrames(not GetLocalPlayer() == player)--скрыть всё
 end
 
 function CreateAllHeroInBox(lineK)
-    local sx,sy=0.1,0.561
+    local sx, sy = 0.1, 0.561
     local totalContent = BlzCreateFrameByType('BACKDROP', 'FaceButtonIcon', BlzGetOriginFrame(ORIGIN_FRAME_GAME_UI, 0), '', 0) --пустышка, где будут все фреймы
-    local allPortraits={}
-    local step=0.039
+    local allPortraits = {}
+    local step = 0.039
 
-    local strTable=HowHeroAtAttrib(1) --сила
-    local intTable=HowHeroAtAttrib(2) -- инт
-    local agiTable=HowHeroAtAttrib(3) -- аги
-    local legTable=HowHeroAtAttrib(4) -- легендарный
-    -- содаём героев атрибута сила
-    if #strTable <=lineK then lineK=#strTable end
-    local s=1+#strTable//lineK
-    --print(s.."Столбцов")
-    local k=1
-    local total=1
-    local lastY=0 --Последняя точка смещения
-    for j=1,s do
-        for i=1,lineK do
-            if k<=#strTable+1 then
-                allPortraits[total]=CreateGluePickHero(totalContent,sx+(i-1)*step,sy-(j-1)*step,step,nil)
-                k=k+1
-                total=total+1
-                lastY=sy-(j-1)*step
+    for m = 1, 4 do
+        local attTable = HowHeroAtAttrib(m)
+        --if #attTable <=lineK then lineK=#attTable end
+        local s = 1 + #attTable // lineK
+        --print(s.."Столбцов")
+        local k = 1
+        local total = 1
+        local lastY = 0
+        for j = 1, s do
+            for i = 1, lineK do
+                if k <= #attTable + 2 then
+                    --откуда +2
+                    local idHero = GetUnitTypeId(attTable[k])
+                    local temp = nil
+                    local index = GetHeroIndexInTable(idHero)
+                    if index then
+                        temp = TalonBD[index].Portrait
+                    else
+                        temp = nil
+                    end
+                    allPortraits[total] = CreateGluePickHero(totalContent, sx + (i - 1) * step, sy - (j - 1) * step, step, temp, 1, attTable[k], index)
+                    k = k + 1
+                    total = total + 1
+                    lastY = sy - (j - 1) * step
+                end
             end
         end
-    end
-    --Смена линии по Y вниз
-    sy=lastY-step*2
-    -- содаём героев атрибута сила
-    s=1+#intTable//lineK
-    k=1
-    for j=1,s do
-        for i=1,lineK do
-            if k<=#intTable+1 then
-                allPortraits[total]=CreateGluePickHero(totalContent,sx+(i-1)*step,sy-(j-1)*step,step,nil)
-                k=k+1
-                total=total+1
-                lastY=sy-(j-1)*step
-            end
-        end
+        sy = lastY - step * 2
+        --s=1+#attTable//lineK
+        k = 1
     end
 
-    --Смена линии по Y вниз
-    sy=lastY-step*2
-    -- содаём героев атрибута ловкость
-    s=1+#agiTable//lineK
-    k=1
-    for j=1,s do
-        for i=1,lineK do
-            if k<=#agiTable+1 then
-                allPortraits[total]=CreateGluePickHero(totalContent,sx+(i-1)*step,sy-(j-1)*step,step,nil)
-                k=k+1
-                total=total+1
-                lastY=sy-(j-1)*step
-            end
-        end
-    end
-
-    --Смена линии по Y вниз
-    sy=lastY-step*2
-    -- содаём героев атрибута ловкость
-    s=1+#legTable//lineK
-    k=1
-    for j=1,s do
-        for i=1,lineK do
-            if k<=#legTable+1 then
-                allPortraits[total]=CreateGluePickHero(totalContent,sx+(i-1)*step,sy-(j-1)*step,step,nil)
-                k=k+1
-                total=total+1
-                lastY=sy-(j-1)*step
-            end
-        end
-    end
 end
+BoxTemHero={}
+function CreateGluePickHero(parent, posX, posY, scale, texture, flag, tempHero, index)
 
-
-
-function CreateGluePickHero(parent,posX,posY,scale,texture)
-
-    if not texture then
+    if not texture or texture == "" then
         texture = "ReplaceableTextures\\CommandButtons\\BTNCancel"
     end
     if not parent then
-        parent= BlzGetOriginFrame(ORIGIN_FRAME_GAME_UI, 0)
+        parent = BlzGetOriginFrame(ORIGIN_FRAME_GAME_UI, 0)
     end
     local SelfFrame = BlzCreateFrameByType('GLUEBUTTON', 'FaceButton', parent, 'ScoreScreenTabButtonTemplate', 0)
     local buttonIconFrame = BlzCreateFrameByType('BACKDROP', 'FaceButtonIcon', SelfFrame, '', 0)
@@ -135,73 +98,158 @@ function CreateGluePickHero(parent,posX,posY,scale,texture)
     BlzFrameSetSize(SelfFrame, scale, scale)
     BlzFrameSetAbsPoint(SelfFrame, FRAMEPOINT_CENTER, posX, posY)
 
-    local ClickTrig = CreateTrigger()
-    BlzTriggerRegisterFrameEvent(ClickTrig, SelfFrame, FRAMEEVENT_CONTROL_CLICK)
-    TriggerAddAction(ClickTrig, function()
-        print("Нажата кнопка ")
-        BlzFrameSetEnable(BlzGetTriggerFrame(), false)
-        BlzFrameSetEnable(BlzGetTriggerFrame(), true)
-    end)
+    if flag == 1 then
+        local ClickTrig = CreateTrigger()
+        BlzTriggerRegisterFrameEvent(ClickTrig, SelfFrame, FRAMEEVENT_CONTROL_CLICK)
+        TriggerAddAction(ClickTrig, function()
+            --print("Нажата кнопка  получаем имя героя и его способности и записываем их в поля")
+            BlzFrameSetEnable(BlzGetTriggerFrame(), false)
+            BlzFrameSetEnable(BlzGetTriggerFrame(), true)
+            local nameOfHero = GetUnitName(tempHero)
+            BlzFrameSetText(BoxNameHero, nameOfHero)
+            BoxTemHero[GetPlayerId(GetTriggerPlayer())]=tempHero
+            --print(TalonBD[index].Portrait)
+            --Дблируем иконку выбранного героя
 
-    local TrigMOUSE_ENTER = CreateTrigger()
-    BlzTriggerRegisterFrameEvent(TrigMOUSE_ENTER, SelfFrame, FRAMEEVENT_MOUSE_ENTER)
+            --BlzFrameSetTexture(BoxInfoAbilityHero[1],TalonBD[index].Portrait, 0, true)
+            FrameChangeTexture(BoxInfoAbilityHero[1], TalonBD[index].Portrait)
+            for i=2,#BoxInfoAbilityHero do
+                FrameChangeTexture(BoxInfoAbilityHero[i], "ReplaceableTextures\\CommandButtons\\BTNCancel")
+            end
 
-    TriggerAddAction(TrigMOUSE_ENTER, function()
-        print("показать подсказку ")
+            for i=2,1+#TalonBD[index].Ability do
+                FrameChangeTexture(BoxInfoAbilityHero[i], TalonBD[index].Ability[i-1])
+            end
+            --print(BlzGetAbilityIcon(TalonBD[index].Ability[1]))
+        end)
+    end
 
-    end)
-    local TrigMOUSE_LEAVE = CreateTrigger()
-    BlzTriggerRegisterFrameEvent(TrigMOUSE_LEAVE, SelfFrame, FRAMEEVENT_MOUSE_LEAVE)
-    TriggerAddAction(TrigMOUSE_LEAVE, function()
-        print("убрать подсказку")
+    if flag == 2 then
+        local TrigMOUSE_ENTER = CreateTrigger()
+        BlzTriggerRegisterFrameEvent(TrigMOUSE_ENTER, SelfFrame, FRAMEEVENT_MOUSE_ENTER)
 
-    end)
-
+        TriggerAddAction(TrigMOUSE_ENTER, function()
+            print("показать подсказку ")
+            local idHero = GetUnitTypeId(BoxTemHero[GetPlayerId(GetTriggerPlayer())])
+            local indexH = GetHeroIndexInTable(idHero)
+            local text=BlzGetAbilityResearchExtendedTooltip(TalonBD[indexH].Ability[index-1],1)
+            BlzFrameSetText(BoxDescription, text)
+        end)
+        local TrigMOUSE_LEAVE = CreateTrigger()
+        BlzTriggerRegisterFrameEvent(TrigMOUSE_LEAVE, SelfFrame, FRAMEEVENT_MOUSE_LEAVE)
+        TriggerAddAction(TrigMOUSE_LEAVE, function()
+            print("убрать подсказку")
+            BlzFrameSetText(BoxDescription, "")
+        end)
+    end
 
     return SelfFrame
 end
 
-AllHeroID={}
-function CreateAllHeroID() -- создаём всех героев по 1 экземпляру
-    local start=FourCC('H000')
-    local endC=FourCC('H000')+2000
-    local k=1
-    for i=start,endC do
-        AllHeroID[k]=CreateUnit(Player(PLAYER_NEUTRAL_PASSIVE),i,0,0,0)
-        ShowUnit(AllHeroID[k],false)
+AllHeroID = {}
+function CreateAllHeroID()
+    -- создаём всех героев по 1 экземпляру
+    local start = FourCC('H000')
+    local endC = FourCC('H000') + 2000
+    local k = 1
+    for i = start, endC do
+        AllHeroID[k] = CreateUnit(Player(PLAYER_NEUTRAL_PASSIVE), i, 0, 0, 0)
         if AllHeroID[k] then
-           -- print(GetUnitName(AllHeroID[k])..k)
-            k=k+1
+            ShowUnit(AllHeroID[k], false)
+            --создаём все способности для героя
+            --print("найдео способностей у юнита " .. #TalonBD[GetHeroIndexInTable(i)].Ability)
+            for a = 1, #TalonBD[GetHeroIndexInTable(i)].Ability do
+                if UnitAddAbility(AllHeroID[k], TalonBD[GetHeroIndexInTable(i)].Ability[a]) then
+                    --print("способность добавлена "..TalonBD[GetHeroIndexInTable(i)].Ability[a])
+                    SetUnitAbilityLevel(AllHeroID[k], TalonBD[GetHeroIndexInTable(i)].Ability[a], 10)
+                end
+            end
+            k = k + 1
         end
     end
-    print("создано "..#AllHeroID)
+    --print("создано "..#AllHeroID)
 end
 
-IsLegendary=FourCC('A02R')
-function HowHeroAtAttrib(attrib) --1 str, 2 int, 3 agi, 4 legend
-    local k=0
-    local table={}
+IsLegendary = FourCC('A02R')
+function HowHeroAtAttrib(attrib)
+    --1 str, 2 int, 3 agi, 4 legend
+    local k = 0
+    local table = {}
 
-    for i=1,#AllHeroID do
-        if GetUnitAbilityLevel(AllHeroID[i],IsLegendary)==0 then
-            if BlzGetUnitIntegerField(AllHeroID[i],UNIT_IF_PRIMARY_ATTRIBUTE)==attrib  then
-                table[k]=AllHeroID[i]
-                k=k+1
+    for i = 1, #AllHeroID do
+        if GetUnitAbilityLevel(AllHeroID[i], IsLegendary) == 0 then
+            if BlzGetUnitIntegerField(AllHeroID[i], UNIT_IF_PRIMARY_ATTRIBUTE) == attrib then
+                table[k] = AllHeroID[i]
+                k = k + 1
             end
         else
-            if attrib==4 then
-                print("Опредлён легендарный герой "..GetUnitName(AllHeroID[i]))
-                table[k]=AllHeroID[i]
-                k=k+1
+            if attrib == 4 then
+                --print("Опредлён легендарный герой "..GetUnitName(AllHeroID[i]))
+                table[k] = AllHeroID[i]
+                k = k + 1
             end
         end
     end
-    if attrib==1 then
+    if attrib == 1 then
         --print(k.. " героев тарибута сила")
-    elseif attrib==2 then
-       -- print(k.. " героев тарибута интеллект")
-    elseif attrib==3 then
+    elseif attrib == 2 then
+        -- print(k.. " героев тарибута интеллект")
+    elseif attrib == 3 then
         --print(k.. " героев тарибута ловкость")
     end
     return table
 end
+
+BoxNameHero = nil
+BoxDescription = nil
+BoxInfoAbilityHero = {}
+function CreateInfoBoxes()
+    --создаём текст нахвание героя, которое называется выберите героя
+    local x, y = 0.58, 0.55
+    local nx, ny = 0, 0
+    local scale = 0.039
+    local nameHero = BlzCreateFrameByType("TEXT", "ButtonChargesText", BlzGetOriginFrame(ORIGIN_FRAME_GAME_UI, 0), "", 0)
+    BlzFrameSetText(nameHero, "Выберите героя")
+    BlzFrameSetAbsPoint(nameHero, FRAMEPOINT_CENTER, x + 0.1, y)
+    BlzFrameSetScale(nameHero, 1)
+    --и 5 иконок портер и 4 способности
+    for i = 1, 6 do
+        BoxInfoAbilityHero[i] = CreateGluePickHero(nameHero, x + scale * (i - 1), y - scale, scale,nil,2,nil,i)
+    end
+
+    -- Большая рамка с описание способностей (требуется кастомный FDF)
+
+    local toolTip = BlzCreateFrame("DemoBoxTooltip", BlzGetOriginFrame(ORIGIN_FRAME_GAME_UI, 0), 0, 0)
+    local text = "Очень большое описание, которое автоматические переносится да другую строчку и увеличивает размер тултипа вверх"
+    --print(#text)
+    local size = 20
+    BlzFrameSetSize(toolTip, 0.24, 0.012 * size)
+    BlzFrameSetAbsPoint(toolTip, FRAMEPOINT_CENTER, 0.68, 0.36)
+
+    --BlzFrameSetPoint(toolTip, FRAMEPOINT_BOTTOM, BlzGetOriginFrame(ORIGIN_FRAME_GAME_UI, 0), FRAMEPOINT_BOTTOM, 0.4, 0.4)
+
+
+    local contaiter = BlzFrameGetChild(toolTip, 1)
+    local title = BlzFrameGetChild(contaiter, 0)
+    local description = BlzFrameGetChild(contaiter, 1)
+    BlzFrameSetText(title, "Описание:")
+    BlzFrameSetText(description, text)
+    --BlzFrameSetVisible(data.ToolTip,false)
+    local k = 0
+
+    BlzFrameSetText(title, BlzFrameGetText(title) .. "\n ") --вставка сеператора
+    local separator = BlzCreateFrameByType("BACKDROP", "Face", toolTip, "", 0)
+    BlzFrameSetTexture(separator, "UI\\Widgets\\tooltips\\Human\\horizontalseparator", 0, true)
+    BlzFrameSetSize(separator, 0.28, 1 / 16 * 0.01)
+    BlzFrameSetPoint(separator, FRAMEPOINT_TOPLEFT, toolTip, FRAMEPOINT_TOPLEFT, 0.005, -0.02 - k)
+
+    -- кнопка подтверждения выбора
+    BoxNameHero = nameHero
+    BoxDescription = description
+end
+
+function FrameChangeTexture(frame, texture)
+    BlzFrameSetTexture(BlzFrameGetChild(frame, 0), texture, 0, true)
+end
+
+

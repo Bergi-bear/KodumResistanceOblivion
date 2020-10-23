@@ -6,6 +6,16 @@
 
 do --Инициализация
 	TimerStart(CreateTimer(), 0.1, false, function()
+		if BlzLoadTOCFile("SystemGeneric\\Main.toc") then
+			--print("успех")
+		else
+			print("провал загрузки ТОС ")
+		end
+	end)
+end
+
+do --Инициализация
+	TimerStart(CreateTimer(), 0.1, false, function()
 		InitSelectionRegister()
 	end)
 end
@@ -285,96 +295,4 @@ end
 
 function ShowTalonAll(data,state)
 	BlzFrameSetVisible(data.TalonTable.self,state)
-end
-
-do -- BD
-	TalonBD={
-		[1]={ --Падший король H00S
-			description={
-				"+2 регенерации маны",
-				"",
-				"+20 урона",
-				"+75 к урону от \nмолний",
-				"",
-				"+8 к силе",
-				"+100 к сильному \nудару",
-				"",
-				"Цепь молний без \nперезарядки",
-				"+18 процентов шанса\n удар молнии",
-				"",
-				"+50 скорости \nперемещения",
-				"-50 сек перезарядки \nпробуждения",
-				"",
-				"Сильный удар \nстановится пассивным",
-
-			},
-			Icons={
-				"ReplaceableTextures\\CommandButtons\\BTNManaStone.blp",
-				"",
-				"ReplaceableTextures\\CommandButtons\\BTNAttack.blp",
-				"war3mapImported\\BTN_[Q]_Lighting_Chain.blp",
-				"",
-				"UI\\Widgets\\Console\\Human\\infocard-heroattributes-str.blp",
-				"war3mapImported\\BTN_[W]_Iron_Hit.blp",
-				"",
-				"war3mapImported\\BTN_[Q]_Lighting_Chain.blp",
-				"war3mapImported\\BTN_[Q]_Lighting_Chain.blp",
-				"",
-				"ReplaceableTextures\\CommandButtons\\BTNSlippersOfAgility.blp",
-				"ReplaceableTextures\\CommandButtons\\BTNAvatarOn.blp",
-				"",
-				"war3mapImported\\BTN_[W]_Iron_Hit.blp",
-			}
-		},
-		[2]={ -- Провидец Пустоты H00D
-			description={
-				"+150 к здоровью",
-				"",
-				"-15%% перезарядки \nспособностей",
-				"+2 существа \nПаразит",
-				"",
-				"+40 к урону",
-				"+20%% урона по постройкам \nКритический удар",
-				"",
-				"+2 к минимальному \nоглушению",
-				"+Критический удар наносит \nурон по области 500",
-				"",
-				"+15%% к уклонению",
-				"100%% шанс молний",
-				"",
-				"Ярость превращается \nв ауру",
-
-			},
-			Icons={
-				"ReplaceableTextures\\CommandButtons\\BTNHealthStone.blp",
-				"",
-				"ReplaceableTextures\\CommandButtons\\BTNEngineeringUpgrade.blp",
-				"war3mapImported\\BTN_[E]_Parasite.blp",
-				"",
-				"ReplaceableTextures\\CommandButtons\\BTNAttack.blp",
-				"ReplaceableTextures\\CommandButtons\\BTNCriticalStrike.blp",
-				"",
-				"ReplaceableTextures\\CommandButtons\\BTNOrbOfLightning.blp",
-				"ReplaceableTextures\\CommandButtons\\BTNCriticalStrike.blp",
-				"",
-				"ReplaceableTextures\\CommandButtons\\BTNHoldPosition.blp",
-				"ReplaceableTextures\\CommandButtons\\BTNOrbOfLightning.blp",
-				"",
-				"war3mapImported\\BTN_[Q]_Rage.blp",
-			}
-		},
-	}
-end
-
-
-
-function GetHeroIndexInTable(HeroID)
-	local table={}
-	table[FourCC('H00S')]=1 -- падший король
-	table[FourCC('H00X')]=2 -- провидец пустоты
-
-	if not table[HeroID] then
-		print("Герой так и не был найден в базе данных")
-	end
-	return table[HeroID]
 end
